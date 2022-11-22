@@ -1,0 +1,101 @@
+.catalog-products3{
+  .item{
+    border: 1px solid #eaebec;
+    background: #fff;
+    transition: box-shadow 0.1s ease-in-out;
+    @include media((
+            padding: (all:15px, sm:10px)
+    ));
+    .img-container {
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+
+      max-width: var(--img-width, 300px);
+      max-height: var(--img-height, 200px);
+      aspect-ratio: var(--aspect-ratio, 300/200);
+      width:100%; // fix max-width bug if parent display:flex
+
+      img{
+        margin: auto;
+
+        // чтобы вписать в данное соотношение сторон картинку с другим соотношением сторон без искажений
+        width: auto;
+        max-height: 100%;
+      }
+
+      .no-img{
+        @include media((
+                font-size: (all:5rem, lg:3rem)
+        ));
+      }
+
+      text-decoration: none;
+      &:hover {
+        opacity: 0.8;
+      }
+
+      position: relative;
+      .not-available{
+        @extend %not-available;
+        &:before{
+          display: none;
+        }
+        &:after{
+          content: "\f05e";
+          font-family: 'Font Awesome 5 Free';
+          font-weight: 900;
+          color: var(--text-color);
+          position: absolute;
+          z-index: 1;
+          @include media((
+                  font-size: (all:2rem, lg:3rem)
+          ));
+        }
+      }
+      .labels-container {
+        @extend %labels-container;
+      }
+      .dopimages {
+        @extend %dopimages;
+      }
+    }
+    .name {
+      color: var(--text-color);
+      text-decoration: none;
+      line-height: 1.2;
+      display: inline-block;
+      @include media((
+              font-size: (lg:14px),
+              margin-bottom: (sm:10px)
+      ));
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    @extend %price-container;
+    .price-container {
+      .old-price{
+        @include media((
+                margin-left: (all: 12px, lg:0, sm:12px)
+        ));
+      }
+    }
+    .tovars-counter {
+      @include tovars-counter($height: 30px);
+      @include media((
+              margin-bottom: (lg: 2px)
+      ));
+    }
+    .button {
+      font-size: 14px;
+      min-width: 100%;
+      min-height: 30px;
+    }
+    &:hover {
+      box-shadow: 0 0 10px rgba(159, 159, 159, 0.4);
+      transition: box-shadow 0.1s ease-in-out;
+      position: relative;
+    }
+  }
+}

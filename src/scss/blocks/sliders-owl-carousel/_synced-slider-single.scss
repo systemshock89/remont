@@ -1,0 +1,122 @@
+.synced-slider-single {
+  .item {
+    //display: flex;
+    //flex-direction: column;
+    width: 100%;
+    border: 1px solid #ededee;
+    .img-container {
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+
+      max-width: var(--img-width, 628px);
+      max-height: var(--img-height, 417px);
+      aspect-ratio: var(--aspect-ratio, 628/417);
+      width:100%; // fix max-width bug if parent display:flex
+
+      img{
+        margin: auto;
+
+        // чтобы вписать в данное соотношение сторон картинку с другим соотношением сторон без искажений
+        width: auto;
+        max-height: 100%;
+      }
+
+      text-decoration: none;
+
+      .labels-container {
+        @extend %labels-container;
+      }
+    }
+  }
+  .owl-carousel {
+    .owl-stage {
+      display: flex;
+      .owl-item {
+        display: flex;
+        flex: 1 0 auto;
+      }
+    }
+
+    @include owl-slider2-nav-vector(
+      // общее
+            $owl-slider2-nav-width: null, // Ширина и Высота указывается если стрелка - картинка, либо если у векторной стрелки есть фон и он должен быть особого размера (размер или null)
+            $owl-slider2-nav-height: null,
+            $owl-slider2-nav-left-right: -30px, // отступы слева/справа
+            $owl-slider2-nav-margin-top: null, // индивидуальный отступ сверху (если не нужно вертикальное выравнивание стрелок) (размер или null)
+            $owl-slider2-nav-opacity: 0.6, // прозрачность
+            $owl-slider2-nav-opacity-hover: 1, // прозрачность при наведении
+            $owl-slider2-nav-padding: 'true', // расширить границы наведения на кнопку ('true' или null)
+
+              // стрелка - fontawesome
+            $owl-slider2-nav-is-awesome: 'true', // стрелки созданы с помощью fontawesome ('true' или null)
+            $owl-slider2-nav-prev-code: "\f053", // код стрелки влево
+            $owl-slider2-nav-next-code: "\f054", // код стрелки вправо
+            $owl-slider2-nav-font-size: 35px, // размер векторной иконки
+            $owl-slider2-nav-color: #fff, // цвет иконки
+            $owl-slider2-nav-color-hover: #fff, // цвет иконки при наведении
+            $owl-slider2-nav-text-shadow: 0px 3px 1px rgba(0, 0, 0, 0.6), // тень у иконки (тень или none)
+            $owl-slider2-nav-bg-color: null, // цвет фона (цвет или null)
+            $owl-slider2-nav-bg-color-hover: null, // цвет фона при наведении (цвет или null)
+            $owl-slider2-nav-icon-bg-left-right: 0, // подкорректировать отступы у стрелки с фоном, если стрекла не отцентрировалась (например, -2px)
+
+              // стрелка - картинка
+            $owl-slider2-nav-is-img: null, // стрелки созданы с помощью фоновых картинок ('true' или null)
+            $owl-slider2-nav-prev-bg: none, // стрелка влево - Пример: url('../img/arr-left.png') или none
+            $owl-slider2-nav-next-bg: none, //стрелка вправо - Пример: url('../img/arr-left.png') или none
+            $owl-slider2-nav-prev-bg-hover: none, // стрелка влево - наведение - Пример: url('../img/arr-left.png') или none
+            $owl-slider2-nav-next-bg-hover: none // стрелка вправо - наведение - Пример: url('../img/arr-left.png') или none
+    );
+
+    @include owl-slider2-dots();
+  }
+  &.one-slide{ // one-slide если слайд всего один, то не запускать скрипт
+    .owl-carousel {
+      display: block;
+    }
+  }
+}
+
+.synced-slider-thumbs {
+  margin-top: 20px;
+  > .row{
+    gap: 12px 0;
+  }
+  .item {
+    //display: flex;
+    //flex-direction: column;
+    //width: 100%;
+    display: block;
+
+    cursor: pointer;
+    border: 1px solid #ededee;
+    transform: translate3d(0px, 0px, 0px);
+    transition: opacity 0.1s ease-in-out, border 0.1s ease-in-out;
+    .img-container {
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+
+      max-width: var(--img-width, 628px);
+      max-height: var(--img-height, 417px);
+      aspect-ratio: var(--aspect-ratio, 628/417);
+      width:100%; // fix max-width bug if parent display:flex
+
+      img{
+        margin: auto;
+
+        // чтобы вписать в данное соотношение сторон картинку с другим соотношением сторон без искажений
+        width: auto;
+        max-height: 100%;
+      }
+
+      text-decoration: none;
+    }
+    &:hover,
+    &.selected {
+      opacity: .6;
+      transition: opacity 0.1s ease-in-out, border 0.1s ease-in-out;
+      border: 1px solid #a2a2a2;
+    }
+  }
+}

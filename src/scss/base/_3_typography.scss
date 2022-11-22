@@ -1,0 +1,508 @@
+%h-base{
+  font-family: "Montserrat-my", sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-color-dark);
+  text-transform: uppercase;
+  @include media((
+          margin-bottom: (all:20px, sm: 1rem)
+  ));
+  //margin-bottom: .5rem;
+
+  span{
+    font-weight: 300;
+    text-transform: none;
+  }
+}
+
+h1, .h1 {
+  @extend %h-base;
+  font-size: betterClamp(26, 45);
+  //@include media((
+  //        font-size: (all: 36px, lg: 28px, md: 24px, sm: 20px, xs: 18px)
+  //));
+}
+
+h2, .h2 {
+  &:not(.h2-title){
+    @extend %h-base;
+    font-size: betterClamp(24, 35);
+    //@include media((
+    //        font-size: (all: 28px, lg:24px, md: 20px, sm: 18px, xs: 16px)
+    //));
+  }
+}
+
+h3, .h3 {
+  @extend %h-base;
+  font-size: betterClamp(22, 28);
+  //@include media((
+  //        font-size: (all: 22px, lg:20px, md: 18px, sm: 16px, xs: 14px)
+  //));
+}
+
+h4, .h4 {
+  @extend %h-base;
+  font-size: betterClamp(20, 24);
+  //@include media((
+  //        font-size: (all: 20px, lg:18px, md: 16px, sm: 14px)
+  //));
+}
+
+h5, .h5{
+  @extend %h-base;
+  font-size: betterClamp(18, 20);
+  //@include media((
+  //        font-size: (all: 18px, lg:16px, md: 14px)
+  //));
+}
+
+h6, .h6{
+  @extend %h-base;
+  font-size: betterClamp(16, 18);
+  //@include media((
+  //        font-size: (all: 16px, lg: 14px)
+  //));
+  font-weight: bold;
+}
+
+.sub-title{
+  font-style: italic;
+  color: var(--text-color);
+  @include media((
+          margin-bottom: (all:20px, sm: 1rem)
+  ));
+  //margin-bottom: .5rem;
+  &:before{
+    content: '';
+    display: flex; // чтобы выравнивание работало и в блоке с обтекаемой картинкой
+    background: var(--accent-color);
+    height: 3px;
+    @include media((
+            width: (all: 190px, md: 140px),
+            margin-bottom: (all: 15px, sm: 10px),
+            margin-top: (md: 10px),
+    ));
+  }
+}
+
+.text-left {
+  text-align: left!important;
+  &.title-wrapper{
+    > * {
+      text-align: left!important;
+    }
+    .sub-title:before{
+      margin-left: inherit!important;
+      margin-right: inherit!important;
+    }
+  }
+}
+.text-right {
+  text-align: right!important;
+  &.title-wrapper{
+    > * {
+      text-align: right!important;
+    }
+    .sub-title:before{
+      margin-left: auto!important;
+      margin-right: inherit!important;
+    }
+  }
+}
+.text-center {
+  text-align: center!important;
+  &.title-wrapper{
+    > * {
+      text-align: center!important;
+    }
+    .sub-title:before{
+      margin-left: auto!important;
+      margin-right: auto!important;
+    }
+  }
+}
+.text-justify {
+  text-align: justify!important;
+  &.title-wrapper{
+    > * {
+      text-align: justify!important;
+    }
+    .sub-title:before{
+      margin-left: auto!important;
+      margin-right: auto!important;
+    }
+  }
+}
+
+
+/* ФОРМАТИРОВАНИЕ ТЕКСТА И ЭЛЕМЕНТОВ В ТЕКСТЕ */
+%text-elements{
+  > * {
+    &:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(.h1):not(.h2):not(.h3):not(.h4):not(.h5):not(.h6):not(.title-wrapper){
+      margin-bottom: 1rem;
+    }
+    &:last-child{
+      margin-bottom: 0!important;
+    }
+  }
+
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
+  .sub-title,
+  .title-wrapper{
+    margin-bottom: .5rem;
+  }
+
+  // по умолчанию в  ckeditor к img добавляется класс img-fluid, но на всякий случай дублируется и случай без класса
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+  .img-container{
+    text-align: center;
+  }
+  a.img-container{
+    display: inline-block;
+    img{
+      transition: box-shadow 0.1s ease-in-out;
+    }
+    &:hover{
+      img{
+        box-shadow: 0 2px 10px 0 #b3b6ba;
+        transition: box-shadow 0.1s ease-in-out;
+      }
+    }
+  }
+
+  // по умолчанию в  ckeditor добавляется адаптивная таблица с дивами, но на всякий случай дублируется и случай
+  // для таблицы без дивов и классов
+  table{
+    @extend %table;
+  }
+
+  ul, ol{
+    li{
+      &:not(:last-child){
+        margin-bottom: 5px;
+      }
+    }
+
+    // чтобы маркеры списка при float не выпирали https://yadi.sk/i/PO0TslM3FHgvwQ , а располагались так https://yadi.sk/i/utMc1mYbgJz1sQ
+    // ранее использовался overflow: hidden; но при нем длинный список не переносится https://yadi.sk/i/dNP4FTHqekgZxg
+    //overflow: hidden;
+    margin-left: -20px;
+    > li{
+      position: relative;
+      left: 20px;
+      padding-right: 20px;
+    }
+  }
+  ul{
+    padding-left: 20px;
+    //@extend %ul-style; // для кастомизации маркированного списка
+    > li{
+      &::marker{
+      }
+    }
+    ul{
+      // padding-left: 30px; // для другого отступа у вложенных списков
+    }
+  }
+
+  ul, ol{
+
+  }
+
+  ol{
+    padding-left: 30px;
+    > li {
+      &::marker{
+        color: var(--accent-color);
+        font-weight: bold;
+      }
+    }
+    ol{
+      // padding-left: 30px; // для другого отступа у вложенных списков
+    }
+  }
+
+  //ul:not(.ul-style){
+  //  padding-left: 17px;
+  //
+  //  //
+  //  font-size: 20px;
+  //}
+  //ul, ol{
+  //  overflow: hidden;
+  //  //margin-bottom: 1rem;
+  //  li{
+  //    margin-bottom: 5px;
+  //    &:last-child{
+  //      margin-bottom: 0;
+  //    }
+  //  }
+  //  > li {
+  //    > ul, ol{
+  //      margin-bottom: 5px;
+  //    }
+  //  }
+  //}
+
+  @extend %video-elements;
+
+  // clearfix для float-ов в тексте
+  &:after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+
+}
+
+// форматирование заголовков в тексте
+%text-elements-title{
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
+  .sub-title,
+  .title-wrapper{
+    margin-bottom: .5rem;
+    &:last-child{
+      margin-bottom: 0!important;
+    }
+  }
+}
+.text-elements-title{
+  @extend %text-elements-title;
+}
+
+// универстальный класс для текстового блока с форматированием элементов
+.text-elements{
+  @extend %text-elements;
+}
+
+// список с иконками. когда иконка списка - fontawesome
+%ul-style{
+  @extend %list-unstyled;
+  padding-left: 0;
+  > li{
+    position: relative;
+    padding-left: 15px;
+    &:before{
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      content: "\f105";
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      color: var(--accent-color);
+    }
+    ul{
+      @extend %list-unstyled;
+    }
+  }
+}
+
+// список с иконками. когда иконка списка - картинка
+//%ul-style{
+//  @extend %list-unstyled;
+//  overflow: inherit!important;
+//  padding-left: 0;
+//  > li{
+//    position: relative;
+//    padding-left: 30px;
+//    margin-bottom: 20px!important;
+//    &:before{
+//      position: absolute;
+//      top: -5px;
+//      left: 0;
+//      margin-right: 10px;
+//
+//      content: "";
+//      background: url('../img/ul-style-icon.png');
+//      background: var(--accent-color);
+//      width: 21px;
+//      height: 32px;
+//    }
+//    ul{
+//      overflow: inherit!important;
+//      margin-top: 20px;
+//      @extend %list-unstyled;
+//    }
+//  }
+//}
+
+ul.ul-style{
+  @extend %ul-style;
+}
+
+// список - цифры (при этом способе не работает атрибут start, но больше возможностей для кастомизации)
+%ol-style{
+  @extend %list-unstyled;
+  counter-reset: my-awesome-counter;
+  li{
+    position: relative;
+    @include media((
+            padding-left: (all: 25px, md:20px),
+            margin-bottom: (all: 10px, md:8px),
+    ));
+    &:before{
+      counter-increment: my-awesome-counter;
+      content: counter(my-awesome-counter) ". ";
+      color: var(--accent-color);
+      font-weight: bold;
+      @include media((
+              font-size: (all: 18px, lg:16px, md:14px)
+      ));
+
+      position: absolute;
+      top: -1px;
+      left: 0;
+
+    }
+    //&:last-child{
+    //  margin-bottom: 0;
+    //}
+  }
+}
+/* /ФОРМАТИРОВАНИЕ ТЕКСТА И ЭЛЕМЕНТОВ В ТЕКСТЕ */
+
+
+/*==========  TABLE  ==========*/
+table[class=""]{
+  margin-bottom: 1rem;
+}
+
+td, th {
+  padding: 5px;
+}
+
+%table{
+  background: #fff;
+
+  // Для прозрачных границ ячеек раскомментировать эти строки, а border: 1px solid #d7dee3 у td и th закомментировать
+  //border-collapse: separate;
+  //border-spacing: 2px;
+
+  > tbody,
+  > thead,
+  > tfoot {
+    > tr {
+      > td, > th {
+        text-align: center;
+        padding: 5px 10px;
+        border: 1px solid #d7dee3;
+        @include media((
+                height: (all: 49px, sm: 40px)
+        ));
+      }
+      > th{
+        background: #f8f9fa;
+        @include media((
+                line-height: (all: 1.2, sm: 1.1)
+        ));
+      }
+      > td{
+        line-height: 1.2;
+      }
+    }
+  }
+  tr {
+    td {
+      transition: background 0.1s ease-in-out, border 0.1s ease-in-out;
+    }
+    &:hover td {
+      transition: background 0.1s ease-in-out, border 0.1s ease-in-out;
+      background-color: #ebeef1;
+    }
+  }
+}
+
+.table-striped {
+  tbody{
+    tr:nth-of-type(odd){
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  }
+}
+
+.table-responsive {
+  > .overflow > table {
+    @extend %table;
+    max-width: 100%;
+  }
+  .overflow{
+    overflow-x: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+  .table-responsive-arrow{
+    display: none;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .table-responsive{
+    position: relative;
+    overflow: hidden;
+    .table-responsive-arrow{
+      display: block;
+      position: absolute;
+      top: 0;
+      width: 40px;
+      height: 100%;
+      transition: left .5s ease-in-out, right .5s ease-in-out;
+      z-index: 1;
+      &:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 5px;
+        height: 100%;
+        background-image: linear-gradient(transparent,rgba(0,0,0,.2) 25%,rgba(0,0,0,.3) 75%,transparent),radial-gradient(farthest-side at 100% 50%,rgba(0,0,0,.4),transparent);
+      }
+      &:after{
+        content: '';
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: rgba(#000,.3);
+        position: absolute;
+        top: 50%;
+        margin-top: -40px;
+        left: 0;
+      }
+      .fa{
+        position: absolute;
+        top: 50%;
+        margin-top: -13px;
+        left: 16px;
+        color: #fff;
+        z-index: 1;
+      }
+      &.arrow-left{
+        left: -100%;
+        transform: scale(-1, 1);
+        &:before{
+          right: 0;
+        }
+      }
+      &.arrow-right{
+        right: -100%;
+        &:before{
+          right: 0;
+        }
+      }
+    }
+    &.table-responsive-arrow-left-on{
+      .table-responsive-arrow.arrow-left{
+        left: 0;
+        transition: left .5s ease-in-out;
+      }
+    }
+    &.table-responsive-arrow-right-on{
+      .table-responsive-arrow.arrow-right{
+        right: 0;
+        transition: right .5s ease-in-out;
+      }
+    }
+  }
+}
+/*==========  TABLE  ==========*/

@@ -1,0 +1,547 @@
+// универсальная заглушка при отсутствии фото
+.no-img{
+  background: #EEEEEE;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  color: #BBBBBB;
+  font-size: 7rem;
+  &:after{
+    content: "\f03e";
+    font-family: 'Font Awesome 5 Free';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Кнопка Наверх */
+.toTop{
+  position: fixed;
+  bottom: 60px;
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+  z-index: 98;
+  @include media((
+          left: (all: calc((100% - 1320px)/2 - 60px - 15px),
+                          (1320 + (60 + 15 + 15)*2): 15px,
+                  lg: calc((100% - 960px)/2 - 60px - 15px),
+                          (960 + (60 + 15 + 15)*2): 15px,
+                  md: calc((100% - 720px)/2 - 60px - 15px),
+                          (720 + (60 + 15 + 15)*2): 15px
+          ),
+          display: (sm: none!important)
+  ));
+  &:before{
+    font-size: 60px;
+    content: "\f139";
+    font-family: 'Font Awesome 5 Free';
+    line-height: normal;
+    font-weight: 900;
+  }
+  &.show{
+    opacity: 0.15;
+    transition: opacity 0.25s ease-in-out;
+  }
+  &:hover{
+    opacity: .45;
+  }
+}
+
+// socials
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  .item {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #fff;
+    i{
+      margin: auto;
+    }
+    &.vk{
+      background: #45668e;
+      //&:hover{
+      //  color: #45668e;
+      //}
+    }
+    &.fb{
+      background: #3b5998;
+      //&:hover{
+      //  color: #3b5998;
+      //}
+    }
+    &.tw{
+      background: #1da1f2;
+      //&:hover{
+      //  color: #1da1f2;
+      //}
+    }
+    &.youtube{
+      background: #ff0000;
+      //&:hover{
+      //  color: #ff0000;
+      //}
+    }
+    &.skype{
+      background: #00AFF0;
+      //&:hover{
+      //  color: #00AFF0;
+      //}
+    }
+    &.inst{
+      background: radial-gradient(circle at 33% 100%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
+      //&:hover{
+      //  color: #F15245;
+      //}
+    }
+    &.ok{
+      background: #ed812b;
+      //&:hover{
+      //  color: #ed812b;
+      //}
+    }
+    &.what{
+      background: #075e54;
+      //&:hover{
+      //  color: #075e54;
+      //}
+    }
+    &.viber{
+      background: #675CA8;
+      //&:hover{
+      //  color: #675CA8;
+      //}
+    }
+    &.telegram{
+      background: #0088cc;
+      //&:hover{
+      //  color: #0088cc;
+      //}
+    }
+    &:hover{
+      //background: #fff;
+      opacity: .8;
+    }
+  }
+}
+
+.block-with-icon{
+  display: flex;
+  align-items: center;
+  &:before {
+    flex: none;
+    font-family: 'Font Awesome 5 Free';
+  }
+  &.block-with-icon_phone:before{
+    content: "\f095";
+    width: 1.28571429em;
+    text-align: center;
+    margin-right: 5px;
+    font-weight: 900;
+  }
+}
+
+.item-padding{
+  @include media((
+          padding: (all: 20px 15px, sm: 15px, xs: 10px)
+  ));
+  background-color: var(--item_bg);
+  border: 1px solid var(--item_border-color);
+}
+
+.lazy:not(.loaded){
+  background: url('data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7');
+}
+
+.blur {
+  filter: blur(3px);
+  transition: all 0.3s;
+  transform: translate3d(0,0,0);
+}
+
+/* fancybox blur */
+body.fancybox-active {
+
+  // чтобы при запуске фэнсибокс не пропадал хедер, если у него position:fixed - filter применять к потомкам
+  // https://stackoverflow.com/questions/52937708/css-filter-on-parent-breaks-child-positioning
+
+  //> * {
+  //  @include media((
+  //          filter: (all: blur(3px), sm: none),
+  //          transition: (all: filter 0.1s, sm: inherit)
+  //  ));
+  //  transform: translate3d(0, 0, 0);
+  //}
+
+  .header__desktop,
+  .menu-top-container,
+  .page-content,
+  footer,
+  .widget-phone,
+  .toTop,
+  .mini-cart,
+  .mini-cart2,
+  .mini-cart3{
+    @include media((
+            filter: (all: blur(3px), sm: none),
+            transition: (all: filter 0.1s, sm: inherit)
+    ));
+  }
+  .fancybox-container {
+    filter: none;
+  }
+}
+
+/* показать лупу, если фэнсибокс увеличивает картинку */
+[data-fancybox] {
+  &.img-container, .img-container {
+    position: relative;
+
+    &:after {
+      @extend %img-centered;
+      width: 43px;
+      height: 60px;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.1s ease-in-out;
+      content: "\f00e";
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      font-size: 40px;
+      color: #fff;
+      text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+      pointer-events: none; // https://github.com/fancyapps/fancybox/issues/1546
+    }
+    &:hover {
+      &:after {
+        opacity: 0.8;
+        transition: opacity 0.1s ease-in-out;
+      }
+    }
+  }
+}
+
+/* preloader */
+#preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  display: none;
+  .spinner {
+    @extend %spinner;
+    top: 50%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -25px;
+    z-index: 99999;
+  }
+  &.active{
+    display: block;
+  }
+}
+@keyframes preloader-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+%spinner {
+  border: 6px solid rgba(100, 100, 100, 0.4);
+  border-top: 6px solid rgba(255, 255, 255, 0.6);
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+  animation: preloader-rotate .8s infinite linear;
+  background: transparent;
+  position: absolute;
+}
+
+// schema-snippet
+.schema-snippet{
+  display: none;
+}
+
+// text-resize-block
+.text-resize-block{
+  &.text-resize-block-hidden{
+    //@media only screen and (max-width: 575px) {
+    position: absolute;
+    visibility: hidden;
+    //}
+  }
+  .text-resize-block-compact{
+    overflow: hidden;
+    height: 100px;
+    position: relative;
+    &:after{
+      position: absolute;
+      height: 15px;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      box-shadow: inset 0 -10px 5px 5px hsla(0,0%,100%,.5);
+      content: "";
+    }
+  }
+  .text-resize-block-button-wrap{
+    text-align: center;
+  }
+  .text-resize-block-button{
+    display: inline-block;
+    margin-top: 5px;
+    text-decoration: none;
+    color: var(--accent-color);
+    &:after{
+      margin-left: 5px;
+      position: relative;
+      top: 1px;
+      content: '\f078';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+    }
+    &.opened:after{
+      content: '\f077';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+    }
+    &:hover{
+      color: var(--accent-color2);
+    }
+  }
+  &.opened{
+    .text-resize-block-compact{
+      &:after{
+        display: none;
+      }
+    }
+  }
+}
+
+.block-text-color-white{
+  color: #fff;
+
+  .h1, .h2, .h3, .h4, .h5, .h6,
+  h1, h2, h3, h4, h5, h6,
+  a:not(.button):not(.button2),
+  &.catalog-advantage.variant7 .item .text-container .name,
+  &.catalog-advantage.variant8 .item .text-container .text ul li a,
+  .sub-title,
+  ol > li::marker{
+    color: #fff;
+  }
+
+  a:not([class]){
+    color: #fff;
+    text-decoration: underline;
+    &:hover{
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  .button2{
+    border: 1px solid #fff;
+    color: #fff;
+    &:hover{
+      background: rgba(#fff,.5);
+    }
+  }
+
+  .input-awesome{
+    &.checkbox-awesome.variant1,
+    &.checkbox-awesome.variant3{
+      label{
+        .icon{
+          box-shadow: 0 0 0 0.13em #fff;
+        }
+      }
+      input:checked + label .icon{
+        box-shadow: 0 0 0 0.13em #fff;
+        &:before {
+          color: #fff;
+        }
+      }
+      input:not(:disabled) + label:hover .icon{
+        box-shadow: 0 0 0 0.13em #fff;
+      }
+      input:focus-visible + label .icon{
+        box-shadow:
+                0 0 0 0.13em #fff,
+                0 0 0 0.23em var(--orange_color);
+      }
+      input:focus-visible + label:hover .icon{
+        box-shadow:
+                0 0 0 0.13em #fff,
+                0 0 0 0.23em var(--orange_color);
+      }
+      input:disabled + label{
+        .icon{
+          box-shadow: 0 0 0 0.13em #6e6e6e;
+        }
+      }
+      input:disabled:checked + label{
+        .icon:before {
+          color: #6e6e6e;
+        }
+      }
+    }
+    &.checkbox-awesome.variant2,
+    &.checkbox-awesome.variant4{
+      label{
+        .icon{
+          background: #fff;
+          box-shadow: 0 0 0 0.13em #fff;
+        }
+      }
+      input:checked + label .icon{
+        background: #fff;
+        box-shadow: 0 0 0 0.13em #fff;
+        &:before {
+          color: #000;
+        }
+      }
+      input:not(:disabled) + label:hover .icon{
+        background: #fff;
+        box-shadow: 0 0 0 0.13em #fff;
+      }
+      input:focus-visible + label .icon{
+        box-shadow:
+                0 0 0 0.13em #fff,
+                0 0 0 0.23em var(--orange_color);
+      }
+      input:focus-visible + label:hover .icon{
+        box-shadow:
+                0 0 0 0.13em #fff,
+                0 0 0 0.23em var(--orange_color);
+      }
+      input:disabled + label{
+        .icon{
+          background: #C5C5C5;
+          box-shadow: 0 0 0 0.13em #C5C5C5;
+        }
+      }
+      input:disabled:checked + label{
+        .icon{
+          background: #C5C5C5;
+          :before {
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    &.radio-awesome.variant1{
+      label{
+        .icon{
+          box-shadow: 0 0 0 0.13em #fff;
+        }
+      }
+      input:checked + label .icon{
+        box-shadow: 0 0 0 0.13em #fff;
+        &:before {
+          background: #fff;
+        }
+      }
+      input:not(:disabled) + label:hover .icon{
+        box-shadow: 0 0 0 0.13em #fff;
+      }
+      input:focus-visible + label .icon{
+        box-shadow:
+                0 0 0 0.13em #fff,
+                0 0 0 0.23em var(--orange_color);
+      }
+      input:focus-visible + label:hover .icon{
+        box-shadow:
+                0 0 0 0.13em #fff,
+                0 0 0 0.23em var(--orange_color);
+      }
+      input:disabled + label{
+        .icon{
+          box-shadow: 0 0 0 0.13em #6e6e6e;
+        }
+      }
+      input:disabled:checked + label{
+        .icon:before {
+          background: #6e6e6e;
+        }
+      }
+    }
+
+    &.radio-awesome.variant2{
+      label{
+        .icon{
+          background: #fff;
+          box-shadow: 0 0 0 0.13em #fff;
+        }
+      }
+      input:checked + label .icon{
+        box-shadow: 0 0 0 0.13em #fff;
+        background: #fff;
+        &:before {
+          background: #000;
+        }
+      }
+      input:not(:disabled) + label:hover .icon{
+        box-shadow: 0 0 0 0.13em #fff;
+        background: #fff;
+      }
+      input:focus-visible + label .icon{
+        box-shadow:
+                0 0 0 0.13em #fff,
+                0 0 0 0.23em var(--orange_color);
+      }
+      input:focus-visible + label:hover .icon{
+        box-shadow:
+                0 0 0 0.13em #fff,
+                0 0 0 0.23em var(--orange_color);
+      }
+      input:disabled + label{
+        .icon{
+          background: #C5C5C5;
+          box-shadow: 0 0 0 0.13em #C5C5C5;
+        }
+      }
+      input:disabled:checked + label{
+        .icon{
+          background: #C5C5C5;
+        }
+      }
+    }
+
+  }
+
+  .sub-title:before{
+    background: rgba(#fff,.5);
+  }
+
+  &.video-bg,
+  &.one-slide{
+    .container{
+      .h1, .h2, .h3,
+      h1, h2, h3{
+        position: relative;
+      }
+    }
+  }
+
+}
+
+.block-text-color-black{
+  color: var(--text-color);
+}

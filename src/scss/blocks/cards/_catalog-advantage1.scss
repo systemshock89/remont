@@ -1,0 +1,82 @@
+.catalog-advantage-variant1 {
+  .item {
+    text-align: center;
+    height: 100%;
+    .img-container {
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+
+      max-width: var(--img-width, 100px);
+      max-height: var(--img-height, 100px);
+      aspect-ratio: var(--aspect-ratio, 100/100);
+      width:100%; // fix max-width bug if parent display:flex
+
+      img{
+        margin: auto;
+
+        // чтобы вписать в данное соотношение сторон картинку с другим соотношением сторон без искажений
+        width: auto;
+        max-height: 100%;        }
+      .no-img{
+        font-size: 4rem;
+      }
+    }
+    .text-container{
+      line-height: 1.2;
+      .title {
+        font-size: 16px;
+        font-weight: bold;
+
+        text-overflow: ellipsis;
+        overflow: hidden;
+        @include media((
+                margin-top: (all: 10px, xs: 7px)
+        ));
+        + .text{
+          @include media((
+                  margin-top: (xs: 5px)
+          ));
+        }
+      }
+      a.title{
+        display: inline-block;
+        text-decoration: none;
+      }
+      .text {
+        font-size: 14px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        @include media((
+                margin-top: (all: 10px, xs: 7px)
+        ));
+      }
+    }
+  }
+  a.item{
+    text-decoration: none;
+    display: block;
+    .img-container{
+      transition: opacity 0.1s ease-in-out;
+    }
+    .title,
+    .text{
+      transition: color 0.1s ease-in-out;
+    }
+    &:hover{
+      .img-container {
+        opacity: 0.8;
+        transition: opacity 0.1s ease-in-out, border 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+      }
+      &.item-padding {
+        box-shadow: 0 0 10px rgba(159, 159, 159, 0.4);
+        transition: border 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+      }
+      .title,
+      .text{
+        color: var(--accent-color);
+        transition: color 0.1s ease-in-out;
+      }
+    }
+  }
+}

@@ -1,0 +1,105 @@
+.catalog-advantage-variant2 {
+  .item {
+    height: 100%;
+
+    .img-container{
+      display: flex;
+      @include media((
+              width: (all: var(--img-width, 100px), lg: inherit!important),
+              height: (all: var(--img-height, 100px), lg: inherit!important),
+      ));
+      aspect-ratio: var(--aspect-ratio, 100/100);
+      img{
+        margin: auto;
+
+        // чтобы вписать в данное соотношение сторон картинку с другим соотношением сторон без искажений
+        width: auto;
+        max-height: 100%;
+      }
+      .no-img{
+        font-size: 4rem;
+      }
+
+      /*
+      // если у картинки нужен фон
+      &:before{
+        content: '';
+        display: block;
+        width: 100%;
+        padding-top: 100%; // чтобы фон был в пропорции 1:1
+
+        background: #c42026;
+        border-radius: 50%;
+      }
+      img{
+        // уменьшаем максимальный размер картинки, чтоб на маленьких разрешениях она не казалась слишком большой на фоне
+        // как тут https://yadi.sk/i/zkuZ7C_yp1nPzg
+        // а была как тут https://yadi.sk/i/l0W0XaAodibxvQ
+        max-width: calc(100% - 20px);
+        max-height: calc(100% - 20px);
+      }
+      */
+    }
+    .text-container{
+      line-height: 1.2;
+      .title {
+        font-size: 16px;
+        font-weight: bold;
+
+        text-overflow: ellipsis;
+        overflow: hidden;
+        + .text{
+          @include media((
+                  margin-top: (all: 10px, xs: 5px)
+          ));
+        }
+      }
+      .text {
+        font-size: 14px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+    > .row{
+      height: 100%;
+      @include row-mini(20px);
+      @media only screen and (max-width: 767px) {
+        @include row-mini(15px);
+      }
+
+      // на случай, если текст будет большим, чтобы картинка не съезжала
+      flex-wrap: nowrap;
+      > .col-xl {
+        @include media((
+                width: (all: calc(100% - var(--img-width, 100px) - 15px - 15px), lg: inherit)
+        ));
+      }
+    }
+  }
+  a.item{
+    display: block;
+    text-decoration: none;
+    .img-container{
+      transition: opacity 0.1s ease-in-out;
+    }
+    .title,
+    .text{
+      transition: color 0.1s ease-in-out;
+    }
+    &:hover{
+      .img-container {
+        opacity: 0.8;
+        transition: opacity 0.1s ease-in-out;
+      }
+      &.item-padding {
+        box-shadow: 0 0 10px rgba(159, 159, 159, 0.4);
+        transition: border 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+      }
+      .title,
+      .text{
+        color: var(--accent-color);
+        transition: color 0.1s ease-in-out;
+      }
+    }
+  }
+}

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    @@include('head.html', {
+    "title": "Корзина покупок",
+    "description": "description"
+    })
+    @@include('head_css.html')
+</head>
+
+<body>
+
+<div class="page">
+
+    @@include('header.html')
+
+    @@include('menu_top.html')
+
+    @@include('breadcrumb.html')
+
+    <!--content-->
+    <main class="main">
+
+        <div class="title-wrapper">
+            <div class="container">
+                <div class="h1">Ваша корзина</div>
+            </div>
+        </div>
+
+        <div class="cart-page block-margin-bottom">
+            <div class="container">
+
+                <div class="cart-page-part1">
+
+                    <div class="table-responsive">
+                        <div class="overflow">
+                            <table class="table table-striped cart-table">
+                                <tr>
+                                    <th>№</th>
+                                    <th>Фото</th>
+                                    <th class="cart-name-td">Наименование</th>
+                                    <th>Цена</th>
+                                    <th>Количество</th>
+                                    <th>Сумма</th>
+                                    <th>Удалить</th>
+                                </tr>
+
+                                <tr>
+                                    <td class="cart-number-td">1</td>
+                                    <td class="cart-photo-td">
+                                        <a href="#" target="_blank" class="img-container">
+                                            <img src="img/temp/tovar-img.webp" class="img-fluid" alt="">
+                                        </a>
+                                    </td>
+                                    <td class="cart-name-td">
+                                        <a href="#" target="_blank">Масло сливочное Крестьянское весовое</a>
+                                    </td>
+                                    <td class="cart-price-td">
+                                        <div class="price-container">
+                                            <div class="price">22 500 руб.</div>
+                                            <div class="old-price">25 000 руб.</div>
+                                        </div>
+                                    </td>
+                                    <td class="cart-count-td">
+                                        <div class="tovars-counter">
+                                            <a href="#" class="minus" title="Уменьшить">—</a>
+                                            <input type="number" value="1">
+                                            <a href="#" class="plus" title="Увеличить">+</a>
+                                        </div>
+                                    </td>
+                                    <td class="cart-summ-td">
+                                        22 500 руб.
+                                    </td>
+                                    <td class="cart-delete-td">
+                                        <a href="#" class="delete-button" title="Удалить из корзины"></a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="cart-number-td">2</td>
+                                    <td class="cart-photo-td">
+                                        <a href="#" target="_blank" class="img-container">
+                                            <div class="no-img"></div>
+                                        </a>
+                                    </td>
+                                    <td class="cart-name-td">
+                                        <a href="#" target="_blank">Масло сливочное  весовое</a>
+                                    </td>
+                                    <td class="cart-price-td">
+                                        <div class="price-container">
+                                            <div class="price">45 500 руб.</div>
+                                        </div>
+                                    </td>
+                                    <td class="cart-count-td">
+                                        <div class="tovars-counter">
+                                            <a href="#" class="minus" title="Уменьшить">—</a>
+                                            <input type="number" value="1">
+                                            <a href="#" class="plus" title="Увеличить">+</a>
+                                        </div>
+                                    </td>
+                                    <td class="cart-summ-td">
+                                        45 500 руб.
+                                    </td>
+                                    <td class="cart-delete-td">
+                                        <a href="#" class="delete-button" title="Удалить из корзины"></a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="cart-number-td">3</td>
+                                    <td class="cart-photo-td">
+                                        <a href="#" target="_blank" class="img-container">
+                                            <img src="img/temp/tovar-img.webp" class="img-fluid" alt="">
+                                        </a>
+                                    </td>
+                                    <td class="cart-name-td">
+                                        <a href="#" target="_blank">Масло сливочное второй сорт</a>
+                                    </td>
+                                    <td class="cart-price-td">
+                                        <div class="price-container">
+                                            <div class="price">55 500 руб.</div>
+                                        </div>
+                                    </td>
+                                    <td class="cart-count-td">
+                                        <div class="tovars-counter">
+                                            <a href="#" class="minus" title="Уменьшить">—</a>
+                                            <input type="number" value="1">
+                                            <a href="#" class="plus" title="Увеличить">+</a>
+                                        </div>
+                                    </td>
+                                    <td class="cart-summ-td">
+                                        55 500 руб.
+                                    </td>
+                                    <td class="cart-delete-td">
+                                        <a href="#" class="delete-button" title="Удалить из корзины"></a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="cart-number-td">4</td>
+                                    <td class="cart-photo-td">
+                                        <a href="#" target="_blank" class="img-container">
+                                            <img src="img/temp/tovar-img.webp" class="img-fluid" alt="">
+                                        </a>
+                                    </td>
+                                    <td class="cart-name-td">
+                                        <a href="#" target="_blank">Сливки</a>
+                                    </td>
+                                    <td class="cart-price-td">
+                                        <div class="price-container">
+                                            <div class="price">15 500 руб.</div>
+                                        </div>
+                                    </td>
+                                    <td class="cart-count-td">
+                                        <div class="tovars-counter">
+                                            <a href="#" class="minus" title="Уменьшить">—</a>
+                                            <input type="number" value="1">
+                                            <a href="#" class="plus" title="Увеличить">+</a>
+                                        </div>
+                                    </td>
+                                    <td class="cart-summ-td">
+                                        15 500 руб.
+                                    </td>
+                                    <td class="cart-delete-td">
+                                        <a href="#" class="delete-button" title="Удалить из корзины"></a>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="total"><b>Итого: </b>125 500 руб.</div>
+
+                </div>
+
+                <div class="cart-page-order">
+                    <div class="cart-page-order-title">Оформление заказа:</div>
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-8">
+                            <div class="cart-page-order-container">
+                                <form>
+
+                                    <div class="form-container">
+
+                                        <div class="form-group row">
+                                            <label for="input_fio" class="col-sm-12 col-form-label">Имя <span class="marker">*</span></label>
+                                            <div class="col-sm-12 form-control">
+                                                <input type="text" id="input_fio" placeholder="Введите имя" value="">
+                                                <div class="form-control-feedback"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row phone">
+                                            <label for="input_phone" class="col-sm-12 col-form-label">Телефон <span class="marker">*</span></label>
+                                            <div class="col-sm-12 form-control">
+                                                <input type="tel" id="input_phone" placeholder="+7 ( ___ ) ___ - __ - __" value="">
+                                                <div class="form-control-feedback"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="input_email" class="col-sm-12 col-form-label">E-mail</label>
+                                            <div class="col-sm-12 form-control">
+                                                <input type="text" id="input_email" placeholder="Введите E-mail" value="">
+                                                <div class="form-control-feedback"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="textarea_message" class="col-sm-12 col-form-label">Комментарий к заказу</label>
+                                            <div class="col-sm-12 form-control">
+                                                <textarea id="textarea_message" placeholder="Введите комментарий"></textarea>
+                                                <div class="form-control-feedback"></div>
+                                            </div>
+                                        </div>
+
+                                        <!--<div class="form-group row select">-->
+                                        <!--<label for="form_select" class="col-sm-12 col-form-label">Доставка <span class="marker">*</span></label>-->
+                                        <!--<div class="col-sm-12 form-control">-->
+                                        <!--<select id="form_select">-->
+                                        <!--<option value="">Выберете способ доставки</option>-->
+                                        <!--<option value="">Да</option>-->
+                                        <!--<option value="">Нет</option>-->
+                                        <!--</select>-->
+                                        <!--<div class="form-control-feedback"></div>-->
+                                        <!--</div>-->
+                                        <!--</div>-->
+
+                                        <!--<div class="form-group row">-->
+                                        <!--<label for="textarea_message2" class="col-sm-12 col-form-label">Адрес доставки</label>-->
+                                        <!--<div class="col-sm-12 form-control">-->
+                                        <!--<textarea id="textarea_message2" placeholder="Введите адрес доставки"></textarea>-->
+                                        <!--<div class="form-control-feedback"></div>-->
+                                        <!--</div>-->
+                                        <!--</div>-->
+
+                                        <!-- noindex -->
+                                            <div class="form-group agreement">
+                                                <div class="checkbox-awesome variant1 input-awesome">
+                                                    <input type="checkbox" id="checkbox_agree" checked>
+                                                    <label for="checkbox_agree">
+                                                        <span class="icon"></span>
+                                                        Я ознакомлен и принимаю <a href="#" target="_blank" rel="nofollow">Согласие на обработку персональных данных</a>
+                                                    </label>
+                                                </div>
+                                                <div class="form-control">
+                                                    <div class="form-control-feedback" id="id_div_error_agree{$data_form.ext_key}{$uniq}">
+                                                        Вы должны согласиться с обработкой персональных данных.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <!-- /noindex -->
+
+                                    </div>
+
+                                </form>
+
+                                <a class="button" data-fancybox data-type="ajax" data-src="forms/modal_success.html" href="javascript:;">Оформить заказ</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </main>
+
+    @@include('footer.html')
+
+</div>
+
+<div class="mini-cart3">
+    <div class="title compensate-for-scrollbar">
+        <i class="fa fa-lg fa-shopping-cart"></i>
+        Корзина
+    </div>
+    <div class="count compensate-for-scrollbar">12</div>
+    <a href="/cart/" class="mini-cart3-button compensate-for-scrollbar">Оформить заказ</a>
+</div>
+
+@@include('widgets.html')
+
+@@include('scripts.html')
+
+</body>
+</html>

@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    @@include('head.html', {
+    "title": "Каталог",
+    "description": "description"
+    })
+    @@include('head_css.html')
+</head>
+
+<body>
+
+<div class="page page_two-columns-template">
+
+    @@include('header.html')
+
+    @@include('menu_top.html')
+
+    @@include('breadcrumb.html')
+
+    <!--content-->
+    <div class="container page__two-columns">
+
+        <main class="main page__main-column">
+
+            <div class="title-wrapper">
+                <div class="container">
+                    <h1>Каталог</h1>
+                </div>
+            </div>
+
+            <div class="container">
+                <p>Мы предлагаем продукцию собственногопроизводства. Обращаем внимание, что мы также принимаем индивидуальные заказы. Вы можете заказать изделия по Вашим размерам и эскизам. Звоните!</p>
+            </div>
+
+            <div class="catalog-top">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-sm-6">
+                            <select class="sort-select">
+                                <option value="">По цене (сначала дешевые)</option>
+                                <option value="">По цене (сначала дорогие)</option>
+                            </select>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="catalog-view">
+                                <div class="title">Вид каталога:</div>
+                                <div class="catalog-view-wrapper">
+                                    <a href="#" rel="nofollow" class="item selected" title="Плитка">
+                                        <i class="fa fa-th-large"></i>
+                                    </a>
+                                    <a href="#" rel="nofollow" class="item" title="Список">
+                                        <i class="fa fa-th-list"></i>
+                                    </a>
+                                    <a href="#" rel="nofollow" class="item" title="Таблица">
+                                        <i class="fa fa-list"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="catalog-products block-margin-bottom">
+                <div class="container">
+                    <div class="row gap-30 mb-30">
+
+                        <div class="col-md-4 col-6">
+                            <div class="item">
+                                <div class="img-container-wrap">
+                                    <a href="#" class="img-container">
+                                        <img data-src="img/temp/tovar-img.webp" width="300" height="200" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' viewBox='0 0 300 200'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+
+                                        <div class="labels-container">
+                                            <div class="label akcia">Акция</div>
+                                            <div class="label hit">Хит</div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="item-bottom">
+                                    <div class="item-bottom2">
+                                        <a href="#" class="name">Удобная садовая лавочка из массива сосны с подлокотниками Удобная садовая лавочка из массива сосны с подлокотниками</a>
+
+                                        <div class="price-container">
+                                            <div class="price-container-block1">
+                                                <div class="price">12 000 руб</div>
+                                                <div class="old-price">12 600 руб</div>
+                                            </div>
+                                            <div class="price-container-block2">
+                                                <div class="skidka">- 3%</div>
+                                                <div class="economy">Экономия 600 руб</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="bottom">
+                                        <div class="row row-mini justify-content-center catalog-products-row">
+                                            <div class="col-sm-6 d-none d-sm-block">
+                                                <div class="tovars-counter">
+                                                    <a href="#" class="minus" title="Уменьшить">—</a>
+                                                    <input type="number" value="1">
+                                                    <a href="#" class="plus" title="Увеличить">+</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-10">
+                                                <a class="button" href="#">В корзину</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="row no-gutters justify-content-between catalog-item-bottom">
+                                            <div class="col-auto">
+                                                <a href="#" class="catalog-item-reviews">Отзывы: (0)</a>
+                                            </div>
+                                            <div class="col-auto">
+                                                <a href="#" class="catalog-item-compare">
+                                                    <i class="far fa-lg fa-fw fa-clone"></i>
+                                                    <div class="text">К сравнению</div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-6">
+                            <div class="item">
+                                <div class="img-container-wrap">
+                                    <a href="#" class="img-container">
+                                        <div class="no-img"></div>
+                                        <div class="labels-container">
+                                            <div class="label sovet">Мы советуем</div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="item-bottom">
+                                    <div class="item-bottom2">
+                                        <a href="#" class="name">Удобная садовая лавочка из массива сосны с подлокотниками</a>
+
+                                        <div class="price-container no-skidka">
+                                            <div class="price-container-block1">
+                                                <div class="price">12 000 руб</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="bottom">
+                                        <div class="row row-mini justify-content-center catalog-products-row">
+                                            <div class="col-sm-6 d-none d-sm-block">
+                                                <div class="tovars-counter">
+                                                    <a href="#" class="minus" title="Уменьшить">—</a>
+                                                    <input type="number" value="1">
+                                                    <a href="#" class="plus" title="Увеличить">+</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-10">
+                                                <a class="button" href="#">В корзину</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="row no-gutters justify-content-between catalog-item-bottom">
+                                            <div class="col-auto">
+                                                <a href="#" class="catalog-item-reviews">Отзывы: (0)</a>
+                                            </div>
+                                            <div class="col-auto">
+                                                <a href="#" class="catalog-item-compare">
+                                                    <i class="far fa-lg fa-fw fa-clone"></i>
+                                                    <div class="text">К сравнению</div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-6">
+                            <div class="item">
+                                <div class="img-container-wrap">
+                                    <a href="#" class="img-container">
+                                        <img data-src="img/temp/tovar-img-vertical.webp" width="133" height="200" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='133' viewBox='0 0 133 200'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+
+                                        <div class="labels-container">
+                                            <div class="label new">Новинка</div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="item-bottom">
+                                    <div class="item-bottom2">
+                                        <a href="#" class="name">Удобная садовая лавочка из массива сосны с подлокотниками</a>
+                                    </div>
+
+                                    <div class="bottom">
+                                        <div class="row row-mini justify-content-center catalog-products-row">
+                                            <div class="col-sm-6 d-none d-sm-block">
+                                                <div class="tovars-counter">
+                                                    <a href="#" class="minus" title="Уменьшить">—</a>
+                                                    <input type="number" value="1">
+                                                    <a href="#" class="plus" title="Увеличить">+</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-10">
+                                                <a class="button" href="#">В корзину</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="row no-gutters justify-content-between catalog-item-bottom">
+                                            <div class="col-auto">
+                                                <a href="#" class="catalog-item-reviews">Отзывы: (0)</a>
+                                            </div>
+                                            <div class="col-auto">
+                                                <a href="#" class="catalog-item-compare">
+                                                    <i class="far fa-lg fa-fw fa-clone"></i>
+                                                    <div class="text">К сравнению</div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-6">
+                            <div class="item">
+                                <div class="img-container-wrap">
+                                    <a href="#" class="img-container">
+                                        <img data-src="img/temp/tovar-img.webp" width="300" height="200" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' viewBox='0 0 300 200'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+
+                                        <div class="not-available"></div>
+
+                                        <div class="labels-container">
+                                            <div class="label new">Новинка</div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="item-bottom">
+                                    <div class="item-bottom2">
+                                        <a href="#" class="name">Удобная садовая лавочка из массива сосны с подлокотниками</a>
+
+                                        <div class="price-container no-skidka">
+                                            <div class="price-container-block1">
+                                                <div class="price">12 000 руб</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="bottom">
+                                        <div class="row row-mini justify-content-center catalog-products-row">
+                                            <div class="col-sm-6 col-10">
+                                                <a class="button" href="#">Подробнее</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="row no-gutters justify-content-between catalog-item-bottom">
+                                            <div class="col-auto">
+                                                <a href="#" class="catalog-item-reviews">Отзывы: (0)</a>
+                                            </div>
+                                            <div class="col-auto">
+                                                <a href="#" class="catalog-item-compare">
+                                                    <i class="far fa-lg fa-fw fa-clone"></i>
+                                                    <div class="text">К сравнению</div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-6">
+                            <div class="item">
+                                <div class="img-container-wrap">
+                                    <a href="#" class="img-container">
+                                        <img data-src="img/temp/portman.webp" width="300" height="83" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' viewBox='0 0 300 83'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+
+                                        <div class="labels-container">
+                                            <div class="label new">Новинка</div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="item-bottom">
+                                    <div class="item-bottom2">
+                                        <a href="#" class="name">Удобная садовая лавочка из массива сосны с подлокотниками</a>
+
+                                        <div class="price-container no-skidka">
+                                            <div class="price-container-block1">
+                                                <div class="price">12 000 руб</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="bottom">
+                                        <div class="row row-mini justify-content-center catalog-products-row">
+                                            <div class="col-sm-6 d-none d-sm-block">
+                                                <div class="tovars-counter">
+                                                    <a href="#" class="minus" title="Уменьшить">—</a>
+                                                    <input type="number" value="1">
+                                                    <a href="#" class="plus" title="Увеличить">+</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-10">
+                                                <a class="button" href="#">В корзину</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="row no-gutters justify-content-between catalog-item-bottom">
+                                            <div class="col-auto">
+                                                <a href="#" class="catalog-item-reviews">Отзывы: (0)</a>
+                                            </div>
+                                            <div class="col-auto">
+                                                <a href="#" class="catalog-item-compare">
+                                                    <i class="far fa-lg fa-fw fa-clone"></i>
+                                                    <div class="text">К сравнению</div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-6">
+                            <div class="item">
+                                <div class="img-container-wrap">
+                                    <a href="#" class="img-container">
+                                        <img data-src="img/temp/advantage-small.webp" width="50" height="50" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' viewBox='0 0 50 50'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+
+                                        <div class="labels-container">
+                                            <div class="label new">Новинка</div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="item-bottom">
+                                    <div class="item-bottom2">
+                                        <a href="#" class="name">Удобная садовая лавочка из массива сосны с подлокотниками</a>
+
+                                        <div class="price-container no-skidka">
+                                            <div class="price-container-block1">
+                                                <div class="price">12 000 руб</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="bottom">
+                                        <div class="row row-mini justify-content-center catalog-products-row">
+                                            <div class="col-sm-6 d-none d-sm-block">
+                                                <div class="tovars-counter">
+                                                    <a href="#" class="minus" title="Уменьшить">—</a>
+                                                    <input type="number" value="1">
+                                                    <a href="#" class="plus" title="Увеличить">+</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-10">
+                                                <a class="button" href="#">В корзину</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="row no-gutters justify-content-between catalog-item-bottom">
+                                            <div class="col-auto">
+                                                <a href="#" class="catalog-item-reviews">Отзывы: (0)</a>
+                                            </div>
+                                            <div class="col-auto">
+                                                <a href="#" class="catalog-item-compare">
+                                                    <i class="far fa-lg fa-fw fa-clone"></i>
+                                                    <div class="text">К сравнению</div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!--pagination-->
+                    <div class="pagination mb-30">
+                        <a href="#" class='pagination-item' title='Назад'><i class='fa fa-chevron-left'></i></a>
+                        <a class="pagination-item selected">1</a>
+                        <a href="#" class="pagination-item">2</a>
+                        <a href="#" class="pagination-item">3</a>
+                        <a href="#" class="pagination-item">4</a>
+                        <a href="#" class="pagination-item">5</a>
+                        <a href="#" class="pagination-item">6</a>
+                        <a href="#" class='pagination-item' title='Вперед'><i class='fa fa-chevron-right'></i></a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="catalog-products block-margin-bottom">
+                <div class="container">
+                    <div class="title-wrapper">
+                        <div class="h1">Каталог простой</div>
+                    </div>
+                    <div class="row gap-30 mb-30">
+
+                        <div class="col-md-4 col-6">
+                            <div class="item">
+                                <div class="img-container-wrap">
+                                    <a href="#" class="img-container">
+                                        <img data-src="img/temp/tovar-img.webp" width="300" height="200" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' viewBox='0 0 300 200'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="item-bottom">
+                                    <div class="item-bottom2">
+                                        <a href="#" class="name">Удобная садовая лавочка из массива сосны с подлокотниками</a>
+
+                                        <div class="price-container">
+                                            <div class="price">12 000 руб</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="catalog-button-wrapper">
+                                        <a class="button" href="#">Подробнее</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-6">
+                            <div class="item">
+                                <div class="img-container-wrap">
+                                    <a href="#" class="img-container">
+                                        <div class="no-img"></div>
+                                    </a>
+                                </div>
+
+                                <div class="item-bottom">
+                                    <div class="item-bottom2">
+                                        <a href="#" class="name">Удобная садовая лавочка из массива сосны с подлокотниками Удобная садовая лавочка из массива сосны с подлокотниками</a>
+
+                                        <div class="price-container">
+                                            <div class="price">12 000 руб</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="catalog-button-wrapper">
+                                        <a class="button" href="#">Подробнее</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-6">
+                            <div class="item">
+                                <div class="img-container-wrap">
+                                    <a href="#" class="img-container">
+                                        <img data-src="img/temp/tovar-img-vertical.webp" width="133" height="200" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='133' viewBox='0 0 133 200'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="item-bottom">
+                                    <div class="item-bottom2">
+                                        <a href="#" class="name">Удобная садовая лавочка из массива сосны с подлокотниками</a>
+                                    </div>
+
+                                    <div class="catalog-button-wrapper">
+                                        <a class="button" href="#">Подробнее</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-6">
+                            <div class="item">
+                                <div class="img-container-wrap">
+                                    <a href="#" class="img-container">
+                                        <img data-src="img/temp/tovar-img.webp" width="300" height="200" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' viewBox='0 0 300 200'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="item-bottom">
+                                    <div class="item-bottom2">
+                                        <a href="#" class="name">Удобная садовая лавочка из массива сосны с подлокотниками</a>
+
+                                        <div class="price-container">
+                                            <div class="price">12 000 руб</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="catalog-button-wrapper">
+                                        <a class="button" href="#">Подробнее</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-6">
+                            <div class="item">
+                                <div class="img-container-wrap">
+                                    <a href="#" class="img-container">
+                                        <img data-src="img/temp/tovar-img.webp" width="300" height="200" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' viewBox='0 0 300 200'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="item-bottom">
+                                    <div class="item-bottom2">
+                                        <a href="#" class="name">Удобная садовая лавочка из массива сосны с подлокотниками</a>
+
+                                        <div class="price-container">
+                                            <div class="price">12 000 руб</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="catalog-button-wrapper">
+                                        <a class="button" href="#">Подробнее</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!--pagination-->
+                    <div class="pagination mb-30">
+                        <a href="#" class='pagination-item' title='Назад'><i class='fa fa-chevron-left'></i></a>
+                        <a class="pagination-item selected">1</a>
+                        <a href="#" class="pagination-item">2</a>
+                        <a href="#" class="pagination-item">3</a>
+                        <a href="#" class="pagination-item">4</a>
+                        <a href="#" class="pagination-item">5</a>
+                        <a href="#" class="pagination-item">6</a>
+                        <a href="#" class='pagination-item' title='Вперед'><i class='fa fa-chevron-right'></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="catalog-products2 block-margin-bottom">
+                <div class="container">
+
+                    <div class="title-wrapper">
+                        <div class="h1">Каталог списком</div>
+                    </div>
+
+                    <div class="items-wrapper mb-30">
+                        <div class="item">
+                            <div class="row">
+
+                                <div class="col-md-4 col-sm-4 col-4">
+                                    <a href="#" class="img-container">
+                                        <img data-src="img/temp/tovar-img.webp" width="300" height="200" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' viewBox='0 0 300 200'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+
+                                        <div class="labels-container">
+                                            <div class="label akcia">Акция</div>
+                                            <div class="label hit">Хит</div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col-md-4 col-sm-8 col-8">
+                                    <a href="#" class="name">Удобная садовая лавочка из массива сосны с подлокотниками</a>
+                                    <div class="text">Краткое описание товара Краткое описание товара Краткое описание товара Краткое описание товара</div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="row">
+
+                                        <div class="col-md-12 col-sm-6">
+                                            <div class="price-container">
+                                                <div class="price-container-block1">
+                                                    <div class="price">12 000 руб</div>
+                                                    <div class="old-price">12 600 руб</div>
+                                                </div>
+                                                <div class="price-container-block2">
+                                                    <div class="skidka">- 3%</div>
+                                                    <div class="economy">Экономия 600 руб</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 col-sm-6 col-10">
+                                            <div class="catalog-products-wrapper">
+                                                <div class="row row-mini">
+                                                    <div class="col-xl-5 col-6">
+                                                        <div class="tovars-counter">
+                                                            <a href="#" class="minus" title="Уменьшить">—</a>
+                                                            <input type="number" value="1">
+                                                            <a href="#" class="plus" title="Увеличить">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <a class="button" href="#">В корзину</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="row">
+
+                                <div class="col-md-4 col-sm-4 col-4">
+                                    <a href="#" class="img-container">
+                                        <div class="no-img"></div>
+                                    </a>
+                                </div>
+
+                                <div class="col-md-4 col-sm-8 col-8">
+                                    <a href="#" class="name">Удобная садовая лавочка из массива сосны с подлокотниками</a>
+                                    <div class="text">Краткое описание товара Краткое описание товара Краткое описание товара Краткое описание товара</div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="row">
+
+                                        <div class="col-md-12 col-sm-6">
+                                            <div class="price-container">
+                                                <div class="price-container-block1">
+                                                    <div class="price">12 000 руб</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 col-sm-6 col-10">
+                                            <div class="catalog-products-wrapper">
+                                                <div class="row row-mini">
+                                                    <div class="col-xl-5 col-6">
+                                                        <div class="tovars-counter">
+                                                            <a href="#" class="minus" title="Уменьшить">—</a>
+                                                            <input type="number" value="1">
+                                                            <a href="#" class="plus" title="Увеличить">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <a class="button" href="#">В корзину</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="row">
+
+                                <div class="col-md-4 col-sm-4 col-4">
+                                    <a href="#" class="img-container">
+                                        <img data-src="img/temp/tovar-img-vertical.webp" width="133" height="200" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='133' viewBox='0 0 133 200'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+
+                                        <div class="not-available">Нет в наличии</div>
+
+                                        <div class="labels-container">
+                                            <div class="label new">Новинка</div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col-md-4 col-sm-8 col-8">
+                                    <a href="#" class="name">Удобная садовая лавочка из массива сосны с подлокотниками Удобная садовая лавочка из массива сосны с подлокотниками</a>
+                                    <div class="text">Краткое описание товара Краткое описание товара Краткое описание товара Краткое описание товара</div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="row">
+
+                                        <div class="col-md-12 col-sm-6">
+                                            <div class="price-container">
+                                                <div class="price-container-block1">
+                                                    <div class="price">12 000 руб</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 col-sm-6 col-10">
+                                            <div class="catalog-products-wrapper">
+                                                <div class="row row-mini">
+                                                    <div class="col-xl-5 col-6">
+                                                        <div class="tovars-counter">
+                                                            <a href="#" class="minus" title="Уменьшить">—</a>
+                                                            <input type="number" value="1">
+                                                            <a href="#" class="plus" title="Увеличить">+</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <a class="button" href="#">В корзину</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--pagination-->
+                    <div class="pagination mb-30">
+                        <a href="#" class='pagination-item' title='Назад'><i class='fa fa-chevron-left'></i></a>
+                        <a class="pagination-item selected">1</a>
+                        <a href="#" class="pagination-item">2</a>
+                        <a href="#" class="pagination-item">3</a>
+                        <a href="#" class="pagination-item">4</a>
+                        <a href="#" class="pagination-item">5</a>
+                        <a href="#" class="pagination-item">6</a>
+                        <a href="#" class='pagination-item' title='Вперед'><i class='fa fa-chevron-right'></i></a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="catalog-products3 block-margin-bottom">
+                <div class="container">
+
+                    <div class="title-wrapper">
+                        <div class="h1">Каталог таблицей</div>
+                    </div>
+
+                    <div class="items-wrapper mb-30">
+                        <div class="item">
+                            <div class="row align-items-center">
+
+                                <div class="col-md-2 col-sm-3 col-4">
+                                    <a href="#" class="img-container">
+                                        <img data-src="img/temp/tovar-img.webp" width="300" height="200" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' viewBox='0 0 300 200'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                    </a>
+                                </div>
+
+                                <div class="col-xl-4 col-md-5 col-sm-9 col-8">
+                                    <a href="#" class="name">Удобная садовая лавочка из массива сосны с подлокотниками</a>
+                                </div>
+
+                                <div class="col-md-3 col-6">
+                                    <div class="price-container">
+                                        <div class="price">12 000 руб</div>
+                                        <div class="old-price">12 600 руб</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-3 col-md-2 col-6">
+                                    <div class="row row-mini">
+                                        <div class="col-xl-6 col-md-12 col-sm-6">
+                                            <div class="tovars-counter">
+                                                <a href="#" class="minus" title="Уменьшить">—</a>
+                                                <input type="number" value="1">
+                                                <a href="#" class="plus" title="Увеличить">+</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-md-12 col-sm-6">
+                                            <a class="button" href="#">В корзину</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="row align-items-center">
+
+                                <div class="col-md-2 col-sm-3 col-4">
+                                    <a href="#" class="img-container">
+                                        <div class="no-img"></div>
+                                    </a>
+                                </div>
+
+                                <div class="col-xl-4 col-md-5 col-sm-9 col-8">
+                                    <a href="#" class="name">Удобная садовая лавочка из массива сосны с подлокотниками</a>
+                                </div>
+
+                                <div class="col-md-3 col-6">
+                                    <div class="price-container">
+                                        <div class="price">12 000 руб</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-3 col-md-2 col-6">
+                                    <div class="row row-mini">
+                                        <div class="col-xl-6 col-md-12 col-sm-6">
+                                            <div class="tovars-counter">
+                                                <a href="#" class="minus" title="Уменьшить">—</a>
+                                                <input type="number" value="1">
+                                                <a href="#" class="plus" title="Увеличить">+</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-md-12 col-sm-6">
+                                            <a class="button" href="#">В корзину</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="row align-items-center">
+
+                                <div class="col-md-2 col-sm-3 col-4">
+                                    <a href="#" class="img-container">
+                                        <img data-src="img/temp/tovar-img-vertical.webp" width="133" height="200" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='133' viewBox='0 0 133 200'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                        <div class="not-available"></div>
+                                    </a>
+                                </div>
+
+                                <div class="col-xl-4 col-md-5 col-sm-9 col-8">
+                                    <a href="#" class="name">Удобная садовая лавочка из массива сосны с подлокотниками Удобная садовая лавочка из массива сосны с подлокотниками</a>
+                                </div>
+
+                                <div class="col-md-3 col-6">
+                                    <div class="price-container">
+                                        <div class="price">12 000 руб</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-3 col-md-2 col-6">
+                                    <div class="row row-mini">
+                                        <div class="col-xl-6 col-md-12 col-sm-6">
+                                            <div class="tovars-counter">
+                                                <a href="#" class="minus" title="Уменьшить">—</a>
+                                                <input type="number" value="1">
+                                                <a href="#" class="plus" title="Увеличить">+</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-md-12 col-sm-6">
+                                            <a class="button" href="#">В корзину</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--pagination-->
+                    <div class="pagination mb-30">
+                        <a href="#" class='pagination-item' title='Назад'><i class='fa fa-chevron-left'></i></a>
+                        <a class="pagination-item selected">1</a>
+                        <a href="#" class="pagination-item">2</a>
+                        <a href="#" class="pagination-item">3</a>
+                        <a href="#" class="pagination-item">4</a>
+                        <a href="#" class="pagination-item">5</a>
+                        <a href="#" class="pagination-item">6</a>
+                        <a href="#" class='pagination-item' title='Вперед'><i class='fa fa-chevron-right'></i></a>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+
+        @@include('aside.html')
+    </div>
+
+    @@include('footer.html')
+
+</div>
+
+@@include('widgets.html')
+
+@@include('scripts.html')
+
+</body>
+</html>

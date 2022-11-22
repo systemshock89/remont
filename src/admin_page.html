@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    @@include('head.html', {
+    "title": "Admin page",
+    "description": "description"
+    })
+    @@include('head_css.html')
+    <link rel="stylesheet" href="css/common.admin.css?ver=1.0.0">
+</head>
+
+<body>
+
+<div class="page">
+
+    @@include('header.html')
+
+    @@include('menu_top.html')
+
+    <!--content-->
+    <main class="main">
+
+        <div class="container">
+
+            <h1>Таблица в админке - стандартная</h1>
+
+            <div class="admin-object-table">
+                <table>
+
+                    <tr>
+                        <th>Действия</th>
+                        <th></th>
+                        <th>Наименование</th>
+                        <th>Цена</th>
+                        <th>Скидка</th>
+                        <th>Изображение</th>
+                    </tr>
+
+                    <tr>
+                        <td class="td-admin-btns"></td>
+                        <td>
+                            <input type="checkbox" id="checkbox1">
+                            <label for="checkbox1">На Главную</label>
+
+                            <br>
+
+                            <input type="checkbox" id="checkbox2">
+                            <label for="checkbox2">Новинка</label>
+                        </td>
+                        <td class="td-name">Товар 1</td>
+                        <td class="td-price">
+
+                            <div class="price">9 800 р.</div>
+                            <div class="old-price">10 000 р.</div>
+                        </td>
+                        <td>200 р.</td>
+                        <td class="td-img">
+                            <div class="img-container">
+                                <img src="img/temp/news.webp" alt="">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="td-admin-btns"></td>
+                        <td>
+                            <input type="checkbox" id="checkbox1">
+                            <label for="checkbox1">На Главную</label>
+
+                            <br>
+
+                            <input type="checkbox" id="checkbox2">
+                            <label for="checkbox2">Новинка</label>
+                        </td>
+                        <td>Товар 1</td>
+                        <td class="td-price">
+
+                            <div class="price">9 800 р.</div>
+                            <div class="old-price">10 000 р.</div>
+                        </td>
+                        <td>200 р.</td>
+                        <td class="td-img">
+                            <div class="img-container">
+                                <img src="img/temp/news.webp" alt="">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="td-admin-btns"></td>
+                        <td>
+                            <input type="checkbox" id="checkbox1">
+                            <label for="checkbox1">На Главную</label>
+
+                            <br>
+
+                            <input type="checkbox" id="checkbox2">
+                            <label for="checkbox2">Новинка</label>
+                        </td>
+                        <td>Товар 1</td>
+                        <td class="td-price">
+
+                            <div class="price">9 800 р.</div>
+                            <div class="old-price">10 000 р.</div>
+                        </td>
+                        <td>200 р.</td>
+                        <td class="td-img">
+                            <div class="img-container">
+                                <img src="img/temp/news.webp" alt="">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="td-admin-btns"></td>
+                        <td>
+                            <input type="checkbox" id="checkbox1">
+                            <label for="checkbox1">На Главную</label>
+
+                            <br>
+
+                            <input type="checkbox" id="checkbox2">
+                            <label for="checkbox2">Новинка</label>
+                        </td>
+                        <td>Товар 1</td>
+                        <td class="td-price">
+
+                            <div class="price">9 800 р.</div>
+                            <div class="old-price">10 000 р.</div>
+                        </td>
+                        <td>200 р.</td>
+                        <td class="td-img">
+                            <div class="img-container">
+                                <img src="img/temp/news.webp" alt="">
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <br><br><br>
+
+            <h1>Таблица в админке - заказы</h1>
+
+            <div class="admin-object-table-zakaz-tabs clearfix">
+                <a href="#" class="admin-object-table-zakaz-tabs-item selected">Новый (1)</a>
+                <a href="#" class="admin-object-table-zakaz-tabs-item">В обработке (2)</a>
+                <a href="#" class="admin-object-table-zakaz-tabs-item">Завершен (10)</a>
+            </div>
+
+            <div class="admin-object-table">
+                <table>
+
+                    <tr>
+                        <th>Действия</th>
+                        <th>Позиции заказа</th>
+                        <th>Данные пользователя</th>
+                        <th>Дата</th>
+                    </tr>
+
+                    <tr>
+                        <td class="td-admin-btns">
+
+                            <div><b>Номер заказа:</b> 85</div>
+
+                        </td>
+
+                        <td class="td-zakaz">
+
+                            <table>
+                                <tr>
+                                    <th>Название</th>
+                                    <th>Цена</th>
+                                    <th>
+                                        <div class="nowrap">Кол-во</div>
+                                    </th>
+                                    <th>Сумма</th>
+                                </tr>
+
+                                <tr>
+                                    <td class="td-zakaz-table-name">Телевизор c длинным названием с длинным названием</td>
+                                    <td class="td-zakaz-table-price">
+                                        <div class="nowrap">36000 р.</div>
+                                        <div class="nowrap"><strike>45000 р.</strike></div>
+                                    </td>
+                                    <td>4</td>
+                                    <td class="td-zakaz-table-summ">
+                                        <div class="nowrap">144000 р.</div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Телевизор c длинным названием с длинным названием</td>
+                                    <td>
+                                        <div class="nowrap">36000 р.</div>
+                                        <div class="nowrap"><strike>45000 р.</strike></div>
+                                    </td>
+                                    <td>4</td>
+                                    <td>
+                                        <div class="nowrap">144000 р.</div>
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <div class="total">
+                                Общая сумма заказа: <span class="summ nowrap">144000 р.</span>
+                            </div>
+
+                        </td>
+                        <td class="td-user">
+
+                            <table>
+                                <tr>
+                                    <th>Имя</th>
+                                    <td>e32</td>
+                                </tr>
+                                <tr>
+                                    <th>Телефон</th>
+                                    <td>+7 ( 434 ) 324 - 23 - 44</td>
+                                </tr>
+                                <tr>
+                                    <th>E-mail</th>
+                                    <td>system.shock89@gmail.com</td>
+                                </tr>
+                                <tr>
+                                    <th>Комментарий к заказу</th>
+                                    <td>4</td>
+                                </tr>
+                            </table>
+
+                        </td>
+                        <td class="td-date nowrap">
+                            15.09.2017 <br>
+                            11:22
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="td-admin-btns">
+
+                            <div><b>Номер заказа:</b> 85</div>
+
+                        </td>
+
+                        <td class="td-zakaz">
+
+                            <table>
+                                <tr>
+                                    <th>Название</th>
+                                    <th>Цена</th>
+                                    <th>
+                                        <div class="nowrap">Кол-во</div>
+                                    </th>
+                                    <th>Сумма</th>
+                                </tr>
+
+                                <tr>
+                                    <td class="td-zakaz-table-name">Телевизор c длинным названием с длинным названием</td>
+                                    <td class="td-zakaz-table-price">
+                                        <div class="nowrap">36000 р.</div>
+                                        <div class="nowrap"><strike>45000 р.</strike></div>
+                                    </td>
+                                    <td>4</td>
+                                    <td class="td-zakaz-table-summ">
+                                        <div class="nowrap">144000 р.</div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Телевизор c длинным названием с длинным названием</td>
+                                    <td>
+                                        <div class="nowrap">36000 р.</div>
+                                        <div class="nowrap"><strike>45000 р.</strike></div>
+                                    </td>
+                                    <td>4</td>
+                                    <td>
+                                        <div class="nowrap">144000 р.</div>
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <div class="total">
+                                Общая сумма заказа: <span class="summ nowrap">144000 р.</span>
+                            </div>
+
+                        </td>
+                        <td class="td-user">
+
+                            <table>
+                                <tr>
+                                    <th>Имя</th>
+                                    <td>e32</td>
+                                </tr>
+                                <tr>
+                                    <th>Телефон</th>
+                                    <td>+7 ( 434 ) 324 - 23 - 44</td>
+                                </tr>
+                                <tr>
+                                    <th>E-mail</th>
+                                    <td>system.shock89@gmail.com</td>
+                                </tr>
+                                <tr>
+                                    <th>Комментарий к заказу</th>
+                                    <td>4</td>
+                                </tr>
+                            </table>
+
+                        </td>
+                        <td class="td-date nowrap">
+                            15.09.2017 <br>
+                            11:22
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="td-admin-btns">
+
+                            <div><b>Номер заказа:</b> 85</div>
+
+                        </td>
+
+                        <td class="td-zakaz">
+
+                            <table>
+                                <tr>
+                                    <th>Название</th>
+                                    <th>Цена</th>
+                                    <th>
+                                        <div class="nowrap">Кол-во</div>
+                                    </th>
+                                    <th>Сумма</th>
+                                </tr>
+
+                                <tr>
+                                    <td class="td-zakaz-table-name">Телевизор c длинным названием с длинным названием</td>
+                                    <td class="td-zakaz-table-price">
+                                        <div class="nowrap">36000 р.</div>
+                                        <div class="nowrap"><strike>45000 р.</strike></div>
+                                    </td>
+                                    <td>4</td>
+                                    <td class="td-zakaz-table-summ">
+                                        <div class="nowrap">144000 р.</div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Телевизор c длинным названием с длинным названием</td>
+                                    <td>
+                                        <div class="nowrap">36000 р.</div>
+                                        <div class="nowrap"><strike>45000 р.</strike></div>
+                                    </td>
+                                    <td>4</td>
+                                    <td>
+                                        <div class="nowrap">144000 р.</div>
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <div class="total">
+                                Общая сумма заказа: <span class="summ nowrap">144000 р.</span>
+                            </div>
+
+                        </td>
+                        <td class="td-user">
+
+                            <table>
+                                <tr>
+                                    <th>Имя</th>
+                                    <td>e32</td>
+                                </tr>
+                                <tr>
+                                    <th>Телефон</th>
+                                    <td>+7 ( 434 ) 324 - 23 - 44</td>
+                                </tr>
+                                <tr>
+                                    <th>E-mail</th>
+                                    <td>system.shock89@gmail.com</td>
+                                </tr>
+                                <tr>
+                                    <th>Комментарий к заказу</th>
+                                    <td>4</td>
+                                </tr>
+                            </table>
+
+                        </td>
+                        <td class="td-date nowrap">
+                            15.09.2017 <br>
+                            11:22
+                        </td>
+
+                    </tr>
+
+                </table>
+            </div>
+
+            <h1>Данные с форм</h1>
+
+            <div class="admin-object-table">
+                <table>
+
+                    <tr>
+                        <th>Действия</th>
+                        <th>Форма</th>
+                        <th>Данные</th>
+                    </tr>
+
+                    <tr>
+                        <td class="td-admin-btns vertical-align-top"></td>
+
+                        <td class="td-form-name vertical-align-top">Отправить заявку</td>
+
+                        <td class="td-form-data vertical-align-top">
+
+                            <table>
+                                <tr>
+                                    <th>Дата</th>
+                                    <td>06.10.2017 <br> 10:32:58</td>
+                                </tr>
+                                <tr>
+                                    <th>IP</th>
+                                    <td>123.456.78.99</td>
+                                </tr>
+                                <tr>
+                                    <th>Страница</th>
+                                    <td><a href="#">http://cms-nc.ru/dev/testform/</a></td>
+                                </tr>
+                                <tr>
+                                    <th>Имя</th>
+                                    <td>Вася</td>
+                                </tr>
+                                <tr>
+                                    <th>Телефон</th>
+                                    <td>+7 ( 123 ) 123 - 12 - 31</td>
+                                </tr>
+                                <tr>
+                                    <th>E-mail</th>
+                                    <td>test@mail.ru</td>
+                                </tr>
+                                <tr>
+                                    <th>Сообщение</th>
+                                    <td>текст</td>
+                                </tr>
+                            </table>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="td-admin-btns vertical-align-top"></td>
+
+                        <td class="td-form-name vertical-align-top">Отправить заявку</td>
+
+                        <td class="td-form-data vertical-align-top">
+
+                            <table>
+                                <tr>
+                                    <th>Дата</th>
+                                    <td>06.10.2017 <br> 10:32:58</td>
+                                </tr>
+                                <tr>
+                                    <th>IP</th>
+                                    <td>123.456.78.99</td>
+                                </tr>
+                                <tr>
+                                    <th>Страница</th>
+                                    <td><a href="#">http://cms-nc.ru/dev/testform/</a></td>
+                                </tr>
+                                <tr>
+                                    <th>Имя</th>
+                                    <td>Вася</td>
+                                </tr>
+                                <tr>
+                                    <th>E-mail</th>
+                                    <td>test@mail.ru</td>
+                                </tr>
+                            </table>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="td-admin-btns vertical-align-top"></td>
+
+                        <td class="td-form-name vertical-align-top">Отправить заявку</td>
+
+                        <td class="td-form-data vertical-align-top">
+
+                            <table>
+                                <tr>
+                                    <th>Дата</th>
+                                    <td>06.10.2017 <br> 10:32:58</td>
+                                </tr>
+                                <tr>
+                                    <th>IP</th>
+                                    <td>123.456.78.99</td>
+                                </tr>
+                                <tr>
+                                    <th>Страница</th>
+                                    <td><a href="#">http://cms-nc.ru/dev/testform/</a></td>
+                                </tr>
+                                <tr>
+                                    <th>Имя</th>
+                                    <td>Вася</td>
+                                </tr>
+                                <tr>
+                                    <th>E-mail</th>
+                                    <td>test@mail.ru</td>
+                                </tr>
+                            </table>
+
+                        </td>
+
+                    </tr>
+
+
+
+                </table>
+            </div>
+
+        </div>
+
+    </main>
+
+    @@include('footer.html')
+
+</div>
+
+@@include('widgets.html')
+
+@@include('scripts.html')
+
+</body>
+</html>

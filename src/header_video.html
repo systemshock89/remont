@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    @@include('head.html', {
+    "title": "Header с видео",
+    "description": "description"
+    })
+    @@include('head_css.html')
+</head>
+
+<body class="index-page">
+
+<div class="page">
+
+    <!--header-->
+    <header class="header header__with-video">
+        <div class="header__desktop">
+            <div class="menu-top">
+                <div class="container">
+                    <nav>
+                        <ul class="level1">
+                            <li class="selected"><span class="item">Главная</span></li>
+                            <li><a href="#" class="item">Услуги</a></li>
+                            <li class="submenu">
+                                <a href="#" class="item">Каталог продукции</a>
+                                <ul class="level2">
+                                    <li>
+                                        <a href="#" class="item">Наша продукция</a>
+                                        <ul class="level3">
+                                            <li><a href="#" class="item">Газосиликатные блоки</a></li>
+                                            <li><a href="#" class="item">Трехслойные несущие блоки с теплоизоляционным слоем</a></li>
+                                            <li><a href="#" class="item">Товары для сада</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="item">Проектирование коттеджей и ландшафтный дизайн</a>
+                                        <ul class="level3">
+                                            <li><a href="#" class="item">Подраздел 1</a></li>
+                                            <li><a href="#" class="item">Подраздел 2</a></li>
+                                            <li><a href="#" class="item">Подраздел 3</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#" class="item">Строительство коттеджей</a></li>
+                                    <li>
+                                        <a href="#" class="item">Аренда техники</a>
+                                        <ul class="level3">
+                                            <li><a href="#" class="item">Подраздел 4</a></li>
+                                            <li><a href="#" class="item">Подраздел 5</a></li>
+                                            <li><a href="#" class="item">Подраздел 6</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#" class="item">Бетонные работы</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#" class="item">Наши работы</a></li>
+                            <li><a href="#" class="item">Отзывы</a></li>
+                            <li><a href="#" class="item">Вопрос-ответ</a></li>
+                            <li><a href="#" class="item">Цены</a></li>
+                            <li><a href="#" class="item">Контакты</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <div class="header__mobile">
+
+            <div class="header-mobile-buttons left">
+                <!--        <a class="fa fa-lg fa-bars" href="#mmenu"></a>-->
+                <a class="mburger mburger--squeeze" href="#mmenu">
+                    <b></b>
+                    <b></b>
+                    <b></b>
+                </a>
+            </div>
+
+            <div class="header-mobile-logo">
+                <a href="#">
+                    <img src="img/logo2.webp" class="img-fluid" alt="">
+                </a>
+                <!--        <a href="#" class="header-mobile-text">Название фирмы</a>-->
+            </div>
+
+            <div class="header-mobile-buttons right">
+                <a class='fa fa-lg fa-search' href='#' data-button-name="search"></a>
+                <a class='fas fa-lg fa-shopping-basket cart' href='/cart/'>
+                    <span class="count">99</span>
+                </a>
+                <a  href="tel:+74951234567" onclick="yaC.reachGoal('ZVONOK');" class="fa fa-lg fa-phone fa-flip-horizontal"></a>
+            </div>
+
+            <div class="header-mobile-button-container" data-button-name="search">
+                <div class="search-container">
+                    <input type="search" placeholder="Поиск по сайту">
+                    <input class="submit" type="submit" value="&#xf002;">
+                </div>
+            </div>
+
+            <div class="mmenu-html-blocks hidden">
+                <div id="mmenu-top-buttons">
+                    <a data-fancybox="" data-type="ajax" class="fas fa-lg fa-comment-dots" data-src="forms/modal_form.html" href="javascript:;"></a>
+                    <a href="mailto:info@name.ru" class="fa fa-lg fa-envelope"></a>
+                    <a  href="tel:+74951234567" onclick="yaC.reachGoal('ZVONOK');" class="fa fa-lg fa-phone fa-flip-horizontal"></a>
+                    <a class='fa fa-lg fa-map-marker-alt' href='https://goo.gl/maps/1TwW6EyWpdK2'></a>
+                </div>
+
+                <div id="mmenu-socials">
+                    <a class='fab fa-lg fa-vk' href='#'></a>
+                    <a class='fab fa-lg fa-facebook' href='#'></a>
+                    <a class='fab fa-lg fa-twitter' href='#'></a>
+                    <a class='fab fa-lg fa-instagram' href='#'></a>
+                    <a class='fab fa-lg fa-youtube' href='#'></a>
+                    <a class='fab fa-lg fa-whatsapp' href='#' onclick="ym(yaC, 'reachGoal', 'WHATSAPP'); return true;"></a>
+                    <a class='fab fa-lg fa-viber' href='#' onclick="ym(yaC, 'reachGoal', 'VIBER'); return true;"></a>
+                </div>
+
+                <div id="mmenu-tabs">
+                    <a href='#panel-menu'>Меню</a>
+                    <a href='#panel-phone'>Телефоны</a>
+                    <a href='#panel-language'>Язык</a>
+                    <a href='#panel-svhelp'>Для слабовидящих</a>
+                </div>
+
+                <div id="mmenu">
+                    <ul class="level1" id="panel-menu">
+                        <li class="selected"><a href="#">Главная</a></li>
+                        <li><a href="#">Услуги</a></li>
+                        <li>
+                            <a href="#">Каталог продукции</a>
+                            <ul class="level2">
+                                <li>
+                                    <a href="#">Наша продукция</a>
+                                    <ul class="level3">
+                                        <li><a href="#">Газосиликатные блоки</a></li>
+                                        <li><a href="#">Трехслойные несущие блоки с теплоизоляционным слоем</a></li>
+                                        <li><a href="#">Товары для сада</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Проектирование коттеджей и ландшафтный дизайн</a>
+                                    <ul class="level3">
+                                        <li><a href="#">Подраздел 1</a></li>
+                                        <li><a href="#">Подраздел 2</a></li>
+                                        <li><a href="#">Подраздел 3</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Строительство коттеджей</a></li>
+                                <li>
+                                    <a href="#">Аренда техники</a>
+                                    <ul class="level3">
+                                        <li><a href="#">Подраздел 4</a></li>
+                                        <li><a href="#">Подраздел 5</a></li>
+                                        <li><a href="#">Подраздел 6</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Бетонные работы</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Наши работы</a></li>
+                        <li><a href="#">Отзывы</a></li>
+                        <li><a href="#">Вопрос-ответ</a></li>
+                        <li><a href="#">Цены</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+
+                    <ul id="panel-phone">
+                        <li><a href="tel:+74951234567">8-920-666-97-77 - телефон 1</a></li>
+                        <li><a href="tel:+74951234567">8-920-666-97-77 - телефон 2</a></li>
+                        <li><a href="tel:+74951234567">8-920-666-97-77 - телефон 3</a></li>
+                        <li><a href="tel:+74951234567">8-920-666-97-77 - телефон 4</a></li>
+                    </ul>
+
+                    <ul id="panel-language">
+                        <li><a href="#/ru">Русский</a></li>
+                        <li><a href="#/en">English</a></li>
+                        <li><a href="#/de">Deutsch</a></li>
+                    </ul>
+
+                    <ul id="panel-svhelp">
+                        <li>
+                            <a href="#" class="svhelp-default"><i class="fa fa-chevron-left" ></i> <span>Обычная версия сайта</span></a>
+                        </li>
+
+                        <li class="svhelp-item-title">
+                            Цветовая схема:
+                        </li>
+
+                        <li class="svhelp-item svhelp-theme">
+                            <a href="#" data-svhelp-class="svhelp-theme-white" class="item" title="Черно-белая">C</a>
+                            <a href="#" data-svhelp-class="svhelp-theme-dark" class="item" title="Бело-черная">C</a>
+                            <a href="#" data-svhelp-class="svhelp-theme-brown" class="item" title="Черно-бежевая">C</a>
+                            <a href="#" data-svhelp-class="svhelp-theme-blue" class="item" title="Черно-синяя">C</a>
+                        </li>
+
+                        <li class="svhelp-item-title">
+                            Размер шрифта:
+                        </li>
+
+                        <li class="svhelp-item svhelp-font-size">
+                            <a href="#" data-svhelp-class="svhelp-font-size-small" class="item" title="Средний">A</a>
+                            <a href="#" data-svhelp-class="svhelp-font-size-medium" class="item" title="Большой">A</a>
+                            <a href="#" data-svhelp-class="svhelp-font-size-big" class="item" title="Огромный">A</a>
+                        </li>
+
+                        <li class="svhelp-item-title">
+                            Шрифт:
+                        </li>
+
+                        <li class="svhelp-item svhelp-font">
+                            <a href="#" data-svhelp-class="svhelp-font-times" class="item">Times New Roman</a>
+                            <a href="#" data-svhelp-class="svhelp-font-arial" class="item">Arial</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <main class="main page-content-no-margin-top">
+
+        <div class="index-video-block block-margin-bottom">
+
+            <script defer src="js/libs/jquery.waypoints.min.js"></script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function(event) {
+
+                    /* хедер с видео - закрашивание хедера при прокрутке */
+                    var waypoint_offset = $('.header.header__with-video').height(); // отступ, который нужен для точности (например, высота меню или хедера)
+
+                    // закрашивание верхнего меню
+                    var waypoint_object = $('.index-video-block');
+                    if( waypoint_object.length ){
+                        var waypoint = new Waypoint({
+                            element: waypoint_object,
+                            handler: function(direction) {
+                                if( direction == 'down'){
+                                    $('.header.header__with-video').addClass('background-color');
+                                }
+                                if( direction == 'up'){
+                                    $('.header.header__with-video').removeClass('background-color');
+                                }
+                            },
+                            offset: -waypoint_offset
+                        });
+                    }
+                    /* хедер с видео - закрашивание хедера при прокрутке */
+
+                });
+            </script>
+
+            <!-- Можно указать lazyload poster -->
+            <!-- <video class="lazy" data-poster="img/video-poster.webp" autoplay="" loop="" muted="" playsinline>-->
+            <video class="lazy" autoplay="" loop="" muted="" playsinline>
+                <source src="#" data-src="https://mastweb.ru/video/video.mp4" type="video/mp4">
+                <source src="#" data-src="https://mastweb.ru/video/video.webm" type="video/webm">
+            </video>
+
+            <div class="container">
+                <div class="text-container">
+                    <div class="text-container2">
+                        <div class="title">
+                            Вентиляция <br>
+                            Отопление <br>
+                            Холодоснабжение
+                        </div>
+                        <div class="text">
+                            <a href="#">Проектирование</a>
+                            <a href="#">Поставка</a>
+                            <a href="#">Монтаж</a>
+                            <a href="#">Ремонт</a>
+                            <a href="#">Сервисное обслуживание</a>
+                        </div>
+                        <a href="#" class="button">Бесплатная консультация</a>
+
+                        <a href="#" class="button-bottom d-none d-md-block" title="Прокрутить вниз"></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-block block-margin-bottom">
+            <div class="container">
+                <div class="text-block-item">
+                    <div class="title-wrapper">
+                        <div class="h1">Текстовый блок</div>
+                    </div>
+
+                    <div class="text-container text-elements-title">
+                        <div class="text text-elements">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-block block-margin-bottom">
+            <div class="container">
+                <div class="text-block-item">
+                    <div class="title-wrapper">
+                        <div class="h1">Текстовый блок</div>
+                    </div>
+
+                    <div class="text-container text-elements-title">
+                        <div class="text text-elements">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-block block-margin-bottom">
+            <div class="container">
+                <div class="text-block-item">
+                    <div class="title-wrapper">
+                        <div class="h1">Текстовый блок</div>
+                    </div>
+
+                    <div class="text-container text-elements-title">
+                        <div class="text text-elements">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-block block-margin-bottom">
+            <div class="container">
+                <div class="text-block-item">
+                    <div class="title-wrapper">
+                        <div class="h1">Текстовый блок</div>
+                    </div>
+
+                    <div class="text-container text-elements-title">
+                        <div class="text text-elements">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    @@include('footer.html')
+
+</div>
+
+@@include('widgets.html')
+
+@@include('scripts.html')
+
+</body>
+</html>

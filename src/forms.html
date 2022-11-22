@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    @@include('head.html', {
+    "title": "Forms",
+    "description": "description"
+    })
+    @@include('head_css.html')
+</head>
+
+<body>
+
+<div class="page">
+
+    @@include('header.html')
+
+    @@include('menu_top.html')
+
+    <!--content-->
+    <main class="main">
+
+        <div class="container">
+
+            <h2>Инфо:</h2>
+            <p><b>Закрыть текущий фенсибокс:</b> <br>
+                <code>$.fancybox.getInstance().close();</code>
+            </p>
+
+            <p>
+                Запустить фенсибокс аякс на джаваскрипте: <br>
+                <code>
+                    $.fancybox.open({
+                    src : 'forms/modal_success.html',
+                    type : 'ajax'
+                    });
+                </code>
+            </p>
+
+            <p>
+                Запустить на джаваскрипте в фенсибоксе произвольный код: <br>
+                <code>
+                    $.fancybox.open('
+                    &lt;div class=&quot;message&quot;&gt;&lt;h2&gt;Hello!&lt;/h2&gt;
+                    &lt;p&gt;You are awesome!&lt;/p&gt;&lt;/div&gt;
+                    ');
+                </code>
+            </p>
+
+            <p>Чтобы элементы с position:fixed не прыгали, когда открывается фенсибокс, им нужно добавить класс
+                compensate-for-scrollbar. Это сделано у виджета звонка и виджета корзины</p>
+            Подробенее о fancybox3 <a href="http://fancyapps.com/fancybox/3/docs/" target="_blank">здесь</a>
+
+            <br><br><br>
+
+            <h2>Всплывающие формы для cms-nc</h2>
+
+            <a data-fancybox="modal-form-test" data-type="ajax" data-src="forms/modal_form_test.html" href="javascript:;" class="button">Тестовая форма</a>
+            <p>
+                Стандатрная форма на аяксе. Нужно указать все атрибуты. <br>
+                data-src - путь до контента, который подгружается в окне аяксом <br>
+                data-fancybox="modal-form" - название окна, которое отображается в ссылке в браузере. По этой ссылке можно
+                открыть окно, например<br>
+                <a href="#modal-form">ссылка</a>
+                <br>
+                Важно, если существует много окон одинакового типа на одной странице(например кнопка "купить" в каталоге
+                товаров), то нужно присваивать id, то есть data-fancybox="modal-form1", data-fancybox="modal-form2" и т.д.
+                <br>
+                Можно вообще не писать этот заголовок у формы, оставив просто атрибут data-fancybox. Тогда у формы не будет
+                своей ссылки.
+            </p>
+            <br><br>
+
+            <a data-fancybox data-type="ajax" data-src="forms/modal_success.html" href="javascript:;" class="button">Успешная
+                отправка</a>
+            <p>
+                <b>Атрибут закрытия у кнопки </b>- data-fancybox-close: <br>
+                Пример: <br>
+
+                &lt;a class="button" href="#" data-fancybox-close&gt;Ok&lt;/a&gt;
+            </p>
+            <br><br>
+
+            <a data-fancybox="modal-form" data-type="ajax" data-src="forms/modal_form.html" href="javascript:;" class="button">Отправить заявку</a>
+
+            <br><br>
+
+            <a data-fancybox="modal-faq" data-type="ajax" data-src="forms/modal_faq.html" href="javascript:;" class="button">Задать вопрос</a>
+            <br><br>
+
+            <a data-fancybox="modal-tovar" data-type="ajax" data-src="forms/modal_zakaz.html" href="javascript:;" class="button">Купить товар</a>
+            <br><br>
+
+            <a class="button" data-fancybox data-type="ajax" data-src="forms/modal_widget_phone.html" href="javascript:;">Widget phone</a>
+
+            <br><br>
+
+            <a class="button" data-fancybox data-type="ajax" data-src="forms/modal_slide.html" href="javascript:;">Слайд в окне</a>
+
+            <br><br>
+            <h2>Примеры форм</h2>
+
+            <a data-fancybox="modal-inline" data-src="#modal-inline" href="javascript:;" class="button">Inline попап (со страницы)</a>
+            <p> Любой контент (форму, текст, картинку и т.д.), который находится на этой же странице можно открыть в окне. В
+                данном примере видно, как открывается форма с id="modal-inline", которая находится в скрытом диве
+                class="hidden"</p>
+            <br><br>
+
+            <a data-fancybox="ajax_test" data-type="ajax" data-src="forms/modal_ajax_test.html" href="javascript:;" class="button">Открыть попап - ajax</a>
+
+            <a data-fancybox="ajax_test2" data-type="ajax" data-src="forms/modal_ajax_test.html"
+               data-selector=".special-text" href="javascript:;" class="button">Открыть попап - ajax (по классу)</a>
+            <p>Демонстрация загрузки контента в окне на аяксе. Можно загружать как страницу целиком, так и выборочно по
+                классу (data-selector=".special-text") или по id data-selector="#special-text"</p>
+            <br><br>
+
+            <a data-fancybox="video" href="https://www.youtube.com/watch?v=_sI_Ps7JSEk&amp;autoplay=1&amp;rel=0&amp;showinfo=0" class="button">YouTube video</a>
+
+            <a data-fancybox="video2" href="https://vimeo.com/191947042?color=f00" class="button">Vimeo video</a>
+            <br><br>
+
+            <a data-fancybox="map" href="https://api-maps.yandex.ru/frame/v1/-/C6Quj6le" class="button">Карта Yandex</a>
+
+            <a data-fancybox="map2"
+               href="https://www.google.lv/maps/place/Googleplex/@37.4220041,-122.0833494,17z/data=!4m5!3m4!1s0x0:0x6c296c66619367e0!8m2!3d37.4219998!4d-122.0840572"
+               class="button">Карта Google</a>
+            <p> Ссылка на карту яндекса берется не из конструктора карт, а из самой карты яндекса. Хотя можно запустить и из
+                конструктора, но через аякс</p>
+            <br><br>
+
+            <a data-fancybox="iframe" data-src="https://mastweb.ru/" data-type="iframe" href="javascript:;" class="button">Iframed page</a>
+            <p> Через айфрейм можно запустить целую страницу какого-то сайта или, например документ pdf</p>
+            <br><br>
+
+            <a data-fancybox
+               data-caption="<span title=&quot;Edited&quot;>balloon rides at dawn ✨🎈<br>was such a magical experience floating over napa valley as the golden light hit the hills.<br><a href=&quot;https://www.instagram.com/jamesrelfdyer/&quot;>@jamesrelfdyer</a></span>"
+               href="https://www.instagram.com/p/BNXYW8-goPI/?taken-by=jamesrelfdyer" class="button">Instagram photo</a>
+            <p>
+                Фотка из инстаграмма. Возможно, можно загружать целый альбом
+            </p>
+
+        </div>
+
+        <div class="form-in-page block-margin-bottom block-padding" style="background:#ecf1f5;">
+            <div class="container">
+                <form class="form-container">
+
+                    <div class="title-wrapper text-center">
+                        <div class="h2">Обратная связь</div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-xl-8">
+
+                            <div class="row justify-content-center">
+
+                                <div class="col-lg-3 col-md-4 col-10">
+                                    <div class="form-group row error phone">
+                                        <div class="col-sm-12 form-control">
+                                            <input type="tel" placeholder="+7 ( ___ ) ___ - __ - __" value="">
+                                            <div class="form-control-feedback">Введите телефон</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-10">
+                                    <div class="form-group row fio">
+                                        <div class="col-sm-12 form-control">
+                                            <input type="text" placeholder="Как Вас зовут" value="">
+                                            <div class="form-control-feedback"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-10">
+                                    <div class="form-group row email">
+                                        <div class="col-sm-12 form-control">
+                                            <input type="text" placeholder="E-mail для связи" value="">
+                                            <div class="form-control-feedback"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-5 col-10">
+                                    <div class="button-container">
+                                        <a class="button seo-btn-in-page" data-fancybox data-type="ajax" data-src="forms/modal_success.html" href="javascript:;">Отправить заявку</a>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-10">
+                                    <!-- noindex -->
+                                        <div class="form-group agreement error">
+                                            <div class="form-group-agreement-wrapper">
+                                                <div class="checkbox-awesome variant1 input-awesome">
+                                                    <input type="checkbox" id="checkbox_agree1" checked>
+                                                    <label for="checkbox_agree1">
+                                                        <span class="icon"></span>
+                                                        Я ознакомлен и принимаю <a href="#" target="_blank" rel="nofollow">Согласие на обработку персональных данных</a>
+                                                    </label>
+                                                </div>
+                                                <div class="form-control">
+                                                    <div class="form-control-feedback">
+                                                        Вы должны согласиться с обработкой персональных данных.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <!-- /noindex -->
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="form-in-page block-margin-bottom block-padding" style="background:#ecf1f5;">
+            <div class="container">
+                <form class="form-container">
+
+                    <div class="title-wrapper text-center">
+                        <div class="h2">Перезвоните мне</div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-xl-8">
+
+                            <div class="row justify-content-center">
+
+                                <div class="col-lg-3 col-md-4 col-10">
+                                    <div class="form-group row error phone">
+                                        <div class="col-sm-12 form-control">
+                                            <input type="tel" placeholder="+7 ( ___ ) ___ - __ - __"
+                                                   value="">
+                                            <div class="form-control-feedback">Введите телефон</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-10">
+                                    <div class="form-group row fio">
+                                        <div class="col-sm-12 form-control">
+                                            <input type="text" placeholder="Как Вас зовут" value="">
+                                            <div class="form-control-feedback"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-5 col-10">
+                                    <div class="button-container">
+                                        <a class="button seo-btn-in-page" data-fancybox data-type="ajax" data-src="forms/modal_success.html" href="javascript:;">Отправить заявку</a>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-10">
+                                    <!-- noindex -->
+                                        <div class="form-group agreement error">
+                                            <div class="form-group-agreement-wrapper">
+                                                <div class="checkbox-awesome variant1 input-awesome">
+                                                    <input type="checkbox" id="checkbox_agree2" checked>
+                                                    <label for="checkbox_agree2">
+                                                        <span class="icon"></span>
+                                                        Я ознакомлен и принимаю <a href="#" target="_blank" rel="nofollow">Согласие на обработку персональных данных</a>
+                                                    </label>
+                                                </div>
+                                                <div class="form-control">
+                                                    <div class="form-control-feedback">
+                                                        Вы должны согласиться с обработкой персональных данных.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <!-- /noindex -->
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="form-in-page2 block-margin-bottom block-padding" style="background:#ecf1f5;">
+            <div class="container">
+                <form class="form-container">
+
+                    <div class="title-wrapper text-center">
+                        <div class="h2">Заказ и консультации</div>
+                    </div>
+
+                    <div class="row justify-content-center">
+
+                        <div class="col-xl-4 col-lg-6 col-md-8 col-10">
+
+                            <div class="form-group row message">
+                                <div class="col-sm-12 form-control">
+                                    <textarea placeholder="Опишите суть вопроса"></textarea>
+                                    <div class="form-control-feedback"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row error phone">
+                                <div class="col-sm-12 form-control">
+                                    <input type="tel" placeholder="+7 ( ___ ) ___ - __ - __"
+                                           value="">
+                                    <div class="form-control-feedback">Введите телефон</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row fio">
+                                <div class="col-sm-12 form-control">
+                                    <input type="text" placeholder="Как Вас зовут" value="">
+                                    <div class="form-control-feedback"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row email">
+                                <div class="col-sm-12 form-control">
+                                    <input type="text" placeholder="E-mail для связи" value="">
+                                    <div class="form-control-feedback"></div>
+                                </div>
+                            </div>
+
+                            <!-- noindex -->
+                                <div class="form-group agreement error">
+                                    <div class="form-group-agreement-wrapper">
+                                        <div class="checkbox-awesome variant1 input-awesome">
+                                            <input type="checkbox" id="checkbox_agree3" checked>
+                                            <label for="checkbox_agree3">
+                                                <span class="icon"></span>
+                                                Я ознакомлен и принимаю <a href="#" target="_blank" rel="nofollow">Согласие на обработку персональных данных</a>
+                                            </label>
+                                        </div>
+                                        <div class="form-control">
+                                            <div class="form-control-feedback">
+                                                Вы должны согласиться с обработкой персональных данных.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <!-- /noindex -->
+
+                            <div class="button-container">
+                                <a class="button seo-btn-in-page" data-fancybox data-type="ajax" data-src="forms/modal_success.html" href="javascript:;">Отправить заявку</a>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="form-in-page-button block-margin-bottom block-padding" style="background:#ecf1f5;">
+            <div class="container">
+
+                <div class="title-wrapper text-center">
+                    <div class="h1">Консультация</div>
+                    <div class="sub-title">Подзаголовок блока Подзаголовок блока Подзаголовок блока Подзаголовок блока Подзаголовок блока</div>
+                </div>
+
+                <div class="button-container">
+                    <a data-fancybox="modal-form" data-type="ajax" data-src="forms/modal_form.html" href="javascript:;" class="button">Отправить заявку</a>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    @@include('footer.html')
+
+</div>
+
+<div class="hidden">
+
+    <!--modal-inline-->
+    <div id="modal-inline" class="modal">
+        <form class="form-container">
+            <div class="h2">Отправить заявку (INLINE ФОРМА)</div>
+
+            <div class="form-group row fio">
+                <label for="input_fio" class="col-sm-3 col-form-label">Имя <span class="marker">*</span></label>
+                <div class="col-sm-9 form-control">
+                    <input type="text" id="input_fio" placeholder="Введите имя" value="">
+                    <div class="form-control-feedback"></div>
+                </div>
+            </div>
+
+            <div class="form-group row error phone">
+                <label for="input_phone" class="col-sm-3 col-form-label">Телефон <span class="marker">*</span></label>
+                <div class="col-sm-9 form-control">
+                    <input type="tel" id="input_phone" placeholder="+7 ( ___ ) ___ - __ - __" value="">
+                    <div class="form-control-feedback">Введите телефон</div>
+                </div>
+            </div>
+
+            <div class="form-group row email">
+                <label for="input_email" class="col-sm-3 col-form-label">E-mail</label>
+                <div class="col-sm-9 form-control">
+                    <input type="text" id="input_email" placeholder="Введите E-mail" value="">
+                    <div class="form-control-feedback"></div>
+                </div>
+            </div>
+
+            <div class="form-group row message">
+                <label for="textarea_message" class="col-sm-3 col-form-label">Сообщение</label>
+                <div class="col-sm-9 form-control">
+                    <textarea id="textarea_message" placeholder="Введите сообщение"></textarea>
+                    <div class="form-control-feedback"></div>
+                </div>
+            </div>
+
+            <!-- noindex -->
+                <div class="form-group agreement">
+                    <div class="checkbox-awesome variant1 input-awesome">
+                        <input type="checkbox" id="checkbox_agree4" checked>
+                        <label for="checkbox_agree4">
+                            <span class="icon"></span>
+                            Я ознакомлен и принимаю <a href="#" target="_blank" rel="nofollow">Согласие на обработку персональных данных</a>
+                        </label>
+                    </div>
+                </div>
+            <!-- /noindex -->
+
+            <div class="button-container">
+                <a class="button" data-fancybox data-type="ajax" data-src="forms/modal_success.html" href="javascript:;">Отправить</a>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+
+@@include('widgets.html')
+
+@@include('scripts.html')
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+.reviews-slider {
+  position: relative;
+  .item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    box-shadow: 3px 5px 15px rgba(6, 7, 7, 0.15);
+    padding: 22px 30px;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 110px;
+    margin-right: 110px;
+    background: #fff;
+    .text-container{
+
+    }
+    .date {
+      @include media((
+              font-size: (sm: 14px)
+      ));
+    }
+    .name {
+      font-weight: 700;
+      @include media((
+              font-size: (sm: 16px)
+      ));
+    }
+    .text {
+      margin-top: 14px;
+      font-style: italic;
+      color: #505050;
+      @include media((
+              font-size: (sm: 14px)
+      ));
+    }
+  }
+  .owl-carousel {
+    margin-bottom: 30px;
+    .owl-stage{
+      display: flex;
+      .owl-item {
+        display: flex;
+        flex: 1 0 auto;
+      }
+    }
+    /**/
+    @include owl-slider2-nav-vector(
+      // общее
+            $owl-slider2-nav-width: null, // Ширина и Высота указывается если стрелка - картинка, либо если у векторной стрелки есть фон и он должен быть особого размера (размер или null)
+            $owl-slider2-nav-height: null,
+            $owl-slider2-nav-left-right: -50px, // отступы слева/справа
+            $owl-slider2-nav-margin-top: null, // индивидуальный отступ сверху (если не нужно вертикальное выравнивание стрелок) (размер или null)
+            $owl-slider2-nav-opacity: 0.6, // прозрачность
+            $owl-slider2-nav-opacity-hover: 1, // прозрачность при наведении
+            $owl-slider2-nav-padding: 'true', // расширить границы наведения на кнопку ('true' или null)
+
+              // стрелка - fontawesome
+            $owl-slider2-nav-is-awesome: 'true', // стрелки созданы с помощью fontawesome ('true' или null)
+            $owl-slider2-nav-prev-code: "\f053", // код стрелки влево
+            $owl-slider2-nav-next-code: "\f054", // код стрелки вправо
+            $owl-slider2-nav-font-size: 35px, // размер векторной иконки
+            $owl-slider2-nav-color: #fff, // цвет иконки
+            $owl-slider2-nav-color-hover: #fff, // цвет иконки при наведении
+            $owl-slider2-nav-text-shadow: 0px 3px 1px rgba(0, 0, 0, 0.6), // тень у иконки (тень или none)
+            $owl-slider2-nav-bg-color: null, // цвет фона (цвет или null)
+            $owl-slider2-nav-bg-color-hover: null, // цвет фона при наведении (цвет или null)
+            $owl-slider2-nav-icon-bg-left-right: 0, // подкорректировать отступы у стрелки с фоном, если стрекла не отцентрировалась (например, -2px)
+
+              // стрелка - картинка
+            $owl-slider2-nav-is-img: null, // стрелки созданы с помощью фоновых картинок ('true' или null)
+            $owl-slider2-nav-prev-bg: none, // стрелка влево - Пример: url('../img/arr-left.png') или none
+            $owl-slider2-nav-next-bg: none, //стрелка вправо - Пример: url('../img/arr-left.png') или none
+            $owl-slider2-nav-prev-bg-hover: none, // стрелка влево - наведение - Пример: url('../img/arr-left.png') или none
+            $owl-slider2-nav-next-bg-hover: none // стрелка вправо - наведение - Пример: url('../img/arr-left.png') или none
+    );
+    .owl-nav {
+      [class*=owl-] {
+        opacity: .5;
+        &:hover {
+          opacity: .8;
+        }
+        &:active {
+          opacity: 0.5;
+        }
+      }
+    }
+
+    @include owl-slider2-dots();
+  }
+}
+
+@media only screen and (max-width: 1359px) {
+  .reviews-slider{
+    .item{
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+    .owl-carousel{
+      .owl-nav [class*=owl-]{
+        &.owl-prev{
+          left: -24px;
+        }
+
+        &.owl-next{
+          right: -24px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .reviews-slider {
+    .container{
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .item{
+      padding: 15px;
+    }
+  }
+}

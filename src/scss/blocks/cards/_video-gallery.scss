@@ -1,0 +1,316 @@
+/* ВИДЕОГАЛЕРЕЯ И ОТДЕЛЬНЫЙ БЛОК */
+iframe, object, embed{
+  border: 0;
+}
+%video-elements{
+  iframe, object, embed{
+    //width: 100%!important;
+    max-width: 100%;
+
+    // Стили соотношения сторон для iframe вставленного без вспомогательных дивов
+    // на мобильнике видео будет на всю ширину, а высотой как видео в указанной пропорции (напр, 16:9)
+    // иногда у видео будут поялвяться мелкие полоски сверху и снизу
+    // ! может и не нужны уже эти стили, т.к. есть плагин вyoutube в слувшещк, где iframe полностью адаптивные
+    @include media((
+            width: (sm: 100%),
+    ));
+    &,
+    .aspect_ratio_16by9{
+      @include media((
+              height: (sm: 286.88px, xs:306.56px, 425: 222.19px, 375: 194.06px, 320:163.13px)
+      ));
+    }
+    &.aspect_ratio_21by9{
+      @include media((
+              height: (sm: 218.56px, xs:233.56px, 425: 169.28px, 375: 147.84px, 320:124.28px)
+      ));
+    }
+    &.aspect_ratio_4by3{
+      @include media((
+              height: (sm: 382.5px, xs:408.75px, 425: 296.25px, 375: 258.75px, 320:217.5px)
+      ));
+    }
+    &.aspect_ratio_1by1{
+      @include media((
+              height: (sm: 510px, xs:545px, 425: 395px, 375: 345px, 320:290px)
+      ));
+    }
+
+    // Стили позиционирования для iframe вставленного без вспомогательных дивов
+    &.float-start{
+      @include media((
+              margin-right: (all: 30px, sm:0)
+      ));
+    }
+    &.float-end{
+      @include media((
+              margin-left: (all: 30px, sm:0)
+      ));
+    }
+    &.center{
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+    &.fullwidth{
+      width: 100%;
+    }
+
+  }
+}
+
+// Стили для тега video
+.ckeditor-html5-video{
+  max-width: 100%;
+  //video{
+  //  @include media((
+  //          width: (sm: 100%),
+  //  ));
+  //}
+
+  // Стили позиционирования для тега video
+  &.float-start{
+    @include media((
+            margin-right: (all: 30px, sm:0),
+            float: (sm:none),
+    ));
+  }
+  &.float-end{
+    @include media((
+            margin-left: (all: 30px, sm:0),
+            float: (sm:none),
+    ));
+  }
+  &.center{
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &.aspect_ratio_original{
+    overflow: hidden;
+    video{
+      display: block;
+    }
+    // чтобы не было https://disk.yandex.ru/i/qEfHGItfeu8l1Q и https://disk.yandex.ru/i/4Gi3HYTe7qddRA
+  }
+
+  &:not(.aspect_ratio_original){
+    position: relative;
+    overflow: hidden;
+    background: #000;
+    &:before{
+      content: "";
+      display: block;
+    }
+    video{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 100% !important;
+      height: 100% !important;
+    }
+    &.aspect_ratio_16by9{
+      aspect-ratio: 16/9;
+    }
+    &.aspect_ratio_21by9{
+      aspect-ratio: 21/9;
+    }
+    &.aspect_ratio_4by3{
+      aspect-ratio: 4/3;
+    }
+    &.aspect_ratio_1by1{
+      aspect-ratio: 1/1;
+    }
+  }
+}
+
+.video-container {
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  &:before{
+    content: "";
+    display: block;
+  }
+  iframe, object, embed {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    // border: 0; выше уже задано для всех
+  }
+
+  // Стили соотношения сторон для iframe вставленного с дивом video-container
+  &,
+  &.aspect_ratio_16by9{
+    aspect-ratio: 16/9;
+  }
+  &.aspect_ratio_21by9{
+    aspect-ratio: 21/9;
+  }
+  &.aspect_ratio_4by3{
+    aspect-ratio: 4/3;
+  }
+  &.aspect_ratio_1by1{
+    aspect-ratio: 1/1;
+  }
+
+  // Стили позиционирования для iframe вставленного с дивом video-container
+  //@include media((
+  //        max-width: (sm: 100%!important),
+  //));
+  &.float-start{
+    width: 100%;
+    @include media((
+            margin-right: (all: 30px, sm:0),
+            float: (sm:none),
+    ));
+  }
+  &.float-end{
+    width: 100%;
+    @include media((
+            margin-left: (all: 30px, sm:0),
+            float: (sm:none),
+    ));
+  }
+  &.center{
+    margin-left: auto;
+    margin-right: auto;
+    //display: block;
+  }
+  &.fullwidth{
+    width: 100%;
+  }
+}
+
+.video-block{
+  .item{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    //.video-container{
+    //  background: #000;
+    //}
+    .name{
+      line-height: 1.2;
+      padding: 10px;
+      color: #fff;
+      background: var(--accent-color);
+      text-overflow: ellipsis;
+      overflow: hidden;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-grow: 1;
+    }
+  }
+}
+
+.video-block-fancybox{
+  .item{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    .img-container {
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+
+      width:100%; // fix max-width bug if parent display:flex
+
+      // Стили соотношения сторон для iframe вставленного с дивом video-container-fancybox
+      &,
+      &.aspect_ratio_16by9{
+        aspect-ratio: 16/9;
+      }
+      &.aspect_ratio_21by9{
+        aspect-ratio: 21/9;
+        img{
+          height: 100%; // превью у видео 21:9 может быть не такого соотношения, поэтому его немного растянем по высоте
+        }
+      }
+      &.aspect_ratio_4by3{
+        aspect-ratio: 4/3;
+      }
+      &.aspect_ratio_1by1{
+        aspect-ratio: 1/1;
+      }
+
+      img{
+        margin: auto;
+
+        // чтобы вписать в данное соотношение сторон картинку с другим соотношением сторон без искажений
+        width: auto;
+        max-height: 100%;
+      }
+    }
+    .name{
+      line-height: 1.2;
+      text-align: center;
+      padding: 10px;
+      color: #fff;
+      background: var(--accent-color);
+      text-overflow: ellipsis;
+      overflow: hidden;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
+    }
+    video{
+      display: none;
+    }
+  }
+}
+.video-block-fancybox .item[data-fancybox] .img-container,
+.video-container-fancybox.img-container{
+  &:after {
+    content: "\f144";
+    opacity: 1;
+  }
+}
+.video-block-fancybox .item[data-fancybox]:hover .img-container{
+  &:after {
+    opacity: .8;
+  }
+}
+
+.video-container-fancybox{
+  // Стили позиционирования для thumbnail
+  max-width: 100%;
+  &.float-start{
+    width: 100%;
+    @include media((
+            margin-right: (all: 30px, sm:0),
+            float: (sm:none),
+    ));
+  }
+  &.float-end{
+    width: 100%;
+    @include media((
+            margin-left: (all: 30px, sm:0),
+            float: (sm:none),
+    ));
+  }
+  &.center{
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+  }
+  &.fullwidth{
+    display: block;
+    img{
+      width: 100%;
+    }
+  }
+}
+/* /ВИДЕОГАЛЕРЕЯ И ОТДЕЛЬНЫЙ БЛОК */

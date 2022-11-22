@@ -1,0 +1,153 @@
+/*forms*/
+.form-container{
+  .h2{
+    text-align: center;
+  }
+  .form-group{
+    margin-bottom: 15px;
+    @include media((
+            margin-bottom: (all: 15px, xs: 10px)
+    ));
+    .col-form-label{
+      margin-bottom: 0;
+      padding-top: calc(.5rem - 1px * 2);
+      padding-bottom: calc(.5rem - 1px * 2);
+    }
+    .form-control{
+      input[type='text'],
+      input[type='file'],
+      input[type='password'],
+      input[type='tel'],
+      input[type='email'],
+      input[type='search'],
+      input[type='number'],
+      select,
+      textarea {
+        width: 100%;
+      }
+      .form-control-feedback{
+        margin-top: 5px;
+        display: none;
+      }
+    }
+    .marker{
+      color: var(--orange_color);
+    }
+    &.error{
+      .col-form-label,
+      .marker,
+      .form-control .form-control-feedback{
+        color: var(--red_color);
+      }
+      .form-control{
+        position: relative;
+        input[type='text'],
+        input[type='file'],
+        input[type='password'],
+        input[type='tel'],
+        input[type='email'],
+        input[type='search'],
+        input[type='number'],
+        textarea {
+          border-color: var(--red_color);
+          transition: border 0.1s ease-in-out;
+        }
+        textarea{
+          min-height: 40px;
+        }
+        select{
+          border-color: var(--red_color);
+          transition: border 0.1s ease-in-out;
+        }
+        .form-control-feedback{
+          display: block;
+        }
+      }
+      &:not(.agreement){
+        .form-control:before {
+          content: "\f06a";
+          font-family: 'Font Awesome 5 Free';
+          position: absolute;
+          @include media((
+                  top: (all: 7px, sm: 5px)
+          ));
+          right: 20px;
+          color: #C30000;
+          font-size: 23px;
+          font-weight: 900;
+          line-height: 1;
+        }
+      }
+    }
+    &.agreement{
+      font-size: 13px;
+      label{
+        margin-bottom: 0;
+      }
+      .input-awesome.checkbox-awesome label .icon{
+        top: 1px;
+      }
+    }
+  }
+  .button-container{
+    margin-top: 0;
+    .button{
+      min-width: 200px;
+    }
+  }
+}
+
+.form-in-page{
+  .form-container{
+    .form-group{
+      @include media((
+              margin-bottom: (all: 0, md: 15px)
+      ));
+      &.agreement{
+        margin-top: 10px;
+        text-align: center;
+        .form-group-agreement-wrapper{
+          display: inline-block;
+          @include media((
+                  text-align: (all: left, sm:center)
+          ));
+          .form-control-feedback{
+            @include media((
+                    margin-left: (all: 24px, sm:0)
+            ));
+          }
+        }
+      }
+    }
+  }
+  .button-container{
+    @include media((
+            text-align: (md: center)
+    ));
+    .button{
+      min-height: 36px;
+      @include media((
+              display: (all: flex, md: inline-flex),
+              min-width: (all: 100%, sm: 200px),
+      ));
+    }
+  }
+}
+
+.form-in-page2{
+  .form-container{
+    .form-group{
+      textarea{
+        min-height: 4.5rem;
+      }
+      &.agreement{
+        text-align: center;
+      }
+    }
+  }
+  .button-container{
+    .button{
+      padding: 6px 12px;
+    }
+  }
+}

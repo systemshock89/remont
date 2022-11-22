@@ -1,0 +1,632 @@
+::placeholder {
+  color: #999;
+}
+
+//::selection {
+//  color: white;
+//  background: var(--accent-color);
+//}
+
+:focus{
+  outline: none;
+}
+:focus-visible{
+  outline: 2px solid #869791;
+  outline-offset: 2px;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: underline;
+  &:hover, &:focus-visible {
+    text-decoration: none;
+  }
+}
+
+a,
+input[type='button']{
+  transition: background 0.1s ease-in-out, border 0.1s ease-in-out, box-shadow 0.1s ease-in-out, opacity 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+a.phone{
+  white-space: nowrap;
+}
+
+%button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 190px; // чтобы при ширине контента меньше ширины кнопки, она сжималась, а не выпирала
+  max-width: 100%; // чтобы при ширине контента меньше ширины кнопки, она сжималась, а не выпирала
+  @include media((
+          font-size: (all: 16px, sm: 14px),
+          min-height: (all: 44px, sm: 40px),
+  ));
+  line-height: 1.1;
+  padding: 5px 10px;
+  text-decoration: none;
+  cursor: pointer;
+  vertical-align: top; // чтобы не было так https://yadi.sk/i/F2hkpOwD9Sg0eA
+
+  _:-ms-input-placeholder, :root & {
+    height: 0; // ie11 align-items: center fix
+  }
+}
+
+.button {
+  @extend %button-base;
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  &:hover {
+    //background-color: darken(var(--accent-color), 8%);
+    background-color: #396B00FF;
+  }
+  &:active {
+    background-color: var(--accent-color);
+  }
+}
+
+.button2 {
+  @extend %button-base;
+  background-color: transparent;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  text-transform: uppercase;
+  &:hover {
+    color: #fff;
+    background-color: var(--accent-color);
+  }
+  &:active {
+    color: var(--accent-color);
+    background-color: transparent;
+  }
+}
+
+//.button, .button2{
+//  &.disabled{
+//    opacity: .4;
+//    cursor: not-allowed;
+//    box-shadow: none;
+//    color: rgba(0,0,0,.8);
+//    background-color: #E6E6E6;
+//    border-color: #E6E6E6;
+//  }
+//}
+
+.button-container{
+  text-align: center;
+  //@include media((
+  //        margin-top: (all: 10px, md:0)
+  //));
+}
+
+blockquote{
+  @include media((
+          margin-left: (all: 30px, sm: 20px),
+          padding-left: (all: 20px, sm: 10px),
+          border-left: (all: 5px solid #ccc, sm: 3px solid #ccc),
+  ));
+  font-style: italic;
+
+  p:last-child{
+    margin-bottom: 0;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.nowrap{
+  white-space: nowrap;
+}
+
+address{
+  margin-bottom: 0;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+// для функционала svg иконок netcat6 этот стиль мешает
+//img.img-fluid[src$=".svg"]{
+//  //width: 100%;
+//  height: 100%;
+//}
+
+.red-color{
+  color: var(--red_color2);
+}
+
+.float-start{
+  float: left;
+}
+
+.float-end{
+  float: right;
+}
+
+.float-none{
+  float: none;
+}
+
+%elements-form-base {
+  padding: 6px 12px;
+  border: 1px solid #eaebec;
+  border-radius: 4px;
+  transition: border ease-in-out 0.2s, box-shadow ease-in-out 0.2s;
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 1pt #869791;
+  }
+}
+
+input[type='text'],
+input[type='file'],
+input[type='password'],
+input[type='tel'],
+input[type='email'],
+input[type='search'],
+input[type='number'],
+input[type='date'],
+select,
+textarea{
+  @extend %elements-form-base;
+}
+
+textarea{
+  min-height: 2.5rem;
+}
+
+label,
+input[type='radio'],
+input[type='checkbox'] {
+  cursor: pointer;
+}
+
+input, textarea{
+  outline: none;
+  &:focus-visible:required:invalid{
+    border-color: var(--red_color);
+  }
+  &:required:valid{
+    border-color: green;
+  }
+}
+
+/*==========  CHECKBOX, RADIO AWESOME ICONS  ==========*/
+.input-awesome{
+  input{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+  .icon{
+    &:before{
+      font-family: 'Font Awesome 5 Free';
+      transition: color 0.1s ease-in-out, background 0.1s ease-in-out;
+    }
+  }
+
+  &.checkbox-awesome.variant1{
+    label{
+      padding-left: 20px;
+      position: relative;
+      .icon{
+        position: absolute;
+        margin-left: -20px;
+        @include media((
+                top: (all: 3px, sm: 1px),
+        ));
+
+        width: 14px;
+        height: 14px;
+        //background: #fff;
+        box-shadow: 0 0 0 0.13em #6e6e6e;
+        border-radius: 1px;
+        transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+        &:before {
+          content: "\f00c";
+          font-weight: 900;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: transparent;
+          font-size: 11px;
+        }
+      }
+    }
+    input:checked + label .icon{
+      box-shadow: 0 0 0 0.13em var(--accent-color);
+      transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+      &:before {
+        color: var(--accent-color);
+        transition: color 0.1s ease-in-out;
+      }
+    }
+    input:not(:disabled) + label:hover .icon{
+      box-shadow: 0 0 0 0.13em var(--accent-color);
+      transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    }
+    input:focus-visible + label .icon{
+      box-shadow:
+              0 0 0 0.13em #6e6e6e,
+              0 0 0 0.23em #869791;
+      transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    }
+    input:focus-visible + label:hover .icon{
+      box-shadow:
+              0 0 0 0.13em var(--accent-color),
+              0 0 0 0.23em #869791;
+      transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    }
+    input:disabled + label{
+      cursor: not-allowed;
+      .icon{
+        opacity: .6;
+        box-shadow: 0 0 0 0.13em #6e6e6e;
+      }
+    }
+    input:disabled:checked + label{
+      .icon:before {
+        color: #6e6e6e;
+      }
+    }
+  }
+
+  &.checkbox-awesome.variant2{
+    label{
+      padding-left: 20px;
+      position: relative;
+      .icon{
+        position: absolute;
+        margin-left: -20px;
+        @include media((
+                top: (all: 3px, sm: 1px),
+        ));
+
+        width: 14px;
+        height: 14px;
+        background: #6e6e6e;
+        box-shadow: 0 0 0 0.13em #6e6e6e;
+        border-radius: 1px;
+        transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+        &:before {
+          content: "\f00c";
+          font-weight: 900;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: transparent;
+          font-size: 11px;
+        }
+      }
+    }
+    input:checked + label .icon{
+      background: var(--accent-color);
+      box-shadow: 0 0 0 0.13em var(--accent-color);
+      transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+      &:before {
+        color: #fff;
+        transition: color 0.1s ease-in-out;
+      }
+    }
+    input:not(:disabled) + label:hover .icon{
+      background: var(--accent-color);
+      box-shadow: 0 0 0 0.13em var(--accent-color);
+      transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    }
+    input:focus-visible + label .icon{
+      box-shadow:
+              0 0 0 0.13em #6e6e6e,
+              0 0 0 0.23em var(--orange_color);
+      transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    }
+    input:focus-visible + label:hover .icon{
+      box-shadow:
+              0 0 0 0.13em var(--accent-color),
+              0 0 0 0.23em var(--orange_color);
+      transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    }
+    input:disabled + label{
+      cursor: not-allowed;
+      .icon{
+        background: #C5C5C5;
+        box-shadow: 0 0 0 0.13em #C5C5C5;
+      }
+    }
+    input:disabled:checked + label{
+      .icon{
+        background: #C5C5C5;
+        :before {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  &.checkbox-awesome.variant3{
+    label{
+      padding-left: 22px;
+      position: relative;
+      .icon{
+        position: absolute;
+        margin-left: -22px;
+        @include media((
+                top: (all: 2px, sm: 1px),
+        ));
+
+        width: 16px;
+        height: 16px;
+        //background: #fff;
+        box-shadow: 0 0 0 0.13em #6e6e6e;
+        border-radius: 50%;
+        transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+        &:before {
+          content: "\f00c";
+          font-weight: 900;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: transparent;
+          font-size: 11px;
+          position: relative;
+          top: 1px;
+        }
+      }
+    }
+    input:checked + label .icon{
+      box-shadow: 0 0 0 0.13em var(--accent-color);
+      transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+      &:before {
+        color: var(--accent-color);
+        transition: color 0.1s ease-in-out;
+      }
+    }
+    input:not(:disabled) + label:hover .icon{
+      box-shadow: 0 0 0 0.13em var(--accent-color);
+      transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    }
+    input:focus-visible + label .icon{
+      box-shadow:
+              0 0 0 0.13em #6e6e6e,
+              0 0 0 0.23em #869791;
+      transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    }
+    input:focus-visible + label:hover .icon{
+      box-shadow:
+              0 0 0 0.13em var(--accent-color),
+              0 0 0 0.23em #869791;
+      transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    }
+    input:disabled + label{
+      cursor: not-allowed;
+      .icon{
+        opacity: .6;
+        box-shadow: 0 0 0 0.13em #6e6e6e;
+      }
+    }
+    input:disabled:checked + label{
+      .icon:before {
+        color: #6e6e6e;
+      }
+    }
+  }
+
+  &.checkbox-awesome.variant4{
+    label{
+      padding-left: 22px;
+      position: relative;
+      .icon{
+        position: absolute;
+        margin-left: -22px;
+        @include media((
+                top: (all: 2px, sm: 1px),
+        ));
+
+        width: 16px;
+        height: 16px;
+        background: #6e6e6e;
+        box-shadow: 0 0 0 0.13em #6e6e6e;
+        border-radius: 50%;
+        transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+        &:before {
+          content: "\f00c";
+          font-weight: 900;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: transparent;
+          font-size: 11px;
+          position: relative;
+          top: 1px;
+        }
+      }
+    }
+    input:checked + label .icon{
+      background: var(--accent-color);
+      box-shadow: 0 0 0 0.13em var(--accent-color);
+      transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+      &:before {
+        color: #fff;
+        transition: color 0.1s ease-in-out;
+      }
+    }
+    input:not(:disabled) + label:hover .icon{
+      background: var(--accent-color);
+      box-shadow: 0 0 0 0.13em var(--accent-color);
+      transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    }
+    input:focus-visible + label .icon{
+      box-shadow:
+              0 0 0 0.13em #6e6e6e,
+              0 0 0 0.23em var(--orange_color);
+      transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    }
+    input:focus-visible + label:hover .icon{
+      box-shadow:
+              0 0 0 0.13em var(--accent-color),
+              0 0 0 0.23em var(--orange_color);
+      transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    }
+    input:disabled + label{
+      cursor: not-allowed;
+      .icon{
+        background: #C5C5C5;
+        box-shadow: 0 0 0 0.13em #C5C5C5;
+      }
+    }
+    input:disabled:checked + label{
+      .icon{
+        background: #C5C5C5;
+        :before {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  &.radio-awesome.variant1{
+    label{
+      padding-left: 22px;
+      position: relative;
+      .icon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        margin-left: -22px;
+        @include media((
+                top: (all: 2px, sm: 1px),
+        ));
+
+        width: 16px;
+        height: 16px;
+        //background: #fff;
+        box-shadow: 0 0 0 0.13em #6e6e6e;
+        border-radius: 50%;
+        transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+        &:before {
+          content: "";
+          width: 6px;
+          height: 6px;
+          background: transparent;
+          border-radius: 50%;
+        }
+      }
+    }
+    input:checked + label .icon{
+      box-shadow: 0 0 0 0.13em var(--accent-color);
+      transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+      &:before {
+        background: var(--accent-color);
+        transition: background 0.1s ease-in-out;
+      }
+    }
+    input:not(:disabled) + label:hover .icon{
+      box-shadow: 0 0 0 0.13em var(--accent-color);
+      transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    }
+    input:focus-visible + label .icon{
+      box-shadow:
+              0 0 0 0.13em #6e6e6e,
+              0 0 0 0.23em #869791;
+      transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    }
+    input:focus-visible + label:hover .icon{
+      box-shadow:
+              0 0 0 0.13em var(--accent-color),
+              0 0 0 0.23em #869791;
+      transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    }
+    input:disabled + label{
+      cursor: not-allowed;
+      .icon{
+        opacity: .6;
+        box-shadow: 0 0 0 0.13em #6e6e6e;
+      }
+    }
+    input:disabled:checked + label{
+      .icon:before {
+        background: #6e6e6e;
+      }
+    }
+  }
+
+  &.radio-awesome.variant2{
+    label{
+      padding-left: 22px;
+      position: relative;
+      .icon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        margin-left: -22px;
+        @include media((
+                top: (all: 2px, sm: 1px),
+        ));
+
+        width: 16px;
+        height: 16px;
+        background: #6e6e6e;
+        box-shadow: 0 0 0 0.13em #6e6e6e;
+        border-radius: 50%;
+        transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+        &:before {
+          content: "";
+          width: 6px;
+          height: 6px;
+          background: transparent;
+          border-radius: 50%;
+        }
+      }
+    }
+    input:checked + label .icon{
+      box-shadow: 0 0 0 0.13em var(--accent-color);
+      background: var(--accent-color);
+      transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+      &:before {
+        background: #fff;
+        transition: background 0.1s ease-in-out;
+      }
+    }
+    input:not(:disabled) + label:hover .icon{
+      box-shadow: 0 0 0 0.13em var(--accent-color);
+      background: var(--accent-color);
+      transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    }
+    input:focus-visible + label .icon{
+      box-shadow:
+              0 0 0 0.13em #6e6e6e,
+              0 0 0 0.23em var(--orange_color);
+      transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    }
+    input:focus-visible + label:hover .icon{
+      box-shadow:
+              0 0 0 0.13em var(--accent-color),
+              0 0 0 0.23em var(--orange_color);
+      transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    }
+    input:disabled + label{
+      cursor: not-allowed;
+      .icon{
+        background: #C5C5C5;
+        box-shadow: 0 0 0 0.13em #C5C5C5;
+      }
+    }
+    input:disabled:checked + label{
+      .icon{
+        background: #C5C5C5;
+      }
+    }
+  }
+}
+/*==========  /CHECKBOX, RADIO AWESOME ICONS  ==========*/

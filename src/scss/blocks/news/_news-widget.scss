@@ -1,0 +1,36 @@
+// виджет новостей в двухколоночном макете
+.news-widget{
+  .item {
+    @include media((
+            margin-bottom: (all: 20px, lg: 15px),
+            padding-bottom: (all: 20px, lg: 15px)
+    ));
+    border-bottom: 1px solid #eaebec;
+    .img-container {
+      display: block;
+      margin-bottom: 13px;
+      &:hover {
+        opacity: 0.8
+      }
+      img {
+
+      }
+    }
+    .date {
+      display: table;
+      color: #666666;
+      font-size: 12px;
+      margin-bottom: 2px;
+    }
+    .title {
+      display: inline-block;
+      color: var(--text-color);
+      line-height: 1.2;
+      .h2-title{
+        font-size: inherit;
+        font-weight: inherit;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

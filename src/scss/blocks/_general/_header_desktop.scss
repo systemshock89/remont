@@ -1,0 +1,305 @@
+/*==========  HEADER  ==========*/
+.header__desktop-top{
+  background-color: #fff;
+  border-bottom: 1px solid var(--stroke);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  @include media((
+          display: (sm: none),
+  ));
+}
+
+.header__desktop-top-grid{
+  min-height: 30px;
+
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 15px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__top-text{
+  font-size: 14px;
+  color: var(--text-color-dark);
+}
+
+.header__nav{
+  ul {
+    @extend %list-unstyled;
+
+    // 1 level menu-top
+    &.level1 {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      > li {
+        position: relative;
+        //z-index: 4;
+        //flex-basis: 0; // чтобы ячейки были одинаковой ширине вне зависимости от их названия
+        //flex-grow: 1;
+
+        > .item,
+        &.flexMenu-viewMore > a{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          text-decoration: none;
+
+          min-height: 30px;
+          padding: 6px 0;
+          font-size: 14px;
+          color: var(--text-color-dark);
+          line-height: 1.2;
+
+          _:-ms-input-placeholder, :root & {
+            height: 0; // ie11 align-items: center fix
+          }
+
+          position: relative;
+          &:before{
+            content: '';
+            width: 0;
+            height: 3px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background-color: var(--accent-color);
+            transition: width 0.1s ease-in-out;
+          }
+        }
+        &:hover > .item,
+        &.active > .item,
+        &.selected > .item,
+
+        &.flexMenu-viewMore:hover > a,
+        &.flexMenu-viewMore.active > a{
+          &:before{
+            width: calc(100% - 30px);
+          }
+        }
+        &.flexMenu-viewMore > a{
+          font-weight: bold;
+        }
+
+        // значок у пунктов меню, имеющих подразделы
+        &.submenu{
+          > .item{
+            &:after {
+              content: "\f078";
+              font-family: 'Font Awesome 5 Free';
+              font-weight: 900;
+              margin-left: 7px;
+              font-size: 13px;
+            }
+          }
+        }
+
+        &:not(:last-child){
+          > .item,
+          &.flexMenu-viewMore > a{
+            padding-right: 30px;
+          }
+        }
+
+        &:last-child{
+          &:hover > .item,
+          &.active > .item,
+          &.selected > .item,
+
+          &.flexMenu-viewMore:hover > a,
+          &.flexMenu-viewMore.active > a{
+            &:before{
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    // 2 level menu-top
+    &.level2 {
+      display: none;
+      position: absolute;
+      min-width: 100%;
+      //left: 0;
+      //white-space: nowrap;
+
+      max-width: 300px;
+      width: max-content;
+    }
+    &.level1 > li:hover > ul.level2 {
+      display: block !important;
+    }
+    &.level2,
+    &.flexMenu-popup{
+      background-color: var(--accent-color);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+      > li {
+        position: relative;
+        > .item {
+          display: flex;
+          align-items: center;
+
+          min-height: 40px;
+          padding: 6px 13px;
+          line-height: 1.2;
+          color: #fff;
+          text-decoration: none;
+
+          _:-ms-input-placeholder, :root & {
+            height: 0; // ie11 align-items: center fix
+          }
+        }
+        &:hover > .item,
+        &.active > .item,
+        &.selected > .item{
+          background-color: var(--accent-color-hover);
+          color: var(--text-color-dark);
+        }
+      }
+    }
+
+    // 3 level menu-top
+    ul.level2:not(.level2-fullwidth-column) {
+      ul.level3 {
+        display: none;
+        top: 0;
+        left: 100%;
+        position: absolute;
+        max-width: 300px;
+        width: max-content;
+
+        background-color: var(--accent-color);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+        > li {
+          position: relative;
+          > .item {
+            display: flex;
+            align-items: center;
+
+            min-height: 40px;
+            padding: 6px 13px;
+            line-height: 1.2;
+            color: #fff;
+            text-decoration: none;
+
+            _:-ms-input-placeholder, :root & {
+              height: 0; // ie11 align-items: center fix
+            }
+          }
+          &:hover > .item,
+          &.active > .item,
+          &.selected > .item{
+            background-color: var(--accent-color-hover);
+            color: var(--text-color-dark);
+          }
+        }
+      }
+      &.level2 > li:hover > ul.level3 {
+        display: block !important;
+      }
+    }
+
+
+    // flexMenu-popup
+    &.flexMenu-popup{
+      right: 0;
+      > li{
+        > ul.level2 {
+          display: block;
+          padding-left: 15px;
+          top: 0;
+          left: 0;
+          position: relative;
+          box-shadow: none;
+        }
+        &:hover > ul.level2 {
+          display: block !important;
+        }
+        > ul.level2 > li{
+          > ul.level3{
+            display: block;
+            padding-left: 15px;
+            top: 0;
+            left: 0;
+            position: relative;
+            box-shadow: none;
+          }
+        }
+        &:hover > ul.level3{
+          display: block!important;
+        }
+      }
+    }
+  }
+}
+
+.header__desktop {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  @include media((
+          display: (sm: none),
+  ));
+}
+
+.header__grid{
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 15px 30px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  width: 415px;
+  //min-width: 100px;
+  display: grid;
+  //grid-template-columns: minmax(100px, 125px) auto;
+  grid-template-columns: 125px auto;
+  grid-template-rows: 1fr auto;
+  gap: 0 20px;
+  align-items: flex-end;
+
+  text-decoration: none;
+  font-family: "Montserrat-my", sans-serif;
+  text-transform: uppercase;
+}
+a.header__logo:hover{
+  opacity: .8;
+}
+
+.header__logo-img{
+  grid-row: span 2;
+}
+
+
+
+.header__logo-title {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 1;
+  color: var(--accent-color);
+}
+
+.header__logo-text {
+  font-size: 20px;
+  letter-spacing: 0.05em;
+  line-height: 110%;
+  color: var(--text-color);
+}
+
+a.header__email {}
+.header__email-text {}
+a.header__phone.phone {}
+.header__time {}
+.header__socials {
+  a.item.whats {}
+  a.item.tg {}
+}
+a.button.header__button.seo-btn-header {}
+.header__button-text {}
+
+/*==========  /HEADER  ==========*/

@@ -1,0 +1,64 @@
+// Автор статей
+.author-articles{
+  margin-bottom: 15px;
+  hr{
+    margin: 15px 0 0 0;
+    border: 0;
+    height: 1px;
+    background: #BBBBBB;
+  }
+  .author-articles-wrap{
+    display: flex;
+    align-items: center;
+  }
+  .img-container{
+    width: 70px;
+    height: 70px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    @include media((
+            margin-right: (all: 15px, md: 10px),
+    ));
+    img,
+    .no-img{
+      @extend %img-centered;
+    }
+    .no-img{
+      font-size: 2rem;
+    }
+  }
+  .text-container{
+    .name{
+
+    }
+    .prof{
+      font-size: 14px;
+    }
+  }
+  .date{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    &:before{
+      font-size: 18px;
+      margin-right: 5px;
+      content: "\f073";
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      color: #BBBBBB;
+    }
+  }
+  .rating{
+    margin-left: 30px;
+    .rating-item{
+      &.far{
+        color: #BBBBBB;
+      }
+      &.fas{
+        color: var(--orange_color);
+      }
+    }
+  }
+}

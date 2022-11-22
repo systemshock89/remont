@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    @@include('head.html', {
+    "title": "Новости",
+    "description": "description"
+    })
+    @@include('head_css.html')
+</head>
+
+<body>
+
+<div class="page page_two-columns-template">
+
+    @@include('header.html')
+
+    @@include('menu_top.html')
+
+    @@include('breadcrumb.html')
+
+    <div class="container page__two-columns">
+
+        <div class="main page__main-column">
+
+            <div class="title-wrapper">
+                <div class="container">
+                    <h1>Новости - в строку (в одну колонку) (для узкого экрана)</h1>
+                </div>
+            </div>
+
+            <div class="news-list news-columns block-margin-bottom">
+                <div class="container">
+
+                    <div class="pagination-ajax-wrapper mb-30">
+                        <article class="item">
+                            <div class="row">
+                                <div class="col-4">
+                                    <a href="#" class="img-container">
+                                        <img data-src="img/temp/news.webp" width="410" height="270" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='410' viewBox='0 0 410 270'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-8">
+                                    <div class="text-container">
+                                        <a href="#" class="title"><h2 class="h2-title">Здесь название новости, наша компания участвует в выставке Экспо-Про и вторая строка длинного названия</h2></a>
+                                        <div class="category">Категория 1</div>
+                                        <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                        <div class="text">Наш стенд находится прямо у входа в выставочный центр. Приглашаем всех посетить стенд. Будет представлена новая продукция и перспективные разработки.</div>
+                                        <a href="#" class="link">Подробнее ></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="item">
+                            <div class="row">
+                                <div class="col-4">
+                                    <a href="#" class="img-container">
+                                        <img data-src="img/temp/news.webp" width="410" height="270" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='410' viewBox='0 0 410 270'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-8">
+                                    <div class="text-container">
+                                        <a href="#" class="title"><h2 class="h2-title">Здесь название новости, наша компания участвует в выставке Экспо-Про</h2></a>
+                                        <div class="category">Категория 1</div>
+                                        <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                        <a href="#" class="link">Подробнее ></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="item">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="text-container">
+                                        <a href="#" class="title"><h2 class="h2-title">А здесь нет фото, но новость есть. Просто без фото</h2></a>
+                                        <div class="category">Категория 1</div>
+                                        <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                        <div class="text">Наш стенд находится прямо у входа в выставочный центр. Приглашаем всех посетить стенд. Будет представлена новая продукция и перспективные разработки.</div>
+                                        <a href="#" class="link">Подробнее ></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="item">
+                            <div class="row">
+                                <div class="col-4">
+                                    <a href="#" class="img-container">
+                                        <img data-src="img/temp/news.webp" width="410" height="270" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='410' viewBox='0 0 410 270'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-8">
+                                    <div class="text-container">
+                                        <a href="#" class="title"><h2 class="h2-title">Здесь название новости, наша компания участвует в выставке Экспо-Про</h2></a>
+                                        <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                        <a href="#" class="link">Подробнее ></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="item">
+                            <div class="row">
+                                <div class="col-4">
+                                    <a href="#" class="img-container">
+                                        <img data-src="img/temp/news.webp" width="410" height="270" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='410' viewBox='0 0 410 270'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-8">
+                                    <div class="text-container">
+                                        <a href="#" class="title"><h2 class="h2-title">Здесь название новости, наша компания участвует в выставке Экспо-Про</h2></a>
+                                        <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                        <a href="#" class="link">Подробнее ></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    @@include('pagination.html')
+
+                </div>
+            </div>
+
+            <br><br><br>
+
+            <div class="title-wrapper">
+                <div class="container">
+                    <h1>Новости - плиткой (для узкого экрана)</h1>
+                </div>
+            </div>
+
+            <div class="news-list news-rows block-margin-bottom">
+                <div class="container">
+                    <div class="row gap-30 mb-30">
+
+                        <div class="col-xl-4 col-sm-6">
+                            <article class="item">
+                                <a href="#" class="img-container">
+                                    <img data-src="img/temp/news.webp" width="545" height="359" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='545' viewBox='0 0 545 359'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                </a>
+                                <div class="text-container">
+                                    <a href="#" class="title"><h2 class="h2-title">Здесь название новости, наша компания участвует в выставке Экспо-Про и вторая строка длинного названия</h2></a>
+                                    <div class="category">Категория 1</div>
+                                    <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                    <div class="text">Наш стенд находится прямо у входа в выставочный центр. Приглашаем всех посетить стенд. Будет представлена новая продукция и перспективные разработки.</div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-xl-4 col-sm-6">
+                            <article class="item">
+                                <a href="#" class="img-container">
+                                    <img data-src="img/temp/news.webp" width="545" height="359" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='545' viewBox='0 0 545 359'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                </a>
+                                <div class="text-container">
+                                    <a href="#" class="title"><h2 class="h2-title">В этой новости только название новости, а описания нет</h2></a>
+                                    <div class="category">Категория 1</div>
+                                    <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-xl-4 col-sm-6">
+                            <article class="item">
+                                <a href="#" class="img-container d-none d-sm-block">
+                                    <div class="no-img"></div>
+                                </a>
+                                <div class="text-container">
+                                    <a href="#" class="title"><h2 class="h2-title">Здесь название новости, наша компания участвует в выставке Экспо-Про и вторая строка длинного названия</h2></a>
+                                    <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                    <div class="text">Наш стенд находится прямо у входа в выставочный центр. Приглашаем всех посетить стенд. Будет представлена новая продукция и перспективные разработки.</div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-xl-4 col-sm-6">
+                            <article class="item">
+                                <a href="#" class="img-container">
+                                    <img data-src="img/temp/news.webp" width="545" height="359" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='545' viewBox='0 0 545 359'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                </a>
+                                <div class="text-container">
+                                    <a href="#" class="title"><h2 class="h2-title">Здесь название новости, наша компания участвует в выставке Экспо-Про и вторая строка длинного названия</h2></a>
+                                    <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                    <div class="text">Наш стенд находится прямо у входа в выставочный центр. Приглашаем всех посетить стенд. Будет представлена новая продукция и перспективные разработки.</div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-xl-4 col-sm-6">
+                            <article class="item">
+                                <a href="#" class="img-container">
+                                    <img data-src="img/temp/news.webp" width="545" height="359" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='545' viewBox='0 0 545 359'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                </a>
+                                <div class="text-container">
+                                    <a href="#" class="title"><h2 class="h2-title">Здесь название новости, наша компания участвует в выставке Экспо-Про и вторая строка длинного названия</h2></a>
+                                    <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                    <div class="text">Наш стенд находится прямо у входа в выставочный центр. Приглашаем всех посетить стенд. Будет представлена новая продукция и перспективные разработки.</div>
+                                </div>
+                            </article>
+                        </div>
+
+                    </div>
+
+                    @@include('pagination.html')
+
+                </div>
+
+            </div>
+
+            <br><br><br>
+
+            <div class="title-wrapper">
+                <div class="container">
+                    <h1 class="red-color">Анонсы на половину (либо часть страницы) - для узкого экрана:</h1>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-8">
+
+                        <div class="news-list news-columns news-list-anons block-margin-bottom">
+
+                            <div class="title-wrapper">
+                                <div class="h1">Новости / <a href="#" class="link">Все новости</a></div>
+                            </div>
+
+                            <article class="item">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <a href="#" class="img-container">
+                                            <img data-src="img/temp/news.webp" width="410" height="270" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='410' viewBox='0 0 410 270'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="text-container">
+                                            <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                            <div class="category-wrapper">
+                                                <div class="category">Категория 1</div>
+                                            </div>
+                                            <a href="#" class="title"><h2 class="h2-title">Здесь название новости, наша компания участвует в выставке Экспо-Про и вторая строка длинного названия</h2></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="item">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <a href="#" class="img-container">
+                                            <img data-src="img/temp/news.webp" width="410" height="270" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='410' viewBox='0 0 410 270'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="text-container">
+                                            <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                            <a href="#" class="title"><h2 class="h2-title">Здесь название новости, наша компания участвует в выставке Экспо-Про</h2></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="item">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="text-container">
+                                            <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                            <a href="#" class="title"><h2 class="h2-title">А здесь нет фото, но новость есть. Просто без фото</h2></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        @@include('aside.html')
+    </div>
+
+    <div class="page__sections-bottom">
+        <br><br><br>
+
+        <div class="title-wrapper">
+            <div class="container">
+                <h1>Новости - в строку (в одну колонку) (для широкого экрана)</h1>
+            </div>
+        </div>
+
+        <div class="news-list news-columns block-margin-bottom">
+            <div class="container">
+
+                <div class="pagination-ajax-wrapper mb-30">
+                    <article class="item">
+                        <div class="row">
+                            <div class="col-4">
+                                <a href="#" class="img-container">
+                                    <img data-src="img/temp/news.webp" width="410" height="270" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='410' viewBox='0 0 410 270'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                </a>
+                            </div>
+                            <div class="col-8">
+                                <div class="text-container">
+                                    <a href="#" class="title"><h2 class="h2-title">Здесь название новости, наша компания участвует в выставке Экспо-Про и вторая строка длинного названия</h2></a>
+                                    <div class="category">Категория 1</div>
+                                    <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                    <div class="text">Наш стенд находится прямо у входа в выставочный центр. Приглашаем всех посетить стенд. Будет представлена новая продукция и перспективные разработки.</div>
+                                    <a href="#" class="link">Подробнее ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="item">
+                        <div class="row">
+                            <div class="col-4">
+                                <a href="#" class="img-container">
+                                    <img data-src="img/temp/news.webp" width="410" height="270" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='410' viewBox='0 0 410 270'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                </a>
+                            </div>
+                            <div class="col-8">
+                                <div class="text-container">
+                                    <a href="#" class="title"><h2 class="h2-title">Здесь название новости, наша компания участвует в выставке Экспо-Про</h2></a>
+                                    <div class="category">Категория 1</div>
+                                    <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                    <a href="#" class="link">Подробнее ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="item">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="text-container">
+                                    <a href="#" class="title"><h2 class="h2-title">А здесь нет фото, но новость есть. Просто без фото</h2></a>
+                                    <div class="category">Категория 1</div>
+                                    <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                    <div class="text">Наш стенд находится прямо у входа в выставочный центр. Приглашаем всех посетить стенд. Будет представлена новая продукция и перспективные разработки.</div>
+                                    <a href="#" class="link">Подробнее ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="item">
+                        <div class="row">
+                            <div class="col-4">
+                                <a href="#" class="img-container">
+                                    <img data-src="img/temp/news.webp" width="410" height="270" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='410' viewBox='0 0 410 270'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                </a>
+                            </div>
+                            <div class="col-8">
+                                <div class="text-container">
+                                    <a href="#" class="title"><h2 class="h2-title">Здесь название новости, наша компания участвует в выставке Экспо-Про</h2></a>
+                                    <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                    <a href="#" class="link">Подробнее ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="item">
+                        <div class="row">
+                            <div class="col-4">
+                                <a href="#" class="img-container">
+                                    <img data-src="img/temp/news.webp" width="410" height="270" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='410' viewBox='0 0 410 270'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                </a>
+                            </div>
+                            <div class="col-8">
+                                <div class="text-container">
+                                    <a href="#" class="title"><h2 class="h2-title">Здесь название новости, наша компания участвует в выставке Экспо-Про</h2></a>
+                                    <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                    <a href="#" class="link">Подробнее ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                @@include('pagination.html')
+
+            </div>
+        </div>
+
+        <br><br><br>
+
+        <div class="title-wrapper">
+            <div class="container">
+                <h1>Новости - в строку (в две колонки) (для широкого экрана)</h1>
+            </div>
+        </div>
+
+        <div class="news-list news-columns block-margin-bottom">
+            <div class="container">
+                <div class="row gap-30 mb-30">
+
+                    <div class="col-xl-6">
+                        <article class="item">
+                            <div class="row">
+                                <div class="col-4 col-xl-5">
+                                    <a href="#" class="img-container">
+                                        <img data-src="img/temp/news.webp" width="410" height="270" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='410' viewBox='0 0 410 270'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-8 col-xl-7">
+                                    <div class="text-container">
+                                        <a href="#" class="title"><h2 class="h2-title">Здесь название новости, наша компания участвует в выставке Экспо-Про и вторая строка длинного названия</h2></a>
+                                        <div class="category">Категория 1</div>
+                                        <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                        <div class="text">Наш стенд находится прямо у входа в выставочный центр. Приглашаем всех посетить стенд. Будет представлена новая продукция и перспективные разработки.</div>
+                                        <a href="#" class="link">Подробнее ></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-xl-6">
+                        <article class="item">
+                            <div class="row">
+                                <div class="col-4 col-xl-5">
+                                    <a href="#" class="img-container">
+                                        <img data-src="img/temp/news.webp" width="410" height="270" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='410' viewBox='0 0 410 270'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-8 col-xl-7">
+                                    <div class="text-container">
+                                        <a href="#" class="title"><h2 class="h2-title">Здесь название новости, наша компания участвует в выставке Экспо-Про</h2></a>
+                                        <div class="category">Категория 1</div>
+                                        <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                        <a href="#" class="link">Подробнее ></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-xl-6">
+                        <article class="item">
+                            <div class="row">
+                                <div class="col-xl-5 d-none d-xl-block">
+                                    <a href="#" class="img-container">
+                                        <div class="no-img"></div>
+                                    </a>
+                                </div>
+                                <div class="col-xl-7">
+                                    <div class="text-container">
+                                        <a href="#" class="title"><h2 class="h2-title">Здесь название новости, наша компания участвует в выставке Экспо-Про и вторая строка длинного названия</h2></a>
+                                        <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                        <div class="text">Наш стенд находится прямо у входа в выставочный центр. Приглашаем всех посетить стенд. Будет представлена новая продукция и перспективные разработки.</div>
+                                        <a href="#" class="link">Подробнее ></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-xl-6">
+                        <article class="item">
+                            <div class="row">
+                                <div class="col-4 col-xl-5">
+                                    <a href="#" class="img-container">
+                                        <img data-src="img/temp/news.webp" width="410" height="270" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='410' viewBox='0 0 410 270'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-8 col-xl-7">
+                                    <div class="text-container">
+                                        <a href="#" class="title"><h2 class="h2-title">Здесь название новости, наша компания участвует в выставке Экспо-Про</h2></a>
+                                        <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                        <a href="#" class="link">Подробнее ></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-xl-6">
+                        <article class="item">
+                            <div class="row">
+                                <div class="col-4 col-xl-5">
+                                    <a href="#" class="img-container">
+                                        <img data-src="img/temp/news.webp" width="410" height="270" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='410' viewBox='0 0 410 270'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-8 col-xl-7">
+                                    <div class="text-container">
+                                        <a href="#" class="title"><h2 class="h2-title">Здесь название новости, наша компания участвует в выставке Экспо-Про</h2></a>
+                                        <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                        <a href="#" class="link">Подробнее ></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+
+                @@include('pagination.html')
+
+            </div>
+        </div>
+
+        <br><br><br>
+
+        <div class="container">
+            <h1 class="red-color">Анонсы на всю ширину (для широкого экрана):</h1>
+        </div>
+
+        <div class="news-list news-columns news-list-anons block-margin-bottom">
+            <div class="container">
+
+                <div class="title-wrapper">
+                    <div class="h1">Новости / <a href="#" class="link">Все новости</a></div>
+                </div>
+
+                <div class="row gap-30 mb-30">
+
+                    <div class="col-xl-4 col-lg-6">
+                        <article class="item">
+                            <div class="row">
+                                <div class="col-4">
+                                    <a href="#" class="img-container">
+                                        <img data-src="img/temp/news.webp" width="410" height="270" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='410' viewBox='0 0 410 270'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-8">
+                                    <div class="text-container">
+                                        <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                        <div class="category">Категория 1</div>
+                                        <a href="#" class="title"><h2 class="h2-title">Здесь название новости, наша компания учавствует в выставке Экспо-Про и еще далее</h2></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-6">
+                        <article class="item">
+                            <div class="row">
+                                <div class="col-4">
+                                    <a href="#" class="img-container">
+                                        <img data-src="img/temp/news.webp" width="410" height="270" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='410' viewBox='0 0 410 270'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-8">
+                                    <div class="text-container">
+                                        <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                        <a href="#" class="title"><h2 class="h2-title">Здесь название новости, наша компания учавствует в выставке Экспо-Про и еще далее</h2></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-6">
+                        <article class="item">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="text-container">
+                                        <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                        <a href="#" class="title"><h2 class="h2-title">Здесь название новости, наша компания учавствует в выставке Экспо-Про и еще далее</h2></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <br><br><br>
+
+        <div class="title-wrapper">
+            <div class="container">
+                <h1>Новости - плиткой (для широкого экрана)</h1>
+            </div>
+        </div>
+
+        <div class="news-list news-rows block-margin-bottom">
+            <div class="container">
+                <div class="row gap-30 mb-30">
+
+                    <div class="col-lg-4 col-sm-6">
+                        <article class="item">
+                            <a href="#" class="img-container">
+                                <img data-src="img/temp/news.webp" width="545" height="359" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='545' viewBox='0 0 545 359'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                            </a>
+                            <div class="text-container">
+                                <a href="#" class="title"><h2 class="h2-title">Здесь название новости, наша компания участвует в выставке Экспо-Про и вторая строка длинного названия</h2></a>
+                                <div class="category">Категория 1</div>
+                                <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                <div class="text"><h2 class="h2-title">Наш стенд находится прямо у входа в выставочный центр. Приглашаем всех посетить стенд. Будет представлена новая продукция и перспективные разработки.</h2></div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6">
+                        <article class="item">
+                            <a href="#" class="img-container">
+                                <img data-src="img/temp/news.webp" width="545" height="359" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='545' viewBox='0 0 545 359'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                            </a>
+                            <div class="text-container">
+                                <a href="#" class="title"><h2 class="h2-title">В этой новости только название новости, а описания нет</h2></a>
+                                <div class="category">Категория 1</div>
+                                <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6">
+                        <article class="item">
+                            <a href="#" class="img-container d-none d-sm-block">
+                                <div class="no-img"></div>
+                            </a>
+                            <div class="text-container">
+                                <a href="#" class="title"><h2 class="h2-title">Здесь название новости, наша компания участвует в выставке Экспо-Про и вторая строка длинного названия</h2></a>
+                                <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                <div class="text">Наш стенд находится прямо у входа в выставочный центр. Приглашаем всех посетить стенд. Будет представлена новая продукция и перспективные разработки.</div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6">
+                        <article class="item">
+                            <a href="#" class="img-container">
+                                <img data-src="img/temp/news.webp" width="545" height="359" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='545' viewBox='0 0 545 359'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                            </a>
+                            <div class="text-container">
+                                <a href="#" class="title"><h2 class="h2-title">Здесь название новости, наша компания участвует в выставке Экспо-Про и вторая строка длинного названия</h2></a>
+                                <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                <div class="text">Наш стенд находится прямо у входа в выставочный центр. Приглашаем всех посетить стенд. Будет представлена новая продукция и перспективные разработки.</div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6">
+                        <article class="item">
+                            <a href="#" class="img-container">
+                                <img data-src="img/temp/news.webp" width="545" height="359" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='545' viewBox='0 0 545 359'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                            </a>
+                            <div class="text-container">
+                                <a href="#" class="title"><h2 class="h2-title">Здесь название новости, наша компания участвует в выставке Экспо-Про и вторая строка длинного названия</h2></a>
+                                <time datetime="2017-05-17" class="date">17 мая 2017</time>
+                                <div class="text">Наш стенд находится прямо у входа в выставочный центр. Приглашаем всех посетить стенд. Будет представлена новая продукция и перспективные разработки.</div>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+
+                @@include('pagination.html')
+
+            </div>
+
+        </div>
+    </div>
+
+    @@include('footer.html')
+
+</div>
+
+@@include('widgets.html')
+
+@@include('scripts.html')
+
+</body>
+</html>

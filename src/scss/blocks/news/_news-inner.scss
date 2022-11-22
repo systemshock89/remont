@@ -1,0 +1,19 @@
+// новости - внутренняя
+.news-inner{
+  .date {
+    display: block;
+    color: #666666;
+    font-size: 12px;
+    margin-bottom: 1rem;
+  }
+  .author{
+    font-size: 12px;
+    margin-bottom: 1rem;
+  }
+
+  @extend %text-block-float;
+
+  .text{
+    margin-bottom: 1rem;
+  }
+}

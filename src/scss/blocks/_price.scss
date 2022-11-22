@@ -1,0 +1,140 @@
+/*==========  PRICE  ==========*/
+.documents-block{
+  .item{
+    &:not(:last-child){
+      margin-bottom: 30px;
+    }
+
+    > div:last-child{
+      margin-bottom: 0;
+    }
+
+    .table-responsive{
+      > .overflow > table {
+        width: 100%;
+
+        .row1 {
+          text-align: left;
+          //min-width: 350px;
+          width: 70%;
+          a:not(.button){
+            color: var(--text-color);
+          }
+          .row1-flex{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .button{
+              margin-left: 10px;
+              min-height: 30px;
+              width: 130px;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+.price-block{
+  .item{
+    .block-hidden{
+      > div:last-child{
+        margin-bottom: 0;
+      }
+    }
+    .table-responsive{
+      > .overflow > table {
+        width: 100%;
+      }
+      .row1{
+        text-align: left;
+        //min-width: 350px;
+        width: 70%;
+        a:not(.button){
+          color: var(--text-color);
+        }
+      }
+    }
+  }
+
+  &.price-block-hidden{
+    .item{
+      .price-block-button{
+        display: inline-flex;
+        font-size: 18px;
+        color: var(--accent-color2);
+        text-decoration: none;
+        &:before {
+          content: "\f078";
+          font-family: 'Font Awesome 5 Free';
+          font-weight: 900;
+          margin-right: 7px;
+          flex-shrink: 0;
+          transition: transform 0.1s ease-in-out;
+        }
+        &.active{
+          &:before {
+            transform: scaleY(-1);
+            transition: transform 0.1s ease-in-out;
+          }
+        }
+        &:hover{
+          span{
+            text-decoration: underline;
+          }
+        }
+      }
+      .block-hidden{
+        display: none;
+        @include media((
+                margin-top: (all:15px, sm: 1rem)
+        ));
+        > div:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &.opened{
+      .item{
+        .block-hidden{
+          display: block;
+        }
+      }
+    }
+
+    // если блоков таблицами несколько, то делаем отступ между ними примерно в 30px
+    // для этого игнорируем block-margin-bottom и учитываем отступ у заголовка таблицы
+    &.block-margin-bottom,
+    &.block-padding-small{
+      &:not(:last-child){
+        margin-bottom: 10px!important;
+        .item{
+          .block-hidden{
+            //margin-bottom: 30px;
+            @include media((
+                    margin-bottom: (all:30px, sm: 15px)
+            ));
+          }
+        }
+      }
+    }
+  }
+}
+
+.block-table-responsive{
+  .item{
+    &:not(:last-child){
+      margin-bottom: 30px;
+    }
+
+    > div:last-child{
+      margin-bottom: 0;
+    }
+  }
+}
+/*==========  /PRICE  ==========*/
+/**/
+/**/

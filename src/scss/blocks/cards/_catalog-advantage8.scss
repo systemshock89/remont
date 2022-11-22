@@ -1,0 +1,68 @@
+.catalog-advantage-variant8 {
+  .item {
+    border: 1px solid #eaebec;
+    height: 100%;
+    background: #fff;
+    .img-container {
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+
+      max-width: var(--img-width, 545px);
+      max-height: var(--img-height, 402px);
+      aspect-ratio: var(--aspect-ratio, 545/402);
+      width:100%; // fix max-width bug if parent display:flex
+
+      img{
+        margin: auto;
+
+        // чтобы вписать в данное соотношение сторон картинку с другим соотношением сторон без искажений
+        width: auto;
+        max-height: 100%;
+      }
+    }
+    a.img-container {
+      overflow: hidden;
+      display: block;
+      .no-img,
+      img {
+        transition: all 0.2s linear;
+      }
+      &:hover {
+        .no-img,
+        img {
+          transform: scale(1.1, 1.1);
+        }
+      }
+    }
+    .text-container {
+      line-height: 1.2;
+      .name {
+        display: flex;
+        align-items: center;
+        @include media((
+                font-size: (all: 18px, md: 16px, sm: 16px),
+                min-height: (all: 55px, md: 45px, sm:40px),
+                padding: (all: 5px 15px, xs: 10px)
+        ));
+        padding: 5px 15px;
+        color: #fff;
+        background: #f79326;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      a.name {
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .text {
+        @include media((
+                padding: (all: 15px, xs: 10px)
+        ));
+        //@extend %text-elements;
+      }
+    }
+  }
+}

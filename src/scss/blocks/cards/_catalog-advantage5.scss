@@ -1,0 +1,104 @@
+.catalog-advantage-variant5 {
+  .item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .img-container {
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+
+      max-width: var(--img-width, 410px);
+      max-height: var(--img-height, 302px);
+      aspect-ratio: var(--aspect-ratio, 410/302);
+      width:100%; // fix max-width bug if parent display:flex
+
+      img{
+        margin: auto;
+
+        // чтобы вписать в данное соотношение сторон картинку с другим соотношением сторон без искажений
+        width: auto;
+        max-height: 100%;
+      }
+    }
+    .text-container {
+      display: block;
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      line-height: 1.2;
+      .name {
+        display: inline-flex; // не inline-block - чтобы не было промежутка между .name и .text
+        padding: 7px 10px;
+        background: var(--accent-color);
+        color: #fff;
+        @include media((
+                font-size: (all: 18px, sm: 16px)
+        ));
+
+        // многоточие при inline-flex можно поставить только с помощью доп. дива .text-div
+        max-width: 100%;
+        .text-div{
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+
+        + .text{
+          @include media((
+                  padding-top: (all: 5px, xs: 0)
+          ));
+        }
+      }
+      .text {
+        display: inline-flex;
+        background: var(--accent-color);
+        color: #fff;
+        padding: 7px 10px;
+
+        max-width: 100%;
+        .text-div{
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+    }
+    @media only screen and (max-width: 767px) {
+      .text-container{
+        position: relative;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        flex-grow: 1;
+        background: var(--accent-color);
+        padding: 7px;
+        .name{
+          display: block;
+          padding: 0;
+        }
+        .text{
+          display: block;
+          padding: 0!important;
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+  a.item {
+    text-decoration: none;
+    .img-container {
+      overflow: hidden;
+      .no-img,
+      img {
+        transition: all 0.2s linear;
+      }
+    }
+    &:hover .img-container {
+      .no-img,
+      img {
+        transform: scale(1.1, 1.1);
+      }
+    }
+  }
+}

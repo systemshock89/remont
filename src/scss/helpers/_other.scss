@@ -1,0 +1,19 @@
+// Полезные решения (не подключены к общему файлу)
+
+[class*="col-"]{
+
+}
+
+table:not([style]){
+
+}
+
+//transform: translate3d(0, 0, 0);
+
+// br в одну строку с пробелом
+br {
+  content: ' ';
+  &:after {
+    content: ' '
+  }
+}

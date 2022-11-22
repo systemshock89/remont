@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  @@include('head.html', {
+  "title": "svg",
+  "description": "description"
+  })
+  @@include('head_css.html')
+</head>
+
+<body>
+
+<div class="page">
+
+  @@include('header.html')
+
+  @@include('menu_top.html')
+
+  @@include('breadcrumb.html')
+
+  <main class="main">
+
+    <div class="interactive-plan-block block-margin-bottom">
+      <div class="container">
+
+        <div class="text-top text-elements mb-30">
+          <div class="h1">Интерактивный план/карта</div>
+          <p><a href="https://habr.com/ru/post/478698/" target="_blank">Подробнее в статье</a></p>
+          <p>Выделение дома - на svg (через Inkscape) и стилях для svg (могут быть разные состояния при ховере и доп.классах)</p>
+          <p>При клике - переход на страницу, либо вызов формы</p>
+          <p><a href="https://developer.mozilla.org/ru/docs/Web/SVG/Element" target="_blank">Справочник SVG элементов</a></p>
+        </div>
+
+        <div class="interactive-plan">
+          <img data-src="img/temp/interactive-plan.webp" width="626" height="417" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='626'%20viewBox='0%200%20626%20417'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+
+<!--          <img src="img/temp/interactive-plan.webp" alt="" class="img-fluid" width="626" height="417">-->
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="626" height="417" viewBox="0 0 626 417" class="img-fluid">
+            <!-- Если не делать lazyload: -->
+            <!--<image width="626" height="417" preserveAspectRatio="none" xlink:href="img/temp/interactive-plan.webp"></image>-->
+
+            <a data-fancybox="modal-form-test" data-type="ajax" data-src="forms/modal_form.html" xlink:href="javascript:;">
+              <g>
+                <path d="M 104.74881,230.04477 V 206.3289 l 88.68745,-1.72928 1.48224,35.07972 4.44673,14.82241 -0.24704,69.17127 -95.1105,3.21152 -7.905292,-43.23204 v -3.95264 l -4.19968,-0.24704 -2.4704,-17.04578 2.4704,-30.13891 13.093132,0.24704 z"></path>
+              </g>
+            </a>
+
+            <a xlink:href="/catalog.html">
+              <g>
+                <path d="m 78.258359,29.172201 h 92.407751 l -0.52405,80.005199 -0.34937,12.57724 -14.84813,-2.09621 -10.48103,6.98735 -3.31899,-0.87342 -3.84304,-4.36709 -4.54178,1.39747 -0.87342,-7.68609 -40.002601,0.17468 -4.891148,-5.4152 -9.432927,-0.69873 -5.240515,-46.81527 z"></path>
+              </g>
+            </a>
+
+            <a xlink:href="/catalog.html">
+              <g>
+                <path d="m 485.62107,125.423 0.52405,-54.850729 -6.81267,0.698735 V 39.303864 h 11.52913 l 5.24052,-4.891148 -2.79494,-10.306346 44.71906,0.698735 21.13675,-5.240515 11.00508,5.240515 39.47854,-0.349368 13.45066,34.762084 -17.11902,64.108969 h -21.13674 v 15.02281 l -4.01773,2.96962 -62.18745,0.69874 0.17469,-16.42028 z"></path>
+              </g>
+            </a>
+
+            <a xlink:href="/catalog.html">
+            <g>
+              <path  d="m 474.07024,264.82715 1.23521,-44.71428 14.08129,-11.6109 69.17127,-1.97632 22.97474,3.45856 18.03394,0.24705 13.09314,43.97316 -13.83426,38.0442 -29.89187,4.9408 -15.81057,1.23521 -25.44515,-1.72929 -43.72612,-3.21152 0.98816,-26.92739 z"></path>
+            </g>
+            </a>
+
+          </svg>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  @@include('footer.html')
+
+</div>
+
+@@include('widgets.html')
+
+@@include('scripts.html')
+
+</body>
+</html>

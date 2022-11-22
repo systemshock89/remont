@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    @@include('head.html', {
+    "title": "Empty page",
+    "description": "description"
+    })
+    @@include('head_css.html')
+</head>
+
+<body>
+
+<div class="page page_two-columns-template">
+
+    @@include('header.html')
+
+    @@include('menu_top.html')
+
+    @@include('breadcrumb.html')
+
+    <div class="container page__two-columns">
+
+        <main class="main page__main-column">
+
+            content
+
+        </main>
+
+        @@include('aside.html')
+    </div>
+
+    @@include('footer.html')
+
+</div>
+
+@@include('widgets.html')
+
+@@include('scripts.html')
+
+</body>
+</html>

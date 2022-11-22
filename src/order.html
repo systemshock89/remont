@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    @@include('head.html', {
+    "title": "Заказ оформлен",
+    "description": "description"
+    })
+    @@include('head_css.html')
+</head>
+
+<body>
+
+<div class="page">
+
+    @@include('header.html')
+
+    @@include('menu_top.html')
+
+    @@include('breadcrumb.html')
+
+    <main class="main">
+
+        <div class="title-wrapper">
+            <div class="container">
+                <div class="h1">Ваш заказ оформлен</div>
+            </div>
+        </div>
+
+        <div class="order-page block-margin-bottom">
+            <div class="container">
+
+                <div class="order-page-text row">
+                    <div class="col-md-10 col-sm-8">
+                        <p>Благодарим! Ваш заказ оформлен. <br> Наши менеджеры свяжутся с Вами в ближайшее время.</p>
+                    </div>
+                    <div class="col-md-2 col-sm-4">
+                        <div class="print-button-container">
+                            <a href="javascript:window.print(); void 0;" class="print-button">
+                                <i class="fa fa-print"></i>
+                                <div>Распечатать</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="zakaz-table-container">
+                    <div class="h3">Ваш заказ:</div>
+
+                    <div class="table-responsive">
+                        <div class="overflow">
+                            <table class="table table-striped cart-table">
+                                <tr>
+                                    <th>№</th>
+                                    <th>Фото</th>
+                                    <th class="cart-name-td">Наименование</th>
+                                    <th>Цена</th>
+                                    <th>Количество</th>
+                                    <th>Сумма</th>
+                                </tr>
+
+                                <tr>
+                                    <td class="cart-number-td">1</td>
+                                    <td class="cart-photo-td">
+                                        <a href="#" target="_blank" class="img-container">
+                                            <img src="img/temp/tovar-img.webp" class="img-fluid" alt="">
+                                        </a>
+                                    </td>
+                                    <td class="cart-name-td">
+                                        <a href="#" target="_blank">Масло сливочное Крестьянское весовое</a>
+                                    </td>
+                                    <td class="cart-price-td">
+                                        <div class="price-container">
+                                            <div class="price">22 500 руб.</div>
+                                            <div class="old-price">25 000 руб.</div>
+                                        </div>
+                                    </td>
+                                    <td class="cart-count-td">20</td>
+                                    <td class="cart-summ-td">
+                                        22 500 руб.
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="cart-number-td">2</td>
+                                    <td class="cart-photo-td">
+                                        <a href="#" target="_blank" class="img-container">
+                                            <div class="no-img"></div>
+                                        </a>
+                                    </td>
+                                    <td class="cart-name-td">
+                                        <a href="#" target="_blank">Масло сливочное  весовое</a>
+                                    </td>
+                                    <td class="cart-price-td">
+                                        <div class="price-container">
+                                            <div class="price">45 500 руб.</div>
+                                        </div>
+                                    </td>
+                                    <td class="cart-count-td">1</td>
+                                    <td class="cart-summ-td">
+                                        45 500 руб.
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="cart-number-td">3</td>
+                                    <td class="cart-photo-td">
+                                        <a href="#" target="_blank" class="img-container">
+                                            <img src="img/temp/tovar-img.webp" class="img-fluid" alt="">
+                                        </a>
+                                    </td>
+                                    <td class="cart-name-td">
+                                        <a href="#" target="_blank">Масло сливочное второй сорт</a>
+                                    </td>
+                                    <td class="cart-price-td">
+                                        <div class="price-container">
+                                            <div class="price">55 500 руб.</div>
+                                        </div>
+                                    </td>
+                                    <td class="cart-count-td">10</td>
+                                    <td class="cart-summ-td">
+                                        55 500 руб.
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="cart-number-td">4</td>
+                                    <td class="cart-photo-td">
+                                        <a href="#" target="_blank" class="img-container">
+                                            <img src="img/temp/tovar-img.webp" class="img-fluid" alt="">
+                                        </a>
+                                    </td>
+                                    <td class="cart-name-td">
+                                        <a href="#" target="_blank">Сливки</a>
+                                    </td>
+                                    <td class="cart-price-td">
+                                        <div class="price-container">
+                                            <div class="price">15 500 руб.</div>
+                                        </div>
+                                    </td>
+                                    <td class="cart-count-td">10</td>
+                                    <td class="cart-summ-td">
+                                        15 500 руб.
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="total"><b>Итого: </b>22 500 руб.</div>
+                </div>
+
+                <div class="buyer">
+                    <div class="h3">Информация к заказу:</div>
+                    <div class="buyer-container">
+
+                        <div class="item-container">
+                            <span class="title">Покупатель:</span>
+                            <span class="text">ООО "Название"</span>
+                        </div>
+
+                        <div class="item-container">
+                            <span class="title">Дата заказа:</span>
+                            <span class="text">10.07.2017 12:35</span>
+                        </div>
+
+                        <div class="item-container">
+                            <span class="title">Номер заказа:</span>
+                            <span class="text">1254</span>
+                        </div>
+
+                        <!--<div class="item-container">-->
+                        <!--<span class="title">Доставка: </span>-->
+                        <!--<span class="text">г. Тверь, ул. Луначарского, д.9, корп.1</span>-->
+                        <!--</div>-->
+
+                        <div class="item-container">
+                            <span class="title">Телефон: </span>
+                            <span class="text">9055505854</span>
+                        </div>
+
+                        <div class="item-container">
+                            <span class="title">E-mail: </span>
+                            <span class="text">pokupatel@gmail.com</span>
+                        </div>
+
+                        <div class="item-container">
+                            <span class="title">Комментарий к заказу: </span>
+                            <span class="text">Очень ждем</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    @@include('footer.html')
+
+</div>
+
+@@include('widgets.html')
+
+@@include('scripts.html')
+
+</body>
+</html>

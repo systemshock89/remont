@@ -1,0 +1,43 @@
+.news-list{
+  // анонсы
+  &.news-list-anons{
+    h1, .h1,
+    h2, .h2,
+    h3, .h3{
+      a.link{
+        @include media((
+                font-size: (all: 16px, xs: 14px)
+        ));
+      }
+    }
+
+    .item{
+      .text-container{
+        .title {
+          font-weight: normal;
+          .h2-title{
+            font-size: inherit;
+            font-weight: inherit;
+            margin-bottom: 0;
+          }
+        }
+        .date {
+          display: table;
+          color: #666;
+          font-size: 12px;
+          @include media((
+                  margin-bottom: (sm: 5px)
+          ));
+        }
+      }
+
+      &:not(:last-child){
+        @include media((
+                margin-bottom: (all: 15px, sm: 30px, xs:15px),
+                padding-bottom: (all: 15px, sm: 0),
+                border-bottom: (all: 1px solid #eaebec, sm: none)
+        ));
+      }
+    }
+  }
+}

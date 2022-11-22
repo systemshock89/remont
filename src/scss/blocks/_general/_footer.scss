@@ -1,0 +1,141 @@
+/*==========  FOOTER  ==========*/
+.footer__desktop{
+  background-color: #d8d8d8;
+  @include media((
+          display: (sm: none),
+  ));
+}
+
+.footer__grid{
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 15px 30px;
+  justify-content: space-between;
+
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+// стандартный footer
+.footer__desktop-variant1{
+
+}
+
+// footer с двойным меню
+.footer__desktop-variant4 {
+  .footer__grid{
+    grid-template-columns: repeat(4, auto);
+  }
+}
+
+// footer с одноуровневым меню
+.footer__desktop-variant3{
+  .footer__grid{
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+.footer__phone{
+  font-size: 20px;
+  text-decoration: none;
+  white-space: nowrap;
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+.footer__email{
+
+}
+
+.footer__mastweb {
+
+}
+
+.footer__socials {
+  margin-top: 10px;
+}
+
+.footer__menu{
+  background: var(--accent-color);
+  ul{
+    @extend %list-unstyled;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    > li {
+      //flex-basis: 0; // чтобы ячейки были одинаковой ширине вне зависимости от их названия
+      flex-grow: 1;
+      > a,
+      > span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        text-decoration: none;
+
+        min-height: 44px;
+        padding: 6px 10px;
+        @include media((
+                font-size: (md: 14px),
+                margin-bottom: (sm: 15px, xs: 10px)
+        ));
+        color: #fff;
+        line-height: 1.2;
+        text-transform: uppercase;
+
+        _:-ms-input-placeholder, :root & {
+          height: 0; // ie11 align-items: center fix
+        }
+      }
+      > a:hover,
+      &.selected > span{
+        background-color: var(--accent-color3);
+      }
+    }
+  }
+}
+.footer__menu2{
+  ul{
+    @extend %list-unstyled;
+    > li {
+      > a,
+      > span {
+        display: inline-block;
+        text-decoration: none;
+        line-height: 1.2;
+      }
+      &:not(:last-child){
+        > a,
+        > span {
+          margin-bottom: 5px;
+        }
+      }
+
+      > a:hover,
+      &.selected > span{
+        color: var(--accent-color);
+      }
+    }
+  }
+}
+
+.footer__mobile{
+  background-color: #d8d8d8;
+  @include media((
+          display: (all: none, sm: block),
+  ));
+
+  > .container{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    min-height: 40px;
+    line-height: 1.2;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+/*==========  FOOTER  ==========*/

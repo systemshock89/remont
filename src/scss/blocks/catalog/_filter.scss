@@ -1,0 +1,88 @@
+.nc_netshop_filter-wrap {
+  background: #e8eff6;
+
+  .nc_netshop_filter-title {
+    font-weight: bold;
+    color: #fff;
+    background: var(--accent-color2);
+    @include media((
+            font-size: (all: 18px, lg: 16px, md: 14px),
+    ));
+    padding: 10px;
+  }
+
+  .nc_netshop_filter_row {
+    border-bottom: 1px solid #dfe3e8;
+    @include media((
+            padding: (all: 20px, lg: 10px),
+    ));
+
+    .nc_netshop_filter_label {
+      font-weight: bold;
+      @include media((
+              margin-bottom: (all: 10px, lg: 5px),
+      ));
+
+      label {
+        margin-bottom: 0;
+        cursor: auto;
+      }
+    }
+
+    select {
+      width: 100%;
+    }
+
+    &.nc_netshop_filter_row_range {
+      .nc_netshop_filter_field {
+        display: flex;
+
+        label {
+          margin-bottom: 0;
+          width: 50%;
+
+          input {
+            width: 100%;
+          }
+
+          &:last-child {
+            margin-left: 20px;
+          }
+        }
+      }
+
+      .range-slider {
+        margin-top: 15px;
+
+        .noUi-connect {
+
+        }
+
+        .noUi-handle {
+          //transition: background 0.1s ease-in-out;
+          &:before,
+          &:after {
+            display: none;
+          }
+
+          &:hover {
+            //transition: background 0.1s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+
+  .nc_netshop_filter_actions {
+    display: flex;
+    padding: 10px;
+
+    button {
+      width: 50%;
+
+      &:last-child {
+        margin-left: 20px;
+      }
+    }
+  }
+}

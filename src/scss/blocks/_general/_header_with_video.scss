@@ -1,0 +1,124 @@
+/*==========  HEADER WITH VIDEO  ==========*/
+.header__with-video{
+  position: sticky;
+  top: 0;
+  z-index: 4;
+
+  .header__desktop{
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .menu-top{
+    background-color: transparent;
+    z-index: auto;
+    position: static;
+    top: auto;
+  }
+}
+.index-page{
+  .header__with-video{
+    background: transparent;
+    @include media((
+            margin-bottom: (all: -64px, lg:-64px, md:-64px, sm:0)
+    ));
+    transition: background 0.1s ease-in-out;
+    &.background-color{
+      background: #0e2756;
+      transition: background 0.1s ease-in-out;
+    }
+  }
+  .index-video-block{
+    position: relative;
+    background: rgba(#0f2b4d,.7) linear-gradient(to bottom, rgba(1, 17, 65, 0.57) 0%, rgba(2, 18, 65, 0.56) 38%, rgba(0, 18, 64, 0.29) 57%, rgba(0, 12, 70, 0.08) 78%, rgba(0, 0, 85, 0.01) 96%, rgba(0, 0, 128, 0) 98%, rgba(0, 0, 0, 0) 100%) ;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    @include media((
+            min-height: (all: 100vh, sm:auto),
+            padding-top: (all: 150px, md:120px, sm:50px, xs:30px),
+            padding-bottom: (all: 105px, sm:50px, xs:30px),
+    ));
+
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    .container{
+      height: 100%;
+
+    }
+    .text-container{
+      display: flex;
+      align-items: center;
+      height: 100%;
+
+      //@include media((
+      //        padding-top: (all: 210px, sm:30px),
+      //        padding-bottom: (all: 210px, sm:30px),
+      //));
+      .text-container2{
+        .button{
+          @include media((
+                  margin-top: (all: 65px, lg: 40px, md: 20px),
+          ));
+        }
+      }
+    }
+    .title{
+      color: #fff;
+      font-weight: bold;
+      @include media((
+              font-size: (all: 70px, lg: 60px, md: 40px, sm:28px, xs:24px),
+              line-height: (all: 80px, lg:normal),
+      ));
+    }
+    .text{
+      display: flex;
+      flex-wrap: wrap;
+      font-weight: bold;
+      color: var(--accent-color2);
+      @include media((
+              font-size: (all: 16px, xs:14px),
+              margin-top: (all: 60px, lg: 40px, md:20px),
+      ));
+      a{
+        color: var(--accent-color2);
+        &:not(:last-child):after{
+          content: "|";
+          margin: 0 8px;
+        }
+      }
+    }
+  }
+  .button-bottom{
+    display: block;
+    //background: url('../img/arrow2.png') center no-repeat;
+    //background: url('http://modnozeleno.ru/img/arrow.png') center no-repeat;
+    background: var(--accent-color2);
+    width: 26px;
+    height: 60px;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -13px;
+    z-index: 1;
+    &:hover{
+      animation: button-bottom-shake .7s ease-in-out alternate infinite;
+    }
+    &:active{
+      opacity: .6;
+    }
+  }
+}
+
+@keyframes button-bottom-shake {
+  100% {
+    transform: translateY(10px);
+  }
+}
+/*==========  /HEADER WITH VIDEO  ==========*/

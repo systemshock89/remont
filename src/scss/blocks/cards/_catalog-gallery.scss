@@ -1,0 +1,112 @@
+/* catalog-gallery-album */
+.catalog-gallery-album {
+  .item {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    .img-border {
+      @include media((
+              padding: (all: 10px, xs: 5px)
+      ));
+      border: 1px solid #eaebec;
+      transition: box-shadow 0.1s ease-in-out;
+      background: #fff;
+    }
+    .img-container {
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+
+      max-width: var(--img-width, 410px);
+      max-height: var(--img-height, 274px);
+      aspect-ratio: var(--aspect-ratio, 410/274);
+      width:100%; // fix max-width bug if parent display:flex
+
+      img{
+        margin: auto;
+
+        // чтобы вписать в данное соотношение сторон картинку с другим соотношением сторон без искажений
+        width: auto;
+        max-height: 100%;
+      }
+
+      overflow: hidden;
+      img,
+      .no-img{
+        transition: all 0.2s linear;
+      }
+    }
+    .name {
+      display: block;
+      color: var(--text-color);
+      line-height: 1.2;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      @include media((
+              margin-top: (all: 10px, xs: 7px)
+      ));
+    }
+    &:hover {
+      .img-border{
+        box-shadow: 0 0 10px rgba(159, 159, 159, 0.4);
+        transition: box-shadow 0.1s ease-in-out;
+      }
+      .img-container  {
+        img{
+          transform: scale(1.1, 1.1);
+        }
+        .no-img {
+          transform: scale(1.1, 1.1);
+        }
+      }
+    }
+  }
+}
+
+/* catalog-gallery */
+.catalog-gallery {
+  .item {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    .img-container {
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+
+      max-width: var(--img-width, 410px);
+      max-height: var(--img-height, 274px);
+      aspect-ratio: var(--aspect-ratio, 410/274);
+      width:100%; // fix max-width bug if parent display:flex
+
+      img{
+        margin: auto;
+
+        // чтобы вписать в данное соотношение сторон картинку с другим соотношением сторон без искажений
+        width: auto;
+        max-height: 100%;
+      }
+
+      overflow: hidden;
+      img,
+      .no-img{
+        transition: all 0.2s linear;
+      }
+    }
+    .name {
+      display: block;
+      @include media((
+              margin-top: (all: 10px, xs: 7px)
+      ));
+      color: var(--text-color);
+      line-height: 1.2;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    &:hover{
+      .img-container img {
+        transform: scale(1.1, 1.1);
+      }
+    }
+  }
+}

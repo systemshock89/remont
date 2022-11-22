@@ -1,0 +1,289 @@
+/* Контакты */
+.contacts-block{
+  .contacts-block-item{
+
+    &:not(:last-child){
+      margin-bottom: 30px;
+    }
+
+    > .row{
+      .contacts-block-item-field-map{
+        @include media((
+                margin-top: (md: 1rem)
+        ));
+      }
+
+      + .text-bottom{
+        margin-top: 1rem;
+      }
+    }
+
+    .contacts-block-item-field{
+
+      &:not(:last-child){
+        margin-bottom: 1rem;
+      }
+
+      .contacts-block-item-field-text-wrap{
+        display: flex;
+        align-items: center;
+
+        > i{
+          margin-right: 15px;
+          &.fa-phone{
+            transform: scaleX(-1);
+          }
+        }
+        .contacts-block-item-field-name{
+          font-weight: bold;
+        }
+
+        .contacts-block-item-field-text{
+
+        }
+      }
+
+      &.contacts-block-item-field-socials{
+        .contacts-block-item-field-text-wrap{
+          .contacts-block-item-field-name{
+            margin-bottom: 5px;
+          }
+          .contacts-block-item-field-text{
+            &:not(:last-child){
+              margin-bottom: 5px;
+            }
+          }
+        }
+      }
+    }
+
+    .contacts-block-img-container-wrap{
+      margin-bottom: 1rem;
+      [class*="col-"]:nth-child(2){
+        @include media((
+                text-align: (all: right, sm: left),
+        ));
+      }
+    }
+    .contacts-block-img-container{
+      display: inline-block;
+      text-decoration: none;
+      @include media((
+              margin-top: (sm: 1rem)
+      ));
+    }
+
+    .contacts-map{
+      margin-top: 10px;
+      width: 100%;
+      position: relative;
+
+      @include media((
+              height: (all: 450px, lg: 350px, sm: 300px, xs: 250px)
+      ));
+
+      .contacts-map-wrap{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #FAFAFA;
+        @include media((
+                height: (all: 450px, lg: 350px, sm: 300px, xs: 250px)
+        ));
+        &:before {
+          content: '';
+          @extend %spinner;
+          top: 50%;
+          left: 50%;
+          margin-top: -25px;
+          margin-left: -25px;
+        }
+        > ymaps{
+          width: 100%!important;
+          height: 100%!important;
+        }
+        > iframe{ // чтоб спиннер скрывался после загрузки карты из конструктора карт
+          position: relative;
+        }
+      }
+    }
+  }
+}
+
+/* Где купить */
+.contacts-block-list{
+  .contacts-block-list-map-wrapper{
+    margin-bottom: 30px;
+    .contacts-block-list-map-button-wrapper{
+      text-align: right;
+    }
+    .contacts-block-list-map{
+      display: none;
+
+      margin-top: 15px;
+      width: 100%;
+      position: relative;
+
+      @include media((
+              height: (all: 650px, lg: 350px, sm: 300px, xs: 250px)
+      ));
+
+      .contacts-block-list-map-wrap{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #FAFAFA;
+        @include media((
+                height: (all: 650px, lg: 350px, sm: 300px, xs: 250px)
+        ));
+      }
+    }
+  }
+
+  .links-wrapper{
+    margin-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 10px;
+    .item{
+
+    }
+  }
+
+  .items-wrapper{
+    .item{
+      &:not(:last-child){
+        margin-bottom: 30px;
+      }
+      .name{
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .item-more{
+        margin-left: 25px;
+        position: relative;
+        //line-height: 1.5;
+        &:not(:last-child){
+          margin-bottom: 5px;
+        }
+        &:before {
+          font-size: 26px;
+          line-height:1;
+          color: var(--accent-color);
+          content: '•';
+          position: absolute;
+          top: 0;
+          left: -20px;
+        }
+      }
+    }
+  }
+
+  .contacts-block-baloon{
+    div:not(:last-child){
+      @include media((
+              margin-bottom: (all: 5px, sm: 2px),
+      ));
+    }
+    .contacts-block-baloon-title-wrap{
+      @include media((
+              text-align: (all: center, sm: left),
+      ));
+    }
+    .contacts-block-baloon-title{
+      @include media((
+              font-size: (all: 15px, lg: 14px),
+      ));
+      display: inline-block;
+      font-weight: bold;
+    }
+    .contacts-block-baloon-img-wrap{
+      text-align: center;
+    }
+    .contacts-block-baloon-img{
+      text-decoration: none;
+      display: inline-block;
+      @include media((
+              display: (sm: none),
+      ));
+      img{
+        max-width: 200px;
+      }
+    }
+  }
+}
+/* /Где купить */
+
+// map-block
+.map-block{
+  .map-block-wrapper{
+    position: relative;
+    @include media((
+            height: (all: 520px, md: auto),
+    ));
+    > .container{
+      height: 100%;
+    }
+  }
+  .map-block-map{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #FAFAFA;
+    @include media((
+            height: (all: 520px, md: 480px, sm: 300px, xs: 250px),
+            position: (md: relative),
+            margin-top: (md: 30px),
+    ));
+
+    &:before {
+      content: '';
+      @extend %spinner;
+      top: 50%;
+      left: 50%;
+      margin-top: -25px;
+      margin-left: -25px;
+    }
+    > ymaps{
+      width: 100%!important;
+      height: 100%!important;
+    }
+    > iframe{ // чтоб спиннер скрывался после загрузки карты из конструктора карт
+      position: relative;
+    }
+  }
+  .contacts-wrapper{
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  .contacts{
+    min-width: 410px;
+    background:#fff;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(12, 12, 12, 0.15);
+    font-style: normal;
+    @include media((
+            margin-left: (md: auto),
+            margin-right: (md: auto),
+            padding: (all: 20px, sm: 15px),
+            width: (sm: 100%),
+            min-width: (sm: inherit),
+    ));
+    .copyright{
+      font-size: 18px;
+      text-align: center;
+    }
+    > div{
+      margin-bottom: 10px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+
+  }
+}

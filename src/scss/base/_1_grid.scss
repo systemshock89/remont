@@ -1,0 +1,433 @@
+html {
+  font-size: 16px;
+}
+
+// Вариант, когда у html и body height: 100% не подходит из-за того,
+// что fancybox при запуске окна присваивает body height: auto
+//
+// Вариант, когда у .page min-height: 100vh; вызывает в chrome вертикальную полосу прокрутки
+// при запуске fancybox, если контента нет https://yadi.sk/i/vHbLT00Cp3KJbA
+// Но такой баг только в chrome 83, причем в режиме инкогнито его нет.
+
+body {
+  font-family: "roboto-my", sans-serif;
+  color: var(--text-color);
+  line-height: 1.4;
+
+  min-width: 320px;
+  position: relative;
+  overflow-x: hidden; // чтоб не появлялась горизонтальная прокрутка, если что-то вдруг выпирает за пределы экрана
+
+  // для фона у body (переделать)
+  //&.full-bg{
+  //  background-position: top center;
+  //  background-repeat: no-repeat;
+  //  background-attachment: fixed;
+  //  background-size: cover;
+  //  //background-image: url('../img/temp/text-block-bg.jpg');
+  //}
+  //&.content-color-bg{
+  //  .page{
+  //    background: #fcecdf;
+  //    max-width: 1360px;
+  //    margin-left: auto;
+  //    margin-right: auto;
+  //  }
+  //  .menu-top-container{
+  //    background: transparent;
+  //  }
+  //  .menu-top{
+  //    background: var(--accent-color);
+  //  }
+  //}
+}
+
+.page {
+  display: grid;
+  grid-template-rows: auto auto auto auto 1fr auto auto;
+  grid-template-areas: "header-top" "header" "nav" "breadcrumb" "sections-top" "main" "sections-bottom" "footer";
+  min-height: 100vh;
+
+  // если menu-top длиннее чем контент на странице, то overflow-y: hidden исправляет этот глюк https://yadi.sk/i/XoTj0kaw7TAEkw
+  // но при overflow-y: hidden перестает работать position:sticky у меню или хедера. Решения этой проблемы нет.
+  //overflow-y: hidden;
+}
+
+.page_two-columns-template{
+  grid-template-areas: "header-top" "header" "nav" "breadcrumb" "sections-top" "two-columns" "sections-bottom" "footer";
+}
+
+.page__two-columns{
+  grid-area: two-columns;
+  display: grid;
+  grid-template-areas: "aside main";
+  gap: 0 30px;
+  grid-template-columns: 300px 1fr;
+  @media only screen and (max-width: 1359px) {
+    grid-template-columns: 210px 1fr;
+  }
+  @media only screen and (max-width: 991px) {
+    grid-template-columns: 1fr;
+    grid-template-areas: "main" "aside";
+  }
+}
+
+// Avoid Chrome to see Safari hack
+// https://github.com/postcss/postcss-100vh-fix
+// ! Не работает в anroid chrome, поэтому использую js https://github.com/Faisal-Manzer/postcss-viewport-height-correction
+//@supports (-webkit-touch-callout: none) {
+//  .page {
+//    /* The hack for Safari */
+//    min-height: -webkit-fill-available;
+//  }
+//}
+
+.header__desktop{
+  grid-area: header-top;
+}
+
+.header{
+  grid-area: header;
+}
+
+.menu-top{
+  grid-area: nav;
+  @include media((
+          display: (sm: none),
+  ));
+}
+
+.breadcrumb{
+  grid-area: breadcrumb;
+  @include media((
+          display: (sm: none),
+  ));
+}
+
+.main{
+  grid-area: main;
+
+  overflow: hidden;
+  // Нужно для того, чтобы анимации с выплыванием сбоку/сверху/снизу не вызывали полосы прокрутки (а иначе полоса видна на мобильном во время анимации, но на десктопе не видна)
+  // используется overflow, а не overflow-x потому что при overflow-x может появиться вертикальная прокрутка, когда последний блок - это блок с ячейками
+
+  &.page-content-no-margin-top{
+    padding-top: 0!important;
+    margin-top: 0!important;
+  }
+}
+
+.main:not(.page__main-column),
+.page__two-columns,
+.page__sections-top{
+  @include media((
+          padding-top: (all: 25px, sm: 15px)
+  ));
+}
+
+.aside{
+  grid-area: aside;
+  @include media((
+          display: (md: none),
+  ));
+  > div:not(:last-child){
+    margin-bottom: 30px;
+  }
+}
+
+.page__sections-top{
+  grid-area: sections-top;
+}
+
+.page__sections-bottom{
+  grid-area: sections-bottom;
+}
+
+.footer{
+  grid-area: footer;
+}
+
+.page__main-column,
+.aside,
+.container:not(.container-wrapper){
+  .container,
+  .container-fluid{
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left:inherit;
+    margin-right:inherit;
+  }
+}
+
+// блок для виджетов, находящихся справа от контента
+.widgets-right{
+  position: absolute;
+  top: 0;
+  right: 0;
+  @include media((
+          width: (all: calc((100% - 1320px)/2), lg: calc((100% - 960px)/2), md: calc((100% - 720px)/2)),
+          display: (sm: none),
+  ));
+  height: 100%;
+}
+
+/* здесь будут стили, чтобы не использовать bootstrap */
+//.container{
+//  width: 100%;
+//  padding-right: 15px;
+//  padding-left: 15px;
+//  margin-right: auto;
+//  margin-left: auto;
+//  @media (min-width: 576px) {
+//    max-width:540px;
+//  }
+//  @media (min-width: 768px) {
+//    max-width:720px;
+//  }
+//  @media (min-width: 992px) {
+//    max-width:960px;
+//  }
+//  @media (min-width: 1360px) {
+//    max-width:1320px;
+//  }
+//
+//  // если container вложен в container, то убираем padding
+//  .page__main-column &,
+//  .aside &,
+//  .container:not(.container-wrapper) &{
+//    padding-left: 0;
+//    padding-right: 0;
+//  }
+//}
+//
+//.grid{
+//  display: grid;
+//
+//
+//  @include media((
+//          gap: (all: 30px, sm: 15px),
+//  ));
+//  justify-content: center; // dont work
+//  // grid-template-columns: repeat(auto-fit, minmax(100%, 200px));
+//
+//  grid-template-columns: repeat(var(--rows-xl, 4), 1fr);
+//  @media only screen and (max-width: 1359px) {
+//    grid-template-columns: repeat(var(--rows-lg, 4), 1fr);
+//  }
+//  @media only screen and (max-width: 991px) {
+//    grid-template-columns: repeat(var(--rows-md, 3), 1fr);
+//  }
+//  @media only screen and (max-width: 767px) {
+//    grid-template-columns: repeat(var(--rows-sm, 2), 1fr);
+//  }
+//  @media only screen and (max-width: 575px) {
+//    grid-template-columns: repeat(var(--rows-xs, 2), 1fr);
+//  }
+//}
+/* /здесь будут стили, чтобы не использовать bootstrap */
+
+
+@media only screen and (max-width: 575px) {
+  .row{
+    margin-left: -7.5px;
+    margin-right: -7.5px;
+    > .col,
+    > [class*="col-"],
+    > [class*="col15-"]{
+      padding-left: 7.5px;
+      padding-right: 7.5px;
+    }
+  }
+}
+
+.row-mini{
+  @include row-mini();
+}
+
+.row-mini15{
+  @include row-mini(15px);
+}
+
+.row-mini20{
+  @include row-mini(20px);
+}
+
+.mb-30:not(:last-child),
+.tpl-block-list-objects:not(:last-child){ // вариант с галереей на всю ширину и текстом снизу https://disk.yandex.ru/i/g2088qPe3cqWPg
+  @include media((
+          margin-bottom: (all: 30px, xs: 15px)
+  ));
+}
+
+.mb-15:not(:last-child){
+  margin-bottom: 15px;
+}
+
+.gap-30{
+  @include media((
+          gap: (all: 30px 0, xs: 15px 0)
+  ));
+}
+
+.gap-15{
+  gap: 15px 0;
+}
+
+/* ОТСТУПЫ И ДР СТИЛИ БЛОКОВ */
+.block-margin-bottom{
+  @include media((
+          margin-bottom: (all: var(--block-margin-bottom, 50px), md: 30px!important)
+  ));
+}
+
+.block-margin-bottom-small{
+  @include media((
+          margin-bottom: (all: var(--block-margin-bottom-small, 30px), md: 30px!important)
+  ));
+}
+
+.block-margin-bottom-disabled{
+  // даже если ошибочно задан индивидуальный отступ в админке, то все равно будет 0
+  margin-bottom: 0!important;
+}
+
+.block-padding{
+  @include media((
+          padding-top: (all: var(--block-padding, 50px), md: 40px!important, sm : 30px!important),
+          padding-bottom: (all: var(--block-padding, 50px), md: 40px!important, sm : 30px!important)
+  ));
+}
+
+.block-padding-small{
+  @include media((
+          padding-top: (all: var(--block-padding-small, 30px), sm : 30px!important),
+          padding-bottom: (all: var(--block-padding-small, 30px), sm : 30px!important)
+  ));
+}
+
+.block-padding-disabled{
+  // даже если ошибочно задан индивидуальный отступ в админке, то все равно будет 0
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+}
+
+// отступы слева и справа при колоночном макете
+.page__main-column{
+  .block-padding,
+  .block-padding-small,
+  .block-padding-disabled{
+    @include media((
+            padding-left: (all: 30px,  sm : 15px),
+            padding-right: (all: 30px, sm : 15px)
+    ));
+    @media only screen and (max-width: 575px) {
+      &:not(.index-slider){
+        margin-left: -15px;
+        margin-right: -15px;
+        .container {
+          padding-right: 15px;
+          padding-left: 15px;
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+.block-bg{
+  background-position: top center;
+}
+
+// временный фон, пока не загрузилась фоновая картинка
+[data-bg]:not(.loaded){
+  background-color: #EEEEEE;
+  &.block-text-color-white {
+    background-color: #BBBBBB;
+  }
+}
+
+.block-bg-repeat{
+  background-repeat: repeat;
+}
+
+.block-bg-no-repeat{
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax-bg {
+  background-position: center center;
+  background-attachment: fixed;
+  //background-repeat: no-repeat;
+  //background-size: cover;
+}
+
+.video-bg{
+  position: relative;
+  overflow: hidden;
+
+  .video-bg-block{
+    position: absolute!important;
+    width: 100%;
+    height: 100%!important;
+    background: #FAFAFA;
+  }
+
+  .inline-YTPlayer{
+    position: absolute!important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+}
+/* /ОТСТУПЫ И ДР СТИЛИ БЛОКОВ */
+
+// в блоке "Вывод другого инфоблока" если стоит "без нижнего отступа", то у последнего выводяшегося инфоблока убирать нижний отступ
+.combine-block{
+  &.block-margin-bottom-disabled{
+    .tpl-block-list-objects{
+      > div:last-child{
+        .block-margin-bottom,
+        .block-padding-small{
+          margin-bottom: 0!important;
+        }
+      }
+    }
+  }
+}
+
+/* netcat 6 styles */
+.tpl-area-main, .tpl-area-main-list { min-height: 100vh; }
+.tpl-container, .tpl-container > .tpl-block-list { display: flex;}
+.tpl-container > .tpl-block-list, .tpl-container > .tpl-block-list > .tpl-block-list-objects { width: 100% }
+
+body.is-autorized{
+  // скрываем плашку netcat на мобильных
+  @include media((
+          margin-top: (sm: 0!important),
+  ));
+  .nc-navbar.nc--fixed{
+    @include media((
+            display: (sm: none),
+    ));
+  }
+
+  .menu-top-container{
+    @include media((
+            top: (all: 55px, sm: 0),
+    ));
+  }
+
+  // учитываем плашку netcat
+  .page {
+    min-height: calc(100vh - 55px);
+    min-height: calc(100vh - var(--vh-offset, 0px) - 55px );
+    @media only screen and (max-width: 767px) {
+      min-height: 100vh;
+      min-height: calc(100vh - var(--vh-offset, 0px) );
+    }
+  }
+}

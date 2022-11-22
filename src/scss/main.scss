@@ -1,0 +1,104 @@
+@use 'sass:math';
+
+// Основное (переменные, миксины, функции, шрифты, сброс стилей)
+@import "base/variables";
+@import "helpers/mixins";
+@import "helpers/media_screen";
+@import "helpers/functions";
+@import "base/fonts";
+//@import "base/reboot"; // свои стили сброса (если не подключен другой normalize)
+
+// CSS-файлы библиотек
+@import "vendor/libs";
+
+// Base styles
+@import "base/1_grid";
+@import "base/2_ui-elements";
+@import "base/3_typography";
+
+// Основные блоки: header, footer, sidebar, menu
+@import "blocks/_general/header_desktop";
+@import "blocks/_general/header_mobile";
+@import "blocks/_general/header_with_video";
+@import "blocks/_general/menu-top";
+@include menu-top-fullwidth();
+@import "blocks/_general/vertical-menu";
+@import "blocks/_general/breadcrumb";
+@import "blocks/_general/pagination";
+@import "blocks/_general/forms";
+@import "blocks/_general/modal";
+@import "blocks/price";
+@import "blocks/_general/footer";
+@import "blocks/small_parts"; // socials, toTop, text-resize-block, block-text-color/black, etc
+
+// Блоки: cards
+@import "blocks/cards/catalog-advantage-mixins";
+@import "blocks/cards/catalog-advantage1";
+@import "blocks/cards/catalog-advantage2";
+@import "blocks/cards/catalog-advantage5";
+@import "blocks/cards/catalog-advantage6";
+@import "blocks/cards/catalog-advantage7";
+@import "blocks/cards/catalog-advantage8";
+@import "blocks/cards/catalog-advantage9";
+@import "blocks/cards/catalog-gallery";
+@import "blocks/cards/catalog-gallery-fluid";
+@import "blocks/cards/video-gallery";
+@import "blocks/cards/catalog-sections";
+
+// Sliders Swiper
+@import "blocks/sliders-swiper/index-slider";
+
+// Sliders Owl-carousel 2
+@import "blocks/sliders-owl-carousel/slider-mixins";
+@import "blocks/sliders-owl-carousel/one_slide";
+@include index-slider();
+@include fullwidth-slider();
+@import "blocks/sliders-owl-carousel/carousel-slider";
+@import "blocks/sliders-owl-carousel/basic-slider";
+@import "blocks/sliders-owl-carousel/reviews-slider";
+@import "blocks/sliders-owl-carousel/synced-slider";
+@import "blocks/sliders-owl-carousel/synced-slider-single";
+
+// Блоки: catalog
+@import "blocks/catalog/list-mixins";
+@import "blocks/catalog/list_template1";
+@import "blocks/catalog/list_template2";
+@import "blocks/catalog/list_template3";
+@import "blocks/catalog/inner";
+@import "blocks/catalog/cart";
+@import "blocks/catalog/filter";
+@import "blocks/catalog/cabinet";
+
+// Блоки: news
+@import "blocks/news/news-columns";
+@import "blocks/news/news-rows";
+@import "blocks/news/news-list-anons";
+@import "blocks/news/news-inner";
+@import "blocks/news/news-widget";
+@import "blocks/news/categories";
+@import "blocks/news/author-articles";
+
+// Блоки: разное
+@import "blocks/content-blocks";
+@import "blocks/price";
+@import "blocks/faq";
+@import "blocks/faq_mini";
+@import "blocks/tabs";
+@import "blocks/widget-phone";
+@import "blocks/contacts_where-buy_map"; // контакты, где купить, карта с контактами
+@import "blocks/search"; // поиск netcat/с подсказками
+@import "blocks/other"; // редко используемые стили
+//@import "common/old"; // устаревшие стили
+
+// версия для печати (оформление заказа)
+@import "print";
+
+// Версия для слабовидящих
+@import "svhelp";
+
+// Media breakpoints
+@import "media_breakpoints";
+
+
+
+

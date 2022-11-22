@@ -1,0 +1,95 @@
+.catalog-products2{
+  .item{
+    border: 1px solid #eaebec;
+    background: #fff;
+    transition: box-shadow 0.1s ease-in-out;
+    @include media((
+            padding: (all:15px, sm:10px)
+    ));
+    &:not(:last-child){
+      @include media((
+              margin-bottom: (all:30px, sm:15px)
+      ));
+    }
+    .img-container {
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+
+      max-width: var(--img-width, 300px);
+      max-height: var(--img-height, 200px);
+      aspect-ratio: var(--aspect-ratio, 300/200);
+      width:100%; // fix max-width bug if parent display:flex
+
+      img{
+        margin: auto;
+
+        // чтобы вписать в данное соотношение сторон картинку с другим соотношением сторон без искажений
+        width: auto;
+        max-height: 100%;
+      }
+
+      .no-img{
+        @include media((
+                font-size: (sm:5rem, xs:4rem)
+        ));
+      }
+
+      text-decoration: none;
+      &:hover {
+        opacity: 0.8;
+      }
+
+      position: relative;
+      .not-available{
+        @extend %not-available;
+      }
+      .labels-container {
+        @extend %labels-container;
+      }
+      .dopimages {
+        @extend %dopimages;
+      }
+    }
+    .name {
+      color: var(--text-color);
+      text-decoration: none;
+      line-height: 1.2;
+      display: inline-block;
+      font-weight: bold;
+      @include media((
+              font-size: (lg:14px)
+      ));
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    .text{
+      margin-top: 10px;
+      line-height: 1.2;
+      @include media((
+              font-size: (lg:14px),
+              margin-bottom: (sm:10px)
+      ));
+    }
+    .catalog-products-wrapper{
+      margin-top: 15px;
+    }
+    @extend %price-container;
+    .tovars-counter {
+      @include tovars-counter($height: 30px);
+      @include media((
+              margin-bottom: (xs: 10px)
+      ));
+    }
+    .button {
+      font-size: 14px;
+      min-width: 100%;
+      min-height: 30px;
+    }
+    &:hover {
+      box-shadow: 0 0 10px rgba(159, 159, 159, 0.4);
+      transition: box-shadow 0.1s ease-in-out;
+    }
+  }
+}

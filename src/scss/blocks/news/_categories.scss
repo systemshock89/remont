@@ -1,0 +1,27 @@
+.categories{
+  margin-bottom: 15px;
+  .categories-item{
+    display: inline-block;
+    margin-bottom: 3px;
+    span{
+      font-size: 14px;
+      color: #666;
+    }
+    &:after{
+      content: '|';
+      font-size: 10px;
+      color: #cccccc;
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 4px;
+    }
+    &.selected{
+      font-weight: bold;
+    }
+    &:last-child{
+      &:after{
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,107 @@
+/*==========  MODAL WINDOWS  ==========*/
+.modal{
+  padding: 24px;
+  padding-top: 35px;
+  max-width: 95%;
+  transition: top 0.2s, transform  0.2s;
+  @include media((
+          min-width: (all: 480px, xs: inherit),
+          width: (xs: 95%)
+  ));
+
+  .h2{
+    margin-bottom: 20px;
+    font-size: 24px;
+    &:before,
+    &:after{
+      display: none;
+    }
+  }
+  .form-container .form-group{
+    @include media((
+            margin-bottom: (xs: 15px)
+    ));
+    .col-form-label{
+      @include media((
+              display: (xs: none)
+      ));
+    }
+  }
+  .other-html{
+    max-width: 600px;
+  }
+  &.modal-success{
+    min-width: 300px;
+    @include media((
+            width: (xs: auto)
+    ));
+    .success-text{
+      text-align: center;
+    }
+  }
+  &.modal-widget-phone{
+    @include media((
+            min-width: (all: 350px, xs: 300px),
+            width: (xs: 300px)
+    ));
+    .h2{
+      font-size: 18px;
+    }
+    .button{
+      display: flex;
+      width: 100%;
+    }
+  }
+  &.modal-zakaz{
+    .img-container{
+      @include media((
+              margin-top: (sm: 10px),
+              text-align: (xs: center)
+      ));
+      img{
+        max-width: 200px;
+        max-height: 200px;
+      }
+    }
+  }
+  &.modal-slide{
+    max-width: 1000px;
+    text-align: center;
+    .img-container{
+
+    }
+    .text-container{
+      margin-top: 15px;
+      .title{
+        @include media((
+                font-size: (all: 32px, sm: 20px)
+        ));
+      }
+      .text{
+        margin-top: 10px;
+      }
+      .button{
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.fancybox-slide--current .modal {
+  animation: modal-open-amimation 0.2s ease-in-out;
+}
+
+@keyframes modal-open-amimation {
+  0% {
+    top: -200px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.fancybox-is-closing .modal {
+  top: 0;
+  transform: scale(1.5);
+}
+/*==========  /MODAL  ==========*/

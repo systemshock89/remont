@@ -1,0 +1,132 @@
+.catalog-products {
+  .item {
+    height: 100%;
+    border: 1px solid #eaebec;
+    background: #fff;
+    @include media((
+            padding: (all: 15px, lg: 10px),
+    ));
+
+    display: flex;
+    flex-direction: column;
+    .item-bottom,
+    .item-bottom2{
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /*
+    div img-container-wrap нужен чтобы длинная картинка вписывалась в заданное соотношение сторон
+    Она не вписывается, т.к. у item свойство display: flex;
+    Свойствами решить эту проблему пока не получилось.
+    https://disk.yandex.ru/i/oSL4FwxHnQStYw
+     */
+
+    .img-container {
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+
+      max-width: var(--img-width, 300px);
+      max-height: var(--img-height, 200px);
+      aspect-ratio: var(--aspect-ratio, 300/200);
+      width:100%; // fix max-width bug if parent display:flex
+
+      img{
+        margin: auto;
+
+        // чтобы вписать в данное соотношение сторон картинку с другим соотношением сторон без искажений
+        width: auto;
+        max-height: 100%;
+      }
+
+      text-decoration: none;
+      &:hover {
+        opacity: 0.8;
+      }
+
+      position: relative;
+      .not-available{
+        @extend %not-available;
+      }
+      .labels-container {
+        @extend %labels-container;
+      }
+      .dopimages {
+        @extend %dopimages;
+      }
+    }
+    .name {
+      @include media((
+              margin-top: (all:15px, xs: 10px)
+      ));
+      color: var(--text-color);
+      text-decoration: none;
+      line-height: 1.2;
+      display: inline-block;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    @extend %price-container;
+    .price-container {
+      @include media((
+              margin-top: (all:15px, xs: 10px)
+      ));
+      .old-price{
+        @include media((
+                display: (xs: none)
+        ));
+      }
+      &.no-skidka{
+        @include media((
+                padding-bottom: (all: 23px, xs: 0)
+        ));
+      }
+    }
+    .price-container-block2{
+      @include media((
+              display: (xs: none)
+      ));
+    }
+    .catalog-products-row {
+      @include media((
+              margin-top: (all:15px, xs: 10px)
+      ));
+    }
+    .tovars-counter {
+      @include tovars-counter($height: 30px);
+    }
+    .catalog-button-wrapper{
+      text-align: center;
+      margin-top: 5px;
+    }
+    .button {
+      font-size: 14px;
+      min-width: inherit;
+      min-height: 30px;
+    }
+
+    .catalog-item-bottom {
+      margin-top: 5px;
+      @include media((
+              display: (xs: none)
+      ));
+      .catalog-item-reviews {
+        text-decoration: none;
+        font-size: 12px;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .catalog-item-compare {
+        @extend %tovar-compare;
+      }
+    }
+
+  }
+}

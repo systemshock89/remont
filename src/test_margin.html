@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    @@include('head.html', {
+    "title": "Тестирование отступов",
+    "description": "description"
+    })
+    @@include('head_css.html')
+</head>
+
+<body>
+
+<div class="page">
+
+    @@include('header.html')
+
+    @@include('menu_top.html')
+
+    @@include('breadcrumb.html')
+
+    <main class="main">
+
+        <div class="text-block block-margin-bottom">
+            <div class="container">
+
+                <div class="text-block-item">
+                    <div class="text-container text-elements-title">
+                        <div class="text text-elements">
+
+                            <div class="h2">Проверить состояния и их комбинации:</div>
+                            <ul>
+                                <li>Классы block-padding, block-padding-small, block-padding-disabled, block-margin-bottom, block-margin-bottom-small, block-margin-bottom-disabled и комбинации</li>
+                                <li>Кастомные внешние и внутренние отступы</li>
+                                <li>Комбинации блоков снизу (ячейки, текст внизу, пагинация, кнопка снизу)</li>
+                                <li>Галерею на всю ширину</li>
+                                <li>Текстовый блок с текстом, картинкой, видео</li>
+                                <li>На мобильной версии</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-block block-padding block-margin-bottom" style="background: #ecf1f5">
+            <div class="container">
+
+                <div class="text-block-item">
+                    <div class="title-wrapper">
+                        <div class="h1">Текстовый блок - объект 1</div>
+                        <div class="sub-title">Подзаголовок</div>
+                    </div>
+
+                    <div class="text-container text-elements-title">
+                        <div class="text text-elements">
+
+                            <div class="h2">Заголовок внутри текстового блока</div>
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+                            <blockquote>
+                                <p>Это цитата</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis consequatur consequuntur deleniti doloremque enim ex fugit, harum incidunt iste magni nam perferendis porro, quae, quasi qui reiciendis! Alias, deleniti dolor earum est, facilis impedit iste laborum nesciunt officia officiis quis repudiandae vero. Error, et laborum laudantium nulla praesentium ullam.</p>
+                            </blockquote>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+
+                            <ul>
+                                <li>Пункт списка 1 <b>(Маркированный список)</b></li>
+                                <li>Пункт списка 2</li>
+                                <li>Пункт списка 3 длинный Пункт списка 3 длинный Пункт списка 3 длинный Пункт списка 3 длинный Пункт списка 3 длинный Пункт списка 3 длинный Пункт списка 3 длинный Пункт списка 3 длинный Пункт списка 3 длинный Пункт списка 3 длинный</li>
+                                <li>Пункт списка 4</li>
+                                <li>
+                                    Пункт списка 5 - <b>(Нумерованный список)</b>
+                                    <ol>
+                                        <li>Пункт списка 1</li>
+                                        <li>Пункт списка 2</li>
+                                        <li>Пункт списка 3 длинный Пункт списка 3 длинный Пункт списка 3 длинный Пункт списка 3 длинный Пункт списка 3 длинный Пункт списка 3 длинный Пункт списка 3 длинный Пункт списка 3 длинный Пункт списка 3 длинный Пункт списка 3 длинный</li>
+                                        <li>Пункт списка 4</li>
+                                    </ol>
+                                </li>
+                                <li>
+                                    Пункт списка 5 <b>(Множество вложенных друг в друга разных типов списков)</b>
+                                    <ul>
+                                        <li>список в списке 1</li>
+                                        <li>список в списке 2 длинный Пункт список в списке 2 длинный Пункт список в списке 2 длинный Пункт список в списке 2 длинный Пункт список в списке 2 длинный Пункт список в списке 2 длинный Пункт</li>
+                                        <li>
+                                            список в списке 3
+                                            <ul>
+                                                <li>список в списке 1</li>
+                                                <li>список в списке 2 длинный Пункт список в списке 2 длинный Пункт список в списке 2 длинный Пункт список в списке 2 длинный Пункт список в списке 2 длинный Пункт список в списке 2 длинный Пункт</li>
+                                                <li>список в списке 3</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            список в списке 4
+                                            <ol>
+                                                <li>список в списке 1</li>
+                                                <li>список в списке 2 длинный Пункт список в списке 2 длинный Пункт список в списке 2 длинный Пункт список в списке 2 длинный Пункт список в списке 2 длинный Пункт список в списке 2 длинный Пункт</li>
+                                                <li>список в списке 3</li>
+                                            </ol>
+                                        </li>
+                                        <li>список в списке 5</li>
+                                        <li>список в списке 6</li>
+                                    </ul>
+                                </li>
+                                <li>Пункт списка 6</li>
+                                <li>Пункт списка 7</li>
+                            </ul>
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+
+                            <ol start="97">
+                                <li>Начинается с 98 <b>(Используется start)</b></li>
+                                <li>Начинается с 98</li>
+                                <li>Пункт списка 99</li>
+                            </ol>
+
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/5lCRsLjMeso" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam atque cumque debitis delectus deserunt dicta earum eligendi eos, esse est exercitationem facilis fuga fugit id ipsam iste iure magni molestiae necessitatibus, nemo nostrum odio, officia pariatur perferendis quae rem repudiandae suscipit voluptas voluptatem. Aspernatur, culpa deleniti hic labore optio soluta voluptatum! Cupiditate ducimus inventore officiis. Corporis distinctio enim nam odio praesentium similique totam? Asperiores beatae labore, maxime neque officia officiis recusandae vel? Cupiditate enim eum laboriosam molestias nesciunt optio perferendis qui! Atque deserunt earum ex labore officia perferendis quod sapiente sed totam vitae. Architecto consequuntur incidunt porro totam vel.</p>
+
+                            <div class="table-responsive">
+                                <div class="overflow">
+                                    <table>
+                                        <tr>
+                                            <td>Длина</td>
+                                            <td> 200 см</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Вес</td>
+                                            <td>50 кг</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Материал</td>
+                                            <td>Сосна</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Размер упаковки</td>
+                                            <td> 30 * 50 *200 см</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Защитная пропитка от атмосферных воздействий</td>
+                                            <td>Пинотекс</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Назначение</td>
+                                            <td>Для наружнего использования</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-block-item">
+                    <div class="title-wrapper">
+                        <div class="h1">Текстовый блок - объект 2</div>
+                    </div>
+
+                    <div class="text-container text-elements-title">
+                        <div class="text text-elements">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-container mb-30">
+                    <a href="" class="button2">Подробнее</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="text-block-two-columns block-margin-bottom">
+            <div class="container">
+
+                <div class="text-block-item">
+                    <div class="title-wrapper">
+                        <div class="h1">Текстовый блок в 2 колонки с фото и видео - объект 1</div>
+                    </div>
+
+                    <div class="text-top text-elements mb-30">
+                        Текст сверху без p<br>
+                        Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху
+                    </div>
+
+                    <div class="row mb-30">
+
+                        <div class="col-md-6">
+                            <div class="text-container text-elements-title">
+                                <div class="title-wrapper">
+                                    <div class="h2">Колонка 1</div>
+                                </div>
+                                <div class="text text-elements">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aperiam aspernatur autem blanditiis commodi consequuntur cum cupiditate debitis dolorum earum est et ex hic, incidunt, ipsa laboriosam laudantium magni minus nam natus necessitatibus quas qui recusandae saepe tenetur, voluptatibus?</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aperiam aspernatur autem blanditiis commodi consequuntur cum cupiditate debitis dolorum earum est et ex hic, incidunt, ipsa laboriosam laudantium magni minus nam natus necessitatibus quas qui recusandae saepe tenetur, voluptatibus?</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aperiam aspernatur autem blanditiis commodi consequuntur cum cupiditate debitis dolorum earum est et ex hic, incidunt, ipsa laboriosam laudantium magni minus nam natus necessitatibus quas qui recusandae saepe tenetur, voluptatibus?</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="text-container text-elements-title">
+                                <div class="title-wrapper">
+                                    <div class="h2">Колонка 2</div>
+                                </div>
+                                <div class="text text-elements">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aperiam aspernatur autem blanditiis commodi consequuntur cum cupiditate debitis dolorum earum est et ex hic, incidunt, ipsa laboriosam laudantium magni minus nam natus necessitatibus quas qui recusandae saepe tenetur, voluptatibus?</p>
+
+                                    <a href="img/temp/news.webp" data-fancybox="" data-caption="Название рисунка" class="img-container">
+                                        <img data-src="img/temp/news.webp" width="630" height="414" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='630' viewBox='0 0 630 414'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                    </a>
+                                    <div class="video-container">
+                                        <iframe data-src="https://www.youtube.com/embed/1IkY0_qONRk" width="560" height="315" class="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-bottom text-elements mb-30">
+                        <p>Текст снизу с p</p>
+                        <p>Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу </p>
+                    </div>
+
+                </div>
+
+                <div class="text-block-item">
+                    <div class="title-wrapper">
+                        <div class="h1">Текстовый блок в 2 колонки - объект 2</div>
+                    </div>
+
+                    <div class="text-top text-elements mb-30">
+                        Текст сверху без p<br>
+                        Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху
+                    </div>
+
+                    <div class="row mb-30">
+
+                        <div class="col-md-6">
+                            <div class="text-container text-elements-title">
+                                <div class="title-wrapper">
+                                    <div class="h2">Колонка 1</div>
+                                </div>
+                                <div class="text text-elements">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aperiam aspernatur autem blanditiis commodi consequuntur cum cupiditate debitis dolorum earum est et ex hic, incidunt, ipsa laboriosam laudantium magni minus nam natus necessitatibus quas qui recusandae saepe tenetur, voluptatibus?</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aperiam aspernatur autem blanditiis commodi consequuntur cum cupiditate debitis dolorum earum est et ex hic, incidunt, ipsa laboriosam laudantium magni minus nam natus necessitatibus quas qui recusandae saepe tenetur, voluptatibus?</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="text-container text-elements-title">
+                                <div class="title-wrapper">
+                                    <div class="h2">Колонка 2</div>
+                                </div>
+                                <div class="text text-elements">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aperiam aspernatur autem blanditiis commodi consequuntur cum cupiditate debitis dolorum earum est et ex hic, incidunt, ipsa laboriosam laudantium magni minus nam natus necessitatibus quas qui recusandae saepe tenetur, voluptatibus?</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aperiam aspernatur autem blanditiis commodi consequuntur cum cupiditate debitis dolorum earum est et ex hic, incidunt, ipsa laboriosam laudantium magni minus nam natus necessitatibus quas qui recusandae saepe tenetur, voluptatibus?</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-bottom text-elements mb-30">
+                        <p>Текст снизу с p</p>
+                        <p>Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу </p>
+                    </div>
+                </div>
+
+                <div class="button-container mb-30">
+                    <a href="" class="button2">Подробнее</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="catalog-gallery block-padding-small block-margin-bottom" style="background: #ecf1f5;/*padding-top: 100px;padding-bottom: 100px;margin-bottom: 100px;*/">
+            <div class="container">
+
+                <div class="title-wrapper">
+                    <div class="h1">Галерея</div>
+                </div>
+
+                <div class="text-top text-elements mb-30">
+                    Текст сверху без p<br>
+                    Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху
+                </div>
+
+                <div class="row gap-30 mb-30">
+
+                    <div class="col-xl-4 col-sm-6" itemscope itemtype="https://schema.org/ImageObject">
+                        <a href="img/temp/gallery_preview.webp"
+                           class="item"
+                           data-thumb="img/temp/gallery_preview.webp"
+                           data-fancybox-id="id1"
+                           data-fancybox="gallery"
+                           data-caption="Название рисунка">
+
+                            <div class="img-container">
+                                <img data-src="img/temp/gallery_preview.webp" width="410" height="274" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='410' viewBox='0 0 410 274'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                <link itemprop="contentUrl" href="путь_к_картинке">
+                            </div>
+                            <div class="name" itemprop="name">Рисунок 1</div>
+                        </a>
+                    </div>
+
+                    <div class="col-xl-4 col-sm-6" itemscope itemtype="https://schema.org/ImageObject">
+                        <a href="img/temp/gallery_preview.webp"
+                           class="item"
+                           data-thumb="img/temp/gallery_preview.webp"
+                           data-fancybox-id="id1"
+                           data-fancybox="gallery"
+                           data-caption="Название рисунка">
+
+                            <div class="img-container">
+                                <img data-src="img/temp/gallery_preview.webp" width="410" height="274" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='410' viewBox='0 0 410 274'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                <link itemprop="contentUrl" href="путь_к_картинке">
+                            </div>
+                            <div class="name" itemprop="name">Рисунок 1</div>
+                        </a>
+                    </div>
+
+                    <div class="col-xl-4 col-sm-6" itemscope itemtype="https://schema.org/ImageObject">
+                        <a href="img/temp/gallery_preview.webp"
+                           class="item"
+                           data-thumb="img/temp/gallery_preview.webp"
+                           data-fancybox-id="id1"
+                           data-fancybox="gallery"
+                           data-caption="Название рисунка">
+
+                            <div class="img-container">
+                                <img data-src="img/temp/gallery_preview.webp" width="410" height="274" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='410' viewBox='0 0 410 274'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                <link itemprop="contentUrl" href="путь_к_картинке">
+                            </div>
+                            <div class="name" itemprop="name">Подпись к фотографии большая в целых две
+                                строки
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+
+                @@include('pagination.html')
+
+                <div class="button-container mb-30">
+                    <a href="" class="button2">Подробнее</a>
+                </div>
+
+                <div class="text-bottom text-elements mb-30">
+                    <p>Текст снизу с p</p>
+                    <p>Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="catalog-gallery-fluid block-margin-bottom">
+            <div class="container mb-30">
+                <div class="title-wrapper">
+                    <div class="h1">Галерея на всю ширину</div>
+                </div>
+
+                <div class="text-top text-elements mb-30">
+                    Текст сверху без p<br>
+                    Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху Текст сверху
+                </div>
+            </div>
+
+            <div class="container-fluid mb-30">
+                <div class="row justify-content-center no-gutters">
+
+                    <div class="col-xxl-3 col-lg-4 col-sm-6">
+                        <a href="img/temp/gallery_preview.webp"
+                           class="item"
+                           data-thumb="img/temp/gallery_preview.webp"
+                           data-fancybox-id="id1"
+                           data-fancybox="gallery"
+                           data-caption="Название рисунка"
+                           itemscope itemtype="https://schema.org/ImageObject">
+
+                            <div class="img-container">
+                                <img data-src="img/temp/gallery_preview.webp" width="650" height="434" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='650' viewBox='0 0 650 434'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                <link itemprop="contentUrl" href="путь_к_картинке">
+                            </div>
+                            <div class="name" itemprop="name">Рисунок 1</div>
+                        </a>
+                    </div>
+
+                    <div class="col-xxl-3 col-lg-4 col-sm-6">
+                        <a href="img/temp/gallery_preview.webp"
+                           class="item"
+                           data-thumb="img/temp/gallery_preview.webp"
+                           data-fancybox-id="id1"
+                           data-fancybox="gallery"
+                           data-caption="Название рисунка"
+                           itemscope itemtype="https://schema.org/ImageObject">
+
+                            <div class="img-container">
+                                <img data-src="img/temp/gallery_preview.webp" width="650" height="434" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='650' viewBox='0 0 650 434'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                <link itemprop="contentUrl" href="путь_к_картинке">
+                            </div>
+                            <div class="name" itemprop="name">Рисунок 1</div>
+                        </a>
+                    </div>
+
+                    <div class="col-xxl-3 col-lg-4 col-sm-6">
+                        <a href="img/temp/gallery_preview.webp"
+                           class="item"
+                           data-thumb="img/temp/gallery_preview.webp"
+                           data-fancybox-id="id1"
+                           data-fancybox="gallery"
+                           data-caption="Название рисунка"
+                           itemscope itemtype="https://schema.org/ImageObject">
+
+                            <div class="img-container">
+                                <img data-src="img/temp/gallery_preview.webp" width="650" height="434" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='650' viewBox='0 0 650 434'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                <link itemprop="contentUrl" href="путь_к_картинке">
+                            </div>
+                            <div class="name" itemprop="name">Подпись к фотографии большая в целых две
+                                строки
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-xxl-3 col-lg-4 col-sm-6">
+                        <a href="img/temp/gallery_preview.webp"
+                           class="item"
+                           data-thumb="img/temp/gallery_preview.webp"
+                           data-fancybox-id="id1"
+                           data-fancybox="gallery"
+                           data-caption="Название рисунка"
+                           itemscope itemtype="https://schema.org/ImageObject">
+
+                            <div class="img-container">
+                                <img data-src="img/temp/gallery_preview.webp" width="650" height="434" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='650' viewBox='0 0 650 434'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                <link itemprop="contentUrl" href="путь_к_картинке">
+                            </div>
+                            <div class="name" itemprop="name">Рисунок 1</div>
+                        </a>
+                    </div>
+
+                    <div class="col-xxl-3 col-lg-4 col-sm-6">
+                        <a href="img/temp/gallery_preview.webp"
+                           class="item"
+                           data-thumb="img/temp/gallery_preview.webp"
+                           data-fancybox-id="id1"
+                           data-fancybox="gallery"
+                           data-caption="Название рисунка"
+                           itemscope itemtype="https://schema.org/ImageObject">
+
+                            <div class="img-container">
+                                <img data-src="img/temp/gallery_preview.webp" width="650" height="434" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='650' viewBox='0 0 650 434'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                <link itemprop="contentUrl" href="путь_к_картинке">
+                            </div>
+                            <div class="name" itemprop="name">Рисунок 1</div>
+                        </a>
+                    </div>
+
+                    <div class="col-xxl-3 col-lg-4 col-sm-6">
+                        <a href="img/temp/gallery_preview.webp"
+                           class="item"
+                           data-thumb="img/temp/gallery_preview.webp"
+                           data-fancybox-id="id1"
+                           data-fancybox="gallery"
+                           data-caption="Название рисунка"
+                           itemscope itemtype="https://schema.org/ImageObject">
+
+                            <div class="img-container">
+                                <img data-src="img/temp/gallery_preview.webp" width="650" height="434" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='650' viewBox='0 0 650 434'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                                <link itemprop="contentUrl" href="путь_к_картинке">
+                            </div>
+                            <div class="name" itemprop="name">Рисунок 1</div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container">
+                @@include('pagination.html')
+
+                <div class="button-container mb-30">
+                    <a href="" class="button2">Подробнее</a>
+                </div>
+
+                <div class="text-bottom text-elements mb-30">
+                    <p>Текст снизу с p</p>
+                    <p>Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу Текст снизу </p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    @@include('footer.html')
+
+</div>
+
+@@include('widgets.html')
+
+@@include('scripts.html')
+
+</body>
+</html>

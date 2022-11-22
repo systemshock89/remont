@@ -1,0 +1,94 @@
+.news-list{
+  // в виде колонок
+  &.news-columns{
+    .item{
+      height: 100%;
+      .img-container {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+
+        max-width: var(--img-width, 410px);
+        max-height: var(--img-height, 270px);
+        aspect-ratio: var(--aspect-ratio, 410/270);
+        width:100%; // fix max-width bug if parent display:flex
+
+        img{
+          margin: auto;
+
+          // чтобы вписать в данное соотношение сторон картинку с другим соотношением сторон без искажений
+          width: auto;
+          max-height: 100%;
+        }
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+      .text-container{
+        .title {
+          display: inline-block;
+          font-weight: bold;
+          color: var(--text-color);
+          line-height: 1.2;
+          .h2-title{
+            font-size: inherit;
+            font-weight: inherit;
+            margin-bottom: 0;
+          }
+        }
+        .category{
+          display: table;
+          padding: 3px;
+          background: var(--accent-color);
+          font-size: 14px;
+          color: #fff;
+          border-radius: 4px;
+          @include media((
+                  display: (sm: none)
+          ));
+        }
+        .date {
+          display: table;
+          color: #666;
+          font-size: 12px;
+          @include media((
+                  margin-bottom: (sm: 0!important)
+          ));
+        }
+        .text {
+          @include media((
+                  display: (sm: none)
+          ));
+        }
+        a.link{
+          display: table;
+          color: #666;
+          font-size: 14px;
+          @include media((
+                  display: (sm: none)
+          ));
+        }
+        > *:not(:last-child){
+          @include media((
+                  margin-bottom: (all: 10px, xs:7px),
+          ));
+        }
+      }
+
+      &:not(:last-child){
+        @include media((
+                margin-bottom: (all: 30px, md: 20px, sm: 30px, xs:15px),
+                padding-bottom: (all: 30px, md: 20px, sm: 0),
+                border-bottom: (all: 1px solid #eaebec, sm: none)
+        ));
+      }
+
+      > .row{
+        @media only screen and (max-width: 767px) {
+          @include row-mini(15px);
+        }
+      }
+    }
+  }
+}
