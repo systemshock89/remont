@@ -31,26 +31,25 @@
             text-align: center;
             text-decoration: none;
 
-            min-height: 44px;
             padding: 6px 10px;
+            font-size: 14px;
             @include media((
-                    font-size: (md: 14px),
+                    min-height: (all: 50px, lg: 44px),
             ));
             color: #fff;
             line-height: 1.2;
             text-transform: uppercase;
+            font-weight: 700;
 
             _:-ms-input-placeholder, :root & {
               height: 0; // ie11 align-items: center fix
             }
           }
-          &:hover > .item,
-          &.active > .item,
-          &.selected > .item,
 
-          &.flexMenu-viewMore:hover > a,
-          &.flexMenu-viewMore.active > a{
-            background-color: var(--accent-color3);
+          &:where(:hover, .active, .selected) > .item,
+          &.flexMenu-viewMore:where(:hover, .active) > a{
+            color: var(--text-color-dark);
+            background-color: var(--accent-color-hover);
           }
           &.flexMenu-viewMore > a{
             font-weight: bold;
@@ -82,13 +81,13 @@
         max-width: 300px;
         width: max-content;
       }
-      &.level1 > li:hover > ul.level2 {
+      &.level1 > li:where(:hover, :focus-within) > ul.level2{
         display: block !important;
       }
       &.level2,
       &.flexMenu-popup{
-        background-color: var(--accent-color3);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+        background-color: var(--accent-color);
+        box-shadow: 0px 3px 10px rgba(239, 127, 26, 0.2), 0px 15px 25px rgba(239, 127, 26, 0.25);
         > li {
           position: relative;
           > .item {
@@ -105,10 +104,9 @@
               height: 0; // ie11 align-items: center fix
             }
           }
-          &:hover > .item,
-          &.active > .item,
-          &.selected > .item{
-            background-color: var(--accent-color);
+          &:where(:hover, .active, .selected) > .item{
+            color: var(--text-color-dark);
+            background-color: var(--accent-color-hover);
           }
         }
       }
@@ -123,8 +121,8 @@
           max-width: 300px;
           width: max-content;
 
-          background-color: var(--accent-color3);
-          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+          background-color: var(--accent-color);
+          box-shadow: 0px 3px 10px rgba(239, 127, 26, 0.2), 0px 15px 25px rgba(239, 127, 26, 0.25);
           > li {
             position: relative;
             > .item {
@@ -141,18 +139,16 @@
                 height: 0; // ie11 align-items: center fix
               }
             }
-            &:hover > .item,
-            &.active > .item,
-            &.selected > .item{
-              background-color: var(--accent-color);
+            &:where(:hover, .active, .selected) > .item{
+              color: var(--text-color-dark);
+              background-color: var(--accent-color-hover);
             }
           }
         }
-        &.level2 > li:hover > ul.level3 {
+        &.level2 > li:where(:hover, :focus-within) > ul.level3{
           display: block !important;
         }
       }
-
 
       // flexMenu-popup
       &.flexMenu-popup{
@@ -184,7 +180,6 @@
           }
         }
       }
-
 
     }
   }

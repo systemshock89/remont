@@ -46,9 +46,8 @@
       }
 
       > .item-wrap > .item:hover,
-      &.active > .item-wrap > .item,
-      &.selected > .item-wrap > .item {
-        background-color: var(--accent-color3);
+      &:where(.active, .selected) > .item-wrap > .item{
+        background-color: var(--accent-color2-hover);
         color: #fff;
 
         + .submenu-btn {
@@ -95,8 +94,7 @@
         }
       }
 
-      &.active > .item-wrap > .submenu-btn,
-      &.selected > .item-wrap > .submenu-btn {
+      &:where(.active, .selected) > .item-wrap > .submenu-btn{
         color: #fff;
 
         &:after {
@@ -108,11 +106,8 @@
         }
       }
 
-      &.active,
-      &.selected {
-        ul.level2 {
-          display: block;
-        }
+      &:where(.active, .selected) ul.level2{
+        display: block;
       }
     }
   }
@@ -140,8 +135,7 @@
       }
 
       > .item:hover,
-      &.active > .item,
-      &.selected > .item {
+      &:where(.active, .selected) > .item{
         text-decoration: underline;
       }
     }

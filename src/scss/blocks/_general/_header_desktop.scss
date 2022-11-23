@@ -14,7 +14,7 @@
   min-height: 30px;
 
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(3, auto);
   gap: 15px;
   align-items: center;
   justify-content: space-between;
@@ -23,6 +23,17 @@
 .header__top-text{
   font-size: 14px;
   color: var(--text-color-dark);
+}
+
+.header__top-button{
+  min-height: 20px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-size: 14px;
+  box-shadow: none;
+  &:active {
+    box-shadow: none;
+  }
 }
 
 .header__nav{
@@ -70,12 +81,9 @@
             transition: width 0.1s ease-in-out;
           }
         }
-        &:hover > .item,
-        &.active > .item,
-        &.selected > .item,
 
-        &.flexMenu-viewMore:hover > a,
-        &.flexMenu-viewMore.active > a{
+        &:where(:hover, .active, .selected) > .item,
+        &.flexMenu-viewMore:where(:hover, .active) > a{
           &:before{
             width: calc(100% - 30px);
           }
@@ -126,17 +134,17 @@
       min-width: 100%;
       //left: 0;
       //white-space: nowrap;
-
-      max-width: 300px;
-      width: max-content;
     }
-    &.level1 > li:hover > ul.level2 {
+    &.level1 > li:where(:hover, :focus-within) > ul.level2 {
       display: block !important;
     }
     &.level2,
     &.flexMenu-popup{
+      max-width: 300px;
+      width: max-content;
+
       background-color: var(--accent-color);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+      box-shadow: 0px 3px 10px rgba(239, 127, 26, 0.2), 0px 15px 25px rgba(239, 127, 26, 0.25);
       > li {
         position: relative;
         > .item {
@@ -153,9 +161,7 @@
             height: 0; // ie11 align-items: center fix
           }
         }
-        &:hover > .item,
-        &.active > .item,
-        &.selected > .item{
+        &:where(:hover, .active, .selected) > .item{
           background-color: var(--accent-color-hover);
           color: var(--text-color-dark);
         }
@@ -173,7 +179,7 @@
         width: max-content;
 
         background-color: var(--accent-color);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+        box-shadow: 0px 3px 10px rgba(239, 127, 26, 0.2), 0px 15px 25px rgba(239, 127, 26, 0.25);
         > li {
           position: relative;
           > .item {
@@ -190,15 +196,13 @@
               height: 0; // ie11 align-items: center fix
             }
           }
-          &:hover > .item,
-          &.active > .item,
-          &.selected > .item{
+          &:where(:hover, .active, .selected) > .item{
             background-color: var(--accent-color-hover);
             color: var(--text-color-dark);
           }
         }
       }
-      &.level2 > li:hover > ul.level3 {
+      &.level2 > li:where(:hover, :focus-within) > ul.level3 {
         display: block !important;
       }
     }
@@ -238,30 +242,32 @@
 }
 
 .header__desktop {
-  padding-top: 15px;
-  padding-bottom: 15px;
   @include media((
+          padding-top: (all: 15px, lg: 10px),
+          padding-bottom: (all: 15px, lg: 10px),
           display: (sm: none),
   ));
 }
 
 .header__grid{
   display: grid;
-  grid-template-columns: repeat(4, auto);
+  @include media((
+          grid-template-columns: (all: auto auto, lg: 1fr),
+  ));
   gap: 15px 30px;
   align-items: center;
   justify-content: space-between;
 }
 
 .header__logo {
-  width: 415px;
-  //min-width: 100px;
   display: grid;
-  //grid-template-columns: minmax(100px, 125px) auto;
-  grid-template-columns: 125px auto;
+  grid-template-columns: minmax(100px, 125px) auto;
   grid-template-rows: 1fr auto;
-  gap: 0 20px;
+  gap: 5px 20px;
   align-items: flex-end;
+  @include media((
+          justify-content: (lg: center),
+  ));
 
   text-decoration: none;
   font-family: "Montserrat-my", sans-serif;
@@ -275,31 +281,115 @@ a.header__logo:hover{
   grid-row: span 2;
 }
 
-
-
 .header__logo-title {
   font-weight: 700;
-  font-size: 25px;
+  //font-size: 25px;
+  font-size: betterClamp(18, 25);
   line-height: 1;
   color: var(--accent-color);
 }
 
 .header__logo-text {
-  font-size: 20px;
+  //font-size: 20px;
+  font-size: betterClamp(14, 20);
   letter-spacing: 0.05em;
   line-height: 110%;
   color: var(--text-color);
 }
 
-a.header__email {}
-.header__email-text {}
-a.header__phone.phone {}
-.header__time {}
-.header__socials {
-  a.item.whats {}
-  a.item.tg {}
+.header__address{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 5px 20px;
+  align-items: center;
+  padding-bottom: 8px;
+  @include media((
+          justify-content: (all: space-between, lg: center),
+  ));
 }
-a.button.header__button.seo-btn-header {}
-.header__button-text {}
 
+.header__email {
+  //font-size: 18px;
+  font-size: betterClamp(14, 18);
+  color: var(--text-color-dark);
+  font-family: "Montserrat-my", 'Montserrat-my Fallback';
+  text-decoration: none;
+  font-weight: 500;
+  @include media((
+          margin-right: (all: 30px, md: 0),
+  ));
+  &:hover{
+    color: var(--accent-color);
+  }
+}
+
+.header__email-text {
+  font-size: 14px;
+  @include media((
+          margin-right: (all: 30px, md: 0),
+  ));
+}
+
+.header__phone {
+  color: var(--text-color-dark);
+  font-family: "Montserrat-my", 'Montserrat-my Fallback';
+  font-weight: 500;
+  //font-size: 20px;
+  font-size: betterClamp(16, 20);
+  text-decoration: none;
+  &:hover{
+    color: var(--accent-color);
+  }
+}
+
+.header__time {
+  font-size: 14px;
+}
+
+.header__socials {
+  display: flex;
+  gap: 10px;
+}
+
+.header__socials-item{
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+  &:hover{
+    opacity: .8;
+  }
+}
+
+.header__socials-item_whats{
+  background-color: #5CCC41;
+  background-image: url('../img/sprite.svg#socials-whats');
+}
+
+.header__socials-item_tg{
+  background-color: #439FE1;
+  background-image: url('../img/sprite.svg#socials-tg');
+}
+
+.header__button {
+  font-size: 16px;
+  min-height: 40px;
+  box-shadow: none;
+  @include media((
+          margin-left: (all: 60px, md: 15px),
+  ));
+  &:active {
+    box-shadow: none;
+  }
+}
+.header__button-text {
+  @include media((
+          margin-left: (all: 60px, md: 15px),
+  ));
+  font-size: 14px;
+  text-align: center;
+  grid-column: 4/-1;
+}
 /*==========  /HEADER  ==========*/

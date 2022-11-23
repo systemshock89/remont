@@ -24,9 +24,9 @@
 
       text-decoration: none;
 
-      .labels-container {
-        @extend %labels-container;
-      }
+      //.labels-container {
+      //  @extend %labels-container;
+      //}
     }
   }
   .owl-carousel {

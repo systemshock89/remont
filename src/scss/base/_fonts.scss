@@ -17,6 +17,76 @@
 @include font('Montserrat-my', 700, normal, '../fonts/Montserrat-Bold.woff2');
 //@include font('roboto-my', 700, italic, '../fonts/roboto-bolditalic-webfont.woff2');
 
+//Font fallbacks
+@font-face {
+  font-family: 'Lato-my Fallback';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arial');
+  ascent-override: 99.53%;
+  descent-override: 21.48%;
+  line-gap-override: 0.00%;
+  size-adjust: 99.17%;
+}
+
+@font-face {
+  font-family: 'Lato-my Fallback';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Arial');
+  ascent-override: 98.05%;
+  descent-override: 21.16%;
+  line-gap-override: 0.00%;
+  size-adjust: 100.66%;
+}
+
+// Montserrat Fallback не очень для случаев со всеми заглавными буквами
+@font-face {
+  font-family: 'Montserrat-my Fallback';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Arial');
+  ascent-override: 86.13%;
+  descent-override: 22.33%;
+  line-gap-override: 0.00%;
+  size-adjust: 112.39%;
+}
+
+
+@font-face {
+  font-family: 'Montserrat-my Fallback';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arial');
+  ascent-override: 84.95%;
+  descent-override: 22.03%;
+  line-gap-override: 0.00%;
+  size-adjust: 113.95%;
+}
+
+@font-face {
+  font-family: 'Montserrat-my Fallback';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Arial');
+  ascent-override: 83.59%;
+  descent-override: 21.67%;
+  line-gap-override: 0.00%;
+  size-adjust: 115.80%;
+}
+
+@font-face {
+  font-family: 'Montserrat-my Fallback';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Arial');
+  ascent-override: 80.59%;
+  descent-override: 20.90%;
+  line-gap-override: 0.00%;
+  size-adjust: 120.11%;
+}
+
+
 // font-weight helper:
 
 // 100 Extra Light or Ultra Light;

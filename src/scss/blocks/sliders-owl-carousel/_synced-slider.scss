@@ -2,12 +2,12 @@
   position: relative;
   margin-bottom: 30px;
   animation: smoothly-show-items 1.1s ease-in-out;
-  .labels-container{
-    @extend %labels-container;
-    z-index: 2;
-    top: 6px;
-    left: 6px;
-  }
+  //.labels-container{
+  //  @extend %labels-container;
+  //  z-index: 2;
+  //  top: 6px;
+  //  left: 6px;
+  //}
 }
 
 .synced-slider1 {
@@ -37,9 +37,9 @@
 
       text-decoration: none;
 
-      .labels-container {
-        @extend %labels-container;
-      }
+      //.labels-container {
+      //  @extend %labels-container;
+      //}
     }
   }
   .owl-carousel {

@@ -1,5 +1,6 @@
 %h-base{
   font-family: "Montserrat-my", sans-serif;
+  //font-family: "Montserrat-my", 'Montserrat-my Fallback';
   font-weight: 700;
   line-height: 1.2;
   color: var(--text-color-dark);
@@ -12,6 +13,7 @@
   span{
     font-weight: 300;
     text-transform: none;
+    font-family: "Montserrat-my", 'Montserrat-my Fallback';
   }
 }
 
