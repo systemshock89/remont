@@ -346,33 +346,6 @@ a.header__logo:hover{
   font-size: 14px;
 }
 
-.header__socials {
-  display: flex;
-  gap: 10px;
-}
-
-.header__socials-item{
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 50%;
-  &:hover{
-    opacity: .8;
-  }
-}
-
-.header__socials-item_whats{
-  background-color: #5CCC41;
-  background-image: url('../img/sprite.svg#socials-whats');
-}
-
-.header__socials-item_tg{
-  background-color: #439FE1;
-  background-image: url('../img/sprite.svg#socials-tg');
-}
-
 .header__button {
   font-size: 16px;
   min-height: 40px;

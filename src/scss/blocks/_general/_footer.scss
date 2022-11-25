@@ -1,102 +1,114 @@
 /*==========  FOOTER  ==========*/
-.footer__desktop{
-  background-color: #d8d8d8;
+.footer__desktop1{
+  &.block-bg{
+    background-color: var(--text-color-dark);
+  }
+  //background: url('../img/footer-bg.webp') top center no-repeat;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  color: #fff;
   @include media((
           display: (sm: none),
   ));
+  a{
+    text-decoration: none;
+  }
 }
 
 .footer__grid{
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(3, auto);
   gap: 15px 30px;
   justify-content: space-between;
-
-  padding-top: 30px;
-  padding-bottom: 30px;
 }
 
-// стандартный footer
-.footer__desktop-variant1{
-
+.footer__address {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 5px 25px;
+  align-items: center;
+  align-self: flex-start;
 }
 
-// footer с двойным меню
-.footer__desktop-variant4 {
-  .footer__grid{
-    grid-template-columns: repeat(4, auto);
-  }
-}
-
-// footer с одноуровневым меню
-.footer__desktop-variant3{
-  .footer__grid{
-    grid-template-columns: repeat(2, auto);
-  }
-}
-
-.footer__phone{
+.footer__slogan {
+  grid-column: 1/-1;
+  font-weight: 700;
   font-size: 20px;
-  text-decoration: none;
-  white-space: nowrap;
-  &:hover{
-    text-decoration: underline;
+  text-transform: uppercase;
+  font-family: "Montserrat-my", 'Montserrat-my Fallback';
+  margin-bottom: 25px;
+  color: var(--accent-color);
+  span{
+    display: block;
+    font-family: "Lato-my", 'Lato-my Fallback';
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 5px;
   }
 }
 
-.footer__email{
-
-}
-
-.footer__mastweb {
-
-}
-
-.footer__socials {
-  margin-top: 10px;
-}
-
-.footer__menu{
-  background: var(--accent-color);
-  ul{
-    @extend %list-unstyled;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    > li {
-      //flex-basis: 0; // чтобы ячейки были одинаковой ширине вне зависимости от их названия
-      flex-grow: 1;
-      > a,
-      > span {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        text-decoration: none;
-
-        min-height: 44px;
-        padding: 6px 10px;
-        @include media((
-                font-size: (md: 14px),
-                margin-bottom: (sm: 15px, xs: 10px)
-        ));
-        color: #fff;
-        line-height: 1.2;
-        text-transform: uppercase;
-
-        _:-ms-input-placeholder, :root & {
-          height: 0; // ie11 align-items: center fix
-        }
-      }
-      > a:hover,
-      &.selected > span{
-        background-color: var(--accent-color2-hover);
-      }
+.svg-icon{
+  svg{
+    margin-right: 7px;
+    use{
+      fill: var(--accent-color);
     }
   }
 }
-.footer__menu2{
+a.svg-icon{
+  svg{
+    use{
+      transition: fill 0.1s ease-in-out;
+    }
+  }
+  &:hover{
+    svg use{
+      fill: var(--accent-color-hover);
+    }
+  }
+}
+
+.footer__time {
+  margin-right: 5px;
+}
+
+.footer__phone {
+  font-weight: 700;
+  font-size: 20px;
+  font-family: "Montserrat-my", 'Montserrat-my Fallback';
+  color: #fff;
+  &:hover{
+    color: var(--accent-color-hover);
+  }
+}
+
+.footer__email {
+  font-weight: 500;
+  font-family: "Montserrat-my", 'Montserrat-my Fallback';
+  margin-right: 5px;
+  &:hover{
+    color: var(--accent-color-hover);
+  }
+}
+
+.footer__link {
+  &:hover{
+    color: var(--accent-color-hover);
+  }
+}
+
+.footer__menu-wrapper{
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 15px 50px;
+}
+
+.footer__menu{
+  line-height: 1;
   ul{
     @extend %list-unstyled;
     > li {
@@ -104,12 +116,13 @@
       > span {
         display: inline-block;
         text-decoration: none;
-        line-height: 1.2;
+        font-size: 14px;
+        color: #fff;
       }
       &:not(:last-child){
         > a,
         > span {
-          margin-bottom: 5px;
+          margin-bottom: 4px;
         }
       }
 
@@ -119,6 +132,44 @@
       }
     }
   }
+}
+
+.footer__mastweb{
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  gap: 6px;
+  &:hover{
+    opacity: .8;
+  }
+}
+
+.footer__desktop2{
+  background-color: var(--text-color-dark);
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  font-size: 11px;
+  line-height: 1.36;
+  color: rgba(255, 255, 255, 0.6);
+  @include media((
+          display: (sm: none),
+  ));
+  a{
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  p{
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+
 }
 
 .footer__mobile{

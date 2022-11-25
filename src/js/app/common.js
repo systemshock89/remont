@@ -129,6 +129,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         $('.menu-top ul.level1, .header__nav ul.level1').flexMenu({
             linkText : 'Еще...',
             linkTitle : 'Показать еще пункты',
+            cutoff : 0,
             // popupClass : 'level2'
         });
     } catch (err) {

@@ -345,9 +345,9 @@ body {
 
 // временный фон, пока не загрузилась фоновая картинка
 [data-bg]:not(.loaded){
-  background-color: #EEEEEE;
+  background-color: var(--bg);
   &.block-text-color-white {
-    background-color: #BBBBBB;
+    background-color: var(--text-color-dark);
   }
 }
 

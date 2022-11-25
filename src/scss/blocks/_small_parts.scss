@@ -28,6 +28,7 @@
   opacity: 0;
   transition: opacity 0.25s ease-in-out;
   z-index: 98;
+  color: var(--accent-color);
   @include media((
           left: (all: calc((100% - 1320px)/2 - 60px - 15px),
                           (1320 + (60 + 15 + 15)*2): 15px,
@@ -52,6 +53,34 @@
   &:hover{
     opacity: .45;
   }
+}
+
+// socials header/footer
+.socials2 {
+  display: flex;
+  gap: 10px;
+}
+
+.socials2-item{
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+  &:hover{
+    opacity: .8;
+  }
+}
+
+.socials2-item_whats{
+  background-color: #5CCC41;
+  background-image: url('../img/sprite.svg#socials-whats');
+}
+
+.socials2-item_tg{
+  background-color: #439FE1;
+  background-image: url('../img/sprite.svg#socials-tg');
 }
 
 // socials
