@@ -47,8 +47,8 @@ body {
 
 .page {
   display: grid;
-  grid-template-rows: auto auto auto auto auto 1fr auto auto;
-  grid-template-areas: "header-top" "header" "nav" "breadcrumb" "sections-top" "main" "sections-bottom" "footer";
+  grid-template-rows: auto auto auto auto auto 1fr auto auto auto auto;
+  grid-template-areas: "header-top" "header" "nav" "breadcrumb" "sections-top" "main" "sections-bottom" "footer-form" "footer-top" "footer";
   min-height: 100vh;
 
   // если menu-top длиннее чем контент на странице, то overflow-y: hidden исправляет этот глюк https://yadi.sk/i/XoTj0kaw7TAEkw
@@ -57,7 +57,7 @@ body {
 }
 
 .page_two-columns-template{
-  grid-template-areas: "header-top" "header" "nav" "breadcrumb" "sections-top" "two-columns" "sections-bottom" "footer";
+  grid-template-areas: "header-top" "header" "nav" "breadcrumb" "sections-top" "two-columns" "sections-bottom" "footer-form" "footer-top" "footer";
 }
 
 .page__two-columns{
@@ -147,6 +147,14 @@ body {
 
 .page__sections-bottom{
   grid-area: sections-bottom;
+}
+
+.footer-form{
+  grid-area: footer-form;
+}
+
+.footer-top{
+  grid-area: footer-top;
 }
 
 .footer{
@@ -283,13 +291,13 @@ body {
 /* ОТСТУПЫ И ДР СТИЛИ БЛОКОВ */
 .block-margin-bottom{
   @include media((
-          margin-bottom: (all: var(--block-margin-bottom, 50px), md: 30px!important)
+          margin-bottom: (all: var(--block-margin-bottom, 100px), lg: 80px, md: 30px!important)
   ));
 }
 
 .block-margin-bottom-small{
   @include media((
-          margin-bottom: (all: var(--block-margin-bottom-small, 30px), md: 30px!important)
+          margin-bottom: (all: var(--block-margin-bottom-small, 50px), lg: 40px, md: 30px!important)
   ));
 }
 
@@ -300,15 +308,15 @@ body {
 
 .block-padding{
   @include media((
-          padding-top: (all: var(--block-padding, 50px), md: 40px!important, sm : 30px!important),
-          padding-bottom: (all: var(--block-padding, 50px), md: 40px!important, sm : 30px!important)
+          padding-top: (all: var(--block-padding, 80px), lg: 60px, md: 40px!important, sm : 30px!important),
+          padding-bottom: (all: var(--block-padding, 80px), lg: 60px, md: 40px!important, sm : 30px!important)
   ));
 }
 
 .block-padding-small{
   @include media((
-          padding-top: (all: var(--block-padding-small, 30px), sm : 30px!important),
-          padding-bottom: (all: var(--block-padding-small, 30px), sm : 30px!important)
+          padding-top: (all: var(--block-padding-small, 50px), lg: 40px, sm : 30px!important),
+          padding-bottom: (all: var(--block-padding-small, 50px), lg: 40px, sm : 30px!important)
   ));
 }
 

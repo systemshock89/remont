@@ -373,30 +373,36 @@ body.fancybox-active {
 }
 
 .block-text-color-white{
+  --text-color: #fff;
+  --text-color-dark: #fff;
+  --accent-color: #fff;
+  --accent-color-hover: #fff;
+
   color: #fff;
 
-  .h1, .h2, .h3, .h4, .h5, .h6,
-  h1, h2, h3, h4, h5, h6,
-  a:not(.button):not(.button2),
-  &.catalog-advantage.variant7 .item .text-container .name,
-  &.catalog-advantage.variant8 .item .text-container .text ul li a,
-  .sub-title,
-  ol > li::marker{
-    color: #fff;
-  }
-
-  a:not([class]){
-    color: #fff;
-    text-decoration: underline;
-    &:hover{
-      color: #fff;
-      text-decoration: none;
-    }
-  }
-
+  //
+  //.h1, .h2, .h3, .h4, .h5, .h6,
+  //h1, h2, h3, h4, h5, h6,
+  //a:not(.button):not(.button2),
+  //&.catalog-advantage.variant7 .item .text-container .name,
+  //&.catalog-advantage.variant8 .item .text-container .text ul li a,
+  //.sub-title,
+  //ol > li::marker{
+  //  color: #fff;
+  //}
+  //
+  //a:not([class]){
+  //  color: #fff;
+  //  text-decoration: underline;
+  //  &:hover{
+  //    color: #fff;
+  //    text-decoration: none;
+  //  }
+  //}
+  //
   .button2{
-    border: 1px solid #fff;
-    color: #fff;
+    //border: 1px solid #fff;
+    //color: #fff;
     &:hover{
       background: rgba(#fff,.5);
     }
