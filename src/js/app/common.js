@@ -4,6 +4,23 @@
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
+    // header__top-button visible
+    if(getComputedStyle(document.querySelector('.header__mobile')).display === 'none'){
+        document.addEventListener("scroll", () => {
+            const headerTopBtn = document.querySelector('.header__top-button');
+            const headerBtn = document.querySelector('.header__button');
+            const headerTopHeight = document.querySelector('.header__desktop-top').clientHeight;
+            if(headerBtn.getBoundingClientRect().top - headerTopHeight <= 0){
+                headerTopBtn.classList.add('header__top-button_opacity');
+                headerTopBtn.classList.add('header__top-button_visible');
+            } else {
+                headerTopBtn.classList.remove('header__top-button_opacity');
+                setTimeout(() => headerTopBtn.classList.remove('header__top-button_visible'), 100);
+            }
+        });
+    }
+
+
     // Mmenu
     new Mmenu( "#mmenu", {
         // options

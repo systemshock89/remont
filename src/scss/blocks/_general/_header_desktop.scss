@@ -15,7 +15,10 @@
 
   display: grid;
   grid-template-columns: repeat(3, auto);
-  gap: 15px;
+  @media only screen and (max-width: 991px) {
+    grid-template-columns: 1fr auto;
+  }
+  gap: 5px 15px;
   align-items: center;
   justify-content: space-between;
 }
@@ -23,20 +26,39 @@
 .header__top-text{
   font-size: 14px;
   color: var(--text-color-dark);
+  @media only screen and (max-width: 991px) {
+    padding-top: 5px;
+  }
 }
 
 .header__top-button{
+  @media only screen and (max-width: 991px) {
+    margin-top: 5px;
+  }
   min-height: 20px;
   padding-top: 3px;
   padding-bottom: 3px;
   font-size: 14px;
   box-shadow: none;
+  opacity: 0;
+  visibility: hidden;
   &:active {
     box-shadow: none;
   }
 }
 
+.header__top-button_opacity{
+  opacity: 1;
+}
+
+.header__top-button_visible{
+  visibility: visible;
+}
+
 .header__nav{
+  @media only screen and (max-width: 991px) {
+    grid-column: 1 / -1;
+  }
   ul {
     @extend %list-unstyled;
 
@@ -45,6 +67,9 @@
       display: flex;
       align-items: center;
       flex-wrap: wrap;
+      @media only screen and (max-width: 991px) {
+        justify-content: space-between;
+      }
       > li {
         position: relative;
         //z-index: 4;

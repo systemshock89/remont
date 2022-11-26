@@ -76,34 +76,23 @@
 
     <div class="header__mobile">
 
-        <div class="header__mobile-buttons">
-            <a class="mburger mburger--squeeze" href="#mmenu">
-                <b></b>
-                <b></b>
-                <b></b>
-            </a>
-        </div>
-
-        <a href="/" class="header__mobile-logo">
-            <img src="img/logo2.webp" width="304" height="30" class="img-fluid" alt="">
-            <!--<div class="header__mobile-logo-text">Название фирмы <br> длинное название</div>-->
+        <a class="mburger mburger--squeeze" href="#mmenu">
+            <b></b>
+            <b></b>
+            <b></b>
         </a>
 
-        <div class="header__mobile-buttons">
-            <a class='fa fa-lg fa-search' href='#' data-button-name="search"></a>
-            <a class='fas fa-lg fa-shopping-basket cart' href='/cart/'>
-                <span class="count">99</span>
-            </a>
-            <a  href="tel:+74951234567" onclick="yaC.reachGoal('ZVONOK');" class="fa fa-lg fa-phone fa-flip-horizontal"></a>
-        </div>
+        <a class="header__mobile-logo" href="/">
+            <img src="img/logo.webp" width="44" height="35" class="header__mobile-logo-img img-fluid" alt="">
+            <div class="header__mobile-logo-title">Основа ремонта</div>
+            <div class="header__mobile-logo-text">Механизированные отделочные работы</div>
+        </a>
 
-        <div class="header__mobile-button-container" data-button-name="search">
-            <div class="search-container header__mobile-search-container">
-                <form class="nc_search" action="/search/" method="GET">
-                    <input type="search" placeholder="Поиск по сайту" name="search_query">
-                    <input class="submit" type="submit" value="&#xf002;" title='Найти'>
-                </form>
-            </div>
+        <a data-fancybox="modal-form" data-type="ajax" data-src="forms/modal_form.html" href="javascript:;" class="button header__mobile-button">Бесплатный замер <svg width="12" height="12"><use xlink:href="img/sprite.svg#button-ico1"></use></svg></a>
+
+        <div class="header__mobile-buttons socials2 socials2_header-mobile">
+            <a class='socials2-item socials2-item_whats' href='#' onclick="ym(yaC, 'reachGoal', 'WHATSAPP'); return true;"></a>
+            <a class='socials2-item socials2-item_tg' href='#' onclick="ym(yaC, 'reachGoal', 'VIBER'); return true;"></a>
         </div>
 
         <div class="mmenu-html-blocks hidden">

@@ -28,9 +28,6 @@ a,
 input[type='button']{
   transition: background 0.1s ease-in-out, border 0.1s ease-in-out, box-shadow 0.1s ease-in-out, opacity 0.1s ease-in-out, color 0.1s ease-in-out;
 }
-a.phone{
-  white-space: nowrap;
-}
 
 %button-base {
   display: inline-flex;
@@ -145,7 +142,8 @@ blockquote{
   display: none !important;
 }
 
-.nowrap{
+.nowrap,
+a.phone{
   white-space: nowrap;
 }
 

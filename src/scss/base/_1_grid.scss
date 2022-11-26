@@ -1,5 +1,7 @@
 html {
-  font-size: 16px;
+  @include media((
+          font-size: (all: 16px, sm: 14px),
+  ));
 }
 
 // Вариант, когда у html и body height: 100% не подходит из-за того,
