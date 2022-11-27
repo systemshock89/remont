@@ -186,62 +186,6 @@ body {
   height: 100%;
 }
 
-/* здесь будут стили, чтобы не использовать bootstrap */
-//.container{
-//  width: 100%;
-//  padding-right: 15px;
-//  padding-left: 15px;
-//  margin-right: auto;
-//  margin-left: auto;
-//  @media (min-width: 576px) {
-//    max-width:540px;
-//  }
-//  @media (min-width: 768px) {
-//    max-width:720px;
-//  }
-//  @media (min-width: 992px) {
-//    max-width:960px;
-//  }
-//  @media (min-width: 1360px) {
-//    max-width:1320px;
-//  }
-//
-//  // если container вложен в container, то убираем padding
-//  .page__main-column &,
-//  .aside &,
-//  .container:not(.container-wrapper) &{
-//    padding-left: 0;
-//    padding-right: 0;
-//  }
-//}
-//
-//.grid{
-//  display: grid;
-//
-//
-//  @include media((
-//          gap: (all: 30px, sm: 15px),
-//  ));
-//  justify-content: center; // dont work
-//  // grid-template-columns: repeat(auto-fit, minmax(100%, 200px));
-//
-//  grid-template-columns: repeat(var(--rows-xl, 4), 1fr);
-//  @media only screen and (max-width: 1359px) {
-//    grid-template-columns: repeat(var(--rows-lg, 4), 1fr);
-//  }
-//  @media only screen and (max-width: 991px) {
-//    grid-template-columns: repeat(var(--rows-md, 3), 1fr);
-//  }
-//  @media only screen and (max-width: 767px) {
-//    grid-template-columns: repeat(var(--rows-sm, 2), 1fr);
-//  }
-//  @media only screen and (max-width: 575px) {
-//    grid-template-columns: repeat(var(--rows-xs, 2), 1fr);
-//  }
-//}
-/* /здесь будут стили, чтобы не использовать bootstrap */
-
-
 @media only screen and (max-width: 575px) {
   .row{
     margin-left: -7.5px;

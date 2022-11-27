@@ -1,14 +1,21 @@
-.catalog-advantage-variant1 {
+.catalog-advantage-variant10 {
   .item {
     height: 100%;
+    .img-wrapper{
+      background: url('../img/elef.svg');
+      width: 116px;
+      height: 70px;
+    }
     .img-container {
-      display: flex;
-      margin-left: auto;
-      margin-right: auto;
+      position: absolute;
+      top: 33px;
+      left: 101px;
 
-      max-width: var(--img-width, 410px);
-      max-height: var(--img-height, 280px);
-      aspect-ratio: var(--aspect-ratio, 410/280);
+      display: flex;
+
+      max-width: var(--img-width, 56px);
+      max-height: var(--img-height, 50px);
+      aspect-ratio: var(--aspect-ratio, 56/50);
       width:100%; // fix max-width bug if parent display:flex
 
       img{
@@ -23,15 +30,19 @@
     }
     .text-container{
       line-height: 1.2;
-      margin-top: 20px;
       .title {
-        font-size: betterClamp(14, 18);
+        font-size: betterClamp(18, 14);
         font-weight: bold;
+        line-height: 1.1;
+        color: var(--text-color-dark);
 
         text-overflow: ellipsis;
         overflow: hidden;
+        margin-top: 22px;
         + .text{
-          margin-top: 6px;
+          @include media((
+                  margin-top: (xs: 5px)
+          ));
         }
       }
       a.title{
@@ -39,9 +50,12 @@
         text-decoration: none;
       }
       .text {
-        font-size: betterClamp(14, 16);
+        font-size: 14px;
         text-overflow: ellipsis;
         overflow: hidden;
+        @include media((
+                margin-top: (all: 10px, xs: 7px)
+        ));
       }
     }
   }

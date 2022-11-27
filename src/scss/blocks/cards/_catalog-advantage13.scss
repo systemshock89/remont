@@ -1,0 +1,73 @@
+.catalog-advantage-variant13 {
+  .item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .img-wrapper{
+      padding: 30px;
+      padding-bottom: 0;
+      background-color: var(--accent-color);
+    }
+    .img-container {
+      position: relative;
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+
+      max-width: var(--img-width, 350px);
+      max-height: var(--img-height, 130px);
+      aspect-ratio: var(--aspect-ratio, 350/130);
+      width:100%; // fix max-width bug if parent display:flex
+      img{
+        margin: auto;
+
+        // чтобы вписать в данное соотношение сторон картинку с другим соотношением сторон без искажений
+        width: auto;
+        max-height: 100%;        }
+      .no-img{
+        font-size: 4rem;
+      }
+    }
+    .text-container{
+      margin-top: -30px;
+      background-color: var(--bg);
+      padding: 30px;
+      padding-top: 52px;
+      flex-grow: 1;
+      aspect-ratio: 410 / 260;
+      .title {
+        line-height: 110%;
+        font-weight: 700;
+        color: var(--text-color-dark);
+        font-size: betterClamp(16, 25);
+
+        text-overflow: ellipsis;
+        overflow: hidden;
+        + .text{
+          margin-top: 13px;
+        }
+      }
+
+      .text {
+        font-size: betterClamp(14, 16);
+        line-height: 140%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+  }
+  a.item{
+    text-decoration: none;
+    &:hover{
+
+    }
+  }
+  .gap-30{
+    @include media((
+            gap: (all: 40px 0, lg: 30px 0),
+    ));
+  }
+  .button-container .button{
+    width: 410px;
+  }
+}

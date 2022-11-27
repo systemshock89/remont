@@ -1,0 +1,60 @@
+.catalog-advantage-variant12 {
+  .item{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    padding: 30px 50% 30px 30px;
+    font-weight: 700;
+    font-size: betterClamp(18, 25);
+    line-height: 120%;
+    font-family: "Montserrat-my", 'Montserrat-my Fallback';
+    text-decoration: none;
+    color: var(--accent-color);
+
+    aspect-ratio: 630 / 150;
+    background-color: #F5F5F7;
+    z-index: 0;
+
+    .img-container-bg{
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 65%;
+      height: 100%;
+      z-index: -1;
+
+      background-repeat: no-repeat;
+      background-position: right center;
+      background-size: cover;
+      transition: width 0.1s ease-in-out;
+    }
+
+    position: relative;
+    &:before{
+      content: '';
+      width: 50px;
+      height: 50px;
+      background-color: var(--text-color);
+      background-image: url('../img/sprite.svg#arr');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 17px;
+      transform: scaleX(-1);
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      transition: background-color 0.1s ease-in-out;
+    }
+    &:hover{
+      color: var(--text-color-dark);
+      .img-container-bg{
+        width: 100%;
+      }
+      &:before{
+        background-color: var(--accent-color);
+      }
+    }
+  }
+}

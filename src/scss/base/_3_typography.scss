@@ -4,9 +4,8 @@
   font-weight: 700;
   line-height: 1.2;
   color: var(--text-color-dark);
-  text-transform: uppercase;
   @include media((
-          margin-bottom: (all:20px, sm: 1rem)
+          margin-bottom: (all:30px, lg: 20px, sm: 1rem)
   ));
   //margin-bottom: .5rem;
 
@@ -20,6 +19,7 @@
 h1, .h1 {
   @extend %h-base;
   font-size: betterClamp(26, 45);
+  text-transform: uppercase;
   //@include media((
   //        font-size: (all: 36px, lg: 28px, md: 24px, sm: 20px, xs: 18px)
   //));
