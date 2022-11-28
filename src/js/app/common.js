@@ -257,10 +257,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
 
 
-    /* Swiper slider */
+    /* index-slider-swiper */
     try {
-        const swiper = new Swiper('.swiper', {
-            loop: document.querySelectorAll('.swiper-slide').length > 1 ? true : false,
+        const sliderClassSelector = '.index-slider-swiper';
+        const swiper = new Swiper(sliderClassSelector + ' .swiper', {
+            loop: document.querySelectorAll(sliderClassSelector + ' .swiper-slide').length > 1 ? true : false,
             preloadImages: false,
             lazy: true,
             autoplay: {
@@ -268,18 +269,64 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 pauseOnMouseEnter: true,
             },
             pagination: {
-                el: '.swiper-pagination',
+                el: sliderClassSelector + ' .swiper-pagination',
                 clickable: true
             },
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: sliderClassSelector + ' .swiper-button-next',
+                prevEl: sliderClassSelector + ' .swiper-button-prev',
             },
         });
     } catch (err) {
         console.log(err);
     }
-    /* /Swiper slider */
+    /* /index-slider-swiper */
+
+
+    /* carousel-slider-swiper */
+    try {
+        const sliderClassSelector = '.carousel-slider-swiper';
+        const swiper = new Swiper(sliderClassSelector + ' .swiper', {
+            loop: document.querySelectorAll(sliderClassSelector + ' .swiper-slide').length > 4 ? true : false,
+            slidesPerView: 1,
+            spaceBetween: 15,
+            breakpoints: {
+                426: {
+                    slidesPerView: 2,
+                    spaceBetween: 15
+                },
+                576: {
+                    slidesPerView: 2,
+                    spaceBetween: 30
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 30
+                },
+                992: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
+                },
+                1360: {
+                    slidesPerView: 4,
+                    spaceBetween: 30
+                }
+            },
+            preloadImages: false,
+            lazy: true,
+            autoplay: {
+                delay: 9000,
+                pauseOnMouseEnter: true,
+            },
+            navigation: {
+                nextEl: sliderClassSelector + ' .swiper-button-next',
+                prevEl: sliderClassSelector + ' .swiper-button-prev',
+            },
+        });
+    } catch (err) {
+        console.log(err);
+    }
+    /* /carousel-slider-swiper */
 
 
     /* Index Owl Slider */

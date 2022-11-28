@@ -1,0 +1,81 @@
+.carousel-slider-swiper{
+  .item{
+    box-sizing: border-box;
+  }
+
+  .swiper{
+    animation: smoothly-show-items 1.5s ease-in-out;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next{
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    border-radius: 100%;
+    background: #FFFFFF;
+    border: 1px solid var(--stroke);
+    transition: border 0.1s ease-in-out;
+    svg use{
+      stroke: var(--text-color-dark);
+      transition: stroke 0.1s ease-in-out;
+    }
+    &:after{
+      display: none;
+    }
+    &:hover{
+      border-color: var(--accent-color);
+      svg use{
+        stroke: var(--accent-color);
+      }
+    }
+    &:active{
+      border-color: var(--stroke);
+      svg use{
+        stroke: var(--text-color-dark);
+      }
+    }
+  }
+  .swiper-button-next{
+    transform: scale(-1, 1);
+  }
+
+  // костыль для тени у itemа в слайдере
+  // добавить как класс .item-with-shadow
+  $padding-left: 30px;
+  $padding-top: 15px;
+  $padding-bottom: 40px;
+
+  .swiper{
+    margin-top: - $padding-top;
+    width: calc(100% + $padding-left * 2);
+    padding: 0 $padding-left;
+    margin-left: - $padding-left;
+    margin-bottom: - $padding-bottom;
+    + *{
+      @include media((
+              margin-top: (all: 30px, xs: 15px),
+      ));
+    }
+  }
+  .swiper-slide{
+    padding-top: $padding-top;
+    padding-bottom: $padding-bottom;
+  }
+  .swiper-button-prev,
+  .swiper-button-next{
+    // центрируем кнопки по вертикали
+    top: calc(50% + ($padding-top - $padding-bottom)/2);
+  }
+  .swiper-button-prev{
+    @include media((
+            left: (all: $padding-left - 20px, xs: 10px + $padding-left),
+    ));
+  }
+  .swiper-button-next{
+    @include media((
+            right: (all: $padding-left - 20px, xs: 10px + $padding-left),
+    ));
+  }
+  // /костыль для тени у itemа в слайдере
+}

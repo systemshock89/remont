@@ -49,6 +49,7 @@
     }
     &:hover{
       color: var(--text-color-dark);
+      box-shadow: var(--box-shadow);
       .img-container-bg{
         width: 100%;
       }

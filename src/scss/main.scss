@@ -51,6 +51,7 @@
 
 // Sliders Swiper
 @import "blocks/sliders-swiper/index-slider";
+@import "blocks/sliders-swiper/carousel-slider";
 
 // Sliders Owl-carousel 2
 @import "blocks/sliders-owl-carousel/slider-mixins";
@@ -65,7 +66,7 @@
 
 // Блоки: catalog
 //@import "blocks/catalog/list-mixins";
-//@import "blocks/catalog/list_template1";
+@import "blocks/catalog/list_template1";
 //@import "blocks/catalog/list_template2";
 //@import "blocks/catalog/list_template3";
 //@import "blocks/catalog/inner";

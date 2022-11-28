@@ -21,7 +21,7 @@
   ));
   color: rgba(0,0,0,.4);
   background: #fff;
-  box-shadow: 0px 3px 10px rgba(127, 128, 130, 0.1), 0px 15px 25px rgba(127, 128, 130, 0.15);
+  box-shadow: var(--box-shadow);
   padding-right: 5px;
 }
 
@@ -97,7 +97,11 @@
   min-height: 30px;
   margin-bottom: 5px;
   box-shadow: none;
-  margin-left: 55px;
+  width: 214px;
+  @media only screen and (min-width: 375px) {
+    margin-left: 55px;
+    width: 200px;
+  }
   &:active {
     box-shadow: none;
   }

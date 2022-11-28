@@ -169,7 +169,7 @@
       width: max-content;
 
       background-color: var(--accent-color);
-      box-shadow: 0px 3px 10px rgba(239, 127, 26, 0.2), 0px 15px 25px rgba(239, 127, 26, 0.25);
+      box-shadow: var(--box-shadow-btn);
       > li {
         position: relative;
         > .item {
@@ -204,7 +204,7 @@
         width: max-content;
 
         background-color: var(--accent-color);
-        box-shadow: 0px 3px 10px rgba(239, 127, 26, 0.2), 0px 15px 25px rgba(239, 127, 26, 0.25);
+        box-shadow: var(--box-shadow-btn);
         > li {
           position: relative;
           > .item {

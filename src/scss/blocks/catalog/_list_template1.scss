@@ -1,132 +1,301 @@
 .catalog-products {
   .item {
-    height: 100%;
-    border: 1px solid #eaebec;
-    background: #fff;
-    @include media((
-            padding: (all: 15px, lg: 10px),
-    ));
-
     display: flex;
     flex-direction: column;
-    .item-bottom,
-    .item-bottom2{
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    height: 100%;
+    transition: box-shadow 0.1s ease-in-out;
+    @include media((
+            max-width: (425: 300px),
+    ));
+    margin-left: auto;
+    margin-right: auto;
+    .img-wrapper{
+      @include media((
+              padding: (all: 30px 30px 0 30px, sm: 15px 15px 0 15px, xs: 10px 10px 0 10px),
+      ));
+      background-color: var(--accent-color);
+      position: relative;
+      &:before{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 52%;
+        background-color: var(--bg);
+      }
     }
-
-    /*
-    div img-container-wrap нужен чтобы длинная картинка вписывалась в заданное соотношение сторон
-    Она не вписывается, т.к. у item свойство display: flex;
-    Свойствами решить эту проблему пока не получилось.
-    https://disk.yandex.ru/i/oSL4FwxHnQStYw
-     */
-
     .img-container {
+
+      position: relative;
       display: flex;
       margin-left: auto;
       margin-right: auto;
 
-      max-width: var(--img-width, 300px);
-      max-height: var(--img-height, 200px);
-      aspect-ratio: var(--aspect-ratio, 300/200);
+      max-width: var(--img-width, 240px);
+      max-height: var(--img-height, 240px);
+      aspect-ratio: var(--aspect-ratio, 240/240);
       width:100%; // fix max-width bug if parent display:flex
-
       img{
         margin: auto;
 
         // чтобы вписать в данное соотношение сторон картинку с другим соотношением сторон без искажений
         width: auto;
-        max-height: 100%;
+        max-height: 100%;        }
+      .no-img{
+        font-size: 4rem;
       }
 
-      text-decoration: none;
-      &:hover {
-        opacity: 0.8;
-      }
-
-      position: relative;
-      .not-available{
-        @extend %not-available;
-      }
-      .labels-container {
-        @extend %labels-container;
-      }
-      .dopimages {
-        @extend %dopimages;
-      }
-    }
-    .name {
-      @include media((
-              margin-top: (all:15px, xs: 10px)
-      ));
-      color: var(--text-color);
-      text-decoration: none;
-      line-height: 1.2;
-      display: inline-block;
-      text-overflow: ellipsis;
       overflow: hidden;
-      &:hover {
-        text-decoration: underline;
+      img,
+      .no-img{
+        transition: all 0.2s linear;
       }
     }
-    @extend %price-container;
-    .price-container {
-      @include media((
-              margin-top: (all:15px, xs: 10px)
-      ));
-      .old-price{
-        @include media((
-                display: (xs: none)
-        ));
-      }
-      &.no-skidka{
-        @include media((
-                padding-bottom: (all: 23px, xs: 0)
-        ));
+    a.img-container:hover{
+      img,
+      .no-img{
+        transform: scale(1.1, 1.1);
       }
     }
-    .price-container-block2{
-      @include media((
-              display: (xs: none)
-      ));
-    }
-    .catalog-products-row {
-      @include media((
-              margin-top: (all:15px, xs: 10px)
-      ));
-    }
-    .tovars-counter {
-      @include tovars-counter($height: 30px);
-    }
-    .catalog-button-wrapper{
-      text-align: center;
-      margin-top: 5px;
-    }
-    .button {
-      font-size: 14px;
-      min-width: inherit;
-      min-height: 30px;
-    }
+    .text-container{
+      display: grid;
+      //grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr minmax(90px, 130px);
+      grid-template-rows: 1fr auto;
+      gap: 13px 10px;
+      flex-grow: 1;
 
-    .catalog-item-bottom {
-      margin-top: 5px;
       @include media((
-              display: (xs: none)
+              padding: (all: 20px 30px 20px 30px, sm: 10px 15px 10px 15px, xs: 10px 10px 10px 10px),
       ));
-      .catalog-item-reviews {
-        text-decoration: none;
-        font-size: 12px;
-        &:hover {
-          text-decoration: underline;
+      background-color: var(--bg);
+      .text-container2{
+        grid-column: 1 / -1;
+      }
+      .title-wrapper{
+        text-overflow: ellipsis;
+        overflow: hidden;
+        + .text{
+          @include media((
+                  margin-top: (all: 7px, xs: 5px),
+          ));
         }
       }
-      .catalog-item-compare {
-        @extend %tovar-compare;
+      .title {
+        line-height: 110%;
+        font-weight: 700;
+        font-size: betterClamp(14, 18);
+        color: var(--accent-color);
+        transition: color 0.1s ease-in-out;
+      }
+      a.title{
+        display: inline-block;
+        text-decoration: none;
+        &:hover{
+          color: var(--text-color-dark);
+        }
+      }
+
+      .text {
+        font-size: betterClamp(14, 16);
+        line-height: 140%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      .price,
+      .button2{
+        align-self: center;
+      }
+      .price{
+        font-weight: 700;
+        font-size: betterClamp(14, 18);
+        color: var(--text-color-dark);
+        white-space: nowrap;
+        //text-overflow: ellipsis;
+        //overflow: hidden;
+      }
+      .button2{
+        width: 130px;
+        min-height: 40px;
+        grid-column: 2;
       }
     }
+    &:hover{
+      box-shadow: var(--box-shadow);
+      .img-container{
+        img,
+        .no-img{
+          transform: scale(1.1, 1.1);
+        }
+      }
+      .title {
+        color: var(--text-color-dark);
+      }
+    }
+  }
 
+  .text-bottom-grid{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 15px 30px;
+    align-items: center;
+    @media only screen and (max-width: 767px) {
+      margin-top: 0;
+      grid-template-columns: 1fr;
+      gap: 10px 30px;
+      justify-items: center;
+    }
+    .text-elements{
+      @media only screen and (max-width: 767px) {
+        text-align: center;
+      }
+      p{
+        font-family: "Montserrat-my", 'Montserrat-my Fallback';
+        font-weight: 300;
+        font-size: betterClamp(16, 35);
+        line-height: 110%;
+        color: var(--text-color-dark);
+      }
+    }
+    .button{
+      @include media((
+              width: (all: 300px, lg: 283px, md: 330px, sm: 200px),
+      ));
+    }
   }
 }
+
+//.catalog-products {
+//  .item {
+//    height: 100%;
+//    border: 1px solid #eaebec;
+//    background: #fff;
+//    @include media((
+//            padding: (all: 15px, lg: 10px),
+//    ));
+//
+//    display: flex;
+//    flex-direction: column;
+//    .item-bottom,
+//    .item-bottom2{
+//      flex-grow: 1;
+//      display: flex;
+//      flex-direction: column;
+//      justify-content: space-between;
+//    }
+//
+//    /*
+//    div img-container-wrap нужен чтобы длинная картинка вписывалась в заданное соотношение сторон
+//    Она не вписывается, т.к. у item свойство display: flex;
+//    Свойствами решить эту проблему пока не получилось.
+//    https://disk.yandex.ru/i/oSL4FwxHnQStYw
+//     */
+//
+//    .img-container {
+//      display: flex;
+//      margin-left: auto;
+//      margin-right: auto;
+//
+//      max-width: var(--img-width, 300px);
+//      max-height: var(--img-height, 200px);
+//      aspect-ratio: var(--aspect-ratio, 300/200);
+//      width:100%; // fix max-width bug if parent display:flex
+//
+//      img{
+//        margin: auto;
+//
+//        // чтобы вписать в данное соотношение сторон картинку с другим соотношением сторон без искажений
+//        width: auto;
+//        max-height: 100%;
+//      }
+//
+//      text-decoration: none;
+//      &:hover {
+//        opacity: 0.8;
+//      }
+//
+//      position: relative;
+//      .not-available{
+//        @extend %not-available;
+//      }
+//      .labels-container {
+//        @extend %labels-container;
+//      }
+//      .dopimages {
+//        @extend %dopimages;
+//      }
+//    }
+//    .name {
+//      @include media((
+//              margin-top: (all:15px, xs: 10px)
+//      ));
+//      color: var(--text-color);
+//      text-decoration: none;
+//      line-height: 1.2;
+//      display: inline-block;
+//      text-overflow: ellipsis;
+//      overflow: hidden;
+//      &:hover {
+//        text-decoration: underline;
+//      }
+//    }
+//    @extend %price-container;
+//    .price-container {
+//      @include media((
+//              margin-top: (all:15px, xs: 10px)
+//      ));
+//      .old-price{
+//        @include media((
+//                display: (xs: none)
+//        ));
+//      }
+//      &.no-skidka{
+//        @include media((
+//                padding-bottom: (all: 23px, xs: 0)
+//        ));
+//      }
+//    }
+//    .price-container-block2{
+//      @include media((
+//              display: (xs: none)
+//      ));
+//    }
+//    .catalog-products-row {
+//      @include media((
+//              margin-top: (all:15px, xs: 10px)
+//      ));
+//    }
+//    .tovars-counter {
+//      @include tovars-counter($height: 30px);
+//    }
+//    .catalog-button-wrapper{
+//      text-align: center;
+//      margin-top: 5px;
+//    }
+//    .button {
+//      font-size: 14px;
+//      min-width: inherit;
+//      min-height: 30px;
+//    }
+//
+//    .catalog-item-bottom {
+//      margin-top: 5px;
+//      @include media((
+//              display: (xs: none)
+//      ));
+//      .catalog-item-reviews {
+//        text-decoration: none;
+//        font-size: 12px;
+//        &:hover {
+//          text-decoration: underline;
+//        }
+//      }
+//      .catalog-item-compare {
+//        @extend %tovar-compare;
+//      }
+//    }
+//
+//  }
+//}

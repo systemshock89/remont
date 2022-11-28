@@ -3,10 +3,22 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    transition: box-shadow 0.1s ease-in-out;
     .img-wrapper{
-      padding: 30px;
-      padding-bottom: 0;
+      @include media((
+              padding: (all: 30px 30px 0 30px, sm: 15px 15px 0 15px, xs: 10px 10px 0 10px),
+      ));
       background-color: var(--accent-color);
+      position: relative;
+      &:before{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 19%;
+        background-color: var(--bg);
+      }
     }
     .img-container {
       position: relative;
@@ -27,24 +39,33 @@
       .no-img{
         font-size: 4rem;
       }
+
+      overflow: hidden;
+      img,
+      .no-img{
+        transition: all 0.2s linear;
+      }
     }
     .text-container{
-      margin-top: -30px;
+      @include media((
+              padding: (all: 20px 30px 30px 30px, sm: 10px 15px 15px 15px, xs: 10px 10px 10px 10px),
+      ));
       background-color: var(--bg);
-      padding: 30px;
-      padding-top: 52px;
       flex-grow: 1;
-      aspect-ratio: 410 / 260;
+      aspect-ratio: 410 / 230;
       .title {
         line-height: 110%;
         font-weight: 700;
         color: var(--text-color-dark);
         font-size: betterClamp(16, 25);
+        transition: color 0.1s ease-in-out;
 
         text-overflow: ellipsis;
         overflow: hidden;
         + .text{
-          margin-top: 13px;
+          @include media((
+                  margin-top: (all: 13px, sm: 10px, xs: 5px),
+          ));
         }
       }
 
@@ -55,19 +76,30 @@
         overflow: hidden;
       }
     }
+    &:hover{
+      box-shadow: var(--box-shadow);
+      .img-container  {
+        img,
+        .no-img{
+          transform: scale(1.1, 1.1);
+        }
+      }
+      .title{
+        color: var(--accent-color);
+      }
+    }
   }
   a.item{
     text-decoration: none;
-    &:hover{
-
-    }
   }
   .gap-30{
     @include media((
-            gap: (all: 40px 0, lg: 30px 0),
+            gap: (all: 40px 0, lg: 30px 0, xs: 15px 0),
     ));
   }
   .button-container .button{
-    width: 410px;
+    @include media((
+            width: (all: 410px, lg: 290px, md: max-content),
+    ));
   }
 }

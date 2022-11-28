@@ -3,9 +3,10 @@
 }
 
 ::selection {
-  //color: white;
-  color: var(--text-color-dark);
-  background: var(--accent-color-hover);
+  color: white;
+  background-color: var(--text-color-dark);
+  //color: var(--text-color-dark);
+  //background: var(--accent-color-hover);
 }
 
 :focus{
@@ -67,7 +68,7 @@ input[type='button']{
   background-color: var(--accent-color);
   color: #fff;
   border: none;
-  box-shadow: 0px 3px 10px rgba(239, 127, 26, 0.2), 0px 15px 25px rgba(239, 127, 26, 0.25);
+  box-shadow: var(--box-shadow-btn);
   svg use{
     fill: #fff;
     transition: fill 0.1s ease-in-out;
@@ -83,7 +84,7 @@ input[type='button']{
   &:active {
     background-color: var(--accent-color);
     color: #fff;
-    box-shadow: 0px 3px 10px rgba(239, 127, 26, 0.2), 0px 15px 25px rgba(239, 127, 26, 0.25);
+    box-shadow: var(--box-shadow-btn);
     svg use{
       fill: #fff;
     }
@@ -92,18 +93,22 @@ input[type='button']{
 
 .button2 {
   @extend %button-base;
-  background-color: transparent;
-  color: var(--accent-color);
-  border: 1px solid var(--accent-color);
-  border-radius: 4px;
-  text-transform: uppercase;
+  color: #fff;
+  background-color: var(--text-color);
+
   &:hover {
-    color: #fff;
-    background-color: var(--accent-color);
+    color: var(--accent-color);
+    background-color: var(--text-color-dark);
+    svg use{
+      fill: var(--accent-color);
+    }
   }
   &:active {
-    color: var(--accent-color);
-    background-color: transparent;
+    color: #fff;
+    background-color: var(--text-color);
+    svg use{
+      color: #fff;
+    }
   }
 }
 

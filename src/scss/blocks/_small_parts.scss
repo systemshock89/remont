@@ -311,6 +311,14 @@ body.fancybox-active {
   position: absolute;
 }
 
+.swiper-lazy-preloader{
+  @extend %spinner;
+  top: 50%;
+  left: 50%;
+  margin-top: -25px;
+  margin-left: -25px;
+}
+
 // schema-snippet
 .schema-snippet{
   display: none;
