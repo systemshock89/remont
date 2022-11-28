@@ -33,12 +33,23 @@
   font-family: 'Lato-my Fallback';
   font-style: normal;
   font-weight: 700;
-  src: local('Arial');
-  ascent-override: 98.05%;
-  descent-override: 21.16%;
+  src: local('Arial Bold');
+  ascent-override: 106.08%;
+  descent-override: 22.89%;
   line-gap-override: 0.00%;
-  size-adjust: 100.66%;
+  size-adjust: 93.04%;
 }
+
+//@font-face {
+//  font-family: 'Lato-my Fallback';
+//  font-style: normal;
+//  font-weight: 700;
+//  src: local('Arial');
+//  ascent-override: 98.05%;
+//  descent-override: 21.16%;
+//  line-gap-override: 0.00%;
+//  size-adjust: 100.66%;
+//}
 
 // Montserrat Fallback не очень для случаев со всеми заглавными буквами
 @font-face {
@@ -51,7 +62,6 @@
   line-gap-override: 0.00%;
   size-adjust: 112.39%;
 }
-
 
 @font-face {
   font-family: 'Montserrat-my Fallback';
@@ -79,12 +89,23 @@
   font-family: 'Montserrat-my Fallback';
   font-style: normal;
   font-weight: 700;
-  src: local('Arial');
-  ascent-override: 80.59%;
-  descent-override: 20.90%;
+  src: local('Arial Bold');
+  ascent-override: 87.19%;
+  descent-override: 22.61%;
   line-gap-override: 0.00%;
-  size-adjust: 120.11%;
+  size-adjust: 111.02%;
 }
+
+//@font-face {
+//  font-family: 'Montserrat-my Fallback';
+//  font-style: normal;
+//  font-weight: 700;
+//  src: local('Arial');
+//  ascent-override: 80.59%;
+//  descent-override: 20.90%;
+//  line-gap-override: 0.00%;
+//  size-adjust: 120.11%;
+//}
 
 
 // font-weight helper:

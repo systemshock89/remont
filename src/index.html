@@ -20,7 +20,7 @@
     <!--content-->
     <main class="main page-content-no-margin-top">
 
-        <div class="index-slider-swiper block-margin-bottom">
+        <div class="slider block-margin-bottom">
             <div class="swiper">
                 <div class="swiper-wrapper">
 
@@ -478,7 +478,7 @@
             </div>
         </div>
 
-        <div class="carousel-slider-swiper catalog-products block-margin-bottom">
+        <div class="catalog-products slider-carousel slider-carousel_products block-margin-bottom">
             <div class="container">
 
                 <div class="title-wrapper">
@@ -827,40 +827,102 @@
             </div>
         </div>
 
-        <div class="catalog-advantage-variant1 block-margin-bottom">
+        <div class="reviews slider-carousel slider-carousel_reviews block-margin-bottom">
             <div class="container">
 
                 <div class="title-wrapper">
                     <div class="h2">Нас рекомендуют</div>
                 </div>
 
-                <div class="row gap-30 mb-30 justify-content-center">
+                <div class="swiper mb-30">
+                    <div class="swiper-wrapper">
 
-                    <div class="col-xl-3 col-lg-4 col-6">
-                        <div class="item">
-                            <img data-src="img/rev.webp" width="240" height="410" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' viewBox='0 0 240 410'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
+                        <!--  col-xl-3 col-md-4 col-6-->
+                        <div class="swiper-slide" itemscope itemtype="https://schema.org/ImageObject">
+                            <a href="img/rev.webp"
+                               class="item"
+                               data-thumb="img/rev.webp"
+                               data-fancybox="gallery-reviews">
+
+                                <div class="img-container">
+                                    <img data-src="img/rev.webp" width="240" height="410" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' viewBox='0 0 240 410'%3E%3C/svg%3E" class="img-fluid swiper-lazy" alt="">
+                                    <link itemprop="contentUrl" href="путь_к_картинке">
+                                    <meta itemprop="name" content="rev">
+                                    <div class="swiper-lazy-preloader"></div>
+                                </div>
+                            </a>
                         </div>
+
+                        <div class="swiper-slide" itemscope itemtype="https://schema.org/ImageObject">
+                            <a href="img/rev.webp"
+                               class="item"
+                               data-thumb="img/rev.webp"
+                               data-fancybox="gallery-reviews">
+
+                                <div class="img-container">
+                                    <img data-src="img/rev.webp" width="240" height="410" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' viewBox='0 0 240 410'%3E%3C/svg%3E" class="img-fluid swiper-lazy" alt="">
+                                    <link itemprop="contentUrl" href="путь_к_картинке">
+                                    <meta itemprop="name" content="rev">
+                                    <div class="swiper-lazy-preloader"></div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="swiper-slide" itemscope itemtype="https://schema.org/ImageObject">
+                            <a href="img/rev.webp"
+                               class="item"
+                               data-thumb="img/rev.webp"
+                               data-fancybox="gallery-reviews">
+
+                                <div class="img-container">
+                                    <img data-src="img/rev.webp" width="240" height="410" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' viewBox='0 0 240 410'%3E%3C/svg%3E" class="img-fluid swiper-lazy" alt="">
+                                    <link itemprop="contentUrl" href="путь_к_картинке">
+                                    <meta itemprop="name" content="rev">
+                                    <div class="swiper-lazy-preloader"></div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="swiper-slide" itemscope itemtype="https://schema.org/ImageObject">
+                            <a href="img/rev.webp"
+                               class="item"
+                               data-thumb="img/rev.webp"
+                               data-fancybox="gallery-reviews">
+
+                                <div class="img-container">
+                                    <img data-src="img/rev.webp" width="240" height="410" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' viewBox='0 0 240 410'%3E%3C/svg%3E" class="img-fluid swiper-lazy" alt="">
+                                    <link itemprop="contentUrl" href="путь_к_картинке">
+                                    <meta itemprop="name" content="rev">
+                                    <div class="swiper-lazy-preloader"></div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="swiper-slide" itemscope itemtype="https://schema.org/ImageObject">
+                            <a href="img/rev.webp"
+                               class="item"
+                               data-thumb="img/rev.webp"
+                               data-fancybox="gallery-reviews">
+
+                                <div class="img-container">
+                                    <img data-src="img/rev.webp" width="240" height="410" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' viewBox='0 0 240 410'%3E%3C/svg%3E" class="img-fluid swiper-lazy" alt="">
+                                    <link itemprop="contentUrl" href="путь_к_картинке">
+                                    <meta itemprop="name" content="rev">
+                                    <div class="swiper-lazy-preloader"></div>
+                                </div>
+                            </a>
+                        </div>
+
                     </div>
 
-                    <div class="col-xl-3 col-lg-4 col-6">
-                        <div class="item">
-                            <img data-src="img/rev.webp" width="240" height="410" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' viewBox='0 0 240 410'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
-                        </div>
+                    <div class="swiper-button-prev">
+                        <svg width="8" height="14"><use xlink:href="img/sprite.svg#slider-arr"></use></svg>
                     </div>
-
-                    <div class="col-xl-3 col-lg-4 col-6">
-                        <div class="item">
-                            <img data-src="img/rev.webp" width="240" height="410" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' viewBox='0 0 240 410'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
-                        </div>
+                    <div class="swiper-button-next">
+                        <svg width="8" height="14"><use xlink:href="img/sprite.svg#slider-arr"></use></svg>
                     </div>
-
-                    <div class="col-xl-3 col-lg-4 col-6">
-                        <div class="item">
-                            <img data-src="img/rev.webp" width="240" height="410" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' viewBox='0 0 240 410'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
-                        </div>
-                    </div>
-
                 </div>
+
             </div>
         </div>
 

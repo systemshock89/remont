@@ -257,76 +257,134 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
 
 
-    /* index-slider-swiper */
+    /* slider */
     try {
-        const sliderClassSelector = '.index-slider-swiper';
-        const swiper = new Swiper(sliderClassSelector + ' .swiper', {
-            loop: document.querySelectorAll(sliderClassSelector + ' .swiper-slide').length > 1 ? true : false,
-            preloadImages: false,
-            lazy: true,
-            autoplay: {
-                delay: 9000,
-                pauseOnMouseEnter: true,
-            },
-            pagination: {
-                el: sliderClassSelector + ' .swiper-pagination',
-                clickable: true
-            },
-            navigation: {
-                nextEl: sliderClassSelector + ' .swiper-button-next',
-                prevEl: sliderClassSelector + ' .swiper-button-prev',
-            },
+        const sliders = document.querySelectorAll('.slider');
+
+        sliders.forEach(slider => {
+            const selector = '.' + slider.classList.value.replaceAll(' ', '.');
+            const swiper = new Swiper(selector + ' .swiper', {
+                loop: slider.querySelectorAll(' .swiper-slide').length > 1 ? true : false,
+                preloadImages: false,
+                lazy: true,
+                autoplay: {
+                    delay: 9000,
+                    pauseOnMouseEnter: true,
+                },
+                pagination: {
+                    el: selector + ' .swiper-pagination',
+                    clickable: true
+                },
+                navigation: {
+                    nextEl: selector + ' .swiper-button-next',
+                    prevEl: selector + ' .swiper-button-prev',
+                },
+            });
         });
     } catch (err) {
         console.log(err);
     }
-    /* /index-slider-swiper */
+    /* /slider */
 
 
-    /* carousel-slider-swiper */
+    /* slider-carousel_products */
     try {
-        const sliderClassSelector = '.carousel-slider-swiper';
-        const swiper = new Swiper(sliderClassSelector + ' .swiper', {
-            loop: document.querySelectorAll(sliderClassSelector + ' .swiper-slide').length > 4 ? true : false,
-            slidesPerView: 1,
-            spaceBetween: 15,
-            breakpoints: {
-                426: {
-                    slidesPerView: 2,
-                    spaceBetween: 15
+        const sliders = document.querySelectorAll('.slider-carousel_products');
+
+        sliders.forEach(slider => {
+            const selector = '.' + slider.classList.value.replaceAll(' ', '.');
+            const swiper = new Swiper(selector + ' .swiper', {
+                loop: slider.querySelectorAll(' .swiper-slide').length > 4 ? true : false,
+                slidesPerView: 1,
+                spaceBetween: 15,
+                breakpoints: {
+                    426: {
+                        slidesPerView: 2,
+                        spaceBetween: 15
+                    },
+                    576: {
+                        slidesPerView: 2,
+                        spaceBetween: 30
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 30
+                    },
+                    992: {
+                        slidesPerView: 3,
+                        spaceBetween: 30
+                    },
+                    1360: {
+                        slidesPerView: 4,
+                        spaceBetween: 30
+                    }
                 },
-                576: {
-                    slidesPerView: 2,
-                    spaceBetween: 30
+                preloadImages: false,
+                lazy: true,
+                autoplay: {
+                    delay: 9000,
+                    pauseOnMouseEnter: true,
                 },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 30
+                navigation: {
+                    nextEl: selector + ' .swiper-button-next',
+                    prevEl: selector + ' .swiper-button-prev',
                 },
-                992: {
-                    slidesPerView: 3,
-                    spaceBetween: 30
-                },
-                1360: {
-                    slidesPerView: 4,
-                    spaceBetween: 30
-                }
-            },
-            preloadImages: false,
-            lazy: true,
-            autoplay: {
-                delay: 9000,
-                pauseOnMouseEnter: true,
-            },
-            navigation: {
-                nextEl: sliderClassSelector + ' .swiper-button-next',
-                prevEl: sliderClassSelector + ' .swiper-button-prev',
-            },
+            });
         });
     } catch (err) {
         console.log(err);
     }
-    /* /carousel-slider-swiper */
+    /* /slider-carousel_products */
+
+
+    /* slider-carousel_reviews */
+    try {
+        const sliders = document.querySelectorAll('.slider-carousel_reviews');
+
+        sliders.forEach(slider => {
+            const selector = '.' + slider.classList.value.replaceAll(' ', '.');
+            const swiper = new Swiper(selector + ' .swiper', {
+                rewind: true,
+                slidesPerView: 1,
+                spaceBetween: 15,
+                breakpoints: {
+                    426: {
+                        slidesPerView: 2,
+                        spaceBetween: 15
+                    },
+                    576: {
+                        slidesPerView: 2,
+                        spaceBetween: 30
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 30
+                    },
+                    992: {
+                        slidesPerView: 3,
+                        spaceBetween: 30
+                    },
+                    1360: {
+                        slidesPerView: 4,
+                        spaceBetween: 30
+                    }
+                },
+                preloadImages: false,
+                lazy: true,
+                autoplay: {
+                    delay: 9000,
+                    pauseOnMouseEnter: true,
+                },
+                navigation: {
+                    nextEl: selector + ' .swiper-button-next',
+                    prevEl: selector + ' .swiper-button-prev',
+                },
+            });
+        });
+    } catch (err) {
+        console.log(err);
+    }
+    /* /slider-carousel_reviews */
 
 
     /* Index Owl Slider */
