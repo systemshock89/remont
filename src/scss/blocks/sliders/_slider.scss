@@ -1,11 +1,13 @@
 .slider{
-  background-color: var(--stroke);
+  background: url('../img/sprite.svg#slider-elef') center left no-repeat var(--stroke);
+  background-size: auto 93%;
   .swiper-slide{
     box-sizing: border-box;
     .swiper-slide-wrap{
-      aspect-ratio: 1290 / 630;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      aspect-ratio: 1290 / 600;
+      display: flex;
+      //display: grid;
+      //grid-template-columns: 1fr auto;
       align-items: center;
       justify-content: space-between;
       @include media((
@@ -13,63 +15,81 @@
       ));
 
       padding-top: 30px;
-      @include media((
-              padding-bottom: (all:30px, md: 55px),
-      ));
+      padding-bottom: 30px;
     }
 
     .text-container{
+      @include media((
+              width: (all: 47%, lg: 80%),
+      ));
+
       display: flex;
       flex-direction: column;
       justify-content: center;
+      padding-bottom: 45px;
       @include media((
-              gap: (all: 30px, sm: 15px),
+              gap: (all: 20px, sm: 15px),
       ));
-
-      .text-container2{
-        display: flex;
-        flex-direction: column;
-        @include media((
-                gap: (all: 30px, sm: 15px),
-                width: (all: 630px, lg: 420px, md: 310px, sm: 250px, xs: auto),
-        ));
-      }
       .title{
-        font-size: betterClamp(18, 64);
+        font-family: "Montserrat-my", 'Montserrat-my Fallback';
+        font-size: betterClamp(16, 45);
         line-height: 1.1;
-        font-weight: 500;
+        font-weight: 700;
         text-transform: uppercase;
         color: var(--text-color-dark);
+
+        text-overflow: ellipsis;
+        overflow: hidden;
       }
       .text{
-        font-weight: 300;
-        font-size: betterClamp(16, 25);
-        line-height: 1.2;
-      }
-    }
+        font-family: "Montserrat-my", 'Montserrat-my Fallback';
+        line-height: 130%;
+        font-size: betterClamp(14, 25);
+        color: var(--text-color-dark);
 
-    .img-container-wrap{
-      position: relative;
-      aspect-ratio: 630 / 530;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      .button{
+        @include media((
+                margin-top: (all: 43px, lg: 30px, md: 20px, sm: 10px),
+                width: (all: 220px, sm: 200px),
+        ));
+      }
     }
 
     .img-container {
-      width: 100%;
-      height: 100%;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
+      position: relative;
+      display: flex;
+
+      max-width: var(--img-width, 645px);
+      max-height: var(--img-height, 540px);
+      aspect-ratio: var(--aspect-ratio, 645/540);
+      width:100%; // fix max-width bug if parent display:flex
+
+      img{
+        margin: auto;
+
+        // чтобы вписать в данное соотношение сторон картинку с другим соотношением сторон без искажений
+        width: auto;
+        max-height: 100%;
+      }
     }
+  }
+  .nav-blocks-wrapper{
+    position: relative;
   }
   .nav-blocks{
     @include media((
             bottom: (all:30px, sm: 15px),
     ));
     position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
+
+    left: 15px;
+    @media only screen and (max-width: 575px) {
+      left: 0;
+      right: 0;
+    }
     display: flex;
     align-items: center;
     justify-content: center;
@@ -108,20 +128,21 @@
 
     width: 18px;
     height: 30px;
-    path{
+    svg use{
+      fill: var(--text-color);
       transition: fill 0.1s ease-in-out;
     }
     &:after{
       display: none;
     }
     &:hover{
-      path{
-        fill: var(--text-color);
+      svg use{
+        fill: var(--accent-color);
       }
     }
     &:active{
-      path{
-        fill: var(--text-color-dark);
+      svg use{
+        fill: var(--text-color);
       }
     }
   }
