@@ -216,8 +216,9 @@ h6, .h6{
   }
 
   ol{
-    padding-left: 30px;
+    padding-left: 20px;
     > li {
+      padding-left: 10px;
       &::marker{
         color: var(--accent-color);
         font-weight: bold;

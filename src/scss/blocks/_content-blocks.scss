@@ -37,6 +37,10 @@
   }
 }
 
+.text-big{
+  font-size: betterClamp(14, 18);
+}
+
 .text-block-float{
   @extend %text-block-float;
 }

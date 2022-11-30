@@ -8,8 +8,10 @@
     }
     .img-container {
       position: absolute;
-      top: 33px;
-      left: 101px;
+      top: 25%;
+      left: 30%;
+      //top: 33px;/**/
+      //left: 101px;
 
       display: flex;
 
@@ -31,7 +33,7 @@
     .text-container{
       line-height: 1.2;
       .title {
-        font-size: betterClamp(18, 14);
+        font-size: betterClamp(14, 18);
         font-weight: bold;
         line-height: 1.1;
         color: var(--text-color-dark);

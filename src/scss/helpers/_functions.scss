@@ -1,7 +1,7 @@
 @use "sass:math";
 
 @function rem($px) {
-    @return ($px / 16) + rem;
+    @return calc($px / 16) + rem;
 }
 
 @function betterClamp($minSize, $maxSize, $minWidth: 320, $maxWidth: 1920) {

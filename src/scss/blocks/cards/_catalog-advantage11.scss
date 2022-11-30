@@ -4,6 +4,9 @@
     flex-direction: column;
     height: 100%;
     .img-container {
+      @include media((
+              padding: (xs: 0 15px),
+      ));
       display: flex;
       margin-left: auto;
       margin-right: auto;
@@ -18,9 +21,14 @@
 
         // чтобы вписать в данное соотношение сторон картинку с другим соотношением сторон без искажений
         width: auto;
-        max-height: 100%;        }
+        max-height: 100%;
+      }
       .no-img{
         font-size: 4rem;
+      }
+      img,
+      .no-img{
+        transition: all 0.2s linear;
       }
 
       position: relative;
@@ -46,10 +54,12 @@
 
       flex-grow: 1;
 
-      margin-top: -60px;
-      padding: 30px;
-      padding-top: 100px;
+      @include media((
+              padding: (all: 100px 30px 30px 30px, lg: 55px 15px 15px 15px, md: 100px 30px 30px 30px, sm: 70px 20px 20px 20px, xs: 40px 15px 20px 15px),
+              margin-top: (all: -60px, lg: -40px, md: -60px, sm: -50px, xs: -40px),
+      ));
       aspect-ratio: 300 / 200;
+      transition: box-shadow 0.1s ease-in-out;
 
       &:before{
         content: '';
@@ -73,6 +83,17 @@
         overflow: hidden;
       }
     }
+    &:hover{
+      .text-container{
+        box-shadow: var(--box-shadow);
+      }
+      .img-container {
+        img,
+        .no-img{
+          transform: scale(1.1, 1.1);
+        }
+      }
+    }
   }
   [class*="col-"]{
     counter-increment: numb;
@@ -81,12 +102,17 @@
         content: counter(numb);
         font-family: "Montserrat-my", 'Montserrat-my Fallback';
         font-weight: 700;
-        font-size: 140px;
+        //@include media((
+        //        font-size: (all: 140px, lg: 100px, md: 140px, sm: 120px, xs: 80px),
+        //));
+        font-size: betterClamp(90, 140);
         color: #FFFFFF;
         opacity: 0.2;
         line-height: 1;
 
-        margin-top: 20px;
+        @include media((
+                margin-top: (all: 20px, xs: 10px),
+        ));
         position: absolute;
         top: 50%;
         left: 50%;

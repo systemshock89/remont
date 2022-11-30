@@ -1,7 +1,8 @@
 html {
-  @include media((
-          font-size: (all: 16px, sm: 14px),
-  ));
+  //@include media((
+  //        font-size: (all: 16px, sm: 14px),
+  //));
+  font-size: 16px;
 }
 
 // Вариант, когда у html и body height: 100% не подходит из-за того,
@@ -12,6 +13,9 @@ html {
 // Но такой баг только в chrome 83, причем в режиме инкогнито его нет.
 
 body {
+  @include media((
+          font-size: (sm: rem(14)),
+  ));
   //font-family: "Lato-my", sans-serif;
   font-family: "Lato-my", 'Lato-my Fallback';
   color: var(--text-color);
