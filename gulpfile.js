@@ -60,7 +60,7 @@ let production;
 
 function styles() {
     return src(["./src/scss/**/*.scss", "!./src/scss/common.admin.scss", "!./src/scss/common.edit.scss"])
-        // .pipe(gulpif(!production, sourcemaps.init()))
+        .pipe(gulpif(!production, sourcemaps.init()))
         .pipe(sass().on('error', sass.logError))
         .pipe(gulpif(!production, postCss([
             postcssViewportHeightCorrection(),
@@ -72,7 +72,7 @@ function styles() {
             cssnano({ preset: ['default', { discardComments: { removeAll: true } }] })
         ])))
         .pipe(concat('bundle.min.css'))
-        // .pipe(gulpif(!production, sourcemaps.write("./maps/")))
+        .pipe(gulpif(!production, sourcemaps.write("./maps/")))
         .pipe(dest(dist + '/css'))
         .pipe(browserSync.stream());
 }
@@ -389,4 +389,5 @@ export let ftpCms = ftpCmsTask;
 export let ftpWiki = ftpWikiTask;
 export let build = parallel(html, styles, scripts, copyAssets, faviconsTask, sprite, images);
 export let prod = series(isProd, parallel(clearDist, clearProd), build, cms);
-export default (!proxy ? series(build, serve) : series(build, cms, serve));
+export default (!proxy ? parallel(build, serve) : parallel(build, cms, serve));
+// export default (!proxy ? series(build, serve) : series(build, cms, serve));

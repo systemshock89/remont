@@ -1,4 +1,19 @@
 /*==========  FOOTER  ==========*/
+.footer-top{
+  background-color: var(--accent-color);
+  padding-top: 11px;
+  padding-bottom: 11px;
+  line-height: 110%;
+  color: var(--text-color-dark);
+  font-weight: 300;
+  font-size: betterClamp(14, 35);
+  text-align: center;
+  font-family: "Montserrat-my", 'Montserrat-my Fallback';
+  span{
+    color: #fff;
+  }
+}
+
 .footer__part1{
   &.block-bg{
     background-color: var(--text-color-dark);

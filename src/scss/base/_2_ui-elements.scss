@@ -1,5 +1,5 @@
 ::placeholder {
-  color: #999;
+  color: var(--text-color-dark);
 }
 
 ::selection {
@@ -183,17 +183,6 @@ address{
   float: none;
 }
 
-%elements-form-base {
-  padding: 6px 12px;
-  border: 1px solid #eaebec;
-  border-radius: 4px;
-  transition: border ease-in-out 0.2s, box-shadow ease-in-out 0.2s;
-  &:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 1pt #869791;
-  }
-}
-
 input[type='text'],
 input[type='file'],
 input[type='password'],
@@ -204,7 +193,29 @@ input[type='number'],
 input[type='date'],
 select,
 textarea{
-  @extend %elements-form-base;
+  padding: 6px 14px;
+  border: 1px solid var(--stroke);
+  transition: border ease-in-out 0.2s, box-shadow ease-in-out 0.2s;
+  color: var(--text-color-dark);
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 1pt #869791;
+  }
+}
+
+select{
+  background-color: #fff;
+  padding: 6px 25px 6px 14px;
+  appearance: none;
+  background-image: url('../img/sprite.svg#select-arr');
+  background-repeat: no-repeat;
+  background-position: right 9px center;
+  background-size: 11px auto;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 textarea{

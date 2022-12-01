@@ -306,27 +306,27 @@
 
                 <div class="row gap-30 mb-30 justify-content-center">
 
-                    <div class="col-sm-6">
+                    <div class="col-md-6">
                         <a href="#" class="item" >Механизированная штукатурка <div class="img-container-bg" data-bg="img/item-bg1.webp"></div></a>
                     </div>
 
-                    <div class="col-sm-6">
+                    <div class="col-md-6">
                         <a href="#" class="item img-container-bg">Механизированная стяжка <div class="img-container-bg" data-bg="img/item-bg2.webp"></div></a>
                     </div>
 
-                    <div class="col-sm-6">
+                    <div class="col-md-6">
                         <a href="#" class="item img-container-bg">Механизированная шпаклевка <div class="img-container-bg" data-bg="img/item-bg3.webp"></div></a>
                     </div>
 
-                    <div class="col-sm-6">
+                    <div class="col-md-6">
                         <a href="#" class="item img-container-bg">Возведение перегородок <div class="img-container-bg" data-bg="img/item-bg4.webp"></div></a>
                     </div>
 
-                    <div class="col-sm-6">
+                    <div class="col-md-6">
                         <a href="#" class="item img-container-bg">Демонтажные работы <div class="img-container-bg" data-bg="img/item-bg5.webp"></div></a>
                     </div>
 
-                    <div class="col-sm-6">
+                    <div class="col-md-6">
                         <a href="#" class="item img-container-bg">Рассчитать стоимость работ <div class="img-container-bg" data-bg="img/item-bg6.webp"></div></a>
                     </div>
 
@@ -450,7 +450,7 @@
 
                 <div class="row gap-30 mb-30 justify-content-center">
 
-                    <div class="col-xl-4 col-6">
+                    <div class="col-sm-4 col-6">
                         <div class="item">
                             <div class="img-container">
                                 <img data-src="img/pic1.webp" width="410" height="280" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='410' viewBox='0 0 410 280'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
@@ -462,7 +462,7 @@
                         </div>
                     </div>
 
-                    <div class="col-xl-4 col-6">
+                    <div class="col-sm-4 col-6">
                         <div class="item">
                             <div class="img-container">
                                 <img data-src="img/pic2.webp" width="410" height="280" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='410' viewBox='0 0 410 280'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
@@ -474,7 +474,7 @@
                         </div>
                     </div>
 
-                    <div class="col-xl-4 col-6">
+                    <div class="col-sm-4 col-6">
                         <div class="item">
                             <div class="img-container">
                                 <img data-src="img/pic3.webp" width="410" height="280" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='410' viewBox='0 0 410 280'%3E%3C/svg%3E" class="img-fluid lazy" alt="">
@@ -485,8 +485,7 @@
                             </div>
                         </div>
                     </div>
-
-
+                    
                 </div>
 
             </div>
@@ -654,14 +653,64 @@
             </div>
         </div>
 
-        <div class="form block-margin-bottom">
-            <div class="container">
+        <div class="form-block form-block_estimate block-padding block-bg block-bg-no-repeat block-margin-bottom" data-bg="img/form-bg.webp">
+            <div class="form-block__grid container">
 
                 <div class="title-wrapper">
-                    <div class="h1">рассчитаем стоимость работ
+                    <div class="h1">рассчитаем стоимость работ <br>
                         по вашему объекту</div>
                     <div class="sub-title">В стоимость входит все, что нужно для создания идеально ровной поверхности на вашем объекте</div>
                 </div>
+
+                <form action="" class="form">
+                    <div class="form__title-wrapper">
+                        <div class="form__title">Заполните форму</div>
+                        <div class="form__subtitle">и получите предварительную смету</div>
+                    </div>
+
+                    <div class="item-form-element">
+                        <select name="">
+                            <option value="0">Где нужно делать штукатурку?</option>
+                        </select>
+                        <div class="form-control-feedback">test test test test test test test test test</div>
+                    </div>
+
+                    <div class="item-form-element">
+                        <select name="">
+                            <option value="0">Когда нужно выполнить работы?</option>
+                        </select>
+                        <div class="form-control-feedback"></div>
+                    </div>
+
+                    <div class="item-form-element">
+                        <select name="">
+                            <option value="0">Площадь вашего объекта, м2</option>
+                        </select>
+                        <div class="form-control-feedback"></div>
+                    </div>
+
+                    <div class="item-form-element">
+                        <select name="">
+                            <option value="0">Удаленность от МКАД, км?</option>
+                        </select>
+                        <div class="form-control-feedback"></div>
+                    </div>
+
+                    <div class="item-form-element">
+                        <input type="text" placeholder="Ваше имя">
+                        <div class="form-control-feedback"></div>
+                    </div>
+
+                    <div class="item-form-element">
+                        <input type="tel" placeholder="+7 ( ___ ) ___ - __ - __">
+                        <div class="form-control-feedback"></div>
+                    </div>
+
+                    <a data-fancybox="modal-form" data-type="ajax" data-src="forms/modal_form.html" href="javascript:;" class="button">Получить смету <svg width="16" height="20"><use xlink:href="img/sprite.svg#button-ico5"></use></svg></a>
+
+                    <div class="form__text">Оставляя заявку Вы принимаете условия <a href="#">пользовательского соглашения</a></div>
+
+                </form>
 
             </div>
         </div>

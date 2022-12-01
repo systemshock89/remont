@@ -151,3 +151,216 @@
     }
   }
 }
+
+//form-block
+.form-block{
+  position: relative;
+  &.block-bg{
+    background-color: var(--text-color-dark);
+  }
+  .title-wrapper{
+    @include media((
+            margin-top: (all: 40px, lg: 0),
+    ));
+    h1, .h1{
+      color: #fff;
+      span{
+        display: inline-block;
+        font-size: betterClamp(14, 25);
+      }
+    }
+    .sub-title{
+      margin-bottom: 0;
+      span{
+        line-height: 160%;
+        display: inline-block;
+        font-size: betterClamp(14, 16);
+      }
+    }
+  }
+}
+
+.form-block__grid{
+  display: grid;
+  gap: 15px 30px;
+  position: relative;
+  align-items: flex-start;
+  @include media((
+          grid-template-columns: (all: 1fr 660px, lg: 1fr),
+  ));
+}
+
+.form{
+  display: grid;
+  gap: 10px;
+  @include media((
+          grid-template-columns: (all: 1fr 1fr, sm: 1fr),
+          padding: (all: 50px 30px, sm: 30px, 375: 20px),
+  ));
+  background-color: #fff;
+}
+
+.form__title-wrapper{
+  grid-column: 1/-1;
+  @include media((
+          margin-bottom: (all: 20px, sm: 5px),
+  ));
+}
+
+.form__title{
+  font-size: betterClamp(18, 35);
+  color: var(--accent-color);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "Montserrat-my", 'Montserrat-my Fallback';
+  line-height: 1.2;
+}
+
+.form__subtitle{
+  font-size: betterClamp(14, 25);
+  font-weight: 700;
+  color: var(--text-color-dark);
+  line-height: 1.1;
+}
+
+.form .item-form-element{
+  select,
+  input[type='text'],
+  input[type='tel']{
+    width: 100%;
+    @include media((
+            height: (all: 50px, lg: 44px, sm: 40px),
+    ));
+  }
+  &.error{
+    select,
+    input[type='text'],
+    input[type='tel']{
+      border-color: var(--red_color);
+      transition: border 0.1s ease-in-out;
+    }
+    .form-control-feedback{
+      display: block;
+      line-height: 1;
+    }
+  }
+}
+
+.form .form-control-feedback{
+  display: none;
+  margin-top: 5px;
+  color: var(--red_color);
+}
+
+.form .button{
+  width: 100%;
+}
+
+.form .button,
+.form__text{
+  @include media((
+          margin-top: (all: 20px, sm: 15px, 375: 10px),
+  ));
+}
+
+.form__text{
+  @include media((
+          margin-left: (all: 15px, sm: 0),
+  ));
+  font-size: 14px;
+  line-height: 140%;
+  align-self: center;
+  a{
+    color: var(--text-color);
+  }
+}
+
+//form-block_estimate
+.form-block_estimate{
+  &:before{
+    @include media((
+            display: (all: block, lg: none),
+    ));
+    content: '';
+    background: url('../img/hand.webp');
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    bottom: 0;
+    left: 35%;
+    z-index: 0;
+  }
+
+  .title-wrapper{
+    @include media((
+            width: (lg: 60%, sm: 100%),
+    ));
+    .sub-title{
+      @include media((
+              max-width: (all: 330px, lg: 100%),
+      ));
+    }
+  }
+
+  .form{
+    position: relative;
+    &:before{
+      @include media((
+              display: (all: none, lg: block, sm: none),
+      ));
+      content: '';
+      background: url('../img/hand.webp');
+      background-size: contain;
+      position: absolute;
+      @include media((
+              width: (all: 320px, lg: 250px),
+              height: (all: 320px, lg: 250px),
+              top: (all: -320px, lg: -250px),
+      ));
+      right: 15px;
+      z-index: 0;
+    }
+  }
+}
+
+//form-block_footer
+.form-block_footer{
+  .title-wrapper{
+    @include media((
+            width: (lg: 60%, sm: 100%),
+    ));
+  }
+
+  .form{
+    position: relative;
+    &:before{
+      content: '';
+      background: url('../img/roulette.webp') top left no-repeat;
+      background-size: contain;
+      position: absolute;
+      @include media((
+              width: (all: 320px, md: 280px),
+              height: (all: 250px, md: 219px),
+              left: (all: -255px, lg: auto),
+              bottom: (all: -53px, lg: auto),
+              top: (lg: -260px, md: -244px),
+              right: (lg: 15px),
+              display: (sm: none),
+      ));
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+    }
+    > * {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+}

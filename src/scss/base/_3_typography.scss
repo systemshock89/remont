@@ -2,7 +2,7 @@
   //font-family: "Montserrat-my", sans-serif;
   font-family: "Montserrat-my", 'Montserrat-my Fallback';
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.1;
   color: var(--text-color-dark);
   @include media((
           margin-bottom: (all:30px, lg: 20px, sm: 1rem)
@@ -13,6 +13,12 @@
     font-weight: 300;
     text-transform: none;
     font-family: "Montserrat-my", 'Montserrat-my Fallback';
+  }
+
+  + .sub-title{
+    @include media((
+            margin-top: (all: -10px, lg: -5px, md: 0),
+    ));
   }
 }
 
@@ -69,23 +75,13 @@ h6, .h6{
 }
 
 .sub-title{
-  font-style: italic;
-  color: var(--text-color);
+  font-family: "Montserrat-my", 'Montserrat-my Fallback';
+  color: var(--orange_color);
+  font-size: betterClamp(14, 25);
+  line-height: 130%;
   @include media((
-          margin-bottom: (all:20px, sm: 1rem)
+          margin-bottom: (all:30px, lg: 20px, sm: 1rem)
   ));
-  //margin-bottom: .5rem;
-  &:before{
-    content: '';
-    display: flex; // чтобы выравнивание работало и в блоке с обтекаемой картинкой
-    background: var(--accent-color);
-    height: 3px;
-    @include media((
-            width: (all: 190px, md: 140px),
-            margin-bottom: (all: 15px, sm: 10px),
-            margin-top: (md: 10px),
-    ));
-  }
 }
 
 .text-left {
