@@ -16,9 +16,15 @@
 
         // чтобы вписать в данное соотношение сторон картинку с другим соотношением сторон без искажений
         width: auto;
-        max-height: 100%;        }
+        max-height: 100%;
+      }
       .no-img{
         font-size: 4rem;
+      }
+
+      img,
+      .no-img{
+        transition: all 0.2s linear;
       }
     }
     .text-container{
@@ -28,11 +34,13 @@
       ));
 
       .title {
+        color: var(--text-color-dark);
         font-size: betterClamp(14, 18);
         font-weight: bold;
 
         text-overflow: ellipsis;
         overflow: hidden;
+        transition: color 0.1s ease-in-out;
         + .text{
           margin-top: 6px;
         }
@@ -45,6 +53,17 @@
         font-size: betterClamp(14, 16);
         text-overflow: ellipsis;
         overflow: hidden;
+      }
+    }
+    &:hover {
+      .title {
+        color: var(--accent-color);
+      }
+      .img-container  {
+        img,
+        .no-img{
+          transform: scale(1.1, 1.1);
+        }
       }
     }
   }
@@ -72,6 +91,20 @@
         color: var(--accent-color);
         transition: color 0.1s ease-in-out;
       }
+    }
+  }
+}
+
+.catalog-advantage-variant1_left{
+  .item{
+    text-align: left;
+    .img-container{
+      margin-left: 0;
+      margin-right: 0;
+
+      max-width: var(--img-width, 50px);
+      max-height: var(--img-height, 50px);
+      aspect-ratio: var(--aspect-ratio, 50/50);
     }
   }
 }

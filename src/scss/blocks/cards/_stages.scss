@@ -1,0 +1,98 @@
+.stages__grid {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 0 30px;
+    grid-auto-flow: column;
+    justify-content: flex-start;
+}
+
+.stages__item{
+    display: grid;
+    grid-template-columns: 116px 320px;
+    gap: 4px;
+    counter-increment: numb;
+    &:nth-child(1){
+        .stages__item-number:before{
+            width: 318px;
+            transform: rotate(35deg);
+        }
+    }
+    &:nth-child(2){
+        margin-left: 259px;
+        margin-top: 5px;
+        .stages__item-number:before{
+            width: 368px;
+            transform: rotate(-23deg);
+        }
+    }
+    &:nth-child(3){
+        margin-top: 40px;
+        margin-left: -130px;
+        .stages__item-number:before{
+            width: 333px;
+            transform: rotate(33deg);
+        }
+    }
+    &:nth-child(4){
+        margin-left: 150px;
+        margin-top: 45px;
+        .stages__item-number:before{
+            width: 361px;
+            transform: rotate(-23deg);
+        }
+    }
+}
+
+.stages__item-number{
+    position: relative;
+    aspect-ratio: 116 / 70;
+    background: url('../img/sprite.svg#elef') center no-repeat;
+    background-size: cover;
+    &:after{
+        content: counter(numb);
+        position: absolute;
+        right: 17px;
+        bottom: -9px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(90deg, var(--accent-color) 0%, var(--accent-color-hover) 100%);
+        border-radius: 100%;
+
+        font-size: 25px;
+        font-weight: 700;
+        color: #fff;
+    }
+
+    &:before{
+        content: '';
+        position: absolute;
+        left: 78px;
+        bottom: 9px;
+        border:1px dashed var(--stroke);
+        //background-color: var(--stroke);
+        transform-origin: top left;
+
+
+        //height: 2px;
+        //background-color: red;
+        //z-index: 1;
+    }
+}
+
+.stages__item-text-wrap {
+    margin-top: 42px;
+}
+
+.stages__item-title{
+    color: var(--text-color-dark);
+    font-weight: 700;
+    font-size: betterClamp(16, 25);
+    + .stages__item-text{
+        margin-top: 8px;
+    }
+}

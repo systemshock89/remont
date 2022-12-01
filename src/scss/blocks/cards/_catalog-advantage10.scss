@@ -2,7 +2,8 @@
   .item {
     height: 100%;
     .img-wrapper{
-      background: url('../img/elef.svg');
+      background: url('../img/sprite.svg#elef') center no-repeat;
+      background-size: cover;
       width: 116px;
       height: 70px;
     }
