@@ -48,6 +48,7 @@ input[type='button']{
   cursor: pointer;
   vertical-align: top; // чтобы не было так https://yadi.sk/i/F2hkpOwD9Sg0eA
   border-radius: 0;
+  transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out, color 0.1s ease-in-out;
 
   _:-ms-input-placeholder, :root & {
     height: 0; // ie11 align-items: center fix
@@ -95,7 +96,10 @@ input[type='button']{
   @extend %button-base;
   color: #fff;
   background-color: var(--text-color);
-
+  svg use{
+    fill: #fff;
+    transition: fill 0.1s ease-in-out;
+  }
   &:hover {
     color: var(--accent-color);
     background-color: var(--text-color-dark);

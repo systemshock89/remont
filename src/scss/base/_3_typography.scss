@@ -178,74 +178,46 @@ h6, .h6{
     @extend %table;
   }
 
-  ul, ol{
-    li{
-      &:not(:last-child){
-        margin-bottom: 5px;
-      }
-    }
+  //ul{
+  //  margin-top: 0;
+  //  padding-left: 0;
+  //  li{
+  //    position: relative;
+  //    left: 20px;
+  //    padding-right: 20px;
+  //  }
+  //
+  //  > li{
+  //    &::marker{
+  //
+  //    }
+  //    &:not(:last-child){
+  //      margin-bottom: .25rem;
+  //    }
+  //  }
+  //}
 
-    // чтобы маркеры списка при float не выпирали https://yadi.sk/i/PO0TslM3FHgvwQ , а располагались так https://yadi.sk/i/utMc1mYbgJz1sQ
-    // ранее использовался overflow: hidden; но при нем длинный список не переносится https://yadi.sk/i/dNP4FTHqekgZxg
-    //overflow: hidden;
-    margin-left: -20px;
-    > li{
+  @extend %ul-custom; // для сложной кастомизации списка (необходимо убрать ul выше)
+
+  ol{
+    margin-top: 0;
+    padding-left: 0;
+    li{
       position: relative;
       left: 20px;
       padding-right: 20px;
     }
-  }
-  ul{
-    padding-left: 20px;
-    //@extend %ul-style; // для кастомизации маркированного списка
-    > li{
-      &::marker{
-      }
-    }
-    ul{
-      // padding-left: 30px; // для другого отступа у вложенных списков
-    }
-  }
 
-  ul, ol{
-
-  }
-
-  ol{
-    padding-left: 20px;
     > li {
-      padding-left: 10px;
       &::marker{
         color: var(--accent-color);
         font-weight: bold;
       }
-    }
-    ol{
-      // padding-left: 30px; // для другого отступа у вложенных списков
+      &:not(:last-child){
+        margin-bottom: .25rem;
+      }
     }
   }
-
-  //ul:not(.ul-style){
-  //  padding-left: 17px;
-  //
-  //  //
-  //  font-size: 20px;
-  //}
-  //ul, ol{
-  //  overflow: hidden;
-  //  //margin-bottom: 1rem;
-  //  li{
-  //    margin-bottom: 5px;
-  //    &:last-child{
-  //      margin-bottom: 0;
-  //    }
-  //  }
-  //  > li {
-  //    > ul, ol{
-  //      margin-bottom: 5px;
-  //    }
-  //  }
-  //}
 
   @extend %video-elements;
 
@@ -279,29 +251,70 @@ h6, .h6{
 }
 
 // список с иконками. когда иконка списка - fontawesome
-%ul-style{
-  @extend %list-unstyled;
-  padding-left: 0;
-  > li{
-    position: relative;
-    padding-left: 15px;
-    &:before{
-      position: absolute;
-      top: 0;
-      left: 0;
+//%ul-style{
+//  @extend %list-unstyled;
+//  padding-left: 0;
+//  > li{
+//    position: relative;
+//    padding-left: 15px;
+//    &:before{
+//      position: absolute;
+//      top: 0;
+//      left: 0;
+//
+//      content: "\f105";
+//      font-family: 'Font Awesome 5 Free';
+//      font-weight: 900;
+//      color: var(--accent-color);
+//    }
+//    ul{
+//      @extend %list-unstyled;
+//    }
+//  }
+//}
 
-      content: "\f105";
-      font-family: 'Font Awesome 5 Free';
-      font-weight: 900;
-      color: var(--accent-color);
-    }
-    ul{
-      @extend %list-unstyled;
+// список с иконками. когда иконка списка - картинка
+
+
+/*
+Если такой стиль списка нужен в блоке text-elements,
+то оттуда убрать стандартный стиль ul
+ */
+%ul-custom{
+  ul{
+    $width: 23px;
+    $height: 20px;
+    $margin-right: 18px;
+    $offset: ($width + $margin-right);
+
+    @extend %list-unstyled;
+    margin-left: -$offset;
+    > li{
+      margin-left: $offset;
+
+      position: relative;
+      left: $offset;
+      padding-right: $offset;
+
+      &:before{
+        top: 3px;
+
+        content: "";
+        float: left;
+        position: relative;
+        background: url('../img/marker.svg') no-repeat;
+        width: $width;
+        height: $height;
+        margin-right: $margin-right;
+        margin-left: -($width + $margin-right);
+      }
+      &:not(:last-child){
+        margin-bottom: .9rem;
+      }
     }
   }
 }
 
-// список с иконками. когда иконка списка - картинка
 //%ul-style{
 //  @extend %list-unstyled;
 //  overflow: inherit!important;
@@ -330,8 +343,8 @@ h6, .h6{
 //  }
 //}
 
-ul.ul-style{
-  @extend %ul-style;
+.ul-custom{
+  @extend %ul-custom;
 }
 
 // список - цифры (при этом способе не работает атрибут start, но больше возможностей для кастомизации)

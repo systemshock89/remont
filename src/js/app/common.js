@@ -287,6 +287,33 @@ document.addEventListener("DOMContentLoaded", function(event) {
     /* /slider */
 
 
+    /* slider-form */
+    try {
+        const sliders = document.querySelectorAll('.slider-form');
+
+        sliders.forEach(slider => {
+            const selector = '.' + slider.classList.value.replaceAll(' ', '.');
+            const swiper = new Swiper(selector + ' .swiper', {
+                preloadImages: false,
+                lazy: true,
+                navigation: {
+                    nextEl: selector + ' .button2',
+                    prevEl: selector + ' .button',
+                },
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                simulateTouch: false,
+                allowTouchMove: false
+            });
+        });
+    } catch (err) {
+        console.log(err);
+    }
+    /* /slider-form */
+
+
     /* slider-carousel_products */
     try {
         const sliders = document.querySelectorAll('.slider-carousel_products');

@@ -18,6 +18,63 @@
   }
 }
 
+.text-block2{
+
+}
+
+.text-block2__grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap:30px;
+  padding: 30px;
+  @media only screen and (max-width: 1359px) {
+    grid-template-columns: 1fr;
+  }
+  @media only screen and (max-width: 575px){
+    gap:15px;
+    padding: 15px;
+  }
+  align-items: center;
+  background-color: var(--bg);
+
+  background-image: url('../img/elef-white.svg');
+  @media only screen and (max-width: 767px) {
+    background-image: none;
+  }
+  background-repeat: no-repeat;
+  background-position: right 30px bottom 30px;
+
+  position: relative;
+  &:before{
+    content: '';
+    width: 17%;
+    height: 100%;
+    background-color: var(--accent-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    @media only screen and (max-width: 1359px) {
+      width: 100%;
+      height: 17%;
+    }
+  }
+}
+
+.text-block2__img{
+  position: relative;
+  @media only screen and (max-width: 1359px) {
+    width: 100%;
+    aspect-ratio: 720 / 250;
+    object-fit: cover;
+    object-position: top center;
+  }
+}
+
+.text-block2__text{
+  font-size: betterClamp(14, 18);
+  color: var(--text-color-dark);
+}
+
 //.text-block-two-columns,
 //.text-block-three-columns,
 //.text-block-float{

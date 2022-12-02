@@ -1,0 +1,73 @@
+.slider-form{
+  .title-wrapper{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: flex-end;
+    gap: 5px 40px;
+    @media only screen and (max-width: 767px) {
+      grid-template-columns: 1fr;
+    }
+    @include media((
+            margin-bottom: (all:30px, lg: 20px, sm: 1rem)
+    ));
+    .h1, h1{
+      margin-bottom: 0;
+    }
+  }
+
+  .swiper-slide{
+    box-sizing: border-box;
+    aspect-ratio: 1290 / 450;
+    background-color: var(--bg);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:30px;
+    padding: 30px;
+    @media only screen and (max-width: 1359px) {
+      grid-template-columns: 1fr;
+    }
+    @media only screen and (max-width: 575px){
+      gap:15px;
+      padding: 15px;
+    }
+
+    position: relative;
+    &:before{
+      content: '';
+      width: 17%;
+      height: 100%;
+      background-color: var(--accent-color);
+      position: absolute;
+      top: 0;
+      left: 0;
+      @media only screen and (max-width: 1359px) {
+        width: 100%;
+        height: 17%;
+      }
+    }
+  }
+}
+
+.slider-form_title-text{
+  color: var(--accent-color);
+  font-size: betterClamp(15, 25);
+}
+
+.slider-form__img{
+  position: relative;
+  @media only screen and (max-width: 1359px) {
+    width: 100%;
+    aspect-ratio: 720 / 250;
+    object-fit: cover;
+    object-position: top center;
+  }
+}
+
+.slider-form__title{
+  font-weight: 700;
+  font-family: "Montserrat-my", 'Montserrat-my Fallback';
+  font-size: betterClamp(16, 35);
+  line-height: 120%;
+  color: var(--accent-color);
+}
