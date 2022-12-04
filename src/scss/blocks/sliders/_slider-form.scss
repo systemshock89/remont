@@ -16,6 +16,8 @@
   }
 
   .swiper-slide{
+    height: auto;
+
     box-sizing: border-box;
     aspect-ratio: 1290 / 450;
     background-color: var(--bg);
@@ -24,8 +26,10 @@
     grid-template-columns: 1fr 1fr;
     gap:30px;
     padding: 30px;
-    @media only screen and (max-width: 1359px) {
+    @media only screen and (max-width: 991px) {
       grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr;
+      grid-auto-flow: column;
     }
     @media only screen and (max-width: 575px){
       gap:15px;
@@ -41,12 +45,69 @@
       position: absolute;
       top: 0;
       left: 0;
-      @media only screen and (max-width: 1359px) {
+      @media only screen and (max-width: 991px) {
         width: 100%;
         height: 17%;
       }
     }
   }
+
+  .swiper-pagination-fraction{
+    margin-top: -10px;
+    @media only screen and (max-width: 575px) {
+      margin-top: 0;
+    }
+    font-size: betterClamp(14, 25);
+    font-family: "Montserrat-my", 'Montserrat-my Fallback';
+    text-align: right;
+  }
+  .swiper-pagination-current{
+    font-weight: 700;
+    color: var(--accent-color);
+  }
+  .swiper-pagination-total{
+
+  }
+}
+
+.slider-form__img-wrapper{
+  position: relative;
+}
+
+.slider-form__img{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+
+  @media only screen and (max-width: 991px) {
+    aspect-ratio: 720 / 250;
+  }
+}
+
+.slider-form__wrap{
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: auto auto 1fr;
+}
+
+.swiper__pagination{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap:1px;
+  height: 8px;
+  margin-top: 6px;
+}
+
+.swiper__pagination-item{
+  height: 8px;
+  background-color: var(--text-color);
+  transition: background 0.1s ease-in-out;
+}
+
+.swiper__pagination-item_active{
+  background-color: var(--accent-color);
 }
 
 .slider-form_title-text{
@@ -54,14 +115,13 @@
   font-size: betterClamp(15, 25);
 }
 
-.slider-form__img{
-  position: relative;
-  @media only screen and (max-width: 1359px) {
-    width: 100%;
-    aspect-ratio: 720 / 250;
-    object-fit: cover;
-    object-position: top center;
-  }
+.slider-form__wrap2{
+  @include media((
+          margin-top: (all: 50px, sm: 30px, xs: 20px),
+  ));
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: auto auto 1fr;
 }
 
 .slider-form__title{
@@ -71,3 +131,62 @@
   line-height: 120%;
   color: var(--accent-color);
 }
+
+.slider-form__radio-wrapper,
+.slider-form__input-wrapper{
+  @include media((
+          margin-top: (all: 35px, sm: 20px, xs: 15px),
+  ));
+}
+
+.slider-form__radio-wrapper{
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 30px;
+  @media only screen and (max-width: 575px) {
+    gap: 10px 15px;
+  }
+  label{
+    margin-bottom: 0;
+  }
+}
+
+.slider-form__input-wrapper{
+  input{
+    width: 100%;
+    @include media((
+            height: (all: 50px, lg: 44px, sm: 40px),
+    ));
+  }
+}
+
+.slider-form__nav{
+  align-self: flex-end;
+  margin-top: 15px;
+  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(100px, 200px));
+  gap: 30px;
+  @media only screen and (max-width: 575px) {
+    gap: 10px;
+  }
+  .swiper-button-next{
+    &.swiper-button-disabled{
+      visibility: hidden;
+    }
+  }
+  .button2,
+  .button{
+    width: 100%;
+  }
+  .button2{
+  }
+  .button{
+    svg{
+      transform: scaleX(-1);
+    }
+
+  }
+}
+

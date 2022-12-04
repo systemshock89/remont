@@ -11,11 +11,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
             const headerBtn = document.querySelector('.header__button');
             const headerTopHeight = document.querySelector('.header__desktop-top').clientHeight;
             if(headerBtn.getBoundingClientRect().top - headerTopHeight <= 0){
-                headerTopBtn.classList.add('header__top-button_opacity');
-                headerTopBtn.classList.add('header__top-button_visible');
+                headerTopBtn.classList.add('header__top-button_active');
             } else {
-                headerTopBtn.classList.remove('header__top-button_opacity');
-                setTimeout(() => headerTopBtn.classList.remove('header__top-button_visible'), 100);
+                headerTopBtn.classList.remove('header__top-button_active');
             }
         });
     }
@@ -296,22 +294,103 @@ document.addEventListener("DOMContentLoaded", function(event) {
             const swiper = new Swiper(selector + ' .swiper', {
                 preloadImages: false,
                 lazy: true,
+                pagination: {
+                    el: selector + " .swiper-pagination-fraction",
+                    type: "fraction",
+                },
                 navigation: {
-                    nextEl: selector + ' .button2',
-                    prevEl: selector + ' .button',
+                    nextEl: selector + ' .swiper-btn-next',
+                    prevEl: selector + ' .swiper-btn-prev',
                 },
                 effect: 'fade',
                 fadeEffect: {
-                    crossFade: true
+                    crossFade: false
                 },
                 simulateTouch: false,
                 allowTouchMove: false
             });
+
+            // swiper__pagination
+            const paginations = document.querySelectorAll(selector + ' .swiper__pagination');
+
+            swiper.slides.forEach(slide => {
+                const dots = [];
+                for (let i = 0; i < swiper.slides.length; i++) {
+                    const dot = document.createElement('div');
+                    dot.classList.add('swiper__pagination-item');
+                    slide.querySelector('.swiper__pagination').append(dot);
+
+                    if (i == 0) {
+                        dot.classList.add('swiper__pagination-item_active');
+                    }
+
+                    dots.push(dot);
+                }
+            });
+
+            swiper.on('slideChange', function () {
+                paginations.forEach(pagination => {
+                    const dots = pagination.querySelectorAll('.swiper__pagination-item');
+                    dots.forEach((dot, i) => {
+                        dot.classList.remove('swiper__pagination-item_active');
+                    });
+                    dots[swiper.activeIndex].classList.add('swiper__pagination-item_active');
+                    return false;
+                });
+            });
+
         });
+
     } catch (err) {
         console.log(err);
     }
     /* /slider-form */
+
+
+    /* slider-tabs */
+    try {
+        const sliders = document.querySelectorAll('.slider-tabs');
+
+        sliders.forEach(slider => {
+            const selector = '.' + slider.classList.value.replaceAll(' ', '.');
+            const swiper = new Swiper(selector + ' .swiper', {
+                preloadImages: false,
+                lazy: true,
+                navigation: {
+                    nextEl: selector + ' .swiper-button-next',
+                    prevEl: selector + ' .swiper-button-prev',
+                },
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: false
+                },
+                simulateTouch: false,
+                allowTouchMove: false
+            });
+
+            const tabs = document.querySelectorAll('.slider-tabs__tab');
+
+            function tabsRemoveActive(){
+                tabs.forEach(tab => {
+                    tab.classList.remove('slider-tabs__tab_active');
+                    return false;
+                });
+            }
+
+            tabs.forEach((tab, i) => {
+                tab.addEventListener('click', () => {
+                    tabsRemoveActive();
+                    tab.classList.add('slider-tabs__tab_active');
+                    swiper.slideTo(i);
+                    return false;
+                });
+            });
+
+        });
+    } catch (err) {
+        console.log(err);
+    }
+    /* /slider-tabs */
 
 
     /* slider-carousel_products */

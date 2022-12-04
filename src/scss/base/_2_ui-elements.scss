@@ -55,6 +55,7 @@ input[type='button']{
   }
 
   svg{
+    flex-shrink: 0;
     &:not([class]){
       margin-left: 10px;
     }
@@ -538,67 +539,85 @@ input, textarea{
 
   &.radio-awesome.variant1{
     label{
-      padding-left: 22px;
-      position: relative;
+      //padding-left: 40px;
+      //position: relative;
+      display: flex;
+      align-items: center;
+      gap:5px 10px;
+      font-size: betterClamp(14, 18);
+      line-height: 1.1;
       .icon{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        margin-left: -22px;
+        //display: flex;
+        //align-items: center;
+        //justify-content: center;
+        //position: absolute;
+        //margin-left: -40px;
+        //@include media((
+        //        top: (all: 2px, sm: 1px),
+        //));
+        flex-shrink: 0;
+        position: relative;
         @include media((
-                top: (all: 2px, sm: 1px),
+                width: (all: 30px, sm: 20px),
+                height: (all: 30px, sm: 20px),
         ));
-
-        width: 16px;
-        height: 16px;
-        //background: #fff;
-        box-shadow: 0 0 0 0.13em #6e6e6e;
+        background: #fff;
+        box-shadow: 0 0 0 1px var(--stroke);
         border-radius: 50%;
         transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
         &:before {
+          position: absolute;
+          //margin: auto;
+          //top: 0;
+          //left: 0;
+          //right: 0;
+          //bottom: 0;
+
           content: "";
-          width: 6px;
-          height: 6px;
+          width: 68%;
+          height: 68%;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
           background: transparent;
           border-radius: 50%;
         }
       }
     }
+    input:not(:disabled, :checked) + label:hover .icon{
+      box-shadow: 0 0 0 1px var(--text-color);
+      transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    }
     input:checked + label .icon{
-      box-shadow: 0 0 0 0.13em var(--accent-color);
+      box-shadow: 0 0 0 1px var(--accent-color);
       transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
       &:before {
         background: var(--accent-color);
         transition: background 0.1s ease-in-out;
       }
     }
-    input:not(:disabled) + label:hover .icon{
-      box-shadow: 0 0 0 0.13em var(--accent-color);
-      transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
-    }
     input:focus-visible + label .icon{
       box-shadow:
-              0 0 0 0.13em #6e6e6e,
-              0 0 0 0.23em #869791;
+              0 0 0 1px var(--accent-color),
+              0 0 0 2px var(--text-color);
       transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
     }
     input:focus-visible + label:hover .icon{
       box-shadow:
-              0 0 0 0.13em var(--accent-color),
-              0 0 0 0.23em #869791;
+              0 0 0 1px var(--accent-color),
+              0 0 0 2px var(--text-color);
       transition: background 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
     }
     input:disabled + label{
       cursor: not-allowed;
       .icon{
         opacity: .6;
-        box-shadow: 0 0 0 0.13em #6e6e6e;
+        box-shadow: 0 0 0 1px var(--stroke);
       }
     }
     input:disabled:checked + label{
       .icon:before {
-        background: #6e6e6e;
+        background: var(--stroke);
       }
     }
   }

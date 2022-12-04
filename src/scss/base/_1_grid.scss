@@ -53,6 +53,7 @@ body {
   display: grid;
   grid-template-rows: auto auto auto auto auto 1fr auto auto auto auto;
   grid-template-areas: "header-top" "header" "nav" "breadcrumb" "sections-top" "main" "sections-bottom" "footer-form" "footer-top" "footer";
+
   min-height: 100vh;
 
   // если menu-top длиннее чем контент на странице, то overflow-y: hidden исправляет этот глюк https://yadi.sk/i/XoTj0kaw7TAEkw

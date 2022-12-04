@@ -157,6 +157,7 @@
   position: relative;
   &.block-bg{
     background-color: var(--text-color-dark);
+    background-attachment: fixed;
   }
   .title-wrapper{
     @include media((

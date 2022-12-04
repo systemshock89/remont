@@ -183,23 +183,64 @@
                 </div>
 
                 <form action="" class="swiper">
-
                     <div class="swiper-wrapper">
 
                         <div class="swiper-slide">
-                            <img data-src="img/slide-form.webp" width="600" height="390" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' viewBox='0 0 600 390'%3E%3C/svg%3E" class="slider-form__img img-fluid lazy" alt="">
+                            <div class="slider-form__img-wrapper">
+                                <img data-src="img/slide-form.webp" width="600" height="390" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' viewBox='0 0 600 390'%3E%3C/svg%3E" class="slider-form__img img-fluid swiper-lazy" alt="">
+                                <div class="swiper-lazy-preloader"></div>
+                            </div>
 
                             <div class="slider-form__wrap">
-                                <div class="slider-form__title">Какое помещение нужно оштукатурить?</div>
+                                <div class="swiper-pagination-fraction"></div>
+                                <div class="swiper__pagination"></div>
 
-                                <div class="slider-form__nav">
-                                    <div class="button2">
-                                        <svg width="18" height="16"><use xlink:href="img/sprite.svg#arr"></use></svg>
-                                        Вернуться
+                                <div class="slider-form__wrap2">
+                                    <div class="slider-form__title">Какое помещение нужно оштукатурить?</div>
+
+                                    <div class="slider-form__radio-wrapper">
+                                        <div class="radio-awesome variant1 input-awesome">
+                                            <input type="radio" name="radio-group-variant1" id="custom-radio1-variant1" checked>
+                                            <label for="custom-radio1-variant1">
+                                                <span class="icon"></span>
+                                                Квартира
+                                            </label>
+                                        </div>
+
+                                        <div class="radio-awesome variant1 input-awesome">
+                                            <input type="radio" name="radio-group-variant1" id="custom-radio2-variant2">
+                                            <label for="custom-radio2-variant2">
+                                                <span class="icon"></span>
+                                                Частный дом/коттедж
+                                            </label>
+                                        </div>
+
+                                        <div class="radio-awesome variant1 input-awesome">
+                                            <input type="radio" name="radio-group-variant1" id="custom-radio2-variant3">
+                                            <label for="custom-radio2-variant3">
+                                                <span class="icon"></span>
+                                                Коммерческое помещение
+                                            </label>
+                                        </div>
+
+                                        <div class="radio-awesome variant1 input-awesome">
+                                            <input type="radio" name="radio-group-variant1" id="custom-radio2-variant4">
+                                            <label for="custom-radio2-variant4">
+                                                <span class="icon"></span>
+                                                Другое
+                                            </label>
+                                        </div>
                                     </div>
-                                    <div class="button">
-                                        Продолжить
-                                        <svg width="18" height="16"><use xlink:href="img/sprite.svg#arr"></use></svg>
+
+                                    <div class="slider-form__nav">
+                                        <div class="swiper-btn-prev button2">
+                                            <svg class="left" width="18" height="16"><use xlink:href="img/sprite.svg#arr"></use></svg>
+                                            Вернуться
+                                        </div>
+                                        <div class="swiper-btn-next button">
+                                            Продолжить
+                                            <svg width="18" height="16"><use xlink:href="img/sprite.svg#arr"></use></svg>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -207,19 +248,236 @@
                         </div>
 
                         <div class="swiper-slide">
-                            <img data-src="img/slide-form.webp" width="600" height="390" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' viewBox='0 0 600 390'%3E%3C/svg%3E" class="slider-form__img img-fluid lazy" alt="">
+                            <div class="slider-form__img-wrapper">
+                                <img data-src="img/slide-form.webp" width="600" height="390" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' viewBox='0 0 600 390'%3E%3C/svg%3E" class="slider-form__img img-fluid swiper-lazy" alt="">
+                                <div class="swiper-lazy-preloader"></div>
+                            </div>
 
                             <div class="slider-form__wrap">
-                                <div class="slider-form__title">Какое помещение нужно оштукатурить? 22222</div>
+                                <div class="swiper-pagination-fraction"></div>
+                                <div class="swiper__pagination"></div>
 
-                                <div class="slider-form__nav">
-                                    <div class="button2">
-                                        <svg width="18" height="16"><use xlink:href="img/sprite.svg#arr"></use></svg>
-                                        Вернуться
+                                <div class="slider-form__wrap2">
+                                    <div class="slider-form__title">Где находится обьект?</div>
+
+                                    <div class="slider-form__radio-wrapper">
+                                        <div class="radio-awesome variant1 input-awesome">
+                                            <input type="radio" name="radio-group-variant2" id="custom-radio1-variant5" checked>
+                                            <label for="custom-radio1-variant5">
+                                                <span class="icon"></span>
+                                                В пределах МКАД
+                                            </label>
+                                        </div>
+
+                                        <div class="radio-awesome variant1 input-awesome">
+                                            <input type="radio" name="radio-group-variant2" id="custom-radio2-variant6">
+                                            <label for="custom-radio2-variant6">
+                                                <span class="icon"></span>
+                                                До 20 км. от МКАД
+                                            </label>
+                                        </div>
+
+                                        <div class="radio-awesome variant1 input-awesome">
+                                            <input type="radio" name="radio-group-variant2" id="custom-radio2-variant7">
+                                            <label for="custom-radio2-variant7">
+                                                <span class="icon"></span>
+                                                До 50 км. от МКАД
+                                            </label>
+                                        </div>
+
+                                        <div class="radio-awesome variant1 input-awesome">
+                                            <input type="radio" name="radio-group-variant2" id="custom-radio2-variant8">
+                                            <label for="custom-radio2-variant8">
+                                                <span class="icon"></span>
+                                                Более 50 км. от МКАД
+                                            </label>
+                                        </div>
                                     </div>
-                                    <div class="button">
-                                        Продолжить
-                                        <svg width="18" height="16"><use xlink:href="img/sprite.svg#arr"></use></svg>
+
+                                    <div class="slider-form__nav">
+                                        <div class="swiper-btn-prev button2">
+                                            <svg class="left" width="18" height="16"><use xlink:href="img/sprite.svg#arr"></use></svg>
+                                            Вернуться
+                                        </div>
+                                        <div class="swiper-btn-next button">
+                                            Продолжить
+                                            <svg width="18" height="16"><use xlink:href="img/sprite.svg#arr"></use></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="slider-form__img-wrapper">
+                                <img data-src="img/slide-form.webp" width="600" height="390" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' viewBox='0 0 600 390'%3E%3C/svg%3E" class="slider-form__img img-fluid swiper-lazy" alt="">
+                                <div class="swiper-lazy-preloader"></div>
+                            </div>
+
+                            <div class="slider-form__wrap">
+                                <div class="swiper-pagination-fraction"></div>
+                                <div class="swiper__pagination"></div>
+
+                                <div class="slider-form__wrap2">
+                                    <div class="slider-form__title">Кто предоставляет материал?</div>
+
+                                    <div class="slider-form__radio-wrapper">
+                                        <div class="radio-awesome variant1 input-awesome">
+                                            <input type="radio" name="radio-group-variant3" id="custom-radio1-variant9" checked>
+                                            <label for="custom-radio1-variant9">
+                                                <span class="icon"></span>
+                                                Подрядчик
+                                            </label>
+                                        </div>
+
+                                        <div class="radio-awesome variant1 input-awesome">
+                                            <input type="radio" name="radio-group-variant3" id="custom-radio2-variant10">
+                                            <label for="custom-radio2-variant10">
+                                                <span class="icon"></span>
+                                                Заказчик
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="slider-form__nav">
+                                        <div class="swiper-btn-prev button2">
+                                            <svg class="left" width="18" height="16"><use xlink:href="img/sprite.svg#arr"></use></svg>
+                                            Вернуться
+                                        </div>
+                                        <div class="swiper-btn-next button">
+                                            Продолжить
+                                            <svg width="18" height="16"><use xlink:href="img/sprite.svg#arr"></use></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="slider-form__img-wrapper">
+                                <img data-src="img/slide-form.webp" width="600" height="390" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' viewBox='0 0 600 390'%3E%3C/svg%3E" class="slider-form__img img-fluid swiper-lazy" alt="">
+                                <div class="swiper-lazy-preloader"></div>
+                            </div>
+
+                            <div class="slider-form__wrap">
+                                <div class="swiper-pagination-fraction"></div>
+                                <div class="swiper__pagination"></div>
+
+                                <div class="slider-form__wrap2">
+                                    <div class="slider-form__title">Какая площадь помещения по полу?</div>
+
+                                    <div class="slider-form__input-wrapper">
+                                        <input type="text" placeholder="Введите площадь помещения">
+                                    </div>
+
+                                    <div class="slider-form__nav">
+                                        <div class="swiper-btn-prev button2">
+                                            <svg class="left" width="18" height="16"><use xlink:href="img/sprite.svg#arr"></use></svg>
+                                            Вернуться
+                                        </div>
+                                        <div class="swiper-btn-next button">
+                                            Продолжить
+                                            <svg width="18" height="16"><use xlink:href="img/sprite.svg#arr"></use></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="slider-form__img-wrapper">
+                                <img data-src="img/slide-form.webp" width="600" height="390" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' viewBox='0 0 600 390'%3E%3C/svg%3E" class="slider-form__img img-fluid swiper-lazy" alt="">
+                                <div class="swiper-lazy-preloader"></div>
+                            </div>
+
+                            <div class="slider-form__wrap">
+                                <div class="swiper-pagination-fraction"></div>
+                                <div class="swiper__pagination"></div>
+
+                                <div class="slider-form__wrap2">
+                                    <div class="slider-form__title">Какая финишная отделка планируется?</div>
+
+                                    <div class="slider-form__radio-wrapper">
+                                        <div class="radio-awesome variant1 input-awesome">
+                                            <input type="radio" name="radio-group-variant4" id="custom-radio1-variant11" checked>
+                                            <label for="custom-radio1-variant11">
+                                                <span class="icon"></span>
+                                                Обои
+                                            </label>
+                                        </div>
+
+                                        <div class="radio-awesome variant1 input-awesome">
+                                            <input type="radio" name="radio-group-variant4" id="custom-radio2-variant12">
+                                            <label for="custom-radio2-variant12">
+                                                <span class="icon"></span>
+                                                Покраска
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="slider-form__nav">
+                                        <div class="swiper-btn-prev button2">
+                                            <svg class="left" width="18" height="16"><use xlink:href="img/sprite.svg#arr"></use></svg>
+                                            Вернуться
+                                        </div>
+                                        <div class="swiper-btn-next button">
+                                            Продолжить
+                                            <svg width="18" height="16"><use xlink:href="img/sprite.svg#arr"></use></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="slider-form__img-wrapper">
+                                <img data-src="img/slide-form.webp" width="600" height="390" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' viewBox='0 0 600 390'%3E%3C/svg%3E" class="slider-form__img img-fluid swiper-lazy" alt="">
+                                <div class="swiper-lazy-preloader"></div>
+                            </div>
+
+                            <div class="slider-form__wrap">
+                                <div class="swiper-pagination-fraction"></div>
+                                <div class="swiper__pagination"></div>
+
+                                <div class="slider-form__wrap2">
+                                    <div class="slider-form__title">Когда планируете начать?</div>
+
+                                    <div class="slider-form__radio-wrapper">
+                                        <div class="radio-awesome variant1 input-awesome">
+                                            <input type="radio" name="radio-group-variant5" id="custom-radio1-variant13" checked>
+                                            <label for="custom-radio1-variant13">
+                                                <span class="icon"></span>
+                                                Как можно раньше
+                                            </label>
+                                        </div>
+
+                                        <div class="radio-awesome variant1 input-awesome">
+                                            <input type="radio" name="radio-group-variant5" id="custom-radio2-variant14">
+                                            <label for="custom-radio2-variant14">
+                                                <span class="icon"></span>
+                                                В течение недели
+                                            </label>
+                                        </div>
+
+                                        <div class="radio-awesome variant1 input-awesome">
+                                            <input type="radio" name="radio-group-variant5" id="custom-radio2-variant15">
+                                            <label for="custom-radio2-variant15">
+                                                <span class="icon"></span>
+                                                Не спешу, подбираю подрядчика
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="slider-form__nav">
+                                        <div class="swiper-btn-prev button2">
+                                            <svg class="left" width="18" height="16"><use xlink:href="img/sprite.svg#arr"></use></svg>
+                                            Вернуться
+                                        </div>
+                                        <a href="#" class="button">Заказать расчёт <svg width="16" height="20"><use xlink:href="img/sprite.svg#button-ico3"></use></svg></a>
                                     </div>
                                 </div>
                             </div>
@@ -227,7 +485,6 @@
                         </div>
 
                     </div>
-
                 </form>
 
             </div>
@@ -332,11 +589,167 @@
             </div>
         </div>
 
-        <div class="tabs-slider">
+        <div class="slider-tabs block-padding block-bg block-margin-bottom" data-bg="img/slider-tabs-bg.webp">
             <div class="container">
 
                 <div class="title-wrapper">
-                    <div class="h1"><span>Цены</span> на механизированную штукатурку</div>
+                    <div class="h1">Цены <span>на механизированную штукатурку</span> </div>
+                </div>
+
+                <div class="slider-tabs__wrapper">
+                    <button class="slider-tabs__tab slider-tabs__tab_active">Стены</button>
+                    <button class="slider-tabs__tab">Откосы</button>
+                    <button class="slider-tabs__tab">Потолки</button>
+                    <button class="slider-tabs__tab">Фасады</button>
+                </div>
+
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <div class="slider-tabs__img-wrapper">
+                                <img data-src="img/slide-form.webp" width="600" height="390" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' viewBox='0 0 600 390'%3E%3C/svg%3E" class="slider-tabs__img img-fluid swiper-lazy" alt="">
+                                <div class="swiper-lazy-preloader"></div>
+                            </div>
+
+                            <div class="slider-tabs__wrap">
+                                <div class="slider-tabs__wrap2">
+                                    <div class="slider-tabs__title">Стены</div>
+                                    <div class="slider-tabs__subtitle">работа от 400 р/м2, с материалами от 650 р/м2</div>
+                                    <div class="slider-tabs__text">
+                                        Наша компания занимается черновыми видами отделочных работ, а именно: механизированная штукатурка стен и стяжка пола в Москве и Московской области, в Твери и Тверской области.
+                                        За плечами 7 лет репутации, более 450 благодарных отзывов, начиная с 2012 года. Одна из главных задач нашей компании — предоставить максимально высокий уровень сервиса для наших клиентов.
+                                    </div>
+                                    <div class="slider-tabs__icons">
+                                        <div class="slider-tabs__icons-item">
+                                            <img src="img/slider-tabs-ico1.svg" width="46" height="50" class="img-fluid" alt="">
+                                            <div class="slider-tabs__icons-item-title">Работаем<br> по договору</div>
+                                        </div>
+                                        <div class="slider-tabs__icons-item">
+                                            <img src="img/slider-tabs-ico2.svg" width="46" height="50" class="img-fluid" alt="">
+                                            <div class="slider-tabs__icons-item-title">Оплата<br> по факту</div>
+                                        </div>
+                                        <div class="slider-tabs__icons-item">
+                                            <img src="img/slider-tabs-ico3.svg" width="46" height="50" class="img-fluid" alt="">
+                                            <div class="slider-tabs__icons-item-title">Без скрытых<br> доплат</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#" class="slider-tabs__btn button">Заказать расчёт <svg width="16" height="20"><use xlink:href="img/sprite.svg#button-ico3"></use></svg></a>
+                            </div>
+
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="slider-tabs__img-wrapper">
+                                <img data-src="img/slide-form.webp" width="600" height="390" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' viewBox='0 0 600 390'%3E%3C/svg%3E" class="slider-tabs__img img-fluid swiper-lazy" alt="">
+                                <div class="swiper-lazy-preloader"></div>
+                            </div>
+
+                            <div class="slider-tabs__wrap">
+                                <div class="slider-tabs__wrap2">
+                                    <div class="slider-tabs__title">Откосы</div>
+                                    <div class="slider-tabs__subtitle">работа от 400 р/м2, с материалами от 650 р/м2</div>
+                                    <div class="slider-tabs__text">
+                                        Наша компания занимается черновыми видами отделочных работ, а именно: механизированная штукатурка стен и стяжка пола в Москве и Московской области, в Твери и Тверской области.
+                                        За плечами 7 лет репутации, более 450 благодарных отзывов, начиная с 2012 года. Одна из главных задач нашей компании — предоставить максимально высокий уровень сервиса для наших клиентов.
+                                    </div>
+                                    <div class="slider-tabs__icons">
+                                        <div class="slider-tabs__icons-item">
+                                            <img src="img/slider-tabs-ico1.svg" width="46" height="50" class="img-fluid" alt="">
+                                            <div class="slider-tabs__icons-item-title">Работаем<br> по договору</div>
+                                        </div>
+                                        <div class="slider-tabs__icons-item">
+                                            <img src="img/slider-tabs-ico2.svg" width="46" height="50" class="img-fluid" alt="">
+                                            <div class="slider-tabs__icons-item-title">Оплата<br> по факту</div>
+                                        </div>
+                                        <div class="slider-tabs__icons-item">
+                                            <img src="img/slider-tabs-ico3.svg" width="46" height="50" class="img-fluid" alt="">
+                                            <div class="slider-tabs__icons-item-title">Без скрытых<br> доплат</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#" class="slider-tabs__btn button">Заказать расчёт <svg width="16" height="20"><use xlink:href="img/sprite.svg#button-ico3"></use></svg></a>
+                            </div>
+
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="slider-tabs__img-wrapper">
+                                <img data-src="img/slide-form.webp" width="600" height="390" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' viewBox='0 0 600 390'%3E%3C/svg%3E" class="slider-tabs__img img-fluid swiper-lazy" alt="">
+                                <div class="swiper-lazy-preloader"></div>
+                            </div>
+
+                            <div class="slider-tabs__wrap">
+                                <div class="slider-tabs__wrap2">
+                                    <div class="slider-tabs__title">Потолки</div>
+                                    <div class="slider-tabs__subtitle">работа от 400 р/м2, с материалами от 650 р/м2</div>
+                                    <div class="slider-tabs__text">
+                                        Наша компания занимается черновыми видами отделочных работ, а именно: механизированная штукатурка стен и стяжка пола в Москве и Московской области, в Твери и Тверской области.
+                                        За плечами 7 лет репутации, более 450 благодарных отзывов, начиная с 2012 года. Одна из главных задач нашей компании — предоставить максимально высокий уровень сервиса для наших клиентов.
+                                    </div>
+                                    <div class="slider-tabs__icons">
+                                        <div class="slider-tabs__icons-item">
+                                            <img src="img/slider-tabs-ico1.svg" width="46" height="50" class="img-fluid" alt="">
+                                            <div class="slider-tabs__icons-item-title">Работаем<br> по договору</div>
+                                        </div>
+                                        <div class="slider-tabs__icons-item">
+                                            <img src="img/slider-tabs-ico2.svg" width="46" height="50" class="img-fluid" alt="">
+                                            <div class="slider-tabs__icons-item-title">Оплата<br> по факту</div>
+                                        </div>
+                                        <div class="slider-tabs__icons-item">
+                                            <img src="img/slider-tabs-ico3.svg" width="46" height="50" class="img-fluid" alt="">
+                                            <div class="slider-tabs__icons-item-title">Без скрытых<br> доплат</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#" class="slider-tabs__btn button">Заказать расчёт <svg width="16" height="20"><use xlink:href="img/sprite.svg#button-ico3"></use></svg></a>
+                            </div>
+
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="slider-tabs__img-wrapper">
+                                <img data-src="img/slide-form.webp" width="600" height="390" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' viewBox='0 0 600 390'%3E%3C/svg%3E" class="slider-tabs__img img-fluid swiper-lazy" alt="">
+                                <div class="swiper-lazy-preloader"></div>
+                            </div>
+
+                            <div class="slider-tabs__wrap">
+                                <div class="slider-tabs__wrap2">
+                                    <div class="slider-tabs__title">Фасады</div>
+                                    <div class="slider-tabs__subtitle">работа от 400 р/м2, с материалами от 650 р/м2</div>
+                                    <div class="slider-tabs__text">
+                                        Наша компания занимается черновыми видами отделочных работ, а именно: механизированная штукатурка стен и стяжка пола в Москве и Московской области, в Твери и Тверской области.
+                                        За плечами 7 лет репутации, более 450 благодарных отзывов, начиная с 2012 года. Одна из главных задач нашей компании — предоставить максимально высокий уровень сервиса для наших клиентов.
+                                    </div>
+                                    <div class="slider-tabs__icons">
+                                        <div class="slider-tabs__icons-item">
+                                            <img src="img/slider-tabs-ico1.svg" width="46" height="50" class="img-fluid" alt="">
+                                            <div class="slider-tabs__icons-item-title">Работаем<br> по договору</div>
+                                        </div>
+                                        <div class="slider-tabs__icons-item">
+                                            <img src="img/slider-tabs-ico2.svg" width="46" height="50" class="img-fluid" alt="">
+                                            <div class="slider-tabs__icons-item-title">Оплата<br> по факту</div>
+                                        </div>
+                                        <div class="slider-tabs__icons-item">
+                                            <img src="img/slider-tabs-ico3.svg" width="46" height="50" class="img-fluid" alt="">
+                                            <div class="slider-tabs__icons-item-title">Без скрытых<br> доплат</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#" class="slider-tabs__btn button">Заказать расчёт <svg width="16" height="20"><use xlink:href="img/sprite.svg#button-ico3"></use></svg></a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="swiper-button-prev">
+                        <svg width="8" height="14"><use xlink:href="img/sprite.svg#slider-arr"></use></svg>
+                    </div>
+                    <div class="swiper-button-next">
+                        <svg width="8" height="14"><use xlink:href="img/sprite.svg#slider-arr"></use></svg>
+                    </div>
                 </div>
 
             </div>
@@ -1013,7 +1426,7 @@
             </div>
         </div>
 
-        <div class="text-block block-margin-bottom">
+        <div class="text-block block-margin-bottom" style="display: none;">
             <div class="container">
                 <div class="text-block-item">
                     <div class="text-container text-elements-title">

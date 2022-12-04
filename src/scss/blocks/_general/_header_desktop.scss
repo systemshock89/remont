@@ -42,16 +42,14 @@
   box-shadow: none;
   opacity: 0;
   visibility: hidden;
+  transition: opacity 0.5s ease-in-out;
   &:active {
     box-shadow: none;
   }
 }
 
-.header__top-button_opacity{
+.header__top-button_active{
   opacity: 1;
-}
-
-.header__top-button_visible{
   visibility: visible;
 }
 
