@@ -4,6 +4,30 @@
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
+    // animations
+    function animTest(selector1, selector2){
+        const observer = new IntersectionObserver(entries => {
+            // ф-я выполняется, когда видимость одного из наблюдаемых эл-тов изменится
+            entries.forEach(entry => {
+                console.log(entry);
+                if(entry.isIntersecting){ // если этот элемент пересекает область просмотра
+                    entry.target.classList.add(selector2);
+                } else {
+                    // если нужно показывать анимацию несколько раз
+                    entry.target.classList.remove(selector2);
+                }
+            });
+        });
+
+        const hiddenElements = document.querySelectorAll('.' + selector1);
+        hiddenElements.forEach(el => observer.observe(el));
+    }
+    animTest('anim-hidden', 'anim-show');
+    animTest('anim-hidden2', 'anim-show2');
+
+    // /animations
+
+
     // header__top-button visible
     if(getComputedStyle(document.querySelector('.header__mobile')).display === 'none'){
         document.addEventListener("scroll", () => {
