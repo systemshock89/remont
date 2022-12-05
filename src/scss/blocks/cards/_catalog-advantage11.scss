@@ -102,9 +102,6 @@
         content: counter(numb);
         font-family: "Montserrat-my", 'Montserrat-my Fallback';
         font-weight: 700;
-        //@include media((
-        //        font-size: (all: 140px, lg: 100px, md: 140px, sm: 120px, xs: 80px),
-        //));
         font-size: betterClamp(90, 140);
         color: #FFFFFF;
         opacity: 0.2;

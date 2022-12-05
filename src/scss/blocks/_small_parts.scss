@@ -246,7 +246,9 @@ body.fancybox-active {
 
 /* показать лупу, если фэнсибокс увеличивает картинку */
 [data-fancybox] {
-  &.img-container, .img-container {
+  &.img-container,
+  .img-container,
+  &.swiper-slide{
     position: relative;
 
     &:after {

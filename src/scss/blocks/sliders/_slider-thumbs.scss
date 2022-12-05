@@ -1,0 +1,169 @@
+//slider-gallery
+.slider-gallery{
+  .button-container{
+    .button{
+      width: 330px;
+      margin-top: 15px;
+      @media only screen and (max-width: 991px) {
+        width: 220px;
+        margin-top: 0;
+      }
+      svg{
+        transform: scaleX(-1);
+      }
+    }
+  }
+}
+
+.slider-gallery__grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  @media only screen and (max-width: 767px) {
+    gap: 30px 15px;
+  }
+  @media only screen and (max-width: 575px) {
+    grid-template-columns: 1fr;
+  }
+  @media only screen and (max-width: 375px) {
+    gap: 15px;
+  }
+}
+
+.slider-gallery__item{
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 20px 30px;
+  align-items: baseline;
+  @media only screen and (max-width: 991px) {
+    gap: 15px;
+  }
+  @media only screen and (max-width: 991px) {
+    gap: 10px;
+  }
+  @media only screen and (max-width: 375px) {
+    gap: 5px;
+  }
+}
+
+.slider-gallery__item-title {
+  line-height: 110%;
+  font-weight: 700;
+  font-size: betterClamp(14, 25);
+  color: var(--accent-color);
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  @media only screen and (max-width: 767px) {
+    grid-column: 1 / -1;
+  }
+  @media only screen and (max-width: 575px) {
+    grid-column:auto;
+  }
+  @media only screen and (max-width: 375px) {
+    grid-column: 1 / -1;
+  }
+}
+
+.slider-gallery__item-metres {
+  line-height: 110%;
+}
+
+.slider-gallery__item-price {
+  line-height: 110%;
+}
+
+.slider-gallery__slider{
+  grid-column: 1 / -1;
+}
+
+//slider-thumbs
+.slider-thumbs{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.slider-thumbs__main{
+  overflow: hidden; // fix display grid bug https://github.com/nolimits4web/swiper/issues/2914
+  .swiper-slide{
+    box-sizing: border-box;
+    padding: 30px;
+    @media only screen and (max-width: 991px) {
+      padding: 15px;
+    }
+    background-color: var(--bg);
+    img{
+      aspect-ratio: 570 / 330;
+    }
+  }
+  .swiper-button-prev,
+  .swiper-button-next{
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    border-radius: 100%;
+    background: #FFFFFF;
+    border: 1px solid var(--stroke);
+    transition: border 0.1s ease-in-out;
+    svg use{
+      stroke: var(--text-color-dark);
+      transition: stroke 0.1s ease-in-out;
+    }
+    &:after{
+      display: none;
+    }
+    &:hover{
+      border-color: var(--accent-color);
+      svg use{
+        stroke: var(--accent-color);
+      }
+    }
+    &:active{
+      border-color: var(--stroke);
+      svg use{
+        stroke: var(--text-color-dark);
+      }
+    }
+  }
+  .swiper-button-next{
+    transform: scale(-1, 1);
+  }
+}
+
+.slider-thumbs__carousel{
+  overflow: hidden; // fix display grid bug https://github.com/nolimits4web/swiper/issues/2914
+  @media only screen and (max-width: 767px) {
+    display: none;
+  }
+  .swiper-slide{
+    box-sizing: border-box;
+    opacity: .6;
+    cursor: pointer;
+    position: relative;
+    transition: opacity 0.1s ease-in-out;
+    img{
+      aspect-ratio: 150 / 100;
+      object-fit: cover;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 5px solid var(--accent-color);
+      opacity: 0;
+      transition: opacity 0.1s ease-in-out;
+    }
+    &:hover,
+    &.swiper-slide-thumb-active{
+      opacity: 1;
+      &:before {
+        opacity: 1;
+      }
+    }
+  }
+}

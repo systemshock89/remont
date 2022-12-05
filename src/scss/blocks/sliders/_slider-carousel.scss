@@ -40,8 +40,7 @@
     transform: scale(-1, 1);
   }
 
-  // костыль для тени у itemа в слайдере
-  // добавить как класс .item-with-shadow
+  // item box-shadow hack
   $padding-left: 30px;
   $padding-top: 15px;
   $padding-bottom: 40px;
@@ -77,5 +76,5 @@
             right: (all: $padding-left - 20px, xs: 10px + $padding-left),
     ));
   }
-  // /костыль для тени у itemа в слайдере
+  // /item box-shadow hack
 }

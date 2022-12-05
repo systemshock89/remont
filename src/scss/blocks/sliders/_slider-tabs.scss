@@ -53,6 +53,9 @@
 
   .swiper-button-prev,
   .swiper-button-next{
+    @media only screen and (max-width: 575px) {
+      display: none;
+    }
     width: 40px;
     height: 40px;
     margin-top: -20px;
@@ -87,6 +90,30 @@
     right: -20px;
     transform: scale(-1, 1);
   }
+
+  // buttons position hack
+  $padding-left: 30px;
+  .swiper{
+    width: calc(100% + $padding-left * 2);
+    padding: 0 $padding-left;
+    margin-left: - $padding-left;
+    + *{
+      @include media((
+              margin-top: (all: 30px, xs: 15px),
+      ));
+    }
+  }
+  .swiper-button-prev{
+    @include media((
+            left: (all: $padding-left - 20px, xs: 10px + $padding-left),
+    ));
+  }
+  .swiper-button-next{
+    @include media((
+            right: (all: $padding-left - 20px, xs: 10px + $padding-left),
+    ));
+  }
+  // /buttons position hack
 }
 
 .slider-tabs__wrapper{
