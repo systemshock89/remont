@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <!--<base href="http://bootstrap-template/">-->
+
+    <title>Header с видео</title>
+    <meta name="description" content="description">
+    <meta property='og:title' content='Header с видео'>
+    <!--<meta property='og:image' content='http://www.example.com/полный_путь_к_изображению.png'>-->
+    <meta property="og:type" content="website">
+    <!--<meta property="og:url" content= "http://www.example.com/текущая_страница.html">-->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <!--<meta name="theme-color" content="#CCCCCC">--><!-- Custom Browsers Color -->
+
+    <!-- Favicons -->
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="img/favicons/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.webmanifest">
+
+    <script defer src="js/libs/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/mmenu.min.css">
+    <!--<link rel="stylesheet" href="css/owl.carousel.min.css">-->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/bundle.min.css?ver=1.0.0">
+</head>
+
+<body class="index-page">
+
+<div class="page">
+
+    <!--header-->
+    <header class="header header__with-video">
+        <div class="header__desktop">
+            <div class="menu-top">
+                <div class="container">
+                    <nav>
+                        <ul class="level1">
+                            <li class="selected"><span class="item">Главная</span></li>
+                            <li><a href="#" class="item">Услуги</a></li>
+                            <li class="submenu">
+                                <a href="#" class="item">Каталог продукции</a>
+                                <ul class="level2">
+                                    <li>
+                                        <a href="#" class="item">Наша продукция</a>
+                                        <ul class="level3">
+                                            <li><a href="#" class="item">Газосиликатные блоки</a></li>
+                                            <li><a href="#" class="item">Трехслойные несущие блоки с теплоизоляционным слоем</a></li>
+                                            <li><a href="#" class="item">Товары для сада</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="item">Проектирование коттеджей и ландшафтный дизайн</a>
+                                        <ul class="level3">
+                                            <li><a href="#" class="item">Подраздел 1</a></li>
+                                            <li><a href="#" class="item">Подраздел 2</a></li>
+                                            <li><a href="#" class="item">Подраздел 3</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#" class="item">Строительство коттеджей</a></li>
+                                    <li>
+                                        <a href="#" class="item">Аренда техники</a>
+                                        <ul class="level3">
+                                            <li><a href="#" class="item">Подраздел 4</a></li>
+                                            <li><a href="#" class="item">Подраздел 5</a></li>
+                                            <li><a href="#" class="item">Подраздел 6</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#" class="item">Бетонные работы</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#" class="item">Наши работы</a></li>
+                            <li><a href="#" class="item">Отзывы</a></li>
+                            <li><a href="#" class="item">Вопрос-ответ</a></li>
+                            <li><a href="#" class="item">Цены</a></li>
+                            <li><a href="#" class="item">Контакты</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <div class="header__mobile">
+
+            <div class="header-mobile-buttons left">
+                <!--        <a class="fa fa-lg fa-bars" href="#mmenu"></a>-->
+                <a class="mburger mburger--squeeze" href="#mmenu">
+                    <b></b>
+                    <b></b>
+                    <b></b>
+                </a>
+            </div>
+
+            <div class="header-mobile-logo">
+                <a href="#">
+                    <img src="img/logo2.webp" class="img-fluid" alt="">
+                </a>
+                <!--        <a href="#" class="header-mobile-text">Название фирмы</a>-->
+            </div>
+
+            <div class="header-mobile-buttons right">
+                <a class='fa fa-lg fa-search' href='#' data-button-name="search"></a>
+                <a class='fas fa-lg fa-shopping-basket cart' href='/cart/'>
+                    <span class="count">99</span>
+                </a>
+                <a  href="tel:+74951234567" onclick="yaC.reachGoal('ZVONOK');" class="fa fa-lg fa-phone fa-flip-horizontal"></a>
+            </div>
+
+            <div class="header-mobile-button-container" data-button-name="search">
+                <div class="search-container">
+                    <input type="search" placeholder="Поиск по сайту">
+                    <input class="submit" type="submit" value="&#xf002;">
+                </div>
+            </div>
+
+            <div class="mmenu-html-blocks hidden">
+                <div id="mmenu-top-buttons">
+                    <a data-fancybox="" data-type="ajax" class="fas fa-lg fa-comment-dots" data-src="forms/modal_form.html" href="javascript:;"></a>
+                    <a href="mailto:info@name.ru" class="fa fa-lg fa-envelope"></a>
+                    <a  href="tel:+74951234567" onclick="yaC.reachGoal('ZVONOK');" class="fa fa-lg fa-phone fa-flip-horizontal"></a>
+                    <a class='fa fa-lg fa-map-marker-alt' href='https://goo.gl/maps/1TwW6EyWpdK2'></a>
+                </div>
+
+                <div id="mmenu-socials">
+                    <a class='fab fa-lg fa-vk' href='#'></a>
+                    <a class='fab fa-lg fa-facebook' href='#'></a>
+                    <a class='fab fa-lg fa-twitter' href='#'></a>
+                    <a class='fab fa-lg fa-instagram' href='#'></a>
+                    <a class='fab fa-lg fa-youtube' href='#'></a>
+                    <a class='fab fa-lg fa-whatsapp' href='#' onclick="ym(yaC, 'reachGoal', 'WHATSAPP'); return true;"></a>
+                    <a class='fab fa-lg fa-viber' href='#' onclick="ym(yaC, 'reachGoal', 'VIBER'); return true;"></a>
+                </div>
+
+                <div id="mmenu-tabs">
+                    <a href='#panel-menu'>Меню</a>
+                    <a href='#panel-phone'>Телефоны</a>
+                    <a href='#panel-language'>Язык</a>
+                    <a href='#panel-svhelp'>Для слабовидящих</a>
+                </div>
+
+                <div id="mmenu">
+                    <ul class="level1" id="panel-menu">
+                        <li class="selected"><a href="#">Главная</a></li>
+                        <li><a href="#">Услуги</a></li>
+                        <li>
+                            <a href="#">Каталог продукции</a>
+                            <ul class="level2">
+                                <li>
+                                    <a href="#">Наша продукция</a>
+                                    <ul class="level3">
+                                        <li><a href="#">Газосиликатные блоки</a></li>
+                                        <li><a href="#">Трехслойные несущие блоки с теплоизоляционным слоем</a></li>
+                                        <li><a href="#">Товары для сада</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Проектирование коттеджей и ландшафтный дизайн</a>
+                                    <ul class="level3">
+                                        <li><a href="#">Подраздел 1</a></li>
+                                        <li><a href="#">Подраздел 2</a></li>
+                                        <li><a href="#">Подраздел 3</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Строительство коттеджей</a></li>
+                                <li>
+                                    <a href="#">Аренда техники</a>
+                                    <ul class="level3">
+                                        <li><a href="#">Подраздел 4</a></li>
+                                        <li><a href="#">Подраздел 5</a></li>
+                                        <li><a href="#">Подраздел 6</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Бетонные работы</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Наши работы</a></li>
+                        <li><a href="#">Отзывы</a></li>
+                        <li><a href="#">Вопрос-ответ</a></li>
+                        <li><a href="#">Цены</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+
+                    <ul id="panel-phone">
+                        <li><a href="tel:+74951234567">8-920-666-97-77 - телефон 1</a></li>
+                        <li><a href="tel:+74951234567">8-920-666-97-77 - телефон 2</a></li>
+                        <li><a href="tel:+74951234567">8-920-666-97-77 - телефон 3</a></li>
+                        <li><a href="tel:+74951234567">8-920-666-97-77 - телефон 4</a></li>
+                    </ul>
+
+                    <ul id="panel-language">
+                        <li><a href="#/ru">Русский</a></li>
+                        <li><a href="#/en">English</a></li>
+                        <li><a href="#/de">Deutsch</a></li>
+                    </ul>
+
+                    <ul id="panel-svhelp">
+                        <li>
+                            <a href="#" class="svhelp-default"><i class="fa fa-chevron-left" ></i> <span>Обычная версия сайта</span></a>
+                        </li>
+
+                        <li class="svhelp-item-title">
+                            Цветовая схема:
+                        </li>
+
+                        <li class="svhelp-item svhelp-theme">
+                            <a href="#" data-svhelp-class="svhelp-theme-white" class="item" title="Черно-белая">C</a>
+                            <a href="#" data-svhelp-class="svhelp-theme-dark" class="item" title="Бело-черная">C</a>
+                            <a href="#" data-svhelp-class="svhelp-theme-brown" class="item" title="Черно-бежевая">C</a>
+                            <a href="#" data-svhelp-class="svhelp-theme-blue" class="item" title="Черно-синяя">C</a>
+                        </li>
+
+                        <li class="svhelp-item-title">
+                            Размер шрифта:
+                        </li>
+
+                        <li class="svhelp-item svhelp-font-size">
+                            <a href="#" data-svhelp-class="svhelp-font-size-small" class="item" title="Средний">A</a>
+                            <a href="#" data-svhelp-class="svhelp-font-size-medium" class="item" title="Большой">A</a>
+                            <a href="#" data-svhelp-class="svhelp-font-size-big" class="item" title="Огромный">A</a>
+                        </li>
+
+                        <li class="svhelp-item-title">
+                            Шрифт:
+                        </li>
+
+                        <li class="svhelp-item svhelp-font">
+                            <a href="#" data-svhelp-class="svhelp-font-times" class="item">Times New Roman</a>
+                            <a href="#" data-svhelp-class="svhelp-font-arial" class="item">Arial</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <main class="main page-content-no-margin-top">
+
+        <div class="index-video-block block-margin-bottom">
+
+            <script defer src="js/libs/jquery.waypoints.min.js"></script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function(event) {
+
+                    /* хедер с видео - закрашивание хедера при прокрутке */
+                    var waypoint_offset = $('.header.header__with-video').height(); // отступ, который нужен для точности (например, высота меню или хедера)
+
+                    // закрашивание верхнего меню
+                    var waypoint_object = $('.index-video-block');
+                    if( waypoint_object.length ){
+                        var waypoint = new Waypoint({
+                            element: waypoint_object,
+                            handler: function(direction) {
+                                if( direction == 'down'){
+                                    $('.header.header__with-video').addClass('background-color');
+                                }
+                                if( direction == 'up'){
+                                    $('.header.header__with-video').removeClass('background-color');
+                                }
+                            },
+                            offset: -waypoint_offset
+                        });
+                    }
+                    /* хедер с видео - закрашивание хедера при прокрутке */
+
+                });
+            </script>
+
+            <!-- Можно указать lazyload poster -->
+            <!-- <video class="lazy" data-poster="img/video-poster.webp" autoplay="" loop="" muted="" playsinline>-->
+            <video class="lazy" autoplay="" loop="" muted="" playsinline>
+                <source src="#" data-src="https://mastweb.ru/video/video.mp4" type="video/mp4">
+                <source src="#" data-src="https://mastweb.ru/video/video.webm" type="video/webm">
+            </video>
+
+            <div class="container">
+                <div class="text-container">
+                    <div class="text-container2">
+                        <div class="title">
+                            Вентиляция <br>
+                            Отопление <br>
+                            Холодоснабжение
+                        </div>
+                        <div class="text">
+                            <a href="#">Проектирование</a>
+                            <a href="#">Поставка</a>
+                            <a href="#">Монтаж</a>
+                            <a href="#">Ремонт</a>
+                            <a href="#">Сервисное обслуживание</a>
+                        </div>
+                        <a href="#" class="button">Бесплатная консультация</a>
+
+                        <a href="#" class="button-bottom d-none d-md-block" title="Прокрутить вниз"></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-block block-margin-bottom">
+            <div class="container">
+                <div class="text-block-item">
+                    <div class="title-wrapper">
+                        <div class="h1">Текстовый блок</div>
+                    </div>
+
+                    <div class="text-container text-elements-title">
+                        <div class="text text-elements">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-block block-margin-bottom">
+            <div class="container">
+                <div class="text-block-item">
+                    <div class="title-wrapper">
+                        <div class="h1">Текстовый блок</div>
+                    </div>
+
+                    <div class="text-container text-elements-title">
+                        <div class="text text-elements">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-block block-margin-bottom">
+            <div class="container">
+                <div class="text-block-item">
+                    <div class="title-wrapper">
+                        <div class="h1">Текстовый блок</div>
+                    </div>
+
+                    <div class="text-container text-elements-title">
+                        <div class="text text-elements">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-block block-margin-bottom">
+            <div class="container">
+                <div class="text-block-item">
+                    <div class="title-wrapper">
+                        <div class="h1">Текстовый блок</div>
+                    </div>
+
+                    <div class="text-container text-elements-title">
+                        <div class="text text-elements">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut consectetur consequuntur delectus deserunt eius eligendi esse est eveniet ex explicabo illum ipsum iste natus nisi nobis placeat provident quos rem repellat, sed sint tempora totam veniam. Consequuntur doloribus ex nobis porro quod? Corporis distinctio illum nihil officia quaerat!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <div class="form-block form-block_footer block-padding block-bg block-bg-no-repeat" data-bg="img/form-bg.webp">
+        <div class="form-block__grid container">
+
+            <div class="title-wrapper">
+                <div class="h1">
+                    В течение 15 минут<br>
+                    <span>перезвоним, подберем материалы, сориентируем по стоимости и если все понравится - выедем к Вам на замер.</span>
+                </div>
+                <div class="sub-title">
+                    <b>По телефону:</b><br>
+                    <span>
+                        Ответим на любые вопросы;<br>
+                        Подберем решения в соответствие с Вашими потребностями;<br>
+                        Рассчитаем стоимость;<br>
+                        Проконсультируем по вопросам эксплуатации.
+                    </span>
+                </div>
+            </div>
+
+            <form action="" class="form">
+                <div class="form__title-wrapper">
+                    <div class="form__title">Вы гарантированно</div>
+                    <div class="form__subtitle">получите лучшую цену на рынке, и самое <br> главное — ровные стены в Вашем помещении!</div>
+                </div>
+
+                <div class="item-form-element">
+                    <input type="text" placeholder="Ваше имя">
+                    <div class="form-control-feedback"></div>
+                </div>
+
+                <div class="item-form-element">
+                    <input type="tel" placeholder="+7 ( ___ ) ___ - __ - __">
+                    <div class="form-control-feedback"></div>
+                </div>
+
+                <a data-fancybox="modal-form" data-type="ajax" data-src="forms/modal_form.html" href="javascript:;" class="button">Бесплатная консультация <svg width="20" height="20"><use xlink:href="img/sprite.svg#button-ico6"></use></svg></a>
+
+                <div class="form__text">Оставляя заявку Вы принимаете условия <a href="#">пользовательского соглашения</a></div>
+
+            </form>
+
+        </div>
+    </div>
+
+    <div class="footer-top">
+        <div class="container">
+            <span>Только у нас вы можете заказать</span> демонтажные работы и механизированную штукатурку <span>в одной кампании</span>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer__part1 block-bg" data-bg="img/footer-bg.webp">
+            <div class="footer__grid container">
+                 <address class="footer__address">
+                     <div class="footer__slogan">
+                         Механизированные отделочные работы
+                         <span>В москве и московской области</span>
+                     </div>
+                     <div class="footer__time svg-icon"><svg width="18" height="18"><use xlink:href="img/sprite.svg#footer-ico1"></use></svg> Пн.-Вс.: 09:00 - 21:00</div>
+                     <a href="tel:+79157324044" class="footer__phone nowrap" title="Позвонить">8 (800) 123-45-67</a>
+                     <div class="socials2 socials2_footer">
+                         <a href="#" class="socials2-item socials2-item_whats"></a>
+                         <a href="#" class="socials2-item socials2-item_tg"></a>
+                     </div>
+                     <a href="mailto:info@cms-nc.ru" class="footer__email svg-icon" title="Написать письмо"><svg width="18" height="14"><use xlink:href="img/sprite.svg#footer-ico2"></use></svg> mail@mail.ru</a>
+                     <a data-fancybox="modal-form" data-type="ajax" data-src="forms/modal_form.html" href="javascript:;" class="footer__link svg-icon seo-btn-footer"><svg width="18" height="18"><use xlink:href="img/sprite.svg#footer-ico3"></use></svg> Обратный звонок</a>
+                 </address>
+
+                <div class="footer__menu-wrapper">
+                    <nav class="footer__menu">
+                        <ul>
+                            <li class="selected"><span>Главная</span></li>
+                            <li><a href="#">Цены</a></li>
+                            <li><a href="#">Портфолио</a></li>
+                            <li><a href="#">Материалы</a></li>
+                            <li><a href="#">О компании</a></li>
+                            <li><a href="#">Сервис</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>
+                    </nav>
+
+                    <nav class="footer__menu">
+                        <ul>
+                            <li><a href="#">Механизированная штукатурка</a></li>
+                            <li><a href="#">Механизированная стяжка</a></li>
+                            <li><a href="#">Механизированная шпаклевка</a></li>
+                            <li><a href="#">Возведение перегородок</a></li>
+                            <li><a href="#">Демонтажные работы</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <a class="footer__mastweb" href="https://mastweb.ru/" target="_blank">
+                    Разработка и реклама сайта
+                    <img data-src="img/mastweb.webp" width="180" height="42" class="img-fluid lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='180'%20viewBox='0%200%20180%2042'%3E%3C/svg%3E" alt="mastweb">
+                </a>
+
+            </div>
+        </div>
+
+        <div class="footer__part2">
+            <div class="container">
+               <p>Обращаем ваше внимание на то, что вся информация (включая цены) на этом интернет-сайте носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями Статьи 437 (2) Гражданского кодекса РФ. Компания оставляет за собой право в любое время без специального уведомления вносить изменения, удалять, исправлять, дополнять, либо любым иным способом обновлять информацию, размещенную во всех разделах данного сайта. Для получения подробной информации о стоимости, сроках и условиях поставки просьба обращаться по указанным на сайте телефонам.</p>
+               <p>Использование любых материалов сайта в коммерческих целях разрешено только с письменного согласия владельцев ресурса. Узнать подробнее условия использования сайта. © ГК «Механизированные отделочные работы», 2022 | <a href="#">Карта сайта</a></p>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+<div class="widgets-right">
+
+    <!--widget-phone-->
+    <div class="widget-phone-wrap">
+        <a data-fancybox data-type="ajax" class="widget-phone compensate-for-scrollbar" data-src="forms/modal_widget_phone.html" href="javascript:;">
+            <div class="widget2-circles"></div>
+        </a>
+    </div>
+
+</div>
+
+<div id="preloader"><span class="spinner"></span></div>
+
+<!-- scripts -->
+<script defer src="js/libs/mmenu.min.js"></script>
+<script defer src="js/libs/lazyload.min.js"></script>
+<script defer src="js/libs/js.cookie.min.js"></script>
+<script defer src="js/libs/infinite-ajax-scroll.min.js"></script>
+<script defer src="js/libs/inputmask.min.js"></script>
+<!--<script defer src="js/libs/owl.carousel.min.js"></script>-->
+<script defer src="js/libs/swiper-bundle.min.js"></script>
+<script defer src="js/libs/jquery.fancybox.min.js"></script>
+<script defer src="js/libs/flexmenu.min.js"></script>
+<script defer src="js/libs/jquery.standart_widgetPhone2.js"></script>
+<script defer src="js/app/common.js?ver=1.0.0"></script>
+<script defer src="js/app/animations.js?ver=1.0.0"></script>
+<!-- /scripts -->
+
+</body>
+</html>
