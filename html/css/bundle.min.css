@@ -168,7 +168,7 @@
   }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .catalog-advantage-variant10 .item {
+  .catalog-advantage-variant10 .text-container {
     visibility: hidden;
   }
 }

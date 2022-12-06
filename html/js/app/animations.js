@@ -5,6 +5,12 @@ animateElements({
 });
 
 animateElements({
+    container: 'catalog-advantage-variant10',
+    element: 'text-container',
+    classAnimEnd: 'fadeIn'
+});
+
+animateElements({
     container: 'catalog-advantage-variant11',
     element: 'item',
     classAnimEnd: 'fadeIn'
@@ -14,12 +20,6 @@ animateElements({
     container: 'catalog-advantage-variant11',
     element: 'img-container',
     classAnimEnd: 'backInLeft'
-});
-
-animateElements({
-    container: 'catalog-advantage-variant10',
-    element: 'item',
-    classAnimEnd: 'fadeIn'
 });
 
 animateElements({
