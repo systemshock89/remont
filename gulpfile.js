@@ -260,7 +260,8 @@ function serve() {
     browserSync.init({
         server: (proxy ? undefined : dist),
         proxy:  (proxy ? proxy : undefined),
-        ghostMode: { clicks: false },
+        ghostMode: false,
+        // ghostMode: { clicks: false },
         notify: false,
         online: true,
         // tunnel: 'yousutename', // Attempt to use the URL https://yousutename.loca.lt

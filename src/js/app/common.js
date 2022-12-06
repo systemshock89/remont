@@ -4,30 +4,6 @@
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
-    // animations
-    function animTest(selector1, selector2){
-        const observer = new IntersectionObserver(entries => {
-            // ф-я выполняется, когда видимость одного из наблюдаемых эл-тов изменится
-            entries.forEach(entry => {
-                console.log(entry);
-                if(entry.isIntersecting){ // если этот элемент пересекает область просмотра
-                    entry.target.classList.add(selector2);
-                } else {
-                    // если нужно показывать анимацию несколько раз
-                    entry.target.classList.remove(selector2);
-                }
-            });
-        });
-
-        const hiddenElements = document.querySelectorAll('.' + selector1);
-        hiddenElements.forEach(el => observer.observe(el));
-    }
-    animTest('anim-hidden', 'anim-show');
-    animTest('anim-hidden2', 'anim-show2');
-
-    // /animations
-
-
     // header__top-button visible
     if(getComputedStyle(document.querySelector('.header__mobile')).display === 'none'){
         document.addEventListener("scroll", () => {
@@ -154,15 +130,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // /Lazyload
 
 
-    // прокрутка к следующему блоку по кнопке
-    $('.index-video-block .button-bottom').click(function (e) {
-        e.preventDefault();
-        $('body,html').animate({scrollTop: ($('.index-video-block').next().offset().top - $('.header__desktop').innerHeight() )}, 500);
-
-    });
-    // прокрутка к следующему блоку по кнопке
-
-
     /* Верхнее меню - пункт еще */
     try {
         $('.menu-top ul.level1, .header__nav ul.level1').flexMenu({
@@ -179,35 +146,35 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     /* Разворачивание разделов в вертикальном меню */
     // по клику на стрелку
-    $('.vertical-menu .submenu-btn').click(function (e) {
-        e.preventDefault();
-        var $this = $(this),
-            $this_li = $this.closest('li');
-
-        $this_li.find('ul.level2').slideToggle(200, function(){
-            /*
-            Состояния пункта меню:
-            - Если у пункта меню есть оба класса "selected" и "active" - то находимся в разделе, имеющем подразделы
-            - Если у пункта меню один класс "active" - мы находимся в дочернем разделе,
-            родитель которого имеет подразделы
-             */
-            if( !$this_li.hasClass('active') ){
-                $this.toggleClass('submenu-btn-show')
-                // если мы не находимся в разделе или подразделе этого пункта
-                // меню, то подставлять класс submenu-btn-show, при котором стрелка развернута
-            } else {
-                $this.toggleClass('submenu-btn-hide');
-                // иначе подставлять класс submenu-btn-hide,
-                // при котором стрелка свернута
-            }
-        });
-    });
+    // $('.vertical-menu .submenu-btn').click(function (e) {
+    //     e.preventDefault();
+    //     var $this = $(this),
+    //         $this_li = $this.closest('li');
+    //
+    //     $this_li.find('ul.level2').slideToggle(200, function(){
+    //         /*
+    //         Состояния пункта меню:
+    //         - Если у пункта меню есть оба класса "selected" и "active" - то находимся в разделе, имеющем подразделы
+    //         - Если у пункта меню один класс "active" - мы находимся в дочернем разделе,
+    //         родитель которого имеет подразделы
+    //          */
+    //         if( !$this_li.hasClass('active') ){
+    //             $this.toggleClass('submenu-btn-show')
+    //             // если мы не находимся в разделе или подразделе этого пункта
+    //             // меню, то подставлять класс submenu-btn-show, при котором стрелка развернута
+    //         } else {
+    //             $this.toggleClass('submenu-btn-hide');
+    //             // иначе подставлять класс submenu-btn-hide,
+    //             // при котором стрелка свернута
+    //         }
+    //     });
+    // });
 
     // по клику на раздел без перехода в этот раздел (при активации галочки в админке)
-    $('.vertical-menu .submenu-toggle').click(function (e) {
-        e.preventDefault();
-        $(this).closest('.item-wrap').find('.submenu-btn').trigger( "click" );
-    });
+    // $('.vertical-menu .submenu-toggle').click(function (e) {
+    //     e.preventDefault();
+    //     $(this).closest('.item-wrap').find('.submenu-btn').trigger( "click" );
+    // });
     /* Разворачивание разделов в вертикальном меню */
 
 
@@ -224,61 +191,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     /* Разворачивание разделов в вертикальном меню - попадаем в подразделы */
 
 
-    // Функционал кнопок в мобильном меню - раскрывающих элементы
-    $(".header__mobile-buttons a").each(function (index) {
-        const btn = $(this);
-
-        btn.click(function (e) {
-
-            headerMobileButtonFunc(index);
-
-            // если кнопка раскрывает какое-лиюо меню
-            if (btn.data('buttonName')) {
-                e.preventDefault();
-                btn.toggleClass('active');
-
-                $('.header__mobile-button-container').each(function () {
-                    if (btn.data('buttonName') === $(this).data('buttonName')) {
-                        $(this).slideToggle(200);
-                    }
-                });
-
-            }
-        });
-    });
-
-    //проверка, не нажата ли другая мобильная кнопка
-    function headerMobileButtonFunc(index) {
-
-        $(".header-mobile-buttons a").each(function( indexFunc ) {
-            const btn = $(this);
-
-            if( indexFunc != index){
-                if( btn.hasClass('active')){
-
-                    btn.removeClass('active');
-
-                    $('.header__mobile-button-container').each(function() {
-                        if( btn.data('buttonName') === $(this).data('buttonName') ){
-
-                            $(this).slideToggle(200);
-
-                        }
-                    });
-                }
-            }
-        });
-
-    }
-    // //Функционал кнопок в мобильном меню - раскрывающих элементы
-
-
-    //фокус на input при клике на кнопке поиска
-    $(".header__mobile-buttons a[data-button-name='search']").click(function (e) {
-        $('.header__mobile-button-container[data-button-name="search"] input[type="search"]').focus();
-    });
-
-
     /* slider */
     try {
         const sliders = document.querySelectorAll('.slider');
@@ -292,6 +204,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 autoplay: {
                     delay: 9000,
                     pauseOnMouseEnter: true,
+                    disableOnInteraction: false
                 },
                 pagination: {
                     el: selector + ' .swiper-pagination',
@@ -434,7 +347,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 lazy: true,
                 spaceBetween: 10,
                 slidesPerView: 4,
-                freeMode: true,
                 watchSlidesProgress: true
             });
 
@@ -442,10 +354,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 preloadImages: false,
                 lazy: true,
                 rewind: true,
-                autoplay: {
-                    delay: 3000,
-                    pauseOnMouseEnter: true,
-                },
+                // autoplay: {
+                //     delay: 3000,
+                //     pauseOnMouseEnter: true,
+                //     disableOnInteraction: false
+                // },
                 navigation: {
                     nextEl: selector + ' .swiper-button-next',
                     prevEl: selector + ' .swiper-button-prev',
@@ -562,133 +475,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     /* /slider-carousel_reviews */
 
 
-    /* Index Owl Slider */
-    $(".index-slider:not(.one-slide) .owl-carousel").each(function(){
-        var owl =  $(this);
-
-        owl.owlCarousel({
-            items: 1,
-            loop: (owl.find(".item").length > 1) ? true: false,
-            margin: 0,
-            autoplay: true,
-            autoplayTimeout: 9000,
-            autoplayHoverPause: true,
-            // lazyLoad:true,
-            nav: true,
-            navText:  [
-                "",
-                ""
-            ],
-            // эффект FadeUp
-            animateOut: 'owl-fadeUp-out',
-            animateIn: 'owl-fadeUp-in',
-            responsiveBaseElement: $('.page, #fullpage'),
-            responsive:{
-                0:{
-                    nav: false,
-                    mouseDrag: false
-                },
-                768:{
-
-                }
-            },
-            onInitialized: function () {
-                lazyLoadInstance_slider.update();
-            }
-        }).on('changed.owl.carousel', function (event) {
-            // при ручном перелистывании слайдера обновлять таймаут автопрокрутки
-            owl.trigger('stop.owl.autoplay');
-            owl.trigger('play.owl.autoplay', [9000]);
-        });
-
-        owl.find('.owl-nav .owl-prev').attr('title', 'Предыдущий');
-        owl.find('.owl-nav .owl-next').attr('title', 'Следующий');
-    });
-    /* /Index Owl Slider */
-
-
-    /* Fullwidth Owl Slider */
-    $(".fullwidth-slider:not(.one-slide) .owl-carousel").each(function(){
-        var owl =  $(this);
-        owl.owlCarousel({
-            items: 1,
-            loop: (owl.find(".item").length > 1) ? true: false,
-            margin: 0,
-            autoplay: true,
-            autoplayTimeout: 9000,
-            autoplayHoverPause: true,
-            // lazyLoad:true,
-            nav: true,
-            navText:  [
-                "",
-                ""
-            ],
-            // эффект FadeUp
-            animateOut: 'owl-fadeUp-out',
-            animateIn: 'owl-fadeUp-in',
-            responsiveBaseElement: $('.page, #fullpage'),
-            responsive:{
-                0:{
-                    nav: false,
-                    mouseDrag: false
-                },
-                768:{
-
-                }
-            },
-            onInitialized: function () {
-                lazyLoadInstance_slider.update();
-            }
-        }).on('changed.owl.carousel', function (event) {
-            // при ручном перелистывании слайдера обновлять таймаут автопрокрутки
-            owl.trigger('stop.owl.autoplay');
-            owl.trigger('play.owl.autoplay', [9000]);
-        });
-
-        owl.find('.owl-nav .owl-prev').attr('title', 'Предыдущий');
-        owl.find('.owl-nav .owl-next').attr('title', 'Следующий');
-    });
-    /* /Fullwidth Owl Slider */
-
-
-    /* Basic Owl Slider */
-    $(".basic-slider:not(.one-slide) .owl-carousel").each(function(){
-        var owl =  $(this);
-        owl.owlCarousel({
-            // autoHeight:true,
-            items: 1,
-            loop: (owl.find(".item").length > 1) ? true: false,
-            margin: 15,
-            autoplay: true,
-            autoplayTimeout: 9000,
-            autoplayHoverPause: true,
-            // lazyLoad:true,
-            navText:  [
-                "",
-                ""
-            ],
-            responsiveBaseElement: $('.page, #fullpage'),
-            responsive:{
-                0:{
-                    nav: false,
-                    mouseDrag: false
-                },
-                768:{
-
-                }
-            }
-        }).on('changed.owl.carousel', function (event) {
-            // при ручном перелистывании слайдера обновлять таймаут автопрокрутки
-            owl.trigger('stop.owl.autoplay');
-            owl.trigger('play.owl.autoplay', [9000]);
-        });
-
-        owl.find('.owl-nav .owl-prev').attr('title', 'Предыдущий');
-        owl.find('.owl-nav .owl-next').attr('title', 'Следующий');
-    });
-    /* /Basic Owl Slider */
-
-
     /* /Carousel Owl Slider */
     $(".carousel-slider .owl-carousel").each(function(){
         var owl =  $(this);
@@ -746,186 +532,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         owl.find('.owl-nav .owl-next').attr('title', 'Следующий');
     });
     /* /Carousel Owl Slider */
-
-
-    /* SYNCED Owl Slider */
-    if ($(".synced-slider1:not(.one-slide) .owl-carousel").is("div")) {
-
-        var owl = $('.synced-slider1 .owl-carousel');
-        var owl2 = $('.synced-slider2 .owl-carousel');
-
-        owl.owlCarousel({
-            items: 1,
-            autoplay: true,
-            autoplayTimeout: 9000,
-            autoplayHoverPause: true,
-            margin: 30,
-            // lazyLoad: true,
-            nav: true,
-            navText:  [
-                "",
-                ""
-            ],
-            dots: false,
-            responsiveBaseElement: $('.page, #fullpage'),
-            responsive:{
-                0:{
-                    margin: 15,
-                    nav: false,
-                    dots: true,
-                    mouseDrag: false
-                    // stagePadding: 35
-                },
-                576:{
-                    dots: true,
-                    mouseDrag: false
-                },
-                768:{
-
-                },
-                992:{
-
-                }
-
-            }
-        }).on('changed.owl.carousel', function (event) {
-            owl2.trigger('to.owl.carousel', [event.item.index, 300, true]);
-            // (Optional) Remove .current class from all items
-            owl2.find('.current').removeClass('current');
-            // (Optional) Add .current class to current active item
-            owl2.find('.owl-item .item').eq(event.item.index).addClass('current');
-
-            // при ручном перелистывании слайдера обновлять таймаут автопрокрутки
-            owl.trigger('stop.owl.autoplay');
-            owl.trigger('play.owl.autoplay', [9000]);
-        });
-
-        owl2.owlCarousel({
-            margin: 6,
-            items: 4,
-            // lazyLoad: true,
-            navText:  [
-                "",
-                ""
-            ],
-            nav: true,
-            dots: false,
-            responsiveBaseElement: $('.page, #fullpage')
-        })
-            .on('click', '.owl-item', function (event) {
-                owl.trigger('to.owl.carousel', [$(event.target).parents('.owl-item').index(), [300], true]);
-            })
-            .on('changed.owl.carousel', function (event) {
-                // при ручном перелистывании слайдера обновлять таймаут автопрокрутки
-                owl.trigger('stop.owl.autoplay');
-                owl.trigger('play.owl.autoplay', [9000]);
-            });
-
-        owl2.find('.owl-item').first().find('.item').addClass('current');
-    }
-    /* /SYNCED Owl Slider */
-
-
-    /* SYNCED single Owl Slider */
-    $(".synced-slider-single:not(.one-slide) .owl-carousel").each(function(){
-        var owl =  $(this);
-        owl.owlCarousel({
-            items: 1,
-            autoplay: true,
-            autoplayTimeout: 9000,
-            autoplayHoverPause: true,
-            margin: 30,
-            // lazyLoad: true,
-            nav: true,
-            navText:  [
-                "",
-                ""
-            ],
-            dots: false,
-            responsiveBaseElement: $('.page, #fullpage'),
-            responsive:{
-                0:{
-                    margin: 15,
-                    nav: false,
-                    dots: true,
-                    mouseDrag: false
-                    // stagePadding: 35
-                },
-                576:{
-                    nav: true,
-                    dots: true,
-                    mouseDrag: false
-                },
-                768:{
-
-                },
-                992:{
-
-                }
-
-            }
-        })
-            .on('changed.owl.carousel', function (event) {
-                $('.synced-slider-thumbs .item').removeClass('selected');
-                $('.synced-slider-thumbs .item').eq(event.item.index).addClass('selected');
-
-                // при ручном перелистывании слайдера обновлять таймаут автопрокрутки
-                owl.trigger('stop.owl.autoplay');
-                owl.trigger('play.owl.autoplay', [9000]);
-            });
-
-        $('.synced-slider-thumbs .item').first().addClass('selected');
-
-        $('.synced-slider-thumbs .item').each(function (index) {
-            var this_btn = $(this);
-
-            this_btn.click(function (e) {
-                e.preventDefault();
-                owl.trigger('to.owl.carousel', [index, 300]);
-            });
-        });
-    });
-    /* /SYNCED single Owl Slider */
-
-
-    /* reviews Owl Slider */
-    $(".reviews-slider .owl-carousel").each(function(){
-        var owl =  $(this);
-        owl.owlCarousel({
-            // autoHeight:true,
-            items: 1,
-            loop: (owl.find(".item").length > 1) ? true: false,
-            autoplay: true,
-            autoplayTimeout: 9000,
-            autoplayHoverPause: true,
-            margin: 0,
-            // lazyLoad:true,
-            nav: true,
-            navText:  [
-                "",
-                ""
-            ],
-            responsiveBaseElement: $('.page, #fullpage'),
-            responsive:{
-                0:{
-                    nav: false,
-                    dots: true,
-                    mouseDrag: false
-                },
-                768:{
-
-                }
-            }
-        }).on('changed.owl.carousel', function (event) {
-            // при ручном перелистывании слайдера обновлять таймаут автопрокрутки
-            owl.trigger('stop.owl.autoplay');
-            owl.trigger('play.owl.autoplay', [9000]);
-        });
-
-        owl.find('.owl-nav .owl-prev').attr('title', 'Предыдущий');
-        owl.find('.owl-nav .owl-next').attr('title', 'Следующий');
-    });
-    /* /reviews Owl Slider */
 
 
     /* fancybox 3 */
@@ -1009,56 +615,23 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     /* Табы */
     //показываем первую вк
-    $('.tovar-container .tabs .tabs-controls > .item').first().addClass('active');
-    $('.tovar-container .tabs .tabs-list > .item').first().addClass('active');
-
-    $('.tabs-controls > .item').on('click', function (e) {
-        e.preventDefault();
-
-        var item = $(this),
-            contentItem = $(this).parent().parent().find('.tabs-list > .item'),
-            itemPosition = item.index();
-
-        contentItem.eq(itemPosition)
-            .add(item)
-            .addClass('active')
-            .siblings()
-            .removeClass('active');
-    });
+    // $('.tovar-container .tabs .tabs-controls > .item').first().addClass('active');
+    // $('.tovar-container .tabs .tabs-list > .item').first().addClass('active');
+    //
+    // $('.tabs-controls > .item').on('click', function (e) {
+    //     e.preventDefault();
+    //
+    //     var item = $(this),
+    //         contentItem = $(this).parent().parent().find('.tabs-list > .item'),
+    //         itemPosition = item.index();
+    //
+    //     contentItem.eq(itemPosition)
+    //         .add(item)
+    //         .addClass('active')
+    //         .siblings()
+    //         .removeClass('active');
+    // });
     /* /Табы */
-
-
-    /* Кнопки для вкладок */
-    $(".buttons-tabs .buttons-item").each(function () {
-        var this_btn = $(this);
-
-        this_btn.click(function (e) {
-            e.preventDefault();
-
-            // открытие нужной вкладки
-            tab_open_func(this_btn.attr('href').replace("#", ""));
-        });
-    });
-
-    function tab_open_func($tab_name){
-        $('.tabs .tabs-controls > .item').each(function (index) {
-            if ($tab_name === $(this).attr('id')) {
-
-                $('.tabs .tabs-controls > .item').removeClass('active');
-                $(this).addClass('active');
-
-                $('.tabs .tabs-list > .item').removeClass('active');
-                $('.tabs .tabs-list > .item').eq(index).addClass('active');
-            }
-        });
-    }
-
-    var page_full_id = window.location.href.indexOf("#");
-    if (page_full_id > 0) {
-        var page_id = window.location.href.substring(page_full_id + 1);
-        tab_open_func(page_id);
-    }
-    /* /Кнопки для вкладок */
 
 
     /* кнопка Наверх */
@@ -1084,14 +657,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
     }
     /* /кнопка Наверх */
-
-
-    /* кнопка Мини-корзина 2*/
-    $('.mini-cart2').find('.btn-rollup, .continue').click(function(e) {
-        e.preventDefault();
-        $('.mini-cart2').toggleClass('mini');
-    });
-    /* /кнопка Мини-корзина 2*/
 
 
     /* WIDGET PHONE */
@@ -1140,65 +705,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         });
     });
     // /при клике по заголовку раскрывается таблица с ценами
-
-
-    // дополнительные изображения в списке товаров
-    $('.catalog-products .item .img-container .dopimages .dopimages-item,' +
-        '.catalog-products2 .item .img-container .dopimages .dopimages-item,' +
-        '.catalog-products3 .item .img-container .dopimages .dopimages-item').mouseover(function(){
-        $(this).parent().find(".dopimages-item").removeClass('selected');
-        $(this).addClass('selected');
-        $(this).parent().parent().find("img").attr("src", $(this).data("dop-src"));
-    });
-    // /дополнительные изображения в списке товаров
-
-
-    /* Блок со сворачивающимся текстом */
-    // if ( $(window).width() <= 575) {
-    $(".text-resize-block").each(function () {
-        var $this = $(this),
-            text_resize_block_text_full = $this.find('.text-resize-block-full'),
-            text_resize_block_text_full_height = text_resize_block_text_full.height(), // полная высота текста
-            text_resize_block_text_compact,
-            text_resize_block_text_height_limit = 130, // высота, больше или равно которой - то сворачивать текст
-            text_resize_block_text_compact_height = 100, // высота свернутого блока
-            text_resize_block_button,
-            text_resize_block_button_text_closed = 'Читать далее',
-            text_resize_block_button_text_opened = 'Свернуть';
-
-        if (text_resize_block_text_full_height >= text_resize_block_text_height_limit) {
-            text_resize_block_text_full.wrap('<div class="text-resize-block-compact" />');
-            $this.append('<div class="text-resize-block-button-wrap">\n' +
-                '                      <a class="text-resize-block-button" href="#">' + text_resize_block_button_text_closed + '</a>\n' +
-                '                  </div>');
-
-            text_resize_block_text_compact = $this.find('.text-resize-block-compact');
-            text_resize_block_button = $this.find('.text-resize-block-button');
-
-            text_resize_block_button.click(function (e) {
-                e.preventDefault();
-
-                if ($(this).hasClass('opened')) {
-                    text_resize_block_text_compact.animate({
-                        height: text_resize_block_text_compact_height
-                    }, 500);
-                    $this.removeClass('opened');
-                    $(this).removeClass('opened');
-                    $(this).html(text_resize_block_button_text_closed);
-                } else {
-                    text_resize_block_text_compact.animate({
-                        height: text_resize_block_text_full_height
-                    }, 500);
-                    $this.addClass('opened');
-                    $(this).addClass('opened');
-                    $(this).html(text_resize_block_button_text_opened);
-                }
-            });
-        }
-        $this.removeClass('text-resize-block-hidden');
-    });
-    // }
-    /* /Блок со сворачивающимся текстом */
 
 
     /* скрытие ссылок для seo */

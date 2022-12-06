@@ -171,14 +171,12 @@
   @media only screen and (max-width: 575px) {
     gap: 10px;
   }
-  .swiper-button-next{
-    &.swiper-button-disabled{
-      visibility: hidden;
-    }
-  }
   .button2,
   .button{
     width: 100%;
+    &.swiper-button-disabled{
+      visibility: hidden;
+    }
   }
   .button2{
   }

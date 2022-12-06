@@ -26,7 +26,10 @@
 
         // чтобы вписать в данное соотношение сторон картинку с другим соотношением сторон без искажений
         width: auto;
-        max-height: 100%;        }
+        max-height: 100%;
+
+        transition: all 0.2s linear;
+      }
       .no-img{
         font-size: 4rem;
       }
@@ -42,6 +45,7 @@
         text-overflow: ellipsis;
         overflow: hidden;
         margin-top: 22px;
+        transition: color 0.1s ease-in-out;
         + .text{
           @include media((
                   margin-top: (xs: 5px)
@@ -61,31 +65,39 @@
         ));
       }
     }
+    &:hover{
+      .img-container img{
+        transform: scale(1.2, 1.2);
+      }
+      .title {
+        color: var(--accent-color);
+      }
+    }
   }
   a.item{
     text-decoration: none;
     display: block;
-    .img-container{
-      transition: opacity 0.1s ease-in-out;
-    }
-    .title,
-    .text{
-      transition: color 0.1s ease-in-out;
-    }
-    &:hover{
-      .img-container {
-        opacity: 0.8;
-        transition: opacity 0.1s ease-in-out, border 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
-      }
-      &.item-padding {
-        box-shadow: 0 0 10px rgba(159, 159, 159, 0.4);
-        transition: border 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
-      }
-      .title,
-      .text{
-        color: var(--accent-color);
-        transition: color 0.1s ease-in-out;
-      }
-    }
+    //.img-container{
+    //  transition: opacity 0.1s ease-in-out;
+    //}
+    //.title,
+    //.text{
+    //  transition: color 0.1s ease-in-out;
+    //}
+    //&:hover{
+    //  .img-container {
+    //    opacity: 0.8;
+    //    transition: opacity 0.1s ease-in-out, border 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    //  }
+    //  &.item-padding {
+    //    box-shadow: 0 0 10px rgba(159, 159, 159, 0.4);
+    //    transition: border 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    //  }
+    //  .title,
+    //  .text{
+    //    color: var(--accent-color);
+    //    transition: color 0.1s ease-in-out;
+    //  }
+    //}
   }
 }

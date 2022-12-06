@@ -225,18 +225,13 @@ body.fancybox-active {
   //  transform: translate3d(0, 0, 0);
   //}
 
-  .header__desktop,
-  .menu-top-container,
-  .page-content,
-  footer,
-  .widget-phone,
+  .page,
+  .widgets-right,
   .toTop,
-  .mini-cart,
-  .mini-cart2,
   .mini-cart3{
     @include media((
             filter: (all: blur(3px), sm: none),
-            transition: (all: filter 0.1s, sm: inherit)
+            transition: (all: filter 0.1s, sm: none)
     ));
   }
   .fancybox-container {
