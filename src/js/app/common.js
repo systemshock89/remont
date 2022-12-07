@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         const sliders = document.querySelectorAll('.slider');
 
         sliders.forEach(slider => {
-            const selector = '.' + slider.classList.value.replaceAll(' ', '.');
+            const selector = '.' + slider.classList.value.trim().replace(/\s+/g, '.');
             const swiper = new Swiper(selector + ' .swiper', {
                 loop: slider.querySelectorAll(' .swiper-slide').length > 1 ? true : false,
                 preloadImages: false,
@@ -227,7 +227,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         const sliders = document.querySelectorAll('.slider-form');
 
         sliders.forEach(slider => {
-            const selector = '.' + slider.classList.value.replaceAll(' ', '.');
+            const selector = '.' + slider.classList.value.trim().replace(/\s+/g, '.');
             const swiper = new Swiper(selector + ' .swiper', {
                 preloadImages: false,
                 lazy: true,
@@ -289,7 +289,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         const sliders = document.querySelectorAll('.slider-tabs');
 
         sliders.forEach(slider => {
-            const selector = '.' + slider.classList.value.replaceAll(' ', '.');
+            const selector = '.' + slider.classList.value.trim().replace(/\s+/g, '.');
             const swiper = new Swiper(selector + ' .swiper', {
                 preloadImages: false,
                 lazy: true,
@@ -340,15 +340,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
         const sliders = document.querySelectorAll('.slider-thumbs');
 
         sliders.forEach(slider => {
-            const selector = '.' + slider.classList.value.replaceAll(' ', '.');
+            const selector = '.' + slider.classList.value.trim().replace(/\s+/g, '.');
 
-            const swiperThumbs = new Swiper(selector + ' .slider-thumbs__carousel .swiper', {
-                preloadImages: false,
-                lazy: true,
-                spaceBetween: 10,
-                slidesPerView: 4,
-                watchSlidesProgress: true
-            });
+            let swiperThumbs;
+            if(window.innerWidth >= 768){
+                 swiperThumbs = new Swiper(selector + ' .slider-thumbs__carousel .swiper', {
+                    preloadImages: false,
+                    lazy: true,
+                    spaceBetween: 10,
+                    slidesPerView: 4,
+                    watchSlidesProgress: true
+                });
+            }
 
             const swiperMain = new Swiper(selector + ' .slider-thumbs__main .swiper', {
                 preloadImages: false,
@@ -364,7 +367,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                     prevEl: selector + ' .swiper-button-prev',
                 },
                 thumbs: {
-                    swiper: swiperThumbs,
+                    swiper: (swiperThumbs ? swiperThumbs : null),
                 }
             });
 
@@ -380,7 +383,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         const sliders = document.querySelectorAll('.slider-carousel_products');
 
         sliders.forEach(slider => {
-            const selector = '.' + slider.classList.value.replaceAll(' ', '.');
+            const selector = '.' + slider.classList.value.trim().replace(/\s+/g, '.');
             const swiper = new Swiper(selector + ' .swiper', {
                 loop: slider.querySelectorAll(' .swiper-slide').length > 4 ? true : false,
                 slidesPerView: 1,
@@ -430,7 +433,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         const sliders = document.querySelectorAll('.slider-carousel_reviews');
 
         sliders.forEach(slider => {
-            const selector = '.' + slider.classList.value.replaceAll(' ', '.');
+            const selector = '.' + slider.classList.value.trim().replace(/\s+/g, '.');
             const swiper = new Swiper(selector + ' .swiper', {
                 rewind: true,
                 slidesPerView: 1,

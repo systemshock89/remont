@@ -23,7 +23,7 @@ from 'gulp-noop'
 
 "use strict";
 
-const proxy = '';
+const proxy = 'remont.local';
 const dist = "./html";
 const imagesType = 'webp'; // 'webp' or 'original'
 const faviconSvg = true;
@@ -390,5 +390,4 @@ export let ftpCms = ftpCmsTask;
 export let ftpWiki = ftpWikiTask;
 export let build = parallel(html, styles, scripts, copyAssets, faviconsTask, sprite, images);
 export let prod = series(isProd, parallel(clearDist, clearProd), build, cms);
-export default (!proxy ? parallel(build, serve) : parallel(build, cms, serve));
-// export default (!proxy ? series(build, serve) : series(build, cms, serve));
+export default (!proxy ? parallel(build, serve) : series(build, cms, serve));

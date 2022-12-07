@@ -158,6 +158,9 @@
   &.block-bg{
     background-color: var(--text-color-dark);
     background-attachment: fixed;
+    @media only screen and (max-width: 767px) {
+      background-attachment: scroll;
+    }
   }
   .title-wrapper{
     @include media((
