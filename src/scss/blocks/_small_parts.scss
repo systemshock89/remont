@@ -1,6 +1,7 @@
 // универсальная заглушка при отсутствии фото
 .no-img{
-  background: #EEEEEE;
+  //background: #EEEEEE;
+  background: var(--stroke);
   width: 100%;
   height: 100%;
   position: relative;

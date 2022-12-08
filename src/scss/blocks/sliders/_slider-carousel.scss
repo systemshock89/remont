@@ -6,6 +6,9 @@
   .swiper{
     animation: smoothly-show-items 1.5s ease-in-out;
   }
+  .swiper-slide{
+    height: auto;
+  }
 
   .swiper-button-prev,
   .swiper-button-next{
