@@ -585,6 +585,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
             }
         });
 
+        // чтобы в слайдере возврат фокуса при закрытии окна не приводил к смещению слайдов
+        $("[data-fancybox].seo-btn-tovar").fancybox({
+            backFocus : false
+        });
+
         // widget-phone
         $("[data-fancybox].widget-phone").fancybox({
             beforeClose : function( instance, current ) {

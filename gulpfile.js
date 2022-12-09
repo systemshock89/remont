@@ -1,26 +1,3 @@
-/*
-TODO:
-- проверить задачи деплоя ftpSite, ftpCmsTask, ftpWiki
-- придумать название для индивидуалных ccs-js файлов: напр other.css, other.js
-- при пуше разобрать предупреждение
-- нужно ли usePolling: true, и другие тонкие настройки из https://github.com/agragregra/OptimizedHTML-5
-
-- нужны ли
-import bssi          from 'browsersync-ssi'
-import ssi           from 'ssi'
-import TerserPlugin  from 'terser-webpack-plugin'
-import sassglob      from 'gulp-sass-glob'
-from 'gulp-noop'
-
-- imagemin, imageminWebp - тонкая настройка?
-- rsync?
-- font responcive betterClamp https://pastebin.com/Ej3Hi4Lx
-- разбить таски на файлы?
-- подумать про исключенные стили "!./src/scss/common.admin.scss", "!./src/scss/common.edit.scss". сейчас они
-вообще не обрабатываются
-- sourcemaps отключены из-за большого времени генерации. возможно генерировать для прода
-*/
-
 "use strict";
 
 const proxy = 'remont.local';
@@ -72,6 +49,24 @@ function styles() {
             cssnano({ preset: ['default', { discardComments: { removeAll: true } }] })
         ])))
         .pipe(concat('bundle.min.css'))
+        .pipe(gulpif(!production, sourcemaps.write("./maps/")))
+        .pipe(dest(dist + '/css'))
+        .pipe(browserSync.stream());
+}
+
+function stylesOther() {
+    return src(["./src/scss/common.admin.scss", "./src/scss/common.edit.scss"])
+        .pipe(gulpif(!production, sourcemaps.init()))
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulpif(!production, postCss([
+            postcssViewportHeightCorrection(),
+        ])))
+        .pipe(gulpif(production, postCss([
+            postcssViewportHeightCorrection(),
+            postcssMergeQueries(),
+            autoprefixer({ grid: 'autoplace' }),
+            cssnano({ preset: ['default', { discardComments: { removeAll: true } }] })
+        ])))
         .pipe(gulpif(!production, sourcemaps.write("./maps/")))
         .pipe(dest(dist + '/css'))
         .pipe(browserSync.stream());
@@ -273,7 +268,7 @@ function serve() {
         watch('./src/img/**/*', { usePolling: true }, images);
         watch('./src/sprites/**/*', { usePolling: true }, sprite);
         watch('./src/favicon/favicon.*', { usePolling: true }, faviconsTask);
-        watch("./src/scss/**/*", { usePolling: true }, styles);
+        watch("./src/scss/**/*", { usePolling: true }, parallel(styles, stylesOther));
         watch("./src/js/**/*", { usePolling: true }, scripts);
     } else {
         watch(["./src/*.html", "./src/parts/*.html", "./src/forms/*.html"], { usePolling: true }, series(html, cms));
@@ -281,7 +276,7 @@ function serve() {
         watch('./src/img/**/*', { usePolling: true }, series(images, cms));
         watch('./src/sprites/**/*', { usePolling: true }, series(sprite, cms));
         watch('./src/favicon/favicon.*', { usePolling: true }, series(faviconsTask, cms));
-        watch("./src/scss/**/*", { usePolling: true }, series(styles, cms));
+        watch("./src/scss/**/*", { usePolling: true }, series(parallel(styles, stylesOther), cms));
         watch("./src/js/**/*", { usePolling: true }, series(scripts, cms));
     }
 }
@@ -388,6 +383,6 @@ export let clearProd = clearProdTask;
 export let ftp = ftpSite;
 export let ftpCms = ftpCmsTask;
 export let ftpWiki = ftpWikiTask;
-export let build = parallel(html, styles, scripts, copyAssets, faviconsTask, sprite, images);
+export let build = parallel(html, styles, stylesOther, scripts, copyAssets, faviconsTask, sprite, images);
 export let prod = series(isProd, parallel(clearDist, clearProd), build, cms);
 export default (!proxy ? parallel(build, serve) : series(build, cms, serve));

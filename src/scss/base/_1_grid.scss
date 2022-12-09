@@ -132,7 +132,7 @@ body {
 .page__two-columns,
 .page__sections-top{
   @include media((
-          padding-top: (all: 25px, sm: 15px)
+          padding-top: (all: 20px, sm: 25px)
   ));
 }
 
@@ -378,10 +378,20 @@ body.is-autorized{
     ));
   }
 
-  .menu-top-container{
+  .header__desktop-top{
     @include media((
             top: (all: 55px, sm: 0),
     ));
+  }
+
+  .menu-top{
+    top: 30px + 55px;
+    @media only screen and (max-width: 991px) {
+      top: 62px + 55px;
+    }
+    @media only screen and (max-width: 767px) {
+      top: 0;
+    }
   }
 
   // учитываем плашку netcat

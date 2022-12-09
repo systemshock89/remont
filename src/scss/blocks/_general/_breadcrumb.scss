@@ -1,5 +1,8 @@
 .breadcrumb {
-  margin-top: 25px;
+  //margin-top: 25px;
+  @include media((
+          margin-bottom: (all: 40px, md: 30px)
+  ));
   ol{
     @extend %list-unstyled;
     display: flex;
@@ -12,7 +15,10 @@
       font-size: 14px;
       line-height: 1;
       a {
-
+        text-decoration: none;
+        &:hover{
+          text-decoration: underline;
+        }
       }
       a, span{
         white-space: nowrap;
@@ -21,18 +27,18 @@
         overflow: hidden;
       }
       &:not(:last-child):after{
-        content: "\f105";
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
-        color: #666666;
+        //content: "\f105";
+        //font-family: 'Font Awesome 5 Free';
+        //font-weight: 900;
+        color: var(--text-color);
         margin: 0 8px;
 
-        //content: '»';
+        content: '»';
         // возможно понадобиться отцентрировать кавычки по вертикали
         // Также нужно убрать "font-weight: 900" и "font-family: 'Font Awesome 5 Free'"
       }
       &.active {
-        color: #999999;
+        color: var(--text-color);
       }
     }
   }
