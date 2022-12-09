@@ -20,9 +20,9 @@
 // Основные блоки: header, footer, sidebar, menu
 @import "blocks/_general/header_desktop";
 @import "blocks/_general/header_mobile";
-@import "blocks/_general/header_with_video";
+//@import "blocks/_general/header_with_video";
 @import "blocks/_general/menu-top";
-@include menu-top-fullwidth();
+//@include menu-top-fullwidth();
 //@import "blocks/_general/vertical-menu";
 @import "blocks/_general/breadcrumb";
 @import "blocks/_general/pagination";
