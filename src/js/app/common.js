@@ -6,7 +6,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     // header__top-button visible
     if(getComputedStyle(document.querySelector('.header__mobile')).display === 'none'){
+        showHeaderBtn();
         document.addEventListener("scroll", () => {
+            showHeaderBtn();
+        });
+        function showHeaderBtn(){
             const headerTopBtn = document.querySelector('.header__top-button');
             const headerBtn = document.querySelector('.header__button');
             const headerTopHeight = document.querySelector('.header__desktop-top').clientHeight;
@@ -15,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             } else {
                 headerTopBtn.classList.remove('header__top-button_active');
             }
-        });
+        }
     }
 
 
@@ -349,7 +353,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
                     lazy: true,
                     spaceBetween: 10,
                     slidesPerView: 4,
-                    watchSlidesProgress: true
+                    watchSlidesProgress: true,
+                     centerInsufficientSlides: true
                 });
             }
 

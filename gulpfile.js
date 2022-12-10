@@ -31,12 +31,13 @@ import sourcemaps from "gulp-sourcemaps";
 import svgSprite from "gulp-svg-sprite";
 import debug from "gulp-debug";
 import favicons from "gulp-favicons";
+import rename from "gulp-rename";
 import ftpSettings from './ftp_settings.js';
 ftpSettings();
 let production;
 
 function styles() {
-    return src(["./src/scss/**/*.scss", "!./src/scss/common.admin.scss", "!./src/scss/common.edit.scss"])
+    src("./src/scss/critical.scss")
         .pipe(gulpif(!production, sourcemaps.init()))
         .pipe(sass().on('error', sass.logError))
         .pipe(gulpif(!production, postCss([
@@ -48,11 +49,52 @@ function styles() {
             autoprefixer({ grid: 'autoplace' }),
             cssnano({ preset: ['default', { discardComments: { removeAll: true } }] })
         ])))
-        .pipe(concat('bundle.min.css'))
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(gulpif(!production, sourcemaps.write("./maps/")))
+        .pipe(dest(dist + '/css'))
+        .pipe(browserSync.stream());
+
+    return src("./src/scss/main.scss")
+        .pipe(gulpif(!production, sourcemaps.init()))
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulpif(!production, postCss([
+            postcssViewportHeightCorrection(),
+        ])))
+        .pipe(gulpif(production, postCss([
+            postcssViewportHeightCorrection(),
+            postcssMergeQueries(),
+            autoprefixer({ grid: 'autoplace' }),
+            cssnano({ preset: ['default', { discardComments: { removeAll: true } }] })
+        ])))
+        .pipe(rename({
+            basename: 'bundle',
+            suffix: '.min'
+        }))
         .pipe(gulpif(!production, sourcemaps.write("./maps/")))
         .pipe(dest(dist + '/css'))
         .pipe(browserSync.stream());
 }
+
+// function styles() {
+//     return src(["./src/scss/**/*.scss", "!./src/scss/common.admin.scss", "!./src/scss/common.edit.scss"])
+//         .pipe(gulpif(!production, sourcemaps.init()))
+//         .pipe(sass().on('error', sass.logError))
+//         .pipe(gulpif(!production, postCss([
+//             postcssViewportHeightCorrection(),
+//         ])))
+//         .pipe(gulpif(production, postCss([
+//             postcssViewportHeightCorrection(),
+//             postcssMergeQueries(),
+//             autoprefixer({ grid: 'autoplace' }),
+//             cssnano({ preset: ['default', { discardComments: { removeAll: true } }] })
+//         ])))
+//         .pipe(concat('bundle.min.css'))
+//         .pipe(gulpif(!production, sourcemaps.write("./maps/")))
+//         .pipe(dest(dist + '/css'))
+//         .pipe(browserSync.stream());
+// }
 
 function stylesOther() {
     return src(["./src/scss/common.admin.scss", "./src/scss/common.edit.scss"])

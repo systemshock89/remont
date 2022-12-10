@@ -5,7 +5,7 @@
   line-height: 1.1;
   color: var(--text-color-dark);
   text-overflow: ellipsis;
-  overflow: hidden;
+  //overflow: hidden;
   @include media((
           margin-bottom: (all:30px, lg: 20px, sm: 1rem)
   ));

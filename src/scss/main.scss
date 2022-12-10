@@ -1,36 +1,23 @@
 @use 'sass:math';
 
-// Основное (переменные, миксины, функции, шрифты, сброс стилей)
+// Основное (переменные, миксины, функции)
 @import "base/variables";
 @import "helpers/mixins";
 @import "helpers/media_screen";
 @import "helpers/functions";
-@import "base/fonts";
-@import "helpers/animations";
-//@import "base/reboot"; // свои стили сброса (если не подключен другой normalize)
 
 // CSS-файлы библиотек
 @import "vendor/libs";
 
-// Base styles
-@import "base/1_grid";
-@import "base/2_ui-elements";
-@import "base/3_typography";
+// анимации
+@import "helpers/animations";
 
-// Основные блоки: header, footer, sidebar, menu
-@import "blocks/_general/header_desktop";
-@import "blocks/_general/header_mobile";
-//@import "blocks/_general/header_with_video";
-@import "blocks/_general/menu-top";
-//@include menu-top-fullwidth();
-//@import "blocks/_general/vertical-menu";
-@import "blocks/_general/breadcrumb";
+// Основные блоки: продолжение
+@import "blocks/small_parts"; // socials, toTop, text-resize-block, block-text-color/black, etc
 @import "blocks/_general/pagination";
 @import "blocks/_general/forms";
 @import "blocks/_general/modal";
 @import "blocks/price";
-@import "blocks/_general/footer";
-@import "blocks/small_parts"; // socials, toTop, text-resize-block, block-text-color/black, etc
 
 // Блоки: cards
 @import "blocks/cards/catalog-advantage-mixins";
@@ -49,26 +36,24 @@
 @import "blocks/cards/catalog-gallery";
 @import "blocks/cards/reviews";
 //@import "blocks/cards/catalog-gallery-fluid";
-@import "blocks/cards/video-gallery";
 @import "blocks/cards/catalog-sections";
 
 // Sliders Swiper
-@import "blocks/sliders/slider";
 @import "blocks/sliders/slider-carousel";
 @import "blocks/sliders/slider-form";
 @import "blocks/sliders/slider-tabs";
 @import "blocks/sliders/slider-thumbs";
 
 // Sliders Owl-carousel 2
-@import "blocks/sliders-owl-carousel/slider-mixins";
-@import "blocks/sliders-owl-carousel/one_slide";
-@include index-slider();
-@include fullwidth-slider();
-@import "blocks/sliders-owl-carousel/carousel-slider";
-@import "blocks/sliders-owl-carousel/basic-slider";
-@import "blocks/sliders-owl-carousel/reviews-slider";
-@import "blocks/sliders-owl-carousel/synced-slider";
-@import "blocks/sliders-owl-carousel/synced-slider-single";
+//@import "blocks/sliders-owl-carousel/slider-mixins";
+//@import "blocks/sliders-owl-carousel/one_slide";
+//@include index-slider();
+//@include fullwidth-slider();
+//@import "blocks/sliders-owl-carousel/carousel-slider";
+//@import "blocks/sliders-owl-carousel/basic-slider";
+//@import "blocks/sliders-owl-carousel/reviews-slider";
+//@import "blocks/sliders-owl-carousel/synced-slider";
+//@import "blocks/sliders-owl-carousel/synced-slider-single";
 
 // Блоки: catalog
 //@import "blocks/catalog/list-mixins";

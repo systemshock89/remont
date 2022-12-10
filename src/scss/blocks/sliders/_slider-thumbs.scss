@@ -33,6 +33,7 @@
 .slider-gallery__item{
   display: grid;
   grid-template-columns: 1fr auto auto;
+  grid-template-rows: auto 1fr;
   gap: 20px 30px;
   align-items: baseline;
   @media only screen and (max-width: 991px) {
@@ -78,11 +79,17 @@
   grid-column: 1 / -1;
 }
 
+.slider-gallery__slider .no-img{
+  aspect-ratio: 570 / 330;
+  background-color: var(--bg);
+}
+
 //slider-thumbs
 .slider-thumbs{
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
+  align-self: flex-end;
 }
 
 .slider-thumbs__main{
@@ -99,6 +106,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    img{
+      height: 100%;
+      width: auto;
+    }
   }
   .swiper-button-prev,
   .swiper-button-next{
@@ -135,6 +147,8 @@
 }
 
 .slider-thumbs__carousel{
+  aspect-ratio: 630 / 100; // чтобы галерея с одним слайдом была нормально расположена по высоте
+
   overflow: hidden; // fix display grid bug https://github.com/nolimits4web/swiper/issues/2914
   @media only screen and (max-width: 767px) {
     display: none;

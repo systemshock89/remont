@@ -1,0 +1,32 @@
+@use 'sass:math';
+
+// Основное (переменные, миксины, функции)
+@import "base/variables";
+@import "helpers/mixins";
+@import "helpers/media_screen";
+@import "helpers/functions";
+
+// шрифты
+@import "base/fonts";
+
+//  сброс стилей
+//@import "base/reboot"; // свои стили сброса (если не подключен другой normalize)
+
+// Base styles
+@import "base/1_grid";
+@import "base/2_ui-elements";
+@import "blocks/cards/video-gallery";
+@import "base/3_typography";
+
+// Основные блоки: header, footer, sidebar, menu
+@import "blocks/_general/header_desktop";
+@import "blocks/_general/header_mobile";
+//@import "blocks/_general/header_with_video";
+@import "blocks/_general/menu-top";
+//@include menu-top-fullwidth();
+//@import "blocks/_general/vertical-menu";
+@import "blocks/_general/breadcrumb";
+@import "blocks/_general/footer";
+
+// slider
+@import "blocks/sliders/slider";
