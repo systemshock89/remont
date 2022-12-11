@@ -19,7 +19,7 @@ import gulpSass from 'gulp-sass';
 import dartSass from 'sass';
 const sass = gulpSass(dartSass);
 import postCss from 'gulp-postcss';
-import postcssMergeQueries from "postcss-merge-queries";
+import postcssSortMediaQueries from "postcss-sort-media-queries";
 import postcssViewportHeightCorrection from "postcss-viewport-height-correction";
 import cssnano from 'cssnano';
 import autoprefixer from 'autoprefixer';
@@ -45,7 +45,7 @@ function styles() {
         ])))
         .pipe(gulpif(production, postCss([
             postcssViewportHeightCorrection(),
-            postcssMergeQueries(),
+            postcssSortMediaQueries({sort: 'desktop-first'}),
             autoprefixer({ grid: 'autoplace' }),
             cssnano({ preset: ['default', { discardComments: { removeAll: true } }] })
         ])))
@@ -64,7 +64,7 @@ function styles() {
         ])))
         .pipe(gulpif(production, postCss([
             postcssViewportHeightCorrection(),
-            postcssMergeQueries(),
+            postcssSortMediaQueries({sort: 'desktop-first'}),
             autoprefixer({ grid: 'autoplace' }),
             cssnano({ preset: ['default', { discardComments: { removeAll: true } }] })
         ])))
@@ -86,7 +86,7 @@ function styles() {
 //         ])))
 //         .pipe(gulpif(production, postCss([
 //             postcssViewportHeightCorrection(),
-//             postcssMergeQueries(),
+//             postcssSortMediaQueries({sort: 'desktop-first'}),
 //             autoprefixer({ grid: 'autoplace' }),
 //             cssnano({ preset: ['default', { discardComments: { removeAll: true } }] })
 //         ])))
@@ -105,7 +105,7 @@ function stylesOther() {
         ])))
         .pipe(gulpif(production, postCss([
             postcssViewportHeightCorrection(),
-            postcssMergeQueries(),
+            postcssSortMediaQueries({sort: 'desktop-first'}),
             autoprefixer({ grid: 'autoplace' }),
             cssnano({ preset: ['default', { discardComments: { removeAll: true } }] })
         ])))
