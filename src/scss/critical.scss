@@ -6,9 +6,6 @@
 @import "helpers/media_screen";
 @import "helpers/functions";
 
-// шрифты
-@import "base/fonts";
-
 //  сброс стилей
 //@import "base/reboot"; // свои стили сброса (если не подключен другой normalize)
 
@@ -26,7 +23,7 @@
 //@include menu-top-fullwidth();
 //@import "blocks/_general/vertical-menu";
 @import "blocks/_general/breadcrumb";
-@import "blocks/_general/footer";
+
 
 // slider
 @import "blocks/sliders/slider";

@@ -31,7 +31,8 @@
   // catalog-advantage-variant10 img-container (animate with keyframes)
   // catalog-advantage-variant11 img-container (animate with keyframes)
   .catalog-advantage-variant10 .img-container{
-    visibility: hidden;
+    //visibility: hidden;
+    opacity: 0;
   }
   .backInLeft {
     animation-name: backInLeft;
@@ -42,7 +43,8 @@
     }
 
     animation-fill-mode: both;
-    visibility: visible!important;
+    //visibility: visible!important;
+    opacity: 1;
   }
   @keyframes backInLeft {
     0% {
