@@ -149,14 +149,14 @@ function scripts() {
         .pipe(browserSync.stream());
 }
 
-function images() {
+// сжимаем содержимое папки img (в случае с webp исключаем файлы svg и обрабатываем их отдельно)
+const srcImg = ['./src/img/**/*'];
+if(imagesType === 'webp'){
+    srcImg.push(`!./src/img/**/*.svg`);
+}
+function images1() {
 
-    // сжимаем содержимое папки img (в случае с webp исключаем файлы svg и обрабатываем их отдельно)
-    const srcImg = ['./src/img/**/*'];
-    if(imagesType === 'webp'){
-        srcImg.push(`!./src/img/**/*.svg`);
-    }
-    src(srcImg)
+    return src(srcImg)
         .pipe(changed(dist + "/img", gulpif(imagesType === 'webp', {extension: '.webp'}) ))
         .pipe(gulpif(imagesType === 'original', imagemin()))
         .pipe(gulpif(imagesType === 'webp',
@@ -168,14 +168,20 @@ function images() {
         .pipe(dest(dist + "/img"))
         .pipe(browserSync.stream());
 
+}
+
+function images2() {
     if(imagesType === 'webp'){
         // svg compress
-        src('./src/img/**/*.svg')
+        return src('./src/img/**/*.svg')
             .pipe(changed(dist + "/img"))
             .pipe(imagemin())
             .pipe(dest(dist + "/img"))
             .pipe(browserSync.stream());
     }
+}
+
+function images3() {
 
     // копируем все из img/nocompress без сжатия
     return src("./src/img_nocompress/**/*")
@@ -184,6 +190,42 @@ function images() {
         .pipe(dest(dist + "/img"))
         .pipe(browserSync.stream());
 }
+
+// function images() {
+//
+//     // сжимаем содержимое папки img (в случае с webp исключаем файлы svg и обрабатываем их отдельно)
+//     const srcImg = ['./src/img/**/*'];
+//     if(imagesType === 'webp'){
+//         srcImg.push(`!./src/img/**/*.svg`);
+//     }
+//     src(srcImg)
+//         .pipe(changed(dist + "/img", gulpif(imagesType === 'webp', {extension: '.webp'}) ))
+//         .pipe(gulpif(imagesType === 'original', imagemin()))
+//         .pipe(gulpif(imagesType === 'webp',
+//             webp(imageminWebp({
+//                 lossless: true,
+//                 quality: 50,
+//                 alphaQuality: 100
+//             }))))
+//         .pipe(dest(dist + "/img"))
+//         .pipe(browserSync.stream());
+//
+//     if(imagesType === 'webp'){
+//         // svg compress
+//         src('./src/img/**/*.svg')
+//             .pipe(changed(dist + "/img"))
+//             .pipe(imagemin())
+//             .pipe(dest(dist + "/img"))
+//             .pipe(browserSync.stream());
+//     }
+//
+//     // копируем все из img/nocompress без сжатия
+//     return src("./src/img_nocompress/**/*")
+//         .pipe(changed(dist + "/img", gulpif(imagesType === 'webp', {extension: '.webp'})))
+//         .pipe(gulpif(imagesType === 'webp', webp()))
+//         .pipe(dest(dist + "/img"))
+//         .pipe(browserSync.stream());
+// }
 
 function sprite() {
     return src("./src/sprites/**/*.svg")
@@ -420,6 +462,7 @@ async function isProd() {
 }
 
 export let faviconsTask = series(faviconsTask1, faviconsTask2, faviconsTask3);
+export let images = series(images1, images2, images3);
 export let clearDist = clearDistTask;
 export let clearProd = clearProdTask;
 export let ftp = ftpSite;

@@ -116,9 +116,11 @@
     transition-duration: .5s;
   }
 
-  .catalog-advantage-variant11 .item,
-  .catalog-advantage-variant11 .img-container{
+  .catalog-advantage-variant11 .item{
     visibility: hidden;
+  }
+  .catalog-advantage-variant11 .img-container{
+    opacity: 0;
   }
 
   .stages__item{
