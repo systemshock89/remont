@@ -201,6 +201,10 @@
   display: grid;
   grid-auto-rows: 1fr auto;
   gap: 15px;
+  @media only screen and (max-width: 991px) {
+    grid-auto-rows: auto 1fr;
+    align-items: flex-start;
+  }
 }
 
 .slider-tabs__wrap2 {
@@ -208,7 +212,7 @@
 
 .slider-tabs__title {
   margin-top: 12px;
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 991px) {
     margin-top: 0;
   }
   color: var(--accent-color);

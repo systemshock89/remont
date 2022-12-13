@@ -318,20 +318,35 @@ function faviconsTask1() {
         .pipe(dest(dist + '/img/favicons'));
 }
 
+// function faviconsTask2() {
+//     if(faviconSvg){
+//         src("./src/favicon/favicon.svg")
+//             .pipe(imagemin())
+//             .pipe(dest(dist + "/img/favicons"));
+//     }
+//
+//     return src([dist + "/img/favicons/favicon.ico", "./src/manifest.webmanifest"])
+//         .pipe(changed(dist + "/"))
+//         .pipe(dest(dist + "/"))
+//         .pipe(browserSync.stream());
+// }
+
 function faviconsTask2() {
     if(faviconSvg){
-        src("./src/favicon/favicon.svg")
+        return src("./src/favicon/favicon.svg")
             .pipe(imagemin())
             .pipe(dest(dist + "/img/favicons"));
     }
+}
 
+function faviconsTask3() {
     return src([dist + "/img/favicons/favicon.ico", "./src/manifest.webmanifest"])
         .pipe(changed(dist + "/"))
         .pipe(dest(dist + "/"))
         .pipe(browserSync.stream());
 }
 
-async function faviconsTask3() {
+async function faviconsTask4() {
     await deleteAsync([dist + "/img/favicons/favicon.ico", dist + "/img/favicons/manifest.json"], { force: true });
 }
 
@@ -461,7 +476,7 @@ async function isProd() {
     production = true;
 }
 
-export let faviconsTask = series(faviconsTask1, faviconsTask2, faviconsTask3);
+export let faviconsTask = series(faviconsTask1, faviconsTask2, faviconsTask3, faviconsTask4);
 export let images = series(images1, images2, images3);
 export let clearDist = clearDistTask;
 export let clearProd = clearProdTask;
@@ -470,4 +485,4 @@ export let ftpCms = ftpCmsTask;
 export let ftpWiki = ftpWikiTask;
 export let build = parallel(html, styles, stylesOther, scripts, copyAssets, faviconsTask, sprite, images);
 export let prod = series(isProd, parallel(clearDist, clearProd), build, cms);
-export default (!proxy ? parallel(build, serve) : series(build, cms, serve));
+export default (!proxy ? parallel(build, serve) : series(parallel(build, serve), cms));

@@ -1,7 +1,7 @@
 @use 'sass:math';
 
 // Основное (переменные, миксины, функции)
-@import "base/variables";
+//@import "base/variables"; // они в critical
 @import "helpers/mixins";
 @import "helpers/media_screen";
 @import "helpers/functions";
@@ -34,7 +34,6 @@
 //@import "blocks/cards/catalog-advantage7";
 //@import "blocks/cards/catalog-advantage8";
 //@import "blocks/cards/catalog-advantage9";
-@import "blocks/cards/catalog-advantage10";
 @import "blocks/cards/catalog-advantage11";
 @import "blocks/cards/catalog-advantage12";
 @import "blocks/cards/catalog-advantage13";
@@ -75,13 +74,11 @@
 @import "blocks/news/news-columns";
 @import "blocks/news/news-rows";
 //@import "blocks/news/news-list-anons";
-@import "blocks/news/news-inner";
 //@import "blocks/news/news-widget";
 @import "blocks/news/categories";
 //@import "blocks/news/author-articles";
 
 // Блоки: разное
-@import "blocks/content-blocks";
 @import "blocks/price";
 @import "blocks/faq";
 @import "blocks/faq_mini";

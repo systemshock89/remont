@@ -35,7 +35,10 @@
   @media only screen and (max-width: 991px) {
     margin-top: 5px;
   }
-  min-height: 20px;
+  @include media((
+          font-size: (all: 14px, lg: 14px),
+          min-height: (all: 20px, lg: 20px, sm: 20px),
+  ));
   padding-top: 3px;
   padding-bottom: 3px;
   font-size: 14px;
