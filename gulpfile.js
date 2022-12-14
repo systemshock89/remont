@@ -1,7 +1,7 @@
 "use strict";
 
 const proxy = 'remont.local';
-const dist = "./html";
+const dist = "./dist";
 const imagesType = 'webp'; // 'webp' or 'original'
 const faviconSvg = true;
 

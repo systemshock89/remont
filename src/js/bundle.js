@@ -90,12 +90,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         Mmenu.options.onClick.close = true;
     }
 
-    // скрипт, чтобы верхнее меню пряталось при прокрутке вниз
-    // new Mhead( ".header-mobile", {
-    //     pin: 100
-    // });
-
-
     // https://github.com/Faisal-Manzer/postcss-viewport-height-correction
     const customViewportCorrectionVariable = 'vh';
 
@@ -212,10 +206,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
             swiper.on('slideChange', function () {
                 paginations.forEach(pagination => {
                     const dots = pagination.querySelectorAll('.swiper__pagination-item');
+
                     dots.forEach((dot, i) => {
-                        dot.classList.remove('swiper__pagination-item_active');
+                        if(i <= swiper.activeIndex){
+                            dot.classList.add('swiper__pagination-item_active');
+                        } else {
+                            dot.classList.remove('swiper__pagination-item_active');
+                        }
                     });
-                    dots[swiper.activeIndex].classList.add('swiper__pagination-item_active');
                     return false;
                 });
             });
@@ -303,7 +301,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 lazy: true,
                 rewind: true,
                 // autoplay: {
-                //     delay: 3000,
+                //     delay: 9000,
                 //     pauseOnMouseEnter: true,
                 //     disableOnInteraction: false
                 // },
@@ -421,90 +419,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         console.log(err);
     }
     /* /slider-carousel_reviews */
-
-
-    /* fancybox 3 */
-    try {
-
-        // настройки для всех fancybox по умолчанию
-        $.fancybox.defaults.thumbs.autoStart = true;
-        $.fancybox.defaults.animationEffect = "zoom";
-        $.fancybox.defaults.transitionEffect = "slide";
-        $.fancybox.defaults.hash = false;
-        $.fancybox.defaults.infobar = true;
-        $.fancybox.defaults.mobile.thumbs = {
-            autoStart : false
-        };
-        $.fancybox.defaults.buttons = [
-            'slideShow',
-            'fullScreen',
-            'thumbs',
-            'close',
-            // 'share',
-            // 'download',
-            // 'zoom'
-        ];
-        $.fancybox.defaults.lang = 'ru';
-        $.fancybox.defaults.i18n = {
-            'ru': {
-                CLOSE: 'Закрыть',
-                NEXT: 'Следующий',
-                PREV: 'Предыдуший',
-                ERROR: 'Запрошенный контент не может быть загружен. <br/> Пожалуйста, повторите попытку позже.',
-                PLAY_START: 'Слайдшоу',
-                PLAY_STOP: 'Пауза',
-                FULL_SCREEN: 'На весь экран',
-                THUMBS: 'Эскизы',
-                DOWNLOAD: 'Скачать',
-                SHARE: 'Поделиться',
-                ZOOM: 'Увеличить'
-            }
-        };
-
-
-        $("[data-fancybox]").fancybox();
-
-        // кнопка вызова окна заказа в товаре (оно большое по высоте - нужно чтобы прокручивалось на мобильном)
-        $("[data-fancybox].order").fancybox({
-            mobile : {
-                touch : false
-            }
-        });
-
-        // чтобы в слайдере возврат фокуса при закрытии окна не приводил к смещению слайдов
-        $("[data-fancybox].seo-btn-tovar").fancybox({
-            backFocus : false
-        });
-
-        // widget-phone
-        // $("[data-fancybox].widget-phone").fancybox({
-        //     beforeClose : function( instance, current ) {
-        //
-        //         $widget_str = current.$content["0"].className;
-        //
-        //         // если попап является виджетом обратного звонка, то включать значок при закрытии попапа
-        //         if ($widget_str.indexOf('modal-widget-phone') + 1) {
-        //             $('.widget-phone').stop().fadeIn(450);
-        //         }
-        //     }
-        // });
-
-        /* Открываем автоматом по id через класс */
-        // var fancybox_start_id = window.location.href.indexOf("#");
-        // if (fancybox_start_id > 0) {
-        //     var fancybox_id = window.location.href.substring(fancybox_start_id + 1);
-        //
-        //     $("[data-fancybox]").each(function() {
-        //         if( $(this).attr('data-fancybox-id') == fancybox_id){
-        //             $(this).click();
-        //         }
-        //     });
-        // }
-
-    } catch (err) {
-        console.log(err);
-    }
-    /* /fancybox 3 */
 
 
     /* Animations */
