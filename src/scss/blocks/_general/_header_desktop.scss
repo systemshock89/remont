@@ -1,13 +1,19 @@
 /*==========  HEADER  ==========*/
 .header__desktop-top{
+  flex: none;
+
   background-color: #fff;
   border-bottom: 1px solid var(--stroke);
   position: sticky;
   top: 0;
   z-index: 5;
-  @include media((
-          display: (sm: none),
-  ));
+  @media only screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.header{
+  flex: none;
 }
 
 .header__desktop-top-grid{

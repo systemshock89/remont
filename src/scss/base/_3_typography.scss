@@ -186,7 +186,7 @@ h6, .h6{
   //  li{
   //    position: relative;
   //    left: 20px;
-  //    padding-right: 20px;
+  //    margin-right: 20px;
   //  }
   //
   //  > li{
@@ -207,7 +207,8 @@ h6, .h6{
     li{
       position: relative;
       left: 20px;
-      padding-right: 20px;
+      //padding-right: 20px;
+      margin-right: 20px;
       padding-left: 10px;
     }
 
@@ -297,7 +298,8 @@ h6, .h6{
 
       position: relative;
       left: $offset;
-      padding-right: $offset;
+      //padding-right: $offset;
+      margin-right: $offset;
 
       &:before{
         top: 3px;

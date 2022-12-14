@@ -329,6 +329,7 @@
 
 //form-block_footer
 .form-block_footer{
+  flex: none;
   .title-wrapper{
     @include media((
             width: (lg: 60%, sm: 100%),

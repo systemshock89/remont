@@ -1,7 +1,4 @@
 html {
-  //@include media((
-  //        font-size: (all: 16px, sm: 14px),
-  //));
   font-size: 16px;
 }
 
@@ -13,9 +10,9 @@ html {
 // Но такой баг только в chrome 83, причем в режиме инкогнито его нет.
 
 body {
-  @include media((
-          font-size: (sm: rem(14)),
-  ));
+  @media only screen and (max-width: 767px) {
+    font-size: rem(14);
+  }
   //font-family: "Lato-my", sans-serif;
   font-family: "Lato-my", 'Lato-my Fallback';
   color: var(--text-color);
@@ -23,37 +20,12 @@ body {
 
   min-width: 320px;
   position: relative;
-  overflow-x: hidden; // чтоб не появлялась горизонтальная прокрутка, если что-то вдруг выпирает за пределы экрана
-
-  // для фона у body (переделать)
-  //&.full-bg{
-  //  background-position: top center;
-  //  background-repeat: no-repeat;
-  //  background-attachment: fixed;
-  //  background-size: cover;
-  //  //background-image: url('../img/temp/text-block-bg.jpg');
-  //}
-  //&.content-color-bg{
-  //  .page{
-  //    background: #fcecdf;
-  //    max-width: 1360px;
-  //    margin-left: auto;
-  //    margin-right: auto;
-  //  }
-  //  .menu-top-container{
-  //    background: transparent;
-  //  }
-  //  .menu-top{
-  //    background: var(--accent-color);
-  //  }
-  //}
+  //overflow-x: hidden; // чтоб не появлялась горизонтальная прокрутка, если что-то вдруг выпирает за пределы экрана
 }
 
 .page {
-  display: grid;
-  grid-template-rows: auto auto auto auto auto 1fr auto auto auto auto;
-  grid-template-areas: "header-top" "header" "nav" "breadcrumb" "sections-top" "main" "sections-bottom" "footer-form" "footer-top" "footer";
-
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
 
   // если menu-top длиннее чем контент на странице, то overflow-y: hidden исправляет этот глюк https://yadi.sk/i/XoTj0kaw7TAEkw
@@ -61,86 +33,47 @@ body {
   //overflow-y: hidden;
 }
 
-.page_two-columns-template{
-  grid-template-areas: "header-top" "header" "nav" "breadcrumb" "sections-top" "two-columns" "sections-bottom" "footer-form" "footer-top" "footer";
+.page__offset-top{
+  @include media((
+          margin-top: (all: 40px, md: 30px, xs: 20px)
+  ));
+}
+
+.main{
+  flex: 1 0 auto;
 }
 
 .page__two-columns{
-  grid-area: two-columns;
+  flex: 1 0 auto;
+
   display: grid;
-  grid-template-areas: "aside main";
+  grid-template-areas:
+          "sections-top sections-top"
+          "aside main"
+          "sections-bottom sections-bottom";
   gap: 0 30px;
   grid-template-columns: 300px 1fr;
+  grid-template-rows: auto auto 1fr;
   @media only screen and (max-width: 1359px) {
     grid-template-columns: 210px 1fr;
   }
   @media only screen and (max-width: 991px) {
     grid-template-columns: 1fr;
-    grid-template-areas: "main" "aside";
+    grid-template-areas: "sections-top" "main" "sections-bottom" "aside";
   }
-}
 
-// Avoid Chrome to see Safari hack
-// https://github.com/postcss/postcss-100vh-fix
-// ! Не работает в anroid chrome, поэтому использую js https://github.com/Faisal-Manzer/postcss-viewport-height-correction
-//@supports (-webkit-touch-callout: none) {
-//  .page {
-//    /* The hack for Safari */
-//    min-height: -webkit-fill-available;
-//  }
-//}
-
-.header__desktop-top{
-  grid-area: header-top;
-  @include media((
-          display: (sm: none),
-  ));
-}
-
-.header{
-  grid-area: header;
-}
-
-.menu-top{
-  grid-area: nav;
-  @include media((
-          display: (sm: none),
-  ));
-}
-
-.breadcrumb{
-  grid-area: breadcrumb;
-  @include media((
-          display: (sm: none),
-  ));
-}
-
-.main{
-  grid-area: main;
-
-  overflow: hidden;
-  // Нужно для того, чтобы анимации с выплыванием сбоку/сверху/снизу не вызывали полосы прокрутки (а иначе полоса видна на мобильном во время анимации, но на десктопе не видна)
-  // используется overflow, а не overflow-x потому что при overflow-x может появиться вертикальная прокрутка, когда последний блок - это блок с ячейками
-
-  &.page-content-no-margin-top{
-    padding-top: 0!important;
-    margin-top: 0!important;
+  .main{
+    flex: none;
+    grid-area: main;
   }
-}
-
-.main:not(.page__main-column),
-.page__two-columns,
-.page__sections-top{
-  @include media((
-          padding-top: (all: 20px, sm: 25px)
-  ));
 }
 
 .aside{
   grid-area: aside;
-  @include media((
-          display: (md: none),
-  ));
+
+  @media only screen and (max-width: 991px) {
+    display: none;
+  }
   > div:not(:last-child){
     margin-bottom: 30px;
   }
@@ -152,18 +85,6 @@ body {
 
 .page__sections-bottom{
   grid-area: sections-bottom;
-}
-
-.form-block_footer{
-  grid-area: footer-form;
-}
-
-.footer-top{
-  grid-area: footer-top;
-}
-
-.footer{
-  grid-area: footer;
 }
 
 .page__main-column,
@@ -397,10 +318,8 @@ body.is-autorized{
   // учитываем плашку netcat
   .page {
     min-height: calc(100vh - 55px);
-    min-height: calc(100vh - var(--vh-offset, 0px) - 55px );
     @media only screen and (max-width: 767px) {
       min-height: 100vh;
-      min-height: calc(100vh - var(--vh-offset, 0px) );
     }
   }
 }

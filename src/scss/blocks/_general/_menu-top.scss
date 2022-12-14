@@ -1,11 +1,15 @@
 /*==========  MENU-TOP  ==========*/
 .menu-top{
+  flex: none;
   background-color: var(--accent-color);
   position: sticky;
   z-index: 4;
   top: 30px;
   @media only screen and (max-width: 991px) {
     top: 62px;
+  }
+  @media only screen and (max-width: 767px) {
+    display: none;
   }
   nav{
     ul {

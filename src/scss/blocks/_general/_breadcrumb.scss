@@ -1,8 +1,11 @@
 .breadcrumb {
-  //margin-top: 25px;
+  flex: none;
   @include media((
-          margin-bottom: (all: 40px, md: 30px)
+          padding-top: (all: 20px, sm: 25px)
   ));
+  @media only screen and (max-width: 767px) {
+    display: none;
+  }
   ol{
     @extend %list-unstyled;
     display: flex;

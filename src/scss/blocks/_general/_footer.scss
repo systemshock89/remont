@@ -1,5 +1,6 @@
 /*==========  FOOTER  ==========*/
 .footer-top{
+  flex: none;
   background-color: var(--accent-color);
   padding-top: 11px;
   padding-bottom: 11px;
@@ -12,6 +13,10 @@
   span{
     color: #fff;
   }
+}
+
+.footer{
+  flex: none;
 }
 
 .footer__part1{

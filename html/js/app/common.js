@@ -1,6 +1,4 @@
-/**
- * @description Основные скрипты
- */
+"use strict";
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
@@ -89,12 +87,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         Mmenu.options.onClick.close = true;
     }
 
-    // скрипт, чтобы верхнее меню пряталось при прокрутке вниз
-    // new Mhead( ".header-mobile", {
-    //     pin: 100
-    // });
-
-
     // https://github.com/Faisal-Manzer/postcss-viewport-height-correction
     const customViewportCorrectionVariable = 'vh';
 
@@ -152,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // по клику на стрелку
     // $('.vertical-menu .submenu-btn').click(function (e) {
     //     e.preventDefault();
-    //     var $this = $(this),
+    //     const $this = $(this),
     //         $this_li = $this.closest('li');
     //
     //     $this_li.find('ul.level2').slideToggle(200, function(){
@@ -185,8 +177,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     /* Верхнее меню - раздер без перехода внутрь - попадаем в подразделы */
     $('.menu-top .submenu-toggle').click(function (e) {
         e.preventDefault(); // при клике на ссылку никуда не переходим
-    })
-        .keydown(function(e){
+    }).keydown(function(e){
             if(e.which === 13){
                 e.preventDefault();
                 $(this).closest('li').find('> ul').slideToggle(200); // при нажатии на enter разворачиваем подразделы
@@ -272,10 +263,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
             swiper.on('slideChange', function () {
                 paginations.forEach(pagination => {
                     const dots = pagination.querySelectorAll('.swiper__pagination-item');
+
                     dots.forEach((dot, i) => {
-                        dot.classList.remove('swiper__pagination-item_active');
+                        if(i <= swiper.activeIndex){
+                            dot.classList.add('swiper__pagination-item_active');
+                        } else {
+                            dot.classList.remove('swiper__pagination-item_active');
+                        }
                     });
-                    dots[swiper.activeIndex].classList.add('swiper__pagination-item_active');
                     return false;
                 });
             });
@@ -363,7 +358,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 lazy: true,
                 rewind: true,
                 // autoplay: {
-                //     delay: 3000,
+                //     delay: 9000,
                 //     pauseOnMouseEnter: true,
                 //     disableOnInteraction: false
                 // },
@@ -484,61 +479,61 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
     /* /Carousel Owl Slider */
-    $(".carousel-slider .owl-carousel").each(function(){
-        var owl =  $(this);
-        owl.owlCarousel({
-            autoplay: true,
-            autoplayTimeout: 9000,
-            autoplayHoverPause: true,
-            // lazyLoad:true,
-            navText:  [
-                "",
-                ""
-            ],
-            dots: false,
-            responsiveBaseElement: $('.page, #fullpage'),
-            responsive:{
-                0:{
-                    items:1,
-                    margin: 15,
-                    nav: false,
-                    dots: true,
-                    // stagePadding: 35,
-                    loop: true,
-                    mouseDrag: false
-                },
-                576:{
-                    items: 2,
-                    margin: 30,
-                    nav: false,
-                    rewind:true,
-                    dots: true,
-                    mouseDrag: false
-                },
-                768:{
-                    items: 3,
-                    margin: 30,
-                    nav: true,
-                    rewind:true,
-                    mouseDrag: true
-                },
-                992:{
-                    items: 4,
-                    margin: 30,
-                    nav: true,
-                    rewind:true
-                }
-
-            }
-        }).on('changed.owl.carousel', function (event) {
-            // при ручном перелистывании слайдера обновлять таймаут автопрокрутки
-            owl.trigger('stop.owl.autoplay');
-            owl.trigger('play.owl.autoplay', [9000]);
-        });
-
-        owl.find('.owl-nav .owl-prev').attr('title', 'Предыдущий');
-        owl.find('.owl-nav .owl-next').attr('title', 'Следующий');
-    });
+    // $(".carousel-slider .owl-carousel").each(function(){
+    //     const owl =  $(this);
+    //     owl.owlCarousel({
+    //         autoplay: true,
+    //         autoplayTimeout: 9000,
+    //         autoplayHoverPause: true,
+    //         // lazyLoad:true,
+    //         navText:  [
+    //             "",
+    //             ""
+    //         ],
+    //         dots: false,
+    //         responsiveBaseElement: $('.page, #fullpage'),
+    //         responsive:{
+    //             0:{
+    //                 items:1,
+    //                 margin: 15,
+    //                 nav: false,
+    //                 dots: true,
+    //                 // stagePadding: 35,
+    //                 loop: true,
+    //                 mouseDrag: false
+    //             },
+    //             576:{
+    //                 items: 2,
+    //                 margin: 30,
+    //                 nav: false,
+    //                 rewind:true,
+    //                 dots: true,
+    //                 mouseDrag: false
+    //             },
+    //             768:{
+    //                 items: 3,
+    //                 margin: 30,
+    //                 nav: true,
+    //                 rewind:true,
+    //                 mouseDrag: true
+    //             },
+    //             992:{
+    //                 items: 4,
+    //                 margin: 30,
+    //                 nav: true,
+    //                 rewind:true
+    //             }
+    //
+    //         }
+    //     }).on('changed.owl.carousel', function (event) {
+    //         // при ручном перелистывании слайдера обновлять таймаут автопрокрутки
+    //         owl.trigger('stop.owl.autoplay');
+    //         owl.trigger('play.owl.autoplay', [9000]);
+    //     });
+    //
+    //     owl.find('.owl-nav .owl-prev').attr('title', 'Предыдущий');
+    //     owl.find('.owl-nav .owl-next').attr('title', 'Следующий');
+    // });
     /* /Carousel Owl Slider */
 
 
@@ -580,7 +575,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
             }
         };
 
-
         $("[data-fancybox]").fancybox();
 
         // кнопка вызова окна заказа в товаре (оно большое по высоте - нужно чтобы прокручивалось на мобильном)
@@ -599,7 +593,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         $("[data-fancybox].widget-phone").fancybox({
             beforeClose : function( instance, current ) {
 
-                $widget_str = current.$content["0"].className;
+                const $widget_str = current.$content["0"].className;
 
                 // если попап является виджетом обратного звонка, то включать значок при закрытии попапа
                 if ($widget_str.indexOf('modal-widget-phone') + 1) {
@@ -608,10 +602,68 @@ document.addEventListener("DOMContentLoaded", function(event) {
             }
         });
 
+        // form-price-plaster (штукатурка)
+        $("[data-fancybox].button_form-price-plaster").fancybox({
+            afterLoad : function() {
+                const sliderForm = document.querySelector('.slider-form'),
+                    modalForm = document.querySelector('.modal-price'),
+                    fieldPlace = sliderForm.querySelector('input[name="field_place"]:checked').value,
+                    fieldDistance = sliderForm.querySelector('input[name="field_distance"]:checked').value,
+                    fieldMaterial = sliderForm.querySelector('input[name="field_material"]:checked').value,
+                    fieldSquare = sliderForm.querySelector('input[id="field_square"]').value,
+                    fieldFinish = sliderForm.querySelector('input[name="field_finish"]:checked').value,
+                    fieldStart = sliderForm.querySelector('input[name="field_start"]:checked').value;
+
+                modalForm.querySelector('.field_square input').value = fieldSquare;
+                checkRadio(modalForm.querySelectorAll('.field_place input'), fieldPlace);
+                checkRadio(modalForm.querySelectorAll('.field_distance input'), fieldDistance);
+                checkRadio(modalForm.querySelectorAll('.field_material input'), fieldMaterial);
+                checkRadio(modalForm.querySelectorAll('.field_finish input'), fieldFinish);
+                checkRadio(modalForm.querySelectorAll('.field_start input'), fieldStart);
+            },
+            onDeactivate : function() {
+                document.querySelector('.slider-form .swiper').swiper.slideTo(0);
+                document.querySelector('.slider-form .swiper-wrapper').reset();
+            }
+        });
+
+        // form-price-putty (шпаклевка)
+        $("[data-fancybox].button_form-price-putty").fancybox({
+            afterLoad : function() {
+                const sliderForm = document.querySelector('.slider-form'),
+                    modalForm = document.querySelector('.modal-price'),
+                    fieldPlace = sliderForm.querySelector('input[name="field_place"]:checked').value,
+                    fieldFinish = sliderForm.querySelector('input[name="field_finish"]:checked').value,
+                    fieldSquare = sliderForm.querySelector('input[id="field_square"]').value,
+                    fieldDistance = sliderForm.querySelector('input[name="field_distance"]:checked').value,
+                    fieldStart = sliderForm.querySelector('input[name="field_start"]:checked').value;
+
+                modalForm.querySelector('.field_square input').value = fieldSquare;
+                checkRadio(modalForm.querySelectorAll('.field_place input'), fieldPlace);
+                checkRadio(modalForm.querySelectorAll('.field_distance input'), fieldDistance);
+                checkRadio(modalForm.querySelectorAll('.field_finish input'), fieldFinish);
+                checkRadio(modalForm.querySelectorAll('.field_start input'), fieldStart);
+            },
+            onDeactivate : function() {
+                document.querySelector('.slider-form .swiper').swiper.slideTo(0);
+                document.querySelector('.slider-form .swiper-wrapper').reset();
+            }
+        });
+
+        function checkRadio(radios, value){
+            radios.forEach(radio => {
+                if(radio.value === value){
+                    radio.setAttribute("checked", "");
+                } else {
+                    radio.removeAttribute("checked");
+                }
+            });
+        }
+
         /* Открываем автоматом по id через класс */
-        var fancybox_start_id = window.location.href.indexOf("#");
+        const fancybox_start_id = window.location.href.indexOf("#");
         if (fancybox_start_id > 0) {
-            var fancybox_id = window.location.href.substring(fancybox_start_id + 1);
+            const fancybox_id = window.location.href.substring(fancybox_start_id + 1);
 
             $("[data-fancybox]").each(function() {
                 if( $(this).attr('data-fancybox-id') == fancybox_id){
@@ -634,7 +686,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // $('.tabs-controls > .item').on('click', function (e) {
     //     e.preventDefault();
     //
-    //     var item = $(this),
+    //     const item = $(this),
     //         contentItem = $(this).parent().parent().find('.tabs-list > .item'),
     //         itemPosition = item.index();
     //
@@ -658,7 +710,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         if( !$('.toTop').length ){
             $('body').append('<a href="#top" class="toTop" title="Наверх"></a>');
         }
-        var toTop = $('.toTop');
+        const toTop = $('.toTop');
         if ($(window).scrollTop() > 0) {
             toTop.show();
             toTop.addClass('show');
@@ -686,7 +738,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     /* FAQ MINI */
     $('.faq-mini .item .question').click(function(e) {
 
-        var faq_mini_item_this = $(this).closest('.item');
+        const faq_mini_item_this = $(this).closest('.item');
         e.preventDefault();
 
         if ( !faq_mini_item_this.hasClass('selected') ){
@@ -710,7 +762,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     // при клике по заголовку раскрывается таблица с ценами
     $('.price-block-button').click(function (e) {
-        var $item =  $(this).closest('.price-block');
+        const $item =  $(this).closest('.price-block');
         e.preventDefault();
         $(this).toggleClass("active");
         $item.find('.block-hidden').slideToggle( function () {
@@ -751,13 +803,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 (function($) {
     $(function() {
         function addLink() {
-            var body_element = document.getElementsByTagName ('body') [0];
-            var html = "";
+            const body_element = document.getElementsByTagName ('body') [0];
+            let html = "";
             if (typeof window.getSelection != "undefined") {
-                var selection = window.getSelection();
+                const selection = window.getSelection();
                 if (selection.rangeCount) {
-                    var container = document.createElement("div");
-                    for (var i = 0, len = selection.rangeCount; i < len; ++i) {
+                    const container = document.createElement("div");
+                    for (let i = 0, len = selection.rangeCount; i < len; ++i) {
                         container.appendChild(selection.getRangeAt(i).cloneContents());
                     }
                     html = container.innerHTML;
@@ -769,9 +821,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 return;
             }
 
-            var pagelink = "<br/><br/> Подробнее: <a href='" + document.location.href+ "'>"  +document.location.href+ "</a>";
-            var copytext = html + ' ' + pagelink;
-            var newdiv = document.createElement('div');
+            const pagelink = "<br/><br/> Подробнее: <a href='" + document.location.href+ "'>"  +document.location.href+ "</a>";
+            const copytext = html + ' ' + pagelink;
+            const newdiv = document.createElement('div');
             newdiv.style.position = 'absolute';
             newdiv.style.left = '-99999px';
             body_element.appendChild(newdiv);
@@ -810,10 +862,10 @@ function phone_input_mask() {
 function table_responsive_func() {
 
     $('.table-responsive').each(function() {
-        var $this = $(this),
+        const $this = $(this),
             $table_overflow = $this.find('.overflow'),
-            $table =  $this.find('.overflow table'),
-            $table_responsive_arrow_right_flag = false;
+            $table =  $this.find('.overflow table');
+        let $table_responsive_arrow_right_flag = false;
 
         $this.prepend('<div class="table-responsive-arrow arrow-left">' +
             '            <i class="fa fa-chevron-right fa-2x"></i>' +
@@ -867,13 +919,13 @@ function table_responsive_func() {
 
         //клик на кнопки влево и вправо - гориз.скролл
         $this.find(".table-responsive-arrow.arrow-left").click(function () {
-            var leftPos = $table_overflow.scrollLeft();
+            const leftPos = $table_overflow.scrollLeft();
             $table_overflow.animate({scrollLeft: leftPos - 100}, 150);
         });
 
         $this.find(".table-responsive-arrow.arrow-right").click(function () {
-            var leftPos = $table_overflow.scrollLeft();
-            $table_overflow.animate({scrollLeft: leftPos + 100}, 150);
+            const rightPos = $table_overflow.scrollLeft();
+            $table_overflow.animate({scrollLeft: rightPos + 100}, 150);
         });
 
     });
@@ -907,8 +959,8 @@ if($('.header__desktop').is(":visible")){
 
 // прокрутка к якорю при клике на ссылку
 $("body").on('click', '[href*="#"]', function () {
-    var href = $.attr(this, 'href'),
-        href_id_block;
+    const href = $.attr(this, 'href');
+    let href_id_block;
 
     // если ссылка содержит href="#top", то прокручивать в начало страницы
     if( href == '#top' ){
@@ -942,11 +994,11 @@ $("body").on('click', '[href*="#"]', function () {
 
                 // В лендинге: подсвечивание активного пункта меню при клике на него после скролла до этого блока
                 if( $('body.landing').length ) {
-                    $menu_top_li = $('.menu-top ul > li');
+                    const $menu_top_li = $('.menu-top ul > li');
                     $menu_top_li.removeClass('selected');
                     $menu_top_li.find('> a').filter('[href="' + window.location.hash + '"]').closest('li').addClass('selected');
 
-                    $mmenu_li = $('#mmenu ul > li');
+                    const $mmenu_li = $('#mmenu ul > li');
                     $mmenu_li.removeClass('mm-listitem_selected');
                     $mmenu_li.find('> a').filter('[href="' + window.location.hash + '"]').closest('li').addClass('mm-listitem_selected');
                 }
@@ -964,8 +1016,8 @@ $("body").on('click', '[href*="#"]', function () {
 // переход к якорю с id из урла (без анимации)
 function url_anchor_func() {
     if (window.location.hash.indexOf('#') !== -1) {
-        // var location_hash = window.location.hash.replace("#", "");
-        var location_hash = window.location.hash;
+        // const location_hash = window.location.hash.replace("#", "");
+        const location_hash = window.location.hash;
 
         if ($(location_hash).offset()) {
 
@@ -986,11 +1038,11 @@ function url_anchor_func() {
 
             // В лендинге: подсвечивание активного пункта меню при клике на него после скролла до этого блока
             if( $('body.landing').length ) {
-                $menu_top_li = $('.menu-top ul > li');
+                const $menu_top_li = $('.menu-top ul > li');
                 $menu_top_li.removeClass('selected');
                 $menu_top_li.find('> a').filter('[href="' + location_hash + '"]').closest('li').addClass('selected');
 
-                $mmenu_li = $('#mmenu ul > li');
+                const $mmenu_li = $('#mmenu ul > li');
                 $mmenu_li.removeClass('mm-listitem_selected');
                 $mmenu_li.find('> a').filter('[href="' + location_hash + '"]').closest('li').addClass('mm-listitem_selected');
             }
@@ -1001,18 +1053,18 @@ function url_anchor_func() {
 // ф-я определяет, видно ли сейчас данную секцию или нет и в зависимости от этого делает пункт меню активным и ставит хэш
 function checkLandingSection(landing_sections, anchor_offset) {
     landing_sections.each(function () {
-        var
-            $this = $(this),
-            topEdge,
-            bottomEdge,
-            wScroll = $(window).scrollTop();
+        const $this = $(this),
+              wScroll = $(window).scrollTop();
+
+        let topEdge,
+            bottomEdge;
 
         anchor_offset_func($this);
         topEdge = $this.offset().top - anchor_offset + anchor_offset_more;
         bottomEdge = topEdge + $this.height();
 
         if (topEdge < wScroll && bottomEdge > wScroll){
-            var currentId;
+            let currentId;
 
             if($this[0].hasAttribute('id')){
                 currentId = '#' + $this.attr('id');
@@ -1020,11 +1072,11 @@ function checkLandingSection(landing_sections, anchor_offset) {
                 currentId = '#' + $this.parent().find('.tpl-anchor').attr('id');
             }
 
-            $menu_top_li = $('.menu-top ul > li');
+            const $menu_top_li = $('.menu-top ul > li');
             $menu_top_li.removeClass('selected');
             $menu_top_li.find('> a').filter('[href="' + currentId + '"]').closest('li').addClass('selected');
 
-            $mmenu_li = $('#mmenu ul > li');
+            const $mmenu_li = $('#mmenu ul > li');
             $mmenu_li.removeClass('mm-listitem_selected');
             $mmenu_li.find('> a').filter('[href="' + currentId + '"]').closest('li').addClass('mm-listitem_selected');
 
@@ -1036,8 +1088,8 @@ function checkLandingSection(landing_sections, anchor_offset) {
 }
 
 //ф-я доп. оступов у блоков с якорем в зависимости от дата-атрибутов и разрешения экрана (breakpoint)
-var $window_width = $(window).width(),
-    $anchor_offset_breakpoint,
+const $window_width = $(window).width();
+let $anchor_offset_breakpoint,
     anchor_offset_more;
 function anchor_offset_func(anchor_id) {
     // Первым используется отступ указанный В БЛОКЕ в атрибуте текущего разрешения
@@ -1066,7 +1118,7 @@ function anchor_offset_func(anchor_id) {
     if( anchor_id.filter('[data-' + $anchor_offset_breakpoint + ']').length ){
         anchor_offset_more = anchor_id.data($anchor_offset_breakpoint);
     } else{
-        anchor_link_id = '#' + anchor_id.attr('id');
+        let anchor_link_id = '#' + anchor_id.attr('id');
         if($('a[href="' + anchor_link_id + '"][data-' + $anchor_offset_breakpoint + ']').length){
             anchor_offset_more = $('a[href="' + anchor_link_id + '"]').data($anchor_offset_breakpoint);
         } else {
@@ -1098,6 +1150,7 @@ function anchor_offset_func(anchor_id) {
 window.onload = function () {
 // document.addEventListener("DOMContentLoaded", () => { // при этом условии срабатывает через раз, тк метрика не успевает инициализироваться
     if (typeof Ya !== 'undefined') { // счетчик существует
+        let yaC;
         if (typeof Ya.Metrika !== 'undefined') { // счетчик называется Ya.Metrika
             yaC = Ya.Metrika.counters()[0].id;
         } else {
