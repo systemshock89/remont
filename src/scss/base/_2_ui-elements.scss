@@ -215,7 +215,8 @@ select{
   background-color: #fff;
   padding: 6px 25px 6px 14px;
   appearance: none;
-  background-image: url('../img/sprite.svg#select-arr');
+  //background-image: url('../img/sprite.svg#select-arr');
+  background-image: url('img/sprite.svg#select-arr');
   background-repeat: no-repeat;
   background-position: right 9px center;
   background-size: 11px auto;
