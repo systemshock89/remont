@@ -39,7 +39,8 @@
   align-items: center;
   background-color: var(--bg);
 
-  background-image: url('../img/elef-white.svg');
+  background-image: url('img/elef-white.svg');
+  //background-image: url('../img/elef-white.svg');
   @media only screen and (max-width: 767px) {
     background-image: none;
   }

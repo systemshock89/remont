@@ -307,7 +307,8 @@ h6, .h6{
         content: "";
         float: left;
         position: relative;
-        background: url('../img/marker.svg') no-repeat;
+        background: url('img/marker.svg') no-repeat;
+        //background: url('../img/marker.svg') no-repeat;
         width: $width;
         height: $height;
         margin-right: $margin-right;
