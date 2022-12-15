@@ -32,6 +32,10 @@ import svgSprite from "gulp-svg-sprite";
 import debug from "gulp-debug";
 import favicons from "gulp-favicons";
 import rename from "gulp-rename";
+import injectCSS from "gulp-inject-css";
+import replace from "gulp-replace";
+
+
 import ftpSettings from './ftp_settings.js';
 ftpSettings();
 let production;
@@ -472,6 +476,18 @@ function ftpWikiTask() {
     });
 }
 
+function replaceCriticalCSSLink() {
+    return src(dist + '/*.html')
+        .pipe(replace('<link rel="stylesheet" href="css/critical.min.css?ver=1.0.0">', '<!-- inject-css css/critical.min.css -->'))
+        .pipe(dest(dist));
+}
+
+function injectCriticalCSS() {
+    return src(dist + '/*.html')
+        .pipe(injectCSS())
+        .pipe(dest(dist));
+}
+
 async function isProd() {
     production = true;
 }
@@ -484,5 +500,5 @@ export let ftp = ftpSite;
 export let ftpCms = ftpCmsTask;
 export let ftpWiki = ftpWikiTask;
 export let build = parallel(html, styles, stylesOther, scripts, copyAssets, faviconsTask, sprite, images);
-export let prod = series(isProd, parallel(clearDist, clearProd), build, cms);
+export let prod = series(isProd, parallel(clearDist, clearProd), replaceCriticalCSSLink, build, replaceCriticalCSSLink, injectCriticalCSS, cms);
 export default (!proxy ? parallel(build, serve) : series(parallel(build, serve), cms));
