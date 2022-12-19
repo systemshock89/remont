@@ -500,5 +500,5 @@ export let ftp = ftpSite;
 export let ftpCms = ftpCmsTask;
 export let ftpWiki = ftpWikiTask;
 export let build = parallel(html, styles, stylesOther, scripts, copyAssets, faviconsTask, sprite, images);
-export let prod = series(isProd, parallel(clearDist, clearProd), replaceCriticalCSSLink, build, replaceCriticalCSSLink, injectCriticalCSS, cms);
+export let prod = series(isProd, parallel(clearDist, clearProd), build, replaceCriticalCSSLink, injectCriticalCSS, cms);
 export default (!proxy ? parallel(build, serve) : series(parallel(build, serve), cms));
