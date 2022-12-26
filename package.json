@@ -41,6 +41,7 @@
     "gulp-webp": "^4.0.1",
     "imagemin-webp": "^7.0.0",
     "postcss": "^8.4.19",
+    "postcss-path-replace": "^1.0.4",
     "postcss-sort-media-queries": "^4.3.0",
     "sass": "^1.56.1",
     "sass-migrator": "^1.7.1",

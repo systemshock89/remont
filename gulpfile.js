@@ -20,6 +20,7 @@ import dartSass from 'sass';
 const sass = gulpSass(dartSass);
 import postCss from 'gulp-postcss';
 import postcssSortMediaQueries from "postcss-sort-media-queries";
+import postcssPathReplace from "postcss-path-replace";
 import postcssViewportHeightCorrection from "postcss-viewport-height-correction";
 import cssnano from 'cssnano';
 import autoprefixer from 'autoprefixer';
@@ -49,6 +50,11 @@ function styles() {
         ])))
         .pipe(gulpif(production, postCss([
             postcssViewportHeightCorrection(),
+            postcssPathReplace({
+                publicPath: "img/",
+                matched: "../img/",
+                mode: "replace"
+            }),
             postcssSortMediaQueries({sort: 'desktop-first'}),
             autoprefixer({ grid: 'autoplace' }),
             cssnano({ preset: ['default', { discardComments: { removeAll: true } }] })
