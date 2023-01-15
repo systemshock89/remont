@@ -1147,19 +1147,14 @@ function anchor_offset_func(anchor_id) {
 
 
 // Определение номера счетчика Яндекс.Метрики (используется для работы целей яндекс метрики)
+let yaC;
 window.onload = function () {
-// document.addEventListener("DOMContentLoaded", () => { // при этом условии срабатывает через раз, тк метрика не успевает инициализироваться
-    if (typeof Ya !== 'undefined') { // счетчик существует
-        let yaC;
-        if (typeof Ya.Metrika !== 'undefined') { // счетчик называется Ya.Metrika
-            yaC = Ya.Metrika.counters()[0].id;
-        } else {
-            if (typeof Ya.Metrika2 !== 'undefined') { // счетчик называется Ya.Metrika2
-                yaC = Ya.Metrika2.counters()[0].id;
-            }
-        }
+    if (Ya.Metrika2) {
+        yaC = Ya.Metrika2.counters()[0].id;
     }
-// });
+    if (Ya.Metrika) {
+        yaC = Ya.Metrika.counters()[0].id;
+    }
 }
 
 
